@@ -8,7 +8,7 @@ import config
 # TODO: accuracy, phonology, etc.
 
 
-class BaseRule():
+class SegRule():
     """ Rule stated over segments """
 
     def __init__(self, A, B, C, D):
@@ -96,9 +96,12 @@ def fix_transcription(x, seg_fixes):
 
 
 def ftrs2regex(F):
-    """ Segment regex corresponding to feature matrix """
-    if isinstance(F, tuple):
-        return ' '.join([ftrs2regex(Fi) for Fi in F])
+    """ Segment regex for sequence of feature matrices """
+    return ' '.join([ftrs2regex1(Fi) for Fi in F])
+
+
+def ftrs2regex1(F):
+    """ Segment regex for single feature matrix """
     if F == 'X':
         return 'X'
     segs = [seg for seg in config.seg2ftrs \
@@ -109,17 +112,17 @@ def ftrs2regex(F):
 
 
 def ftrs2print(F):
+    """ String corresponding to sequence of feature matrices"""
+    return ' '.join([ftrs2print1(Fi) for Fi in F])
+
+
+def ftrs2print1(F):
     """ String corresponding to feature matrix, with non-zero values only """
-    if isinstance(F, tuple):
-        return ' '.join([ftrs2print(Fi) for Fi in F])
-    if isinstance(F, list):
-        print('error, list should be tuple')
-        print(F)
     if F == 'X':
         return 'X'
     ftr_names = config.ftr_names
     #ftrvals = [f'{val}{ftr}' for ftr, val in F.items() if val != '0']
-    ftrvales = [f"{F[i]}{ftr_names[i]}" for i in range(len(F))]
+    ftrvals = [f"{F[i]}{ftr_names[i]}" for i in range(len(F)) if F[i] != '0']
     return '[' + ', '.join(ftrvals) + ']'
 
 
@@ -150,7 +153,7 @@ def lcp(x, y, direction='LR->'):
 
 def make_base_rule(x, y):
     """
-    Create BaseRule A -> B / C __D by aligning two segment sequences
+    Create SegRule A -> B / C __D by aligning two segment sequences
     """
     x = x.split(' ')
     y = y.split(' ')
@@ -163,12 +166,12 @@ def make_base_rule(x, y):
     # Change
     A = x[:-len(D)]
     B = y[:-len(D)]
-    return BaseRule(tuple(A), tuple(B), tuple(C), tuple(D))
+    return SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
 
 
 def featurize_rule(R):
     """
-    Convert BaseRule to FtrRule by replacing segments in context with feature matrices
+    Convert SegRule to FtrRule by replacing segments in context with feature matrices
     """
     C = [config.seg2ftrs_[seg] for seg in R.C]
     D = [config.seg2ftrs_[seg] for seg in R.D]
@@ -201,6 +204,8 @@ def generalize_context(X1, X2, direction='LR->'):
             Y.append('X')
             break
         # Match segments perfectly
+        # (NB. Conforms to A&H spec only if at least
+        # one of the rules is specified with segments)
         if X1[i] == X2[i]:
             Y.append(X1[i])
             continue
@@ -235,69 +240,69 @@ def generalize_rules(R1, R2):
 
 def generalize_rules_rec(Rs):
     """
-    Apply minimal generalization recursively to set of FtrRules
+    Recursively apply minimal generalization to set of FtrRules
     """
     # (invariant) Rules grouped by common change
-    change2rules_all = {}
+    # Word-specific rules
+    R_base = {}
     for R in Rs:
         change = ' '.join(R.A) + ' -> ' + ' '.join(R.B)
-        if change in change2rules_all:
-            change2rules_all[change].append(R)
+        if change in R_base:
+            R_base[change].append(R)
         else:
-            change2rules_all[change] = [R]
-    change2rules_all = {change: set(rules) \
-        for change, rules in change2rules_all.items()}
+            R_base[change] = [R]
+    R_base = {change: set(rules) \
+        for change, rules in R_base.items()}
+    R_all = R_base.copy()
 
     # First-step minimal generalization
     print('First-step mingen ...')
-    change2rules_new = {}
-    for change, rules_all in change2rules_all.items():
-        print(f'\t{change} [{len(rules_all)}]')
-        rules_all = [R for R in rules_all]
+    R_new = {}
+    for change, rules_base in R_base.items():
+        print(f'\t{change} [{len(rules_base)}]')
+        rules_base = [R for R in rules_base]
         rules_new = []
-        n = len(rules_all)
+        n = len(rules_base)
         for i in range(n - 1):
-            R1 = rules_all[i]
+            R1 = rules_base[i]
             for j in range(i + 1, n):
-                R2 = rules_all[j]
+                R2 = rules_base[j]
                 R = generalize_rules(R1, R2)
-                if (R is None):
+                if R is None:
                     continue
                 rules_new.append(R)
         rules_new = set(rules_new)
-        change2rules_new[change] = rules_new
-    for change in change2rules_all:
-        change2rules_all[change] |= change2rules_new[change]
-    print('done')
+        R_new[change] = rules_new
+    for change in R_all:
+        R_all[change] |= R_new[change]
 
     # Recursive minimal generalization
     for i in range(10):  # xxx loop forever
         # Report number of rules by change
         print(f"iteration {i}")
-        for change, rules_all in change2rules_all.items():
-            print(f"{change} [{len(rules_all)}]")
 
         # One-step minimal generalization
-        change2rules_old = change2rules_new
-        change2rules_new = {}
-        for change, rules_all in change2rules_all.items():
-            rules_old = change2rules_old[change]
+        R_old = R_new
+        R_new = {}
+        for change, rules_base in R_base.items():
+            print(f'\t{change} [{len(rules_base)}]')
+            rules_old = R_old[change]
             rules_new = []
-            for R1 in rules_old:
-                for R2 in rules_all:
+            for R1 in rules_base:
+                for R2 in rules_old:
                     R = generalize_rules(R1, R2)
                     if R is None:
                         continue
                     rules_new.append(R)
             rules_new = set(rules_new)
-            change2rules_new[change] = rules_new
+            R_new[change] = rules_new
 
         # Update rule sets
         new_rule_flag = False
-        for change in change2rules_all:
-            size_old = len(change2rules_all[change])
-            change2rules_all[change] |= rules_new
-            size_new = len(change2rules_all[change])
+        for change in R_all:
+            size_old = len(R_all[change])
+            R_all[change] |= R_new[change]
+            size_new = len(R_all[change])
             if size_new > size_old:
                 new_rule_flag = True
 
@@ -305,7 +310,14 @@ def generalize_rules_rec(Rs):
         if not new_rule_flag:
             break
 
-    return None
+    # Write rules
+    rules_out = [str(R) for change, rules in R_all.items() \
+                for R in rules]
+    rules_out = pd.DataFrame(rules_out, columns=['rule'])
+    rules_out['rule_len'] = [len(x) for x in rules_out['rule']]
+    rules_out.to_csv('rules_out.tsv', index=False, sep='\t')
+
+    return R_all
 
 
 def match_ftrs(F, seg):
@@ -453,6 +465,7 @@ def main():
     config.seg2ftrs = seg2ftrs
     config.seg2ftrs_ = seg2ftrs_
     print(seg2ftrs_)
+    print(config.ftr_names)
     print(config.phon_ftrs)
 
     # Segment transcription fixes
@@ -480,8 +493,8 @@ def main():
         '/Users/colin/Code/Python/tensormorph_data/unimorph/eng_all_past',
         sep='\t',
         names=['wordform1', 'wordform2', 'morphosyn'])
-    #dat = dat.head(n=500)  # xxx subset for debugging
     dat = dat.drop_duplicates().reset_index()
+    #dat = dat.head(n=100)  # xxx subset for debugging
     dat['wordform1'] = fix_transcription(dat['wordform1'], config.seg_fixes)
     dat['wordform2'] = fix_transcription(dat['wordform2'], config.seg_fixes)
     dat['wordform1'] = [add_delim(x) for x in dat['wordform1']]
