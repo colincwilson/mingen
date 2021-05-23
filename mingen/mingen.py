@@ -51,6 +51,7 @@ class FtrRule():
         return _hash
 
     def __str__(self):
+        """ String with feature matrices """
         if hasattr(self, '_str'):
             return self._str
         parts1 = {'A': self.A, 'B': self.B}
@@ -64,6 +65,7 @@ class FtrRule():
                 f"{parts2['C']} __ {parts2['D']}")
 
     def __repr__(self):
+        """ String with segment regexs """
         if hasattr(self, '_repr'):
             return self._repr
         parts1 = {'A': self.A, 'B': self.B}
@@ -106,8 +108,6 @@ def ftrs2regex1(F):
         return 'X'
     segs = [seg for seg in config.seg2ftrs \
             if match_ftrs(F, seg)]
-    if len(segs) == 0:
-        return '∅'
     return '(' + '|'.join(segs) + ')'
 
 
@@ -122,7 +122,8 @@ def ftrs2print1(F):
         return 'X'
     ftr_names = config.ftr_names
     #ftrvals = [f'{val}{ftr}' for ftr, val in F.items() if val != '0']
-    ftrvals = [f"{F[i]}{ftr_names[i]}" for i in range(len(F)) if F[i] != '0']
+    ftrvals = [f"{F[i]}{ftr_names[i]}" \
+                for i in range(len(F)) if F[i] != '0']
     return '[' + ', '.join(ftrvals) + ']'
 
 
@@ -204,13 +205,17 @@ def generalize_context(X1, X2, direction='LR->'):
             Y.append('X')
             break
         # Match segments perfectly
-        # (NB. Conforms to A&H spec only if at least
-        # one of the rules is specified with segments)
+        # (NB. Conforms to A&H spec only if at least one
+        # of the rules has contexts specified with segments)
         if X1[i] == X2[i]:
             Y.append(X1[i])
             continue
         # Unify features at first segment mismatch
-        Y.append(unify_ftrs_(X1[i], X2[i]))
+        ftrs, any_match = unify_ftrs(X1[i], X2[i])
+        if not any_match:
+            Y.append('X')
+            break
+        Y.append(ftrs)
         seg_ident_flag = False
 
     if direction == '<-RL':
@@ -252,8 +257,9 @@ def generalize_rules_rec(Rs):
         else:
             R_base[change] = [R]
     R_base = {change: set(rules) \
-        for change, rules in R_base.items()}
-    R_all = R_base.copy()
+                for change, rules in R_base.items()}
+    R_all = {change: rules.copy() \
+                for change, rules in R_base.items()}
 
     # First-step minimal generalization
     print('First-step mingen ...')
@@ -261,7 +267,7 @@ def generalize_rules_rec(Rs):
     for change, rules_base in R_base.items():
         print(f'\t{change} [{len(rules_base)}]')
         rules_base = [R for R in rules_base]
-        rules_new = []
+        rules_new = set()
         n = len(rules_base)
         for i in range(n - 1):
             R1 = rules_base[i]
@@ -270,11 +276,16 @@ def generalize_rules_rec(Rs):
                 R = generalize_rules(R1, R2)
                 if R is None:
                     continue
-                rules_new.append(R)
-        rules_new = set(rules_new)
+                rules_new.add(R)
         R_new[change] = rules_new
     for change in R_all:
         R_all[change] |= R_new[change]
+
+    # xxx organize rules by C and D within change
+    #for change, rules_all in R_new.items():
+    #    for R in rules_all:
+    #        print(repr(R))
+    #sys.exit(0)
 
     # Recursive minimal generalization
     for i in range(10):  # xxx loop forever
@@ -285,17 +296,16 @@ def generalize_rules_rec(Rs):
         R_old = R_new
         R_new = {}
         for change, rules_base in R_base.items():
-            print(f'\t{change} [{len(rules_base)}]')
             rules_old = R_old[change]
-            rules_new = []
+            print(f'\t{change} [{len(rules_base)} x {len(rules_old)}]')
+            rules_new = set()
             for R1 in rules_base:
                 for R2 in rules_old:
                     R = generalize_rules(R1, R2)
                     if R is None:
                         continue
-                    rules_new.append(R)
-            rules_new = set(rules_new)
-            R_new[change] = rules_new
+                    rules_new.add(R)
+            R_new[change] = (rules_new - R_all[change])
 
         # Update rule sets
         new_rule_flag = False
@@ -312,7 +322,7 @@ def generalize_rules_rec(Rs):
 
     # Write rules
     rules_out = [str(R) for change, rules in R_all.items() \
-                for R in rules]
+                    for R in rules]
     rules_out = pd.DataFrame(rules_out, columns=['rule'])
     rules_out['rule_len'] = [len(x) for x in rules_out['rule']]
     rules_out.to_csv('rules_out.tsv', index=False, sep='\t')
@@ -320,19 +330,19 @@ def generalize_rules_rec(Rs):
     return R_all
 
 
-def match_ftrs(F, seg):
+def match_ftrs_(F, seg):
     """
     Test whether feature matrix subsumes segment features
     [Args: feature dicts]
     """
     seg_ftrs = config.seg2ftrs[seg]
     for (ftr, val) in F.items():
-        if seg_ftrs[ftr] != val:  # todo: handle 0s
+        if seg_ftrs[ftr] != val:
             return False
     return True
 
 
-def match_ftrs_(F, seg):
+def match_ftrs(F, seg):
     """
     Test whether feature matrix subsumes segment features
     [Args: feature vectors]
@@ -340,12 +350,14 @@ def match_ftrs_(F, seg):
     seg_ftrs = config.seg2ftrs_[seg]
     n = len(seg_ftrs)
     for i in range(n):
+        if F[i] == '0':
+            continue
         if seg_ftrs[i] != F[i]:
             return False
     return True
 
 
-def unify_ftrs(F1, F2):
+def unify_ftrs_(F1, F2):
     """
     Retain common values from two feature matrices
     [Args: feature dicts]
@@ -362,7 +374,7 @@ def unify_ftrs(F1, F2):
     return F
 
 
-def unify_ftrs_(F1, F2):
+def unify_ftrs(F1, F2):
     """
     Retain common values from two feature matrices
     [Args: feature vectors]
@@ -370,8 +382,15 @@ def unify_ftrs_(F1, F2):
     if (F1 == 'X') or (F2 == 'X'):
         return 'X'
     n = len(F1)
-    F = [F1[i] if F1[i] == F2[i] else '0' for i in range(n)]
-    return tuple(F)
+    F = ['0'] * n
+    any_match = False
+    for i in range(n):
+        if F1[i] == '0':
+            continue
+        if F1[i] == F2[i]:
+            F[i] = F1[i]
+            any_match = True
+    return tuple(F), any_match
 
 
 def match_rule(A, x, x_offset, direction='LR->'):
@@ -494,7 +513,7 @@ def main():
         sep='\t',
         names=['wordform1', 'wordform2', 'morphosyn'])
     dat = dat.drop_duplicates().reset_index()
-    #dat = dat.head(n=100)  # xxx subset for debugging
+    #dat = dat.head(n=200)  # xxx subset for debugging
     dat['wordform1'] = fix_transcription(dat['wordform1'], config.seg_fixes)
     dat['wordform2'] = fix_transcription(dat['wordform2'], config.seg_fixes)
     dat['wordform1'] = [add_delim(x) for x in dat['wordform1']]
