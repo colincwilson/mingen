@@ -99,26 +99,30 @@ def ftrs2str1(F):
 
 def str2ftrs(x):
     """ String to sequence of feature matrices (inverse of ftrs2str) """
-    y = x.split(' [')
-    y = [str2ftrs1(yi) for yi in y]
+    y = re.sub('X', '[X', x)  # Pseudo-matrix for Sigma*
+    y = y.split(' [')
+    try:
+        y = [str2ftrs1(yi) for yi in y]
+    except:
+        print(f'Error in str2ftrs for input {y}')
+        sys.exit(0)
     return tuple(y)
 
 
 def str2ftrs1(x):
     """ String to feature matrix (inverse of ftrs2str1) """
-    if x == 'X':
+    y = re.sub('\\[', '', x)
+    y = re.sub('\\]', '', y)
+    # Parse Sigma*
+    if y == 'X':
         return 'X'
-    y = re.sub('\\]', '', x)
+    # Parse ordinary feature matrix, non-zero specs only
     y = y.split(', ')
-    print(y)
     ftrs = ['0'] * len(config.ftr_names)
     for spec in y:
+        if spec == '':  # xxx document
+            continue
         val = spec[0]
         ftr = spec[1:]
-        print(val, ftr)
-        try:
-            ftrs[config.ftr_names.index(ftr)] = val
-        except:
-            print(val, ftr)
-    sys.exit(0)
+        ftrs[config.ftr_names.index(ftr)] = val
     return tuple(ftrs)

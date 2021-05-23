@@ -6,6 +6,7 @@ import pandas as pd
 import config
 from rules import *
 from mingen import *
+from score import *
 
 
 def main():
@@ -79,10 +80,20 @@ def main():
     # Recursive minimal generalization of all rules,
     # or read results of mingen from file
     if 0:
-        generalize_rules_rec(R_ftr)
+        R_all = generalize_rules_rec(R_ftr)
     else:
         rules = pd.read_csv('rules_out.tsv', sep='\t')
-        rules = [str2rule(x) for x in rules['rule']]
+        rules = rules.head(n=10)  # xxx debugging
+        R_all = [str2rule(x) for x in rules['rule']]
+
+    # Score rules
+    scores = []
+    for R in R_all:
+        hit, scope = score_rule(R)
+        scores.append((hit, scope))
+    rules['hit'] = [x[0] for x in scores]
+    rules['scope'] = [x[1] for x in scores]
+    print(rules)
 
 
 if __name__ == "__main__":

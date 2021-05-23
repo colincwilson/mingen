@@ -79,11 +79,14 @@ def str2rule(x):
     """
     Create FtrRule from string with feature matrices
     """
-    A, rest = x.split(' -> ')
-    B, rest = rest.split(' / ')
-    C, D = rest.split(' __ ')
-    R = FtrRule(A, B, str2ftrs(C), str2ftrs(D))
-    print(str(R))
+    AB, CD = x.split(' / ')
+    A, B = AB.split(' -> ')
+    C, D = CD.split(' __ ')
+    A = tuple(A.split(' '))
+    B = tuple(B.split(' '))
+    C = str2ftrs(C)
+    D = str2ftrs(D)
+    R = FtrRule(A, B, C, D)
     return R
 
 
@@ -92,20 +95,19 @@ def apply_rule(R, x):
     Apply FtrRule A -> B / C __ D at all positions in segment sequence that match context CAD
     todo: use pynini
     """
-    x = x.split(' ')
     A, B, C, D = \
         R.A, R.B, R.C, R.D
     n_A, n_C, n_D, n_x = \
         len(A), len(C), len(D), len(x)
 
     # Find offsets in x that match A
-    offsets = [i for i in range(n_x) if match_rule(A, x, i, 'LR->')]
+    offsets = [i for i in range(n_x) if match_focus(A, x, i, 'LR->')]
 
     # Find pre-offsets in x that match C
-    offsets = [i for i in offsets if match_rule(C, x, i - 1, '<-RL')]
+    offsets = [i for i in offsets if match_context(C, x, i - 1, '<-RL')]
 
     # Find post-offsets in x that match D
-    offsets = [i for i in offsets if match_rule(D, x, i + n_A, 'LR->')]
+    offsets = [i for i in offsets if match_context(D, x, i + n_A, 'LR->')]
 
     # Apply at each offset
     products = []
@@ -120,30 +122,48 @@ def apply_rule(R, x):
     return products, apply_flag
 
 
-def match_rule(A, x, x_offset, direction='LR->'):
+def match_focus(A, x, x_offset, direction='LR->'):
     """
-    Attempt to match part of a FtrRule (left-context | focus | right-context)  against a segment sequence, starting at offset position in the sequence
+    Attempt to match focus of FtrRule against a segment sequence, starting at offset position
+    todo: use pynini
+    """
+    assert (direction == 'LR->')
+    n_A = len(A)
+    n_x = len(x)
+    if n_A == 0 & ((A[0] == '∅') or (A[0] == '')):  # xxx fixme
+        return True
+    for i in range(n_A):
+        if (x_offset + i) >= n_x:  # Off trailing edge of x
+            return False
+
+    print(A)
+    sys.exit(0)
+
+
+def match_context(C, x, x_offset, direction='LR->'):
+    """
+    Attempt to match (left- | right-) context of a FtrRule against a segment sequence, starting at offset position
     todo: use pynini
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
-    n_A = len(A)
+    n_C = len(C)
     n_x = len(x)
     if direction == 'LR->':
-        for i in range(n_A):
-            if A[i] == 'X':  # Sigma*
+        for i in range(n_C):
+            if C[i] == 'X':  # Sigma* at end of A
                 return True
-            if (x_offset + i) >= n_x:  # Off right edge of x
+            if (x_offset + i) >= n_x:  # Off trailing edge of x
                 return False
-            if not match_ftrs(A[i], x[x_offset + i]):  # Mismatch
+            if not match_ftrs(C[i], x[x_offset + i]):  # Mismatch
                 return False
         return True
     elif direction == '<-RL':
-        for i in range(n_A):
-            if A[(n_A - 1) - i] == 'X':  # Sigma*
+        for i in range(n_C):
+            if C[(n_C - 1) - i] == 'X':  # Sigma* at beginning of A
                 return True
-            if (x_offset - i) < 0:  # Off left edge of x
+            if (x_offset - i) < 0:  # Off leading edge of x
                 return False
-            if not match_ftrs(A[(n_A - 1) - i], x[x_offset - i]):  # Mismatch
+            if not match_ftrs(C[(n_C - 1) - i], x[x_offset - i]):  # Mismatch
                 return False
         return True
     return None
