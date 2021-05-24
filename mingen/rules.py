@@ -90,10 +90,10 @@ def str2rule(x):
     return R
 
 
+# xxx deprecated, see pynini_util
 def apply_rule(R, x):
     """
     Apply FtrRule A -> B / C __ D at all positions in segment sequence that match context CAD
-    todo: use pynini
     """
     A, B, C, D = \
         R.A, R.B, R.C, R.D
@@ -122,10 +122,10 @@ def apply_rule(R, x):
     return products, apply_flag
 
 
+# xxx deprecated, see pynini_util
 def match_focus(A, x, x_offset, direction='LR->'):
     """
     Attempt to match focus of FtrRule against a segment sequence, starting at offset position
-    todo: use pynini
     """
     assert (direction == 'LR->')
     n_A = len(A)
@@ -140,10 +140,10 @@ def match_focus(A, x, x_offset, direction='LR->'):
     sys.exit(0)
 
 
+# xxx deprecated, see pynini_util
 def match_context(C, x, x_offset, direction='LR->'):
     """
     Attempt to match (left- | right-) context of a FtrRule against a segment sequence, starting at offset position
-    todo: use pynini
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
     n_C = len(C)
@@ -169,9 +169,9 @@ def match_context(C, x, x_offset, direction='LR->'):
     return None
 
 
+# xxx deprecated, see pynini_util
 def replace_rule(B, x_A):
     """
     Apply change A -> B to portion of segment sequence that matches rule focus
-    todo: use pynini
     """
     return B  # xxx fixme

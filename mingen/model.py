@@ -83,7 +83,7 @@ def main():
         R_all = generalize_rules_rec(R_ftr)
     else:
         rules = pd.read_csv('rules_out.tsv', sep='\t')
-        rules = rules.head(n=1)  # xxx debugging
+        rules = rules.head(n=10)  # xxx debugging
         rules = [str2rule(x) for x in rules['rule']]
 
     # Score rules

@@ -31,9 +31,17 @@ def lcp(x, y, direction='LR->'):
 
 def add_delim(x):
     """
-    Add begin/end delimiters to space-separated segment strings
+    Add begin/end delimiters to space-separated segment string
     """
     y = f'{config.begin_delim} {x} {config.end_delim}'
+    return y
+
+
+def strip_markers(x):
+    """
+    Remove markers indicating loci of rule application from space-separated string
+    """
+    y = re.sub('[⟨⟩]', '', x)
     return y
 
 

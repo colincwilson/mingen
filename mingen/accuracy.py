@@ -12,8 +12,7 @@ def score_rules(R_all):
 
     # Convert rules to Pynini cdrewrites
     syms = [x for x in config.seg2ftrs]
-    symtable = pynini_util.symtable(syms)
-    sigstar = pynini_util.sigstar(symtable)
+    sigstar, symtable = pynini_util.sigstar(syms)
 
     #input1 = config.dat_train['wordform1'][0]  # xxx test input
     input1 = '⋊ ɪ n v ɛ n t ⋉'
@@ -26,12 +25,12 @@ def score_rules(R_all):
         print(R)
         AB, CD = R.split(' / ')
         A, B = AB.split(' -> ')
+        B = "⟨ " + B + " ⟩"  # Mark rewrites for scope calculation
         C, D = CD.split(' __ ')
         R = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
         R_fst.append(R)
 
         output1 = input1 @ R
-        print(output1.print())
         strpath_iter = output1.paths(input_token_type=symtable,
                                      output_token_type=symtable)
         print([x for x in strpath_iter.ostrings()])
@@ -41,8 +40,7 @@ def score_rules(R_all):
 
 def score_rule(R):
     """
-    Hits and scope for FtrRule on training data 
-    todo: use pynini
+    Hits and scope for FtrRule on training data
     """
     hit = 0
     scope = 0

@@ -11,23 +11,21 @@ from rules import FtrRule
 # Note: Pynini word delimiters are "[BOS]", "[EOS]"
 
 
-def symtable(syms):
+def sigstar(syms, markers=["⟨", "⟩"]):
     """
-    Symbol table fom list of symbols
+    Symbol table and Sigma* acceptor fom list of symbols
+    (optional markers for loci of cdrewrite rule application)
     """
     symtable = SymbolTable()
     symtable.add_symbol('<eps>')  # Epsilon has id 0
     for sym in syms:
         symtable.add_symbol(sym)
-    return symtable
+    for sym in markers:
+        symtable.add_symbol(sym)
 
-
-def sigstar(symtable: SymbolTable):
-    """ Sigma* from list of symbols in SymbolTable """
-    syms = [sym for (sym_id, sym) in symtable]
-    fsts = accep(syms, symtable)
-    fst = union(fsts).closure().optimize()
-    return fst
+    fsts = accep(syms + markers, symtable)
+    sigstar = union(fsts).closure().optimize()
+    return sigstar, symtable
 
 
 def accep(x, symtable):
@@ -70,7 +68,7 @@ def union(fsts):
 
 
 def concat(fsts):
-    """ Concate list of Fsts """
+    """ Concatenate list of Fsts """
     n = 0 if fsts is None else len(fsts)
     if n == 0:
         return None
@@ -86,6 +84,10 @@ def compile_context(C, symtable):
     """
     Convert context (sequence of regexs) to Fst
     """
+    # Empty context
+    if C == "[ ]*":
+        return C
+    # Ordinary context
     fsts = []
     for regex in C.split(' '):
         #if regex == '(⋊)':
@@ -104,8 +106,7 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     """
     Rewrite rule from A -> B / C __D where A and B are space-separated 
     strings, C and D are segment regexs in (seg1|seg2|...) format
-    # xxx handle insertion rules (pynutil.insert)
-    # xxx handle deletion rules (pynutil.delete)
+    # todo: handle no-change 'rules'
     """
     assert ((A != "∅") or (B != "∅"))
     if A == "∅":
@@ -125,14 +126,8 @@ def compile_rule(A, B, C, D, sigstar, symtable):
 
 
 def test():
-    syms = ['<eps>', 'aa', 'bb', 'cc', 'dd']
-    symtable = SymbolTable()
-    for x in syms:
-        symtable.add_symbol(x)
-
-    # Sigma*
-    sigstar_ = sigstar(symtable)
-    print(sigstar_.print())
+    syms = ['aa', 'bb', 'cc', 'dd']
+    sigstar_, symtable = sigstar(syms)
 
     # Rule aa -> bb / cc __ dd
     rule1 = compile_rule('aa', 'bb', '(cc)', '(dd)', sigstar_, symtable)
