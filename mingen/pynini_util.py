@@ -10,6 +10,13 @@ from rules import FtrRule
 # compile rules from mingen format and apply to symbol lists.
 # Note: Pynini word delimiters are "[BOS]", "[EOS]"
 
+# todo: look at documentation for context management
+# with pynini.default_token_type(token_type):
+#   ...
+# https://github.com/kylebgorman/Pynini/issues/8
+# see also (on how operations affect SymbolTables):
+# https://github.com/kylebgorman/pynini/issues/22
+
 
 def sigstar(syms, markers=["⟨", "⟩"]):
     """
@@ -44,7 +51,7 @@ def accep(x, symtable):
 def accep_(x, symtable):
     """
     Map space-separated sequence of symbols to acceptor (identity transducer)
-    [demo version operating using primitive FST functions]
+    [demo version using primitive FST functions]
     """
     fst = Fst()
     fst.set_input_symbols(symtable)
@@ -108,10 +115,9 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     strings, C and D are segment regexs in (seg1|seg2|...) format
     # todo: handle no-change 'rules'
     """
-    assert ((A != "∅") or (B != "∅"))
-    if A == "∅":
+    if A == "":
         change = pynutil.insert(accep(B, symtable))
-    elif B == "∅":
+    elif B == "":
         change = pynutil.delete(accep(A, symtable))
     else:
         fstA = accep(A, symtable)

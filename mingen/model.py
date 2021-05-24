@@ -22,7 +22,7 @@ def main():
     seg2ftrs = {}
     seg2ftrs_ = {}
     for i, seg in enumerate(phon_ftrs['seg']):
-        ftrs = phon_ftrs.iloc[i, :].iloc[1:].to_dict()
+        ftrs = phon_ftrs.iloc[i, :].iloc[2:].to_dict()
         seg2ftrs[seg] = ftrs
         seg2ftrs_[seg] = tuple([val for key, val in ftrs.items()])
     config.phon_ftrs = phon_ftrs
@@ -66,28 +66,25 @@ def main():
     dat['wordform2'] = [add_delim(x) for x in dat['wordform2']]
     config.dat_train = dat_train = dat
     print(config.dat_train)
-    print(len(dat_train))
 
-    # Base rules, convert to features
-    R_base = [make_base_rule(w1, w2) \
-        for (w1, w2) in zip(dat_train['wordform1'], dat_train['wordform2']) ]
-    print(R_base[0])
-    print(R_base[1])
-    R_ftr = [featurize_rule(R) for R in R_base]
-    #print(R_ftr[0])
-    #print(R_ftr[1])
-
-    # Recursive minimal generalization of all rules,
-    # or read results of mingen from file
-    if 0:
+    # Recursive minimal generalization of base rules,
+    # or read rules from file
+    make_rules = False
+    if make_rules:
+        R_base = [make_base_rule(w1, w2) for (w1, w2) \
+            in zip(dat_train['wordform1'], dat_train['wordform2'])]
+        R_ftr = [featurize_rule(R) for R in R_base]
         R_all = generalize_rules_rec(R_ftr)
     else:
         rules = pd.read_csv('rules_out.tsv', sep='\t')
-        rules = rules.head(n=10)  # xxx debugging
-        rules = [str2rule(x) for x in rules['rule']]
+        #rules = rules.head(n=10)  # xxx subset for debugging
+        R_all = [str2rule(R) for R in rules['rule']]
 
-    # Score rules
-    score_rules(rules)
+        # Score rules
+        hits, scopes = score_rules(R_all)
+        rules['hits'] = hits
+        rules['scopes'] = scopes
+        rules.to_csv('rules_scored.tsv', sep='\t', index=False)
 
 
 if __name__ == "__main__":

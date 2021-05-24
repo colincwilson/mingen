@@ -8,7 +8,7 @@ from util import *
 from features import *
 from rules import *
 
-# TODO: accuracy, phonology, etc.
+# TODO: phonology, cross-context, impugnment, etc.
 
 
 def make_base_rule(x, y):

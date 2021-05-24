@@ -66,7 +66,7 @@ class FtrRule():
             return self._repr
         parts1 = {'A': self.A, 'B': self.B}
         parts1 = {X: ' '.join(parts1[X]) for X in parts1}
-        parts1 = {X: '∅' if val == '' else val for X, val in parts1.items()}
+        parts1 = {X: "" if val == '∅' else val for X, val in parts1.items()}
 
         parts2 = {'C': self.C, 'D': self.D}
         parts2 = {X: ftrs2regex(parts2[X]) for X in parts2}
