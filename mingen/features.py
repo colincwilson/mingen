@@ -69,7 +69,7 @@ def unify_ftrs(F1, F2):
 
 def ftrs2regex(F):
     """ Segment regex for sequence of feature matrices """
-    return ' '.join([ftrs2regex1(Fi) for Fi in F])
+    return ' '.join([ftrs2regex1(Fi) for Fi in F if Fi != 'X'])
 
 
 def ftrs2regex1(F):

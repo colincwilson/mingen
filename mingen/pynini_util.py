@@ -11,11 +11,34 @@ from rules import FtrRule
 # Note: Pynini word delimiters are "[BOS]", "[EOS]"
 
 
+def symtable(syms):
+    """
+    Symbol table fom list of symbols
+    """
+    symtable = SymbolTable()
+    symtable.add_symbol('<eps>')  # Epsilon has id 0
+    for sym in syms:
+        symtable.add_symbol(sym)
+    return symtable
+
+
+def sigstar(symtable: SymbolTable):
+    """ Sigma* from list of symbols in SymbolTable """
+    syms = [sym for (sym_id, sym) in symtable]
+    fsts = accep(syms, symtable)
+    fst = union(fsts).closure().optimize()
+    return fst
+
+
 def accep(x, symtable):
     """
     Map space-separated sequence of symbols to acceptor (identity transducer)
     [pynini built-in, see bottom of "Constructing acceptors" in documentation]
     """
+    # List of sequences -> list of Fsts
+    if isinstance(x, list):
+        return [accep(xi, symtable) for xi in x]
+    # Single sequence -> Fst
     fst = pynini.accep(x, token_type=symtable)
     return fst
 
@@ -40,17 +63,40 @@ def accep_(x, symtable):
     return fst
 
 
-def union(x, symtable: SymbolTable):
-    """ Union of symbols in list """
-    fsts = [accep(sym, symtable) for sym in x]
+def union(fsts):
+    """ Union list of Fsts """
     fst = pynini.union(*fsts)
     return fst
 
 
-def make_sigstar(symtable: SymbolTable):
-    """ Sigma* from list of symbols in SymbolTable """
-    syms_ = [sym for (sym_id, sym) in symtable]
-    fst = union(syms_, symtable).closure().optimize()
+def concat(fsts):
+    """ Concate list of Fsts """
+    n = 0 if fsts is None else len(fsts)
+    if n == 0:
+        return None
+    if n == 1:
+        return fsts[0]
+    fst = pynini.concat(fsts[0], fsts[1])
+    for i in range(2, n):
+        fst = pynini.concat(fst, fsts[i])
+    return fst
+
+
+def compile_context(C, symtable):
+    """
+    Convert context (sequence of regexs) to Fst
+    """
+    fsts = []
+    for regex in C.split(' '):
+        #if regex == '(⋊)':
+        #    fsts.append(pynini.accep('[BOS]'))
+        #    continue
+        #elif regex == '(⋉)':
+        #    fsts.append(pynini.accep('[EOS]'))
+        #    continue
+        regex = re.sub('[()]', '', regex).split('|')
+        fsts.append(union(accep(regex, symtable)))
+    fst = concat(fsts)
     return fst
 
 
@@ -70,15 +116,12 @@ def compile_rule(A, B, C, D, sigstar, symtable):
         fstA = accep(A, symtable)
         fstB = accep(B, symtable)
         change = pynini.cross(fstA, fstB)
-    C = union(re.sub('[()]', '', C).split('|'), symtable)
-    D = union(re.sub('[()]', '', D).split('|'), symtable)
 
-    rule = pynini.cdrewrite(change, C, D, sigstar).optimize()
-    return rule
-
-    #rule = pynini.cdrewrite(
-    #    pynutil.delete(self.td), self.consonant, "[EOS]",
-    #    self.sigstar).optimize()
+    left_context = compile_context(C, symtable)
+    right_context = compile_context(D, symtable)
+    fst = pynini.cdrewrite(change, left_context, right_context,
+                           sigstar).optimize()
+    return fst
 
 
 def test():
@@ -88,11 +131,11 @@ def test():
         symtable.add_symbol(x)
 
     # Sigma*
-    sigstar = make_sigstar(symtable)
-    print(sigstar.print())
+    sigstar_ = sigstar(symtable)
+    print(sigstar_.print())
 
     # Rule aa -> bb / cc __ dd
-    rule1 = compile_rule('aa', 'bb', 'cc', 'dd', sigstar, symtable)
+    rule1 = compile_rule('aa', 'bb', '(cc)', '(dd)', sigstar_, symtable)
     print(rule1.print())
     rule1.draw('rule1.dot', isymbols=symtable, osymbols=symtable, portrait=True)
     # dot -Tpdf rule1.dot -o rule1.pdf
@@ -106,7 +149,7 @@ def test():
     print([x for x in strpath_iter.ostrings()])
 
     # Rule aa -> ∅ / cc __ dd
-    rule2 = compile_rule('aa', '∅', 'cc', 'dd', sigstar, symtable)
+    rule2 = compile_rule('aa', '∅', 'cc', 'dd', sigstar_, symtable)
     output2 = (input1 @ rule2).project("output").rmepsilon()
     print(output2.print(isymbols=symtable, osymbols=symtable))
     strpath_iter = output2.paths(input_token_type=symtable,
