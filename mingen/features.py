@@ -82,7 +82,7 @@ def ftrs2regex1(F):
 
 
 def ftrs2str(F):
-    """ String corresponding to sequence of feature matrices"""
+    """ String corresponding to sequence of feature matrices """
     return ' '.join([ftrs2str1(Fi) for Fi in F])
 
 
@@ -94,7 +94,8 @@ def ftrs2str1(F):
     #ftrvals = [f'{val}{ftr}' for ftr, val in F.items() if val != '0']
     ftrvals = [f"{F[i]}{ftr_names[i]}" \
                 for i in range(len(F)) if F[i] != '0']
-    return '[' + ', '.join(ftrvals) + ']'
+    val = '[' + ', '.join(ftrvals) + ']'
+    return val
 
 
 def str2ftrs(x):
@@ -119,10 +120,11 @@ def str2ftrs1(x):
     # Parse ordinary feature matrix, non-zero specs only
     y = y.split(', ')
     ftrs = ['0'] * len(config.ftr_names)
+    ftr_names = config.ftr_names
     for spec in y:
         if spec == '':  # xxx document
             continue
         val = spec[0]
         ftr = spec[1:]
-        ftrs[config.ftr_names.index(ftr)] = val
+        ftrs[ftr_names.index(ftr)] = val
     return tuple(ftrs)

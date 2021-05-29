@@ -4,7 +4,6 @@ import re
 import pynini
 from pynini import Arc, Fst, SymbolTable
 from pynini.lib import pynutil, rewrite
-from rules import FtrRule
 
 # Create acceptors, unions, sigstar from symbol lists (cf. strings),
 # compile rules from mingen format and apply to symbol lists.
@@ -33,8 +32,8 @@ def sigstar(syms, markers=["⟨", "⟩"]):
     #fsts = accep(syms + markers, symtable)
     #sigstar = union(fsts).closure().optimize()
     with pynini.default_token_type(symtable):
-        sigstar = pynini.string_map(syms + markers)
-        sigstar = sigstar.closure().optimize()
+        sigstar = pynini.string_map(syms + markers) \
+                        .closure().optimize()
     return sigstar, symtable
 
 
@@ -71,12 +70,15 @@ def accep_(x, symtable):
     return fst
 
 
+# xxx pynini built-in?
 def union(fsts):
     """ Union list of Fsts """
     fst = pynini.union(*fsts)
+    # xxx check symbol table of output
     return fst
 
 
+# xxx pynini built-in?
 def concat(fsts):
     """ Concatenate list of Fsts """
     n = 0 if fsts is None else len(fsts)
@@ -87,6 +89,7 @@ def concat(fsts):
     fst = pynini.concat(fsts[0], fsts[1])
     for i in range(2, n):
         fst = pynini.concat(fst, fsts[i])
+    # xxx check symbol table of output
     return fst
 
 
@@ -94,41 +97,38 @@ def compile_context(C, symtable):
     """
     Convert context (sequence of regexs) to Fst
     """
-    # Empty context
+    # Empty context xxx document
     if C == "[ ]*":
         return C
     # Ordinary context
     fsts = []
     for regex in C.split(' '):
-        #if regex == '(⋊)':
-        #    fsts.append(pynini.accep('[BOS]'))
-        #    continue
-        #elif regex == '(⋉)':
-        #    fsts.append(pynini.accep('[EOS]'))
-        #    continue
+        # Remove grouping parens and make list of symbols
         regex = re.sub('[()]', '', regex).split('|')
-        fsts.append(union(accep(regex, symtable)))
+        fst = union(accep(regex, symtable))
+        fsts.append(fst)
     fst = concat(fsts)
     return fst
 
 
 def compile_rule(A, B, C, D, sigstar, symtable):
     """
-    Rewrite rule from A -> B / C __D where A and B are space-separated 
-    strings, C and D are segment regexs in (seg1|seg2|...) format
-    # todo: handle no-change 'rules'
+    Compile cdrewrite rule from A -> B / C __D where A and B are space-separated strings, C and D are segment regexs in (seg1|seg2|...) format
     """
-    if A == "":
+    # Explicit epsilon for deletion rules, instead of pynutil.delete()
+    B = re.sub('∅', '<eps>', B)
+    # Insertion rule
+    if A == "∅":
         change = pynutil.insert(accep(B, symtable))
-    elif B == "":
-        change = pynutil.delete(accep(A, symtable))
+    # Change or deletion rule
     else:
         fstA = accep(A, symtable)
         fstB = accep(B, symtable)
         change = pynini.cross(fstA, fstB)
 
-    left_context = compile_context(C, symtable)
-    right_context = compile_context(D, symtable)
+    with pynini.default_token_type(symtable):
+        left_context = compile_context(C, symtable)
+        right_context = compile_context(D, symtable)
     fst = pynini.cdrewrite(change, left_context, right_context,
                            sigstar).optimize()
     return fst

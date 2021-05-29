@@ -11,15 +11,6 @@ from rules import *
 # TODO: phonology, cross-context, impugnment, etc.
 
 
-def featurize_rule(R):
-    """
-    Convert SegRule to FtrRule by replacing segments in context with feature matrices
-    """
-    C = [config.seg2ftrs_[seg] for seg in R.C]
-    D = [config.seg2ftrs_[seg] for seg in R.D]
-    return FtrRule(R.A, R.B, tuple(C), tuple(D))
-
-
 def generalize_context(X1, X2, direction='LR->'):
     """
     Apply minimal generalization to pair of FtrRule contexts
@@ -69,7 +60,6 @@ def generalize_context(X1, X2, direction='LR->'):
 def generalize_rules(R1, R2):
     """
     Apply minimal generalization to pair of FtrRules
-    todo: fix problem with rules that contain both begin and end delimiter (i.e , whole string identity maps / no change rules) -- these are incorrectly generalized in a way that places begin- and end- delimiters on the wrong side of __
     """
     # Check for matching change A -> B
     if (R1.A != R2.A) or (R1.B != R2.B):
@@ -78,16 +68,6 @@ def generalize_rules(R1, R2):
     # Generalize left and right contexts
     C = generalize_context(R1.C, R2.C, '<-RL')
     D = generalize_context(R1.D, R2.D, 'LR->')
-    if C is None or D is None:
-        return None
-    if re.search('⋉', ftrs2regex(C)):
-        print('end-delim in left-hand context')
-        print(R1.C, R2.C, C)
-        sys.exit(0)
-    if re.search('⋊', ftrs2regex(D)):
-        print('begin-delim in right-hand context')
-        print(R1.D, R2.D, D)
-        sys.exit(0)
 
     R = FtrRule(R1.A, R1.B, C, D)
     return R
@@ -165,11 +145,5 @@ def generalize_rules_rec(Rs):
         if not new_rule_flag:
             break
 
-    # Write rules
-    rules_out = [str(R) for change, rules in R_all.items() \
-                    for R in rules]
-    rules_out = pd.DataFrame(rules_out, columns=['rule'])
-    rules_out['rule_len'] = [len(x) for x in rules_out['rule']]
-    rules_out.to_csv('rules_out.tsv', index=False, sep='\t')
-
+    R_all = [R for change, rules in R_all.items() for R in rules]
     return R_all

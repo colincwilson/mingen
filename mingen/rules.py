@@ -33,6 +33,10 @@ class FtrRule():
         self.B = B
         self.C = C
         self.D = D
+        if len(D) == 0:
+            print('error creating feature rule from')
+            print(A, B, C, D)
+            sys.exit(0)
         self._hash = self.__hash__()
 
     def __eq__(self, other):
@@ -56,6 +60,13 @@ class FtrRule():
         B_ = ' '.join(self.B) if self.B != '' else config.zero
         C_ = ftrs2str(self.C)
         D_ = ftrs2str(self.D)
+        if C_ == '' or D_ == '':
+            print('empty string (expected feature matrix)')
+            print('C:', self.C)
+            print('C_:', C_)
+            print('D:', self.D)
+            print('D_:', D_)
+            sys.exit(0)
         return f'{A_} -> {B_} / {C_} __ {D_}'
 
     def __repr__(self):
@@ -90,14 +101,11 @@ def base_rule(x: str, y: str) -> SegRule:
     B = config.zero if len(B) == 0 else B
 
     # Identity rule xxx change locn at end
-    if (C == x) and (C == y):
-        A = config.zero
-        B = config.zero
-        C = C[:-2]  # Remove end_delim
-        D = config.end_delim
+    if (A == config.zero) and (B == config.zero):
+        C = C[:-1]  # Remove end_delim
+        D = [config.end_delim]
 
     rule = SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
-    print(rule)
     return rule
 
 
