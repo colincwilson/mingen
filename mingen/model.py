@@ -14,16 +14,20 @@ def main():
     # Phonological features
     config.begin_delim = '⋊'
     config.end_delim = '⋉'
+    config.zero = '∅'
     phon_ftrs = pd.read_csv(
         '/Users/colin/Code/Python/tensormorph_data/unimorph/eng.ftr',
         sep='\t',
         header=0)
     phon_ftrs.columns.values[0] = 'seg'
+    phon_ftrs = phon_ftrs.drop('sym', 1)  # Redundant with X = (Sigma*)
     seg2ftrs = {}
-    seg2ftrs_ = {}
+    #seg2ftrs[config.zero] = {}  # Empty feature matrix
     for i, seg in enumerate(phon_ftrs['seg']):
-        ftrs = phon_ftrs.iloc[i, :].iloc[2:].to_dict()
+        ftrs = phon_ftrs.iloc[i, :].iloc[1:].to_dict()
         seg2ftrs[seg] = ftrs
+    seg2ftrs_ = {}  # Vectorized feature matrices
+    for seg in seg2ftrs:
         seg2ftrs_[seg] = tuple([val for key, val in ftrs.items()])
     config.phon_ftrs = phon_ftrs
     config.ftr_names = [x for x in phon_ftrs.columns.values[1:]]
@@ -59,7 +63,7 @@ def main():
         sep='\t',
         names=['wordform1', 'wordform2', 'morphosyn'])
     dat = dat.drop_duplicates().reset_index()
-    #dat = dat.head(n=200)  # xxx subset for debugging
+    dat = dat.head(n=200)  # xxx subset for debugging
     dat['wordform1'] = fix_transcription(dat['wordform1'], config.seg_fixes)
     dat['wordform2'] = fix_transcription(dat['wordform2'], config.seg_fixes)
     dat['wordform1'] = [add_delim(x) for x in dat['wordform1']]
@@ -69,12 +73,13 @@ def main():
 
     # Recursive minimal generalization of base rules,
     # or read rules from file
-    make_rules = False
+    make_rules = True
     if make_rules:
-        R_base = [make_base_rule(w1, w2) for (w1, w2) \
+        R_base = [base_rule(w1, w2) for (w1, w2) \
             in zip(dat_train['wordform1'], dat_train['wordform2'])]
         R_ftr = [featurize_rule(R) for R in R_base]
         R_all = generalize_rules_rec(R_ftr)
+        print(f'total number of rules: {len(R_all)}')
     else:
         rules = pd.read_csv('rules_out.tsv', sep='\t')
         #rules = rules.head(n=10)  # xxx subset for debugging

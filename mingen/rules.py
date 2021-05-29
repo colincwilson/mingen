@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import config
+from str_util import *
 from features import *
 
 
@@ -14,10 +15,11 @@ class SegRule():
         self.D = D
 
     def __str__(self):
-        parts = {'A': self.A, 'B': self.B, 'C': self.C, 'D': self.D}
-        parts = {X: ' '.join(parts[X]) for X in parts}
-        parts = {X: '∅' if val == '' else val for X, val in parts.items()}
-        return f"{parts['A']} -> {parts['B']} / {parts['C']} __ {parts['D']}"
+        A_ = ' '.join(self.A) if self.A != '' else config.zero
+        B_ = ' '.join(self.B) if self.B != '' else config.zero
+        C_ = ' '.join(self.C) if self.C != '' else config.zero
+        D_ = ' '.join(self.D) if self.D != '' else config.zero
+        return f'{A_} -> {B_} / {C_} __ {D_}'
 
 
 class FtrRule():
@@ -47,37 +49,74 @@ class FtrRule():
         return _hash
 
     def __str__(self):
-        """ String with feature matrices """
+        """ String with feature matrices and X (for the humans) """
         if hasattr(self, '_str'):
             return self._str
-        parts1 = {'A': self.A, 'B': self.B}
-        parts1 = {X: ' '.join(parts1[X]) for X in parts1}
-        parts1 = {X: '∅' if val == '' else val for X, val in parts1.items()}
-
-        parts2 = {'C': self.C, 'D': self.D}
-        parts2 = {X: ftrs2str(parts2[X]) for X in parts2}
-
-        return (f"{parts1['A']} -> {parts1['B']} / "
-                f"{parts2['C']} __ {parts2['D']}")
+        A_ = ' '.join(self.A) if self.A != '' else config.zero
+        B_ = ' '.join(self.B) if self.B != '' else config.zero
+        C_ = ftrs2str(self.C)
+        D_ = ftrs2str(self.D)
+        return f'{A_} -> {B_} / {C_} __ {D_}'
 
     def __repr__(self):
-        """ String with segment regexs """
+        """ String with segment regexs (for compilation to FST) """
         if hasattr(self, '_repr'):
             return self._repr
-        parts1 = {'A': self.A, 'B': self.B}
-        parts1 = {X: ' '.join(parts1[X]) for X in parts1}
-        parts1 = {X: "" if val == '∅' else val for X, val in parts1.items()}
-
-        parts2 = {'C': self.C, 'D': self.D}
-        parts2 = {X: ftrs2regex(parts2[X]) for X in parts2}
-
-        return (f"{parts1['A']} -> {parts1['B']} / "
-                f"{parts2['C']} __ {parts2['D']}")
+        A_ = ' '.join(self.A)
+        B_ = ' '.join(self.B)
+        C_ = ftrs2regex(self.C)
+        D_ = ftrs2regex(self.D)
+        return f'{A_} -> {B_} / {C_} __ {D_}'
 
 
-def str2rule(x):
+def base_rule(x: str, y: str) -> SegRule:
     """
-    Create FtrRule from string with feature matrices
+    Create rule A -> B / C __D by aligning input x with output y
+    """
+    x = x.split(' ')
+    y = y.split(' ')
+    # Left-hand context
+    C = lcp(x, y, 'LR->')
+    # Right-hand context
+    x = x[len(C):]
+    y = y[len(C):]
+    D = lcp(x, y, '<-RL')
+    # Change
+    A = x[:-len(D)]
+    B = y[:-len(D)]
+
+    # Zeros in change
+    A = config.zero if len(A) == 0 else A
+    B = config.zero if len(B) == 0 else B
+
+    # Identity rule xxx change locn at end
+    if (C == x) and (C == y):
+        A = config.zero
+        B = config.zero
+        C = C[:-2]  # Remove end_delim
+        D = config.end_delim
+
+    rule = SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
+    print(rule)
+    return rule
+
+
+def featurize_rule(R: SegRule) -> FtrRule:
+    """
+    Convert SegRule to FtrRule by replacing segments in context with feature matrices
+    """
+    A = R.A
+    B = R.B
+    C = [config.seg2ftrs_[seg] for seg in R.C]
+    D = [config.seg2ftrs_[seg] for seg in R.D]
+    return FtrRule(A, B, tuple(C), tuple(D))
+
+
+def str2ftr_rule(x: str) -> FtrRule:
+    """
+    Create FtrRule from string A -> B / C __ D 
+    with contexts defined by feature matrices
+    (inverse of FtrRule.__str__)
     """
     AB, CD = x.split(' / ')
     A, B = AB.split(' -> ')
@@ -88,90 +127,3 @@ def str2rule(x):
     D = str2ftrs(D)
     R = FtrRule(A, B, C, D)
     return R
-
-
-# xxx deprecated, see pynini_util
-def apply_rule(R, x):
-    """
-    Apply FtrRule A -> B / C __ D at all positions in segment sequence that match context CAD
-    """
-    A, B, C, D = \
-        R.A, R.B, R.C, R.D
-    n_A, n_C, n_D, n_x = \
-        len(A), len(C), len(D), len(x)
-
-    # Find offsets in x that match A
-    offsets = [i for i in range(n_x) if match_focus(A, x, i, 'LR->')]
-
-    # Find pre-offsets in x that match C
-    offsets = [i for i in offsets if match_context(C, x, i - 1, '<-RL')]
-
-    # Find post-offsets in x that match D
-    offsets = [i for i in offsets if match_context(D, x, i + n_A, 'LR->')]
-
-    # Apply at each offset
-    products = []
-    for i in offsets:
-        x_A = x[i:(i + n_A)]
-        x_prefix = x[:i]
-        x_suffix = x[(i + n_A + 1):]
-        y = x_prefix + replace_rule(B, x_A) + x_suffix
-        products.append(y)
-
-    apply_flag = len(offsets) > 0
-    return products, apply_flag
-
-
-# xxx deprecated, see pynini_util
-def match_focus(A, x, x_offset, direction='LR->'):
-    """
-    Attempt to match focus of FtrRule against a segment sequence, starting at offset position
-    """
-    assert (direction == 'LR->')
-    n_A = len(A)
-    n_x = len(x)
-    if n_A == 0 & ((A[0] == '∅') or (A[0] == '')):  # xxx fixme
-        return True
-    for i in range(n_A):
-        if (x_offset + i) >= n_x:  # Off trailing edge of x
-            return False
-
-    print(A)
-    sys.exit(0)
-
-
-# xxx deprecated, see pynini_util
-def match_context(C, x, x_offset, direction='LR->'):
-    """
-    Attempt to match (left- | right-) context of a FtrRule against a segment sequence, starting at offset position
-    """
-    assert ((direction == 'LR->') or (direction == '<-RL'))
-    n_C = len(C)
-    n_x = len(x)
-    if direction == 'LR->':
-        for i in range(n_C):
-            if C[i] == 'X':  # Sigma* at end of A
-                return True
-            if (x_offset + i) >= n_x:  # Off trailing edge of x
-                return False
-            if not match_ftrs(C[i], x[x_offset + i]):  # Mismatch
-                return False
-        return True
-    elif direction == '<-RL':
-        for i in range(n_C):
-            if C[(n_C - 1) - i] == 'X':  # Sigma* at beginning of A
-                return True
-            if (x_offset - i) < 0:  # Off leading edge of x
-                return False
-            if not match_ftrs(C[(n_C - 1) - i], x[x_offset - i]):  # Mismatch
-                return False
-        return True
-    return None
-
-
-# xxx deprecated, see pynini_util
-def replace_rule(B, x_A):
-    """
-    Apply change A -> B to portion of segment sequence that matches rule focus
-    """
-    return B  # xxx fixme

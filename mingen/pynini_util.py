@@ -30,8 +30,11 @@ def sigstar(syms, markers=["⟨", "⟩"]):
     for sym in markers:
         symtable.add_symbol(sym)
 
-    fsts = accep(syms + markers, symtable)
-    sigstar = union(fsts).closure().optimize()
+    #fsts = accep(syms + markers, symtable)
+    #sigstar = union(fsts).closure().optimize()
+    with pynini.default_token_type(symtable):
+        sigstar = pynini.string_map(syms + markers)
+        sigstar = sigstar.closure().optimize()
     return sigstar, symtable
 
 

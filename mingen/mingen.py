@@ -4,29 +4,11 @@ import re, sys
 import pandas as pd
 
 import config
-from util import *
+from str_util import *
 from features import *
 from rules import *
 
 # TODO: phonology, cross-context, impugnment, etc.
-
-
-def make_base_rule(x, y):
-    """
-    Create SegRule A -> B / C __D by aligning two segment sequences
-    """
-    x = x.split(' ')
-    y = y.split(' ')
-    # Left-hand context
-    C = lcp(x, y, 'LR->')
-    # Right-hand context
-    x = x[len(C):]
-    y = y[len(C):]
-    D = lcp(x, y, '<-RL')
-    # Change
-    A = x[:-len(D)]
-    B = y[:-len(D)]
-    return SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
 
 
 def featurize_rule(R):
@@ -87,6 +69,7 @@ def generalize_context(X1, X2, direction='LR->'):
 def generalize_rules(R1, R2):
     """
     Apply minimal generalization to pair of FtrRules
+    todo: fix problem with rules that contain both begin and end delimiter (i.e , whole string identity maps / no change rules) -- these are incorrectly generalized in a way that places begin- and end- delimiters on the wrong side of __
     """
     # Check for matching change A -> B
     if (R1.A != R2.A) or (R1.B != R2.B):
@@ -97,6 +80,14 @@ def generalize_rules(R1, R2):
     D = generalize_context(R1.D, R2.D, 'LR->')
     if C is None or D is None:
         return None
+    if re.search('⋉', ftrs2regex(C)):
+        print('end-delim in left-hand context')
+        print(R1.C, R2.C, C)
+        sys.exit(0)
+    if re.search('⋊', ftrs2regex(D)):
+        print('begin-delim in right-hand context')
+        print(R1.D, R2.D, D)
+        sys.exit(0)
 
     R = FtrRule(R1.A, R1.B, C, D)
     return R
@@ -105,6 +96,7 @@ def generalize_rules(R1, R2):
 def generalize_rules_rec(Rs):
     """
     Recursively apply minimal generalization to set of FtrRules
+    todo: generalize each unique pair of contexts at most once
     """
     # (invariant) Rules grouped by common change
     # Word-specific rules
