@@ -1,0 +1,3 @@
+rule	rule_len	hits	scope
+∅ -> s / [+begin/end] [-C/V, +syllabic, -consonantal, +sonorant, +continuant, +approximant, +voice, -CORONAL, +DORSAL, +high, -low, +front, -back, +tense] [+C/V, -syllabic, +consonantal, -sonorant, -continuant, -delayed.release, -approximant, -voice, +CORONAL, +anterior, -distributed, -strident, -DORSAL] __ [-begin/end]	321	1.0	1.0
+∅ -> z / [+begin/end] [-C/V, +syllabic, -consonantal, +sonorant, +continuant, +approximant, +voice, -CORONAL, +DORSAL, +high, -low, +front, -back, +tense] [+C/V, -syllabic, +consonantal, -sonorant, -continuant, -delayed.release, -approximant, +voice, +CORONAL, +anterior, -distributed, -strident, -DORSAL] __ [-begin/end]	321	1.0	1.0

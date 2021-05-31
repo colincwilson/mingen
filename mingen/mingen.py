@@ -13,7 +13,7 @@ from rules import *
 
 def generalize_context(X1, X2, direction='LR->'):
     """
-    Apply minimal generalization to pair of FtrRule contexts
+    Apply minimal generalization to pair of feature contexts
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
     n_X1 = len(X1)
@@ -36,9 +36,9 @@ def generalize_context(X1, X2, direction='LR->'):
         if (X1[i] == 'X') or (X2[i] == 'X'):
             Y.append('X')
             break
-        # Match segments perfectly
+        # Perfect match of feature matrices
         # (NB. Conforms to A&H spec only if at least one
-        # of the rules has contexts specified with segments)
+        # of the rules has contexts that are segment-specific)
         if X1[i] == X2[i]:
             Y.append(X1[i])
             continue
@@ -92,7 +92,7 @@ def generalize_rules_rec(Rs):
     R_all = {change: rules.copy() \
                 for change, rules in R_base.items()}
 
-    # First-step minimal generalization
+    # First-step minimal generalization (exploit commutativity)
     print('First-step mingen ...')
     R_new = {}
     for change, rules_base in R_base.items():

@@ -37,12 +37,13 @@ def add_delim(x):
     return y
 
 
-# xxx not used
-def strip_markers(x):
+def delete_markers(x):
     """
     Remove markers indicating loci of rule application from space-separated string
     """
-    y = re.sub('⟨ | ⟩', '', x)
+    y = x
+    y = re.sub('⟨ ', '', y)
+    y = re.sub(' ⟩', '', y)
     return y
 
 

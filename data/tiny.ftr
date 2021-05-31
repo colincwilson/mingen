@@ -1,0 +1,9 @@
+	sym	begin/end	C/V	syllabic	consonantal	sonorant	continuant	delayed.release	approximant	voice	CORONAL	anterior	distributed	strident	DORSAL	high	low	front	back	tense
+ϵ	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+⋊	+	+	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+⋉	+	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+i	+	0	-	+	-	+	+	0	+	+	-	0	0	0	+	+	-	+	-	+
+z	+	0	+	-	+	-	+	+	-	+	+	+	-	+	-	0	0	0	0	0
+t	+	0	+	-	+	-	-	-	-	-	+	+	-	-	-	0	0	0	0	0
+s	+	0	+	-	+	-	+	+	-	-	+	+	-	+	-	0	0	0	0	0
+d	+	0	+	-	+	-	-	-	-	+	+	+	-	-	-	0	0	0	0	0

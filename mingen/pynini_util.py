@@ -115,22 +115,26 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     """
     Compile cdrewrite rule from A -> B / C __D where A and B are space-separated strings, C and D are segment regexs in (seg1|seg2|...) format
     """
-    # Explicit epsilon for deletion rules, instead of pynutil.delete()
-    B = re.sub('∅', '<eps>', B)
+    # Use explicit epsilon for deletion rules, instead of pynutil.delete(),
+    # and mark rewrite loci (used for checking whether rule applies to input)
+    if B == '∅':
+        B = '<eps>'
+    B = ' '.join(['⟨', B, '⟩'])
     # Insertion rule
     if A == "∅":
         change = pynutil.insert(accep(B, symtable))
     # Change or deletion rule
     else:
-        fstA = accep(A, symtable)
-        fstB = accep(B, symtable)
-        change = pynini.cross(fstA, fstB)
+        A_fst = accep(A, symtable)
+        B_fst = accep(B, symtable)
+        change = pynini.cross(A_fst, B_fst)
 
     with pynini.default_token_type(symtable):
         left_context = compile_context(C, symtable)
         right_context = compile_context(D, symtable)
     fst = pynini.cdrewrite(change, left_context, right_context,
                            sigstar).optimize()
+    # xxx check symbol table
     return fst
 
 
