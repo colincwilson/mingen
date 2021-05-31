@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import numpy as np
+
 import config
 from rules import *
 from str_util import *
@@ -20,12 +22,15 @@ def score_mappings(wug_dat, rules):
 
     # Parsed regex rules grouped by left-hand side
     R_all = [str2ftr_rule(R) for R in rules['rule']]
-    score_all = [score for score in rules['reliability']]
+    score_all = [score for score in rules['confidence']]
     #R_parse, C_map = group_rules(R_all)
 
     for idx, R in enumerate(R_all):
         if idx % 500 == 0:
             print(idx)
+        if np.isnan(score_all[idx]):
+            continue
+
         # Convert rule to explicit regexp format
         R_regex = repr(R)
         AB, CD = R_regex.split(' / ')

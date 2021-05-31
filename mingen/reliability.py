@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import config
+from scipy.stats import t as student_t
+
 from rules import *
 from str_util import *
 import pynini_util
@@ -112,14 +114,45 @@ def score_rules(R_all):
 
             hits_all[idx] = hits
             scope_all[idx] = scope
-            try:
-                print(f'rule {idx}, hits = {hits}, scope = {scope}, '
-                      f'reliability = {hits/scope}')
-            except:
-                print('error: rule has zero scope')
+            if hits == 0.0:
+                print('(warning) rule has zero hits')
+                print(R_all[idx])
+                print(repr(R_all[idx]))
+            if scope == 0.0:
+                print('(error) rule has zero scope')
                 print(f'size of data subset_ {len(subdat_)}')
                 print(R_all[idx])
                 print(repr(R_all[idx]))
                 sys.exit(0)
+            print(f'rule {idx}, hits = {hits}, scope = {scope}, '
+                  f'reliability = {hits/scope}')
 
     return hits_all, scope_all
+
+
+def confidence(hits, scope, alpha=0.55):
+    """
+    Adjust reliability by scope
+    (default alpha from A&H 2003:127)
+    """
+    # Adjusted reliability
+    p_star = (hits + 0.5) / (scope + 1.0)
+    # Estimated variance
+    var_est = (p_star * (1 - p_star)) / scope
+    var_est = var_est**0.5
+    # Confidence
+    z = student_t.ppf(alpha, scope - 1.0)
+    c = p_star - z * var_est
+    return c
+
+
+def test():
+    # Exampes from A&H 2003:127
+    hits, scope = 5.0, 5.0
+    print(confidence(hits, scope, alpha=0.75))
+    hits, scope = 1000, 1000.0
+    print(confidence(hits, scope, alpha=0.75))
+
+
+if __name__ == "__main__":
+    test()
