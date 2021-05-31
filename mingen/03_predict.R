@@ -24,7 +24,7 @@ wug_dev %>%
     wug_dev
 
 ggplot(wug_dev, aes(x=model_rating, y=human_rating)) + geom_point()
-with(wug_dev, cor.test(model_rating, human_rating))
+print(with(wug_dev, cor.test(model_rating, human_rating)))
 
 fit_model = glmmTMB(human_rating ~ model_rating + double_past + (1 | lemma), data = wug_dev, family = beta_family())
 coef_dev = fixef(fit_model)$cond

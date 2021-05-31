@@ -37,7 +37,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ s k ɛ t ⋉	⋊ s k ɛ t ⋉	0.4050576765214162	24638.0	s k ɛ t	s k ɛ t	3.385
 ⋊ s ɛ l d ⋉	⋊ s ɛ l d ɪ d ⋉	0.9257719907500607	10463.0	s ɛ l d	s ɛ l d ɪ d	1.89
 ⋊ s ɛ l d ⋉	⋊ s ɛ l t ⋉	0.07486488744403293	25014.0	s ɛ l d	s ɛ l t	4.23
-⋊ d ʒ o ⋉	⋊ d ʒ o d ⋉	0.9605192135447681	5793.0	d ʒ əʊ	d ʒ əʊ d	4.24
+⋊ d ʒ o ⋉	⋊ d ʒ o d ⋉	0.9605192135447681	5771.0	d ʒ əʊ	d ʒ əʊ d	4.24
 ⋊ d ʒ o ⋉	⋊ d ʒ u ⋉			d ʒ əʊ	d ʒ uː	1.58
 ⋊ s p ɪ ŋ k ⋉	⋊ s p ɪ ŋ k t ⋉	0.9331266179600765	10335.0	s p ɪ ŋ k	s p ɪ ŋ k t	2.665
 ⋊ s p ɪ ŋ k ⋉	⋊ s p ʌ ŋ k ⋉	0.19848006775232074	24869.0	s p ɪ ŋ k	s p ʌ ŋ k	3.96
@@ -49,7 +49,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ g ɹ e k ⋉	⋊ g ɹ e k ⋉	0.02411039942613699	25096.0	g r eɪ k	g r eɪ k	1.89
 ⋊ p ɪ l d ⋉	⋊ p ɪ l d ɪ d ⋉	0.9257719907500607	10463.0	p ɪ l d	p ɪ l d ɪ d	1.115
 ⋊ p ɪ l d ⋉	⋊ p ɪ l t ⋉	0.07486488744403293	25014.0	p ɪ l d	p ɪ l t	2.395
-⋊ d ɹ a ɪ n ⋉	⋊ d ɹ a ɪ n d ⋉	0.9789087453215534	2652.0	d r aɪ n	d r aɪ n d	5.26
+⋊ d ɹ a ɪ n ⋉	⋊ d ɹ a ɪ n d ⋉	0.9789087453215534	2640.0	d r aɪ n	d r aɪ n d	5.26
 ⋊ d ɹ a ɪ n ⋉	⋊ d ɹ o n ⋉			d r aɪ n	d r əʊ n	1.775
 ⋊ k ɹ i v ⋉	⋊ k ɹ i v d ⋉	0.9573423708051145	6539.0	k r iː v	k r iː v d	6.13
 ⋊ k ɹ i v ⋉	⋊ k ɹ o v ⋉	0.23009694824464566	24845.0	k r iː v	k r əʊ v	3.87
@@ -69,7 +69,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ b ʊ l d ⋉	⋊ b ʊ l t ⋉	0.07486488744403293	25014.0	b ʊ l d	b ʊ l t	1.535
 ⋊ p l i v ⋉	⋊ p l i v d ⋉	0.9573423708051145	6539.0	p l iː v	p l iː v d	4.89
 ⋊ p l i v ⋉	⋊ p l ɛ f t ⋉	0.17767746466849954	24890.0	p l iː v	p l ɛ f t	1.69
-⋊ s m ɪ t ⋉	⋊ s m ɪ t ɪ d ⋉	0.9763690594737285	3157.0	s m ɪ t	s m ɪ t ɪ d	4.75
+⋊ s m ɪ t ⋉	⋊ s m ɪ t ɪ d ⋉	0.9763690594737285	3135.0	s m ɪ t	s m ɪ t ɪ d	4.75
 ⋊ s m ɪ t ⋉	⋊ s m ɪ t ⋉	0.1179226503921818	24947.0	s m ɪ t	s m ɪ t	2.89
 ⋊ b ɹ ɛ n d ⋉	⋊ b ɹ ɛ n d ɪ d ⋉	0.9257719907500607	10463.0	b r ɛ n d	b r ɛ n d ɪ d	0.895
 ⋊ b ɹ ɛ n d ⋉	⋊ b ɹ ɛ n t ⋉	0.5886542904982304	24190.0	b r ɛ n d	b r ɛ n t	2.16
@@ -77,7 +77,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ s k ɪ ŋ k ⋉	⋊ s k ʌ ŋ k ⋉	0.19848006775232074	24869.0	s k ɪ ŋ k	s k ʌ ŋ k	4.27
 ⋊ s p a n d ⋉	⋊ s p a n d ɪ d ⋉	0.9257719907500607	10463.0	s p a n d	s p a n d ɪ d	5.25
 ⋊ s p a n d ⋉	⋊ s p a n t ⋉	0.07486488744403293	25014.0	s p a n d	s p a n t	2.5
-⋊ s p ɹ a ŋ k ⋉	⋊ s p ɹ a ŋ k t ⋉	0.9789087453215534	2621.0	s p r a ŋ k	s p r a ŋ k t	4.125
+⋊ s p ɹ a ŋ k ⋉	⋊ s p ɹ a ŋ k t ⋉	0.9789087453215534	2606.0	s p r a ŋ k	s p r a ŋ k t	4.125
 ⋊ s p ɹ a ŋ k ⋉	⋊ s p ɹ ʌ ŋ k ⋉			s p r a ŋ k	s p r ʌ ŋ k	4.63
 ⋊ b l a ɪ k ⋉	⋊ b l a ɪ k t ⋉	0.9691477182934601	4184.0	b l aɪ k	b l aɪ k t	5.24
 ⋊ b l a ɪ k ⋉	⋊ b l a ɪ k ⋉	0.02411039942613699	25096.0	b l aɪ k	b l aɪ k	1.285
@@ -102,7 +102,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ p ɹ a ɪ v ⋉	⋊ p ɹ a ɪ v d ⋉	0.9573423708051145	6539.0	p r aɪ v	p r aɪ v d	5.665
 ⋊ p ɹ a ɪ v ⋉	⋊ p ɹ o v ⋉	0.6619466695793516	23936.0	p r aɪ v	p r əʊ v	3.7
 ⋊ s t ɹ ɛ d ⋉	⋊ s t ɹ ɛ d ɪ d ⋉	0.9558005568670203	6564.0	s t r ɛ d	s t r ɛ d ɪ d	4.345
-⋊ s t ɹ ɛ d ⋉	⋊ s t ɹ ɛ d ⋉	0.3664320682760081	24701.0	s t r ɛ d	s t r ɛ d	1.69
+⋊ s t ɹ ɛ d ⋉	⋊ s t ɹ ɛ d ⋉	0.3664320682760081	24700.0	s t r ɛ d	s t r ɛ d	1.69
 ⋊ n i v ⋉	⋊ n i v d ⋉	0.9573423708051145	6539.0	n iː v	n iː v d	1.23
 ⋊ n i v ⋉	⋊ n ɛ f t ⋉			n iː v	n ɛ f t	3.185
 ⋊ g e k ⋉	⋊ g e k t ⋉	0.9331266179600765	10335.0	g eɪ k	g eɪ k t	5.1
@@ -115,8 +115,8 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ b ɹ i m ⋉	⋊ b ɹ ɛ m p t ⋉			b r iː m	b r ɛ m p t	0.535
 ⋊ s p o ⋉	⋊ s p o d ⋉	0.9577286007035797	6089.0	s p əʊ	s p əʊ d	4.58
 ⋊ s p o ⋉	⋊ s p o t ⋉			s p əʊ	s p əʊ t	2.73
-⋊ d ɪ s t ɹ a ɪ b ⋉	⋊ d ɪ s t ɹ a ɪ b d ⋉	0.990641495845294	1042.0	d ɪ s t r aɪ b	d ɪ s t r aɪ b d	4.83
-⋊ d ɪ s t ɹ a ɪ b ⋉	⋊ d ɪ s t ɹ o b ⋉	0.8478608772434439	19359.0	d ɪ s t r aɪ b	d ɪ s t r əʊ b	2.96
+⋊ d ɪ s t ɹ a ɪ b ⋉	⋊ d ɪ s t ɹ a ɪ b d ⋉	0.990641495845294	1044.0	d ɪ s t r aɪ b	d ɪ s t r aɪ b d	4.83
+⋊ d ɪ s t ɹ a ɪ b ⋉	⋊ d ɪ s t ɹ o b ⋉	0.8478608772434439	19358.0	d ɪ s t r aɪ b	d ɪ s t r əʊ b	2.96
 ⋊ h ɛ n d ⋉	⋊ h ɛ n d ɪ d ⋉	0.9257719907500607	10463.0	h ɛ n d	h ɛ n d ɪ d	5.27
 ⋊ h ɛ n d ⋉	⋊ h ɛ n t ⋉	0.07486488744403293	25014.0	h ɛ n d	h ɛ n t	2.29
 ⋊ n ɪ d ⋉	⋊ n ɪ d ɪ d ⋉	0.9257719907500607	10463.0	n ɪ d	n ɪ d ɪ d	3.975
@@ -146,7 +146,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
 ⋊ t ʃ ɪ d ⋉	⋊ t ʃ ɪ d ɪ d ⋉	0.9257719907500607	10463.0	t ʃ ɪ d	t ʃ ɪ d ɪ d	4.08
 ⋊ t ʃ ɪ d ⋉	⋊ t ʃ ɪ d ⋉	0.12149389071142384	24940.0	t ʃ ɪ d	t ʃ ɪ d	1.645
 ⋊ b l ɪ t ⋉	⋊ b l ɪ t ɪ d ⋉	0.9549508981696708	6580.0	b l ɪ t	b l ɪ t ɪ d	4.61
-⋊ b l ɪ t ⋉	⋊ b l ɪ t ⋉	0.3664320682760081	24699.0	b l ɪ t	b l ɪ t	4.07
+⋊ b l ɪ t ⋉	⋊ b l ɪ t ⋉	0.3664320682760081	24701.0	b l ɪ t	b l ɪ t	4.07
 ⋊ h e k ⋉	⋊ h e k t ⋉	0.9331266179600765	10335.0	h eɪ k	h eɪ k t	3.385
 ⋊ h e k ⋉	⋊ h o k ⋉			h eɪ k	h əʊ k	1.455
 ⋊ t a ɪ n d ⋉	⋊ t a ɪ n d ɪ d ⋉	0.9257719907500607	10463.0	t aɪ n d	t aɪ n d ɪ d	3.93

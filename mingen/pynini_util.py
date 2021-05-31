@@ -17,7 +17,7 @@ from pynini.lib import pynutil, rewrite
 # https://github.com/kylebgorman/pynini/issues/22
 
 
-def sigstar(syms, markers=["⟨", "⟩"]):
+def sigstar(syms, markers=['⟨', '⟩']):
     """
     Symbol table and Sigma* acceptor fom list of symbols
     (optional markers for loci of cdrewrite rule application)
@@ -74,7 +74,7 @@ def accep_(x, symtable):
 def union(fsts):
     """ Union list of Fsts """
     fst = pynini.union(*fsts)
-    # xxx check symbol table of output
+    # xxx check symbol table
     return fst
 
 
@@ -89,7 +89,7 @@ def concat(fsts):
     fst = pynini.concat(fsts[0], fsts[1])
     for i in range(2, n):
         fst = pynini.concat(fst, fsts[i])
-    # xxx check symbol table of output
+    # xxx check symbol table
     return fst
 
 
@@ -108,6 +108,7 @@ def compile_context(C, symtable):
         fst = union(accep(regex, symtable))
         fsts.append(fst)
     fst = concat(fsts)
+    # xxx check symbol table
     return fst
 
 
@@ -138,6 +139,7 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     return fst
 
 
+# xxx maybe broken
 def test():
     syms = ['aa', 'bb', 'cc', 'dd']
     sigstar_, symtable = sigstar(syms)

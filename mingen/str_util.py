@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# Compute longest common prefix/suffix of pair of strings, handle delimiters and markers, fix transcriptions
+
 import re
 import config
 

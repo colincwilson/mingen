@@ -15,7 +15,7 @@ def main():
     score_rules = 1
     evaluate_wugs = 1
 
-    # Import config (as created by prepare_data)
+    # Import config (as created by 01_prepare_data)
     LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][0]
     config_save = pickle.load(open(f'../data/{LANGUAGE}_config.pkl', 'rb'))
     for key, val in config_save.items():
@@ -35,7 +35,7 @@ def main():
         rules['rule_len'] = [len(x) for x in rules['rule']]
         rules.to_csv(f'../data/{LANGUAGE}_rules_out.tsv', index=False, sep='\t')
 
-    # Compute scope and hits for each rule
+    # Compute hits and scope and for each rule
     if score_rules:
         rules = pd.read_csv(f'../data/{LANGUAGE}_rules_out.tsv', sep='\t')
         #rules = rules.head(n=10)  # xxx subset for debugging
@@ -49,6 +49,7 @@ def main():
                      sep='\t',
                      index=False)
 
+    # Predict wug-test ratings (sigmorphon 2021 format)
     if evaluate_wugs:
         rules = pd.read_csv(f'../data/{LANGUAGE}_rules_scored.tsv', sep='\t')
         confidences = []

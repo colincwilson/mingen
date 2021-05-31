@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# Feature matching and unification, convert feature matrices to/from strings
+
 import re
 import config
 

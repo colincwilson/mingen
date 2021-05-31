@@ -38,6 +38,7 @@ def score_rules(R_all):
     Hits and scope for FtrRules on training data
     todo: precompile inputs, apply to all simultaneously?
     """
+    # xxx grouping no longer used, only need to parse
     R_parse, C_map = group_rules(R_all)
 
     # Symbol environment

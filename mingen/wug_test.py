@@ -6,7 +6,6 @@ import config
 from rules import *
 from str_util import *
 import pynini_util
-from reliability import group_rules
 
 
 def score_mappings(wug_dat, rules):
