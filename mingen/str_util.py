@@ -35,7 +35,7 @@ def add_delim(x):
     """
     Add begin/end delimiters to space-separated segment string
     """
-    y = f'{config.begin_delim} {x} {config.end_delim}'
+    y = f'{config.bos} {x} {config.eos}'
     return y
 
 

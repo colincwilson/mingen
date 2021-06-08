@@ -10,13 +10,13 @@ sys.path.append('/Users/colin/Code/Python/tensormorph_redup/tensormorph')
 import tensormorph
 
 # String environment
-config.begin_delim = '⋊'
-config.end_delim = '⋉'
+config.bos = '⋊'
+config.eos = '⋉'
 config.zero = '∅'
 config.save_dir = '/Users/colin/Code/Python/mingen/data'
 
-tensormorph.config.begin_delim = config.begin_delim
-tensormorph.config.end_delim = config.end_delim
+tensormorph.config.bos = config.bos
+tensormorph.config.eos = config.eos
 tensormorph.config.epsilon = 'ϵ'
 tensormorph.config.wildcard = '□'
 
@@ -132,7 +132,7 @@ for stem in dat['stem']:
     segments |= set(stem.split())
 for output in dat['output']:
     segments |= set(output.split())
-segments -= {config.begin_delim, config.end_delim}
+segments -= {config.bos, config.eos}
 segments = [x for x in segments]
 segments.sort()
 print(f'Segments that appear in training data: '

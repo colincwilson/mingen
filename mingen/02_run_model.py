@@ -11,7 +11,7 @@ import wug_test
 
 
 def main():
-    make_rules = 1
+    make_rules = 0
     score_rules = 1
     evaluate_wugs = 1
 

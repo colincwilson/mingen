@@ -103,7 +103,7 @@ def base_rule(x: str, y: str) -> SegRule:
     # Identity rule xxx change locn at end
     if (A == config.zero) and (B == config.zero):
         C = C[:-1]  # Remove end_delim
-        D = [config.end_delim]
+        D = [config.eos]
 
     rule = SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
     return rule
