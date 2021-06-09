@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import pickle, sys
+import configargparse, pickle, sys
 from pathlib import Path
 import pandas as pd
 
@@ -13,11 +13,19 @@ import wug_test
 
 
 def main():
-    LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][2]
-    learn_rules = 1
-    score_rules = 1
-    prune_rules = 1
-    rate_wugs = 1
+    parser = configargparse.ArgParser(
+        config_file_parser_class=configargparse.YAMLConfigFileParser)
+    parser.add(
+        '--language',
+        type=str,
+        choices=['eng', 'deu', 'nld', 'tiny'],
+        default='tiny')
+    parser.add('--learn_rules', action='store_true', default=False)
+    parser.add('--score_rules', action='store_true', default=False)
+    parser.add('--prune_rules', action='store_true', default=False)
+    parser.add('--rate_wugs', action='store_true', default=False)
+    args = parser.parse_args()
+    LANGUAGE = args.language
 
     # Import config (as created by 01_prepare_data)
     config_save = pickle.load(
@@ -26,7 +34,7 @@ def main():
         setattr(config, key, val)
 
     # Make word-specific (base) rules, apply recursive minimal generalization
-    if learn_rules:
+    if args.learn_rules:
         dat_train = config.dat_train
         print('Base rules ...')
         R_base = [base_rule(w1, w2) for (w1, w2) \
@@ -41,53 +49,62 @@ def main():
             'rule': [str(R) for R in R_all]
         })
         rules['rule_len'] = [len(x) for x in rules['rule']]
-        rules.to_csv(Path('../data') / f'{LANGUAGE}_rules_out.tsv',
-                     index=False,
-                     sep='\t')
+        rules.to_csv(
+            Path('../data') / f'{LANGUAGE}_rules_out.tsv',
+            index=False,
+            sep='\t')
 
     # Compute hits and scope and for each rule
-    if score_rules:
-        rules = pd.read_csv(Path('../data') / f'{LANGUAGE}_rules_out.tsv',
-                            sep='\t')
+    if args.score_rules:
+        rules = pd.read_csv(
+            Path('../data') / f'{LANGUAGE}_rules_out.tsv', sep='\t')
         #rules = rules.head(n=10)  # xxx subset for debugging
         R_all = [FtrRule.from_str(R) for R in rules['rule']]
 
-        # Score rules
+        # Hit and scope on train data
         hits_all, scope_all = reliability.score_rules(R_all)
         rules['hits'] = hits_all
         rules['scope'] = scope_all
+
+        # Confidence
         rules['confidence'] = [reliability.confidence(h,s) \
             for (h,s) in zip(rules['hits'], rules['scope'])]
-        rules.to_csv(Path('../data') / f'{LANGUAGE}_rules_scored.tsv',
-                     sep='\t',
-                     index=False)
+        rules.to_csv(
+            Path('../data') / f'{LANGUAGE}_rules_scored.tsv',
+            sep='\t',
+            index=False)
 
     # Prune rules that are bounded by less minimal generalizations
-    if prune_rules:
-        rules = pd.read_csv(Path('../data') / f'{LANGUAGE}_rules_scored.tsv',
-                            sep='\t')
+    if args.prune_rules:
+        rules = pd.read_csv(
+            Path('../data') / f'{LANGUAGE}_rules_scored.tsv', sep='\t')
         rules_max = pruning.prune_rules(rules)
-        rules_max.to_csv(Path('../data') / f'{LANGUAGE}_rules_pruned.tsv',
-                         sep='\t',
-                         index=False)
+        rules_max.to_csv(
+            Path('../data') / f'{LANGUAGE}_rules_pruned.tsv',
+            sep='\t',
+            index=False)
 
-    # Predict wug-test ratings (sigmorphon 2021 dev and tst)
-    if rate_wugs:
-        rules = pd.read_csv(Path('../data') / f'{LANGUAGE}_rules_pruned.tsv',
-                            sep='\t')
+    # Predict wug-test ratings
+    if args.rate_wugs:
+        rules = pd.read_csv(
+            Path('../data') / f'{LANGUAGE}_rules_pruned.tsv', sep='\t')
         print(rules)
 
-        for split in ['dev', 'tst']:
+        splits = ['dev', 'tst']  # Sigmorphon2021
+        if LANGUAGE == 'eng':
+            splits.append('albrighthayes')
+
+        for split in splits:
             wugs = getattr(config, f'wug_{split}')
-            wug_ratings = wug_test.score_mappings(wugs, rules)
+            wug_ratings = wug_test.rate_wugs(wugs, rules)
             wug_ratings = pd.DataFrame(
                 wug_ratings,
                 columns=['stem', 'output', 'model_rating', 'rule_idx'])
             wug_ratings = wug_ratings.merge(wugs, how='right')
-            wug_ratings.to_csv(Path('../data') /
-                               f'{LANGUAGE}_wug_{split}_predict.tsv',
-                               sep='\t',
-                               index=False)
+            wug_ratings.to_csv(
+                Path('../data') / f'{LANGUAGE}_wug_{split}_predict.tsv',
+                sep='\t',
+                index=False)
 
 
 if __name__ == "__main__":

@@ -8,16 +8,16 @@ from str_util import *
 import pynini_util
 
 
-def score_mappings(wug_dat, rules, rule_score='confidence'):
+def rate_wugs(wugs, rules, rule_score='confidence'):
     # Symbol environment
     syms = [x for x in config.seg2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
 
-    stems = [str(x) for x in wug_dat['stem']]
-    outputs = [str(x) for x in wug_dat['output']]
+    stems = [str(x) for x in wugs['stem']]
+    outputs = [str(x) for x in wugs['output']]
     wordforms = list(zip(stems, outputs))
-    max_score = {}
-    max_score_idx = {}
+    max_rating = {}
+    max_rating_idx = {}
 
     R_all = [FtrRule.from_str(R) for R in rules['rule']]
     score_all = [score for score in rules[rule_score]]
@@ -45,8 +45,8 @@ def score_mappings(wug_dat, rules, rule_score='confidence'):
             # Apply rule to input
             input1 = pynini_util.accep(wf1, symtable)
             output1 = input1 @ R_fst
-            strpath_iter = output1.paths(input_token_type=symtable,
-                                         output_token_type=symtable)
+            strpath_iter = output1.paths(
+                input_token_type=symtable, output_token_type=symtable)
             output1 = [x for x in strpath_iter.ostrings()][0]  # xxx
 
             # Check whether rule applied
@@ -60,21 +60,21 @@ def score_mappings(wug_dat, rules, rule_score='confidence'):
             # Update only if exact match and better than previous score
             if output1 != wf2:
                 continue
-            if ((wf1, wf2) not in max_score) \
-                    or (score > max_score[(wf1, wf2)]):
-                max_score[(wf1, wf2)] = score
-                max_score_idx[(wf1, wf2)] = idx
+            if ((wf1, wf2) not in max_rating) \
+                    or (score > max_rating[(wf1, wf2)]):
+                max_rating[(wf1, wf2)] = score
+                max_rating_idx[(wf1, wf2)] = idx
 
     # Results
     print()
-    wug_scores = []
-    for wf in max_score.keys():
+    wug_ratings = []
+    for wf in max_rating.keys():
         wf1, wf2 = wf
-        score = max_score[wf]
-        rule_idx = max_score_idx[wf]
+        rating = max_rating[wf]
+        rule_idx = max_rating_idx[wf]
         R = R_all[rule_idx]
-        print(wf1, wf2, score)
+        print(wf1, wf2, rating)
         print(R)
         print()
-        wug_scores.append((wf1, wf2, score, rule_idx))
-    return wug_scores
+        wug_ratings.append((wf1, wf2, rating, rule_idx))
+    return wug_ratings

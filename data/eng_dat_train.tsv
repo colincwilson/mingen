@@ -11,7 +11,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 41	ɪ n t ɪ g r eɪ t	ɪ n t ɪ g r eɪ t ɪ d	integrate	integrated	⋊ ɪ n t ɪ g ɹ e t ⋉	⋊ ɪ n t ɪ g ɹ e t ɪ d ⋉
 44	f uː lˠ	f uː lˠ d	fool	fooled	⋊ f u l ⋉	⋊ f u l d ⋉
 46	t ʃ eɪ n	t ʃ eɪ n d	chain	chained	⋊ t ʃ e n ⋉	⋊ t ʃ e n d ⋉
-49	d ɔ k t ə	d ɔ k t ə d	doctor	doctored	⋊ d ɔ k t ə ⋉	⋊ d ɔ k t ə d ⋉
+49	d ɔ k t ə	d ɔ k t ə d	doctor	doctored	⋊ d ɔ k t ə ⋉	⋊ d ɔ k t ɪ d ⋉
 50	k ɔ n t r ʊ v ɜː t	k ɔ n t r ʊ v ɜː t ɪ d	controvert	controverted	⋊ k ɔ n t ɹ ʊ v ə t ⋉	⋊ k ɔ n t ɹ ʊ v ə t ɪ d ⋉
 55	əʊ v ə d uː	əʊ v ə d ɪ d	overdo	overdid	⋊ o v ə d u ⋉	⋊ o v ə d ɪ d ⋉
 70	d ɪ s ɛ m b ɑː k	d ɪ s ɛ m b ɑː k t	disembark	disembarked	⋊ d ɪ s ɛ m b ɑ k ⋉	⋊ d ɪ s ɛ m b ɑ k t ⋉
@@ -60,7 +60,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 225	n əʊ t ə r aɪ z	n əʊ t ə r aɪ z d	notarize	notarized	⋊ n o t ə ɹ a ɪ z ⋉	⋊ n o t ə ɹ a ɪ z d ⋉
 229	p a n t	p a n t ɪ d	pant	panted	⋊ p a n t ⋉	⋊ p a n t ɪ d ⋉
 234	b ɜː θ	b ɜː θ t	berth	berthed	⋊ b ə θ ⋉	⋊ b ə θ t ⋉
-237	d ʒ ɛ r ɪ m a n d ə	d ʒ ɛ r ɪ m a n d ə d	gerrymander	gerrymandered	⋊ d ʒ ɛ ɹ ɪ m a n d ə ⋉	⋊ d ʒ ɛ ɹ ɪ m a n d ə d ⋉
+237	d ʒ ɛ r ɪ m a n d ə	d ʒ ɛ r ɪ m a n d ə d	gerrymander	gerrymandered	⋊ d ʒ ɛ ɹ ɪ m a n d ə ⋉	⋊ d ʒ ɛ ɹ ɪ m a n d ɪ d ⋉
 239	aʊ t g əʊ	aʊ t w ɛ n t	outgo	outwent	⋊ a ʊ t g o ⋉	⋊ a ʊ t w ɛ n t ⋉
 240	b ʊ lˠ d əʊ z	b ʊ lˠ d əʊ z d	bulldoze	bulldozed	⋊ b ʊ l d o z ⋉	⋊ b ʊ l d o z d ⋉
 242	g r ʌ b	g r ʌ b d	grub	grubbed	⋊ g ɹ ʌ b ⋉	⋊ g ɹ ʌ b d ⋉
@@ -72,7 +72,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 280	d ɔː n t	d ɔː n t ɪ d	daunt	daunted	⋊ d ɔ n t ⋉	⋊ d ɔ n t ɪ d ⋉
 284	ɛ n t r ɑː n s	ɛ n t r ɑː n s t	entrance	entranced	⋊ ɛ n t ɹ ɑ n s ⋉	⋊ ɛ n t ɹ ɑ n s t ⋉
 285	d ɪ s k aʊ n t	d ɪ s k aʊ n t ɪ d	discount	discounted	⋊ d ɪ s k a ʊ n t ⋉	⋊ d ɪ s k a ʊ n t ɪ d ⋉
-286	s w ɛ lˠ t ə	s w ɛ lˠ t ə d	swelter	sweltered	⋊ s w ɛ l t ə ⋉	⋊ s w ɛ l t ə d ⋉
+286	s w ɛ lˠ t ə	s w ɛ lˠ t ə d	swelter	sweltered	⋊ s w ɛ l t ə ⋉	⋊ s w ɛ l t ɪ d ⋉
 287	f l eɪ v ə	f l eɪ v ə d	flavour	flavoured	⋊ f l e v ə ⋉	⋊ f l e v ə d ⋉
 288	ɪ n h a b ɪ t	ɪ n h a b ɪ t ɪ d	inhabit	inhabited	⋊ ɪ n h a b ɪ t ⋉	⋊ ɪ n h a b ɪ t ɪ d ⋉
 291	əʊ v ə ɪ n d ʌ lˠ d ʒ	əʊ v ə ɪ n d ʌ lˠ d ʒ d	over-indulge	over-indulged	⋊ o v ə ɪ n d ʌ l d ʒ ⋉	⋊ o v ə ɪ n d ʌ l d ʒ d ⋉
@@ -199,10 +199,10 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 690	b ə w eɪ lˠ	b ə w eɪ lˠ d	bewail	bewailed	⋊ b ə w e l ⋉	⋊ b ə w e l d ⋉
 691	r ɛ s l̩ˠ	r ɛ s l̩ˠ d	wrestle	wrestled	⋊ ɹ ɛ s l ⋉	⋊ ɹ ɛ s l d ⋉
 692	t r ɛ s p ə s	t r ɛ s p ə s t	trespass	trespassed	⋊ t ɹ ɛ s p ə s ⋉	⋊ t ɹ ɛ s p ə s t ⋉
-693	s m əʊ lˠ d ə	s m əʊ lˠ d ə d	smoulder	smouldered	⋊ s m o l d ə ⋉	⋊ s m o l d ə d ⋉
-694	l ɛ t ə	l ɛ t ə d	letter	lettered	⋊ l ɛ t ə ⋉	⋊ l ɛ t ə d ⋉
+693	s m əʊ lˠ d ə	s m əʊ lˠ d ə d	smoulder	smouldered	⋊ s m o l d ə ⋉	⋊ s m o l d ɪ d ⋉
+694	l ɛ t ə	l ɛ t ə d	letter	lettered	⋊ l ɛ t ə ⋉	⋊ l ɛ t ɪ d ⋉
 695	r ə v aɪ lˠ	r ə v aɪ lˠ d	revile	reviled	⋊ ɹ ə v a ɪ l ⋉	⋊ ɹ ə v a ɪ l d ⋉
-700	d ɪ t ɜː	d ɪ t ɜː d	deter	deterred	⋊ d ɪ t ə ⋉	⋊ d ɪ t ə d ⋉
+700	d ɪ t ɜː	d ɪ t ɜː d	deter	deterred	⋊ d ɪ t ə ⋉	⋊ d ɪ t ɪ d ⋉
 702	b aʊ n d	b aʊ n d ɪ d	bound	bounded	⋊ b a ʊ n d ⋉	⋊ b a ʊ n d ɪ d ⋉
 703	ɪ n ʌ n ʃ j eɪ t	ɪ n ʌ n ʃ j eɪ t ɪ d	enunciate	enunciated	⋊ ɪ n ʌ n ʃ j e t ⋉	⋊ ɪ n ʌ n ʃ j e t ɪ d ⋉
 704	p ɪ t ʃ f ɔː k	p ɪ t ʃ f ɔː k t	pitchfork	pitchforked	⋊ p ɪ t ʃ f ɔ k ⋉	⋊ p ɪ t ʃ f ɔ k t ⋉
@@ -243,7 +243,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 792	d iː h j uː m ə n aɪ z	d iː h j uː m ə n aɪ z d	dehumanize	dehumanized	⋊ d i h j u m ə n a ɪ z ⋉	⋊ d i h j u m ə n a ɪ z d ⋉
 793	ə d ɔ p t	ə d ɔ p t ɪ d	adopt	adopted	⋊ ə d ɔ p t ⋉	⋊ ə d ɔ p t ɪ d ⋉
 801	ɔ b v j eɪ t	ɔ b v j eɪ t ɪ d	obviate	obviated	⋊ ɔ b v j e t ⋉	⋊ ɔ b v j e t ɪ d ⋉
-803	w ɔ n d ə	w ɔ n d ə d	wander	wandered	⋊ w ɔ n d ə ⋉	⋊ w ɔ n d ə d ⋉
+803	w ɔ n d ə	w ɔ n d ə d	wander	wandered	⋊ w ɔ n d ə ⋉	⋊ w ɔ n d ɪ d ⋉
 806	ə k s iː d	ə k s iː d ɪ d	accede	acceded	⋊ ə k s i d ⋉	⋊ ə k s i d ɪ d ⋉
 808	ɪ n f j ɔː r ɪ eɪ t	ɪ n f j ɔː r ɪ eɪ t ɪ d	infuriate	infuriated	⋊ ɪ n f j ɔ ɹ ɪ e t ⋉	⋊ ɪ n f j ɔ ɹ ɪ e t ɪ d ⋉
 810	d ɪ s k ʌ l ə	d ɪ s k ʌ l ə d	discolour	discoloured	⋊ d ɪ s k ʌ l ə ⋉	⋊ d ɪ s k ʌ l ə d ⋉
@@ -264,7 +264,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 859	b ə s m ɪ ə	b ə s m ɪ ə d	besmear	besmeared	⋊ b ə s m ɪ ə ⋉	⋊ b ə s m ɪ ə d ⋉
 860	m ɪ s h a n d l̩ˠ	m ɪ s h a n d l̩ˠ d	mishandle	mishandled	⋊ m ɪ s h a n d l ⋉	⋊ m ɪ s h a n d l d ⋉
 865	g eɪ d ʒ	g eɪ d ʒ d	gauge	gauged	⋊ g e d ʒ ⋉	⋊ g e d ʒ d ⋉
-866	p ɔ t ə	p ɔ t ə d	potter	pottered	⋊ p ɔ t ə ⋉	⋊ p ɔ t ə d ⋉
+866	p ɔ t ə	p ɔ t ə d	potter	pottered	⋊ p ɔ t ə ⋉	⋊ p ɔ t ɪ d ⋉
 867	f l ʌ k t j ʊ eɪ t	f l ʌ k t j ʊ eɪ t ɪ d	fluctuate	fluctuated	⋊ f l ʌ k t j ʊ e t ⋉	⋊ f l ʌ k t j ʊ e t ɪ d ⋉
 868	d ʒ ɛ n ə r eɪ t	d ʒ ɛ n ə r eɪ t ɪ d	generate	generated	⋊ d ʒ ɛ n ə ɹ e t ⋉	⋊ d ʒ ɛ n ə ɹ e t ɪ d ⋉
 870	m ɑː k	m ɑː k t	mark	marked	⋊ m ɑ k ⋉	⋊ m ɑ k t ⋉
@@ -302,7 +302,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 983	f a n s ɪ	f a n s ɪ d	fancy	fancied	⋊ f a n s ɪ ⋉	⋊ f a n s ɪ d ⋉
 992	ɛ n g ʌ lˠ f	ɛ n g ʌ lˠ f t	engulf	engulfed	⋊ ɛ n g ʌ l f ⋉	⋊ ɛ n g ʌ l f t ⋉
 993	ə s ɜː t	ə s ɜː t ɪ d	assert	asserted	⋊ ə s ə t ⋉	⋊ ə s ə t ɪ d ⋉
-996	p l ʌ n d ə	p l ʌ n d ə d	plunder	plundered	⋊ p l ʌ n d ə ⋉	⋊ p l ʌ n d ə d ⋉
+996	p l ʌ n d ə	p l ʌ n d ə d	plunder	plundered	⋊ p l ʌ n d ə ⋉	⋊ p l ʌ n d ɪ d ⋉
 999	s a lˠ v ɪ d ʒ	s a lˠ v ɪ d ʒ d	salvage	salvaged	⋊ s a l v ɪ d ʒ ⋉	⋊ s a l v ɪ d ʒ d ⋉
 1006	l ɛ n d	l ɛ n t	lend	lent	⋊ l ɛ n d ⋉	⋊ l ɛ n t ⋉
 1008	b ɪ d ʒ uːɪ lˠ	b ɪ d ʒ uːɪ lˠ d	bejewel	bejewelled	⋊ b ɪ d ʒ u ɪ l ⋉	⋊ b ɪ d ʒ u ɪ l d ⋉
@@ -312,7 +312,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 1021	p ʌ n ɪ ʃ	p ʌ n ɪ ʃ t	punish	punished	⋊ p ʌ n ɪ ʃ ⋉	⋊ p ʌ n ɪ ʃ t ⋉
 1022	ɪ m p iː d	ɪ m p iː d ɪ d	impede	impeded	⋊ ɪ m p i d ⋉	⋊ ɪ m p i d ɪ d ⋉
 1028	r iː f ɔː m	r iː f ɔː m d	reform	reformed	⋊ ɹ i f ɔ m ⋉	⋊ ɹ i f ɔ m d ⋉
-1029	m ʌ t ə	m ʌ t ə d	mutter	muttered	⋊ m ʌ t ə ⋉	⋊ m ʌ t ə d ⋉
+1029	m ʌ t ə	m ʌ t ə d	mutter	muttered	⋊ m ʌ t ə ⋉	⋊ m ʌ t ɪ d ⋉
 1030	ɪ n ʃ	ɪ n ʃ t	inch	inched	⋊ ɪ n ʃ ⋉	⋊ ɪ n ʃ t ⋉
 1032	ɪ m p r ɪ k eɪ t	ɪ m p r ɪ k eɪ t ɪ d	imprecate	imprecated	⋊ ɪ m p ɹ ɪ k e t ⋉	⋊ ɪ m p ɹ ɪ k e t ɪ d ⋉
 1034	k r ɔː s f ɜː t ɪ l aɪ z	k r ɔː s f ɜː t ɪ l aɪ z d	cross-fertilize	cross-fertilized	⋊ k ɹ ɔ s f ə t ɪ l a ɪ z ⋉	⋊ k ɹ ɔ s f ə t ɪ l a ɪ z d ⋉
@@ -325,7 +325,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 1062	ɔ lˠ t ə k eɪ t	ɔ lˠ t ə k eɪ t ɪ d	altercate	altercated	⋊ ɔ l t ə k e t ⋉	⋊ ɔ l t ə k e t ɪ d ⋉
 1065	k a p s aɪ z	k a p s aɪ z d	capsize	capsized	⋊ k a p s a ɪ z ⋉	⋊ k a p s a ɪ z d ⋉
 1069	t r ɑː n z m aɪ g r eɪ t	t r ɑː n z m aɪ g r eɪ t ɪ d	transmigrate	transmigrated	⋊ t ɹ ɑ n z m a ɪ g ɹ e t ⋉	⋊ t ɹ ɑ n z m a ɪ g ɹ e t ɪ d ⋉
-1074	m ɑː t ə	m ɑː t ə d	martyr	martyred	⋊ m ɑ t ə ⋉	⋊ m ɑ t ə d ⋉
+1074	m ɑː t ə	m ɑː t ə d	martyr	martyred	⋊ m ɑ t ə ⋉	⋊ m ɑ t ɪ d ⋉
 1078	əʊ v ə s ɪ m p l ɪ f aɪ	əʊ v ə s ɪ m p l ɪ f aɪ d	oversimplify	oversimplified	⋊ o v ə s ɪ m p l ɪ f a ɪ ⋉	⋊ o v ə s ɪ m p l ɪ f a ɪ d ⋉
 1083	k ɔː n	k ɔː n d	corn	corned	⋊ k ɔ n ⋉	⋊ k ɔ n d ⋉
 1088	s p ɪ lˠ	s p ɪ lˠ t	spill	spilt	⋊ s p ɪ l ⋉	⋊ s p ɪ l t ⋉
@@ -488,7 +488,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 1655	p ʌ lˠ s	p ʌ lˠ s t	pulse	pulsed	⋊ p ʌ l s ⋉	⋊ p ʌ l s t ⋉
 1663	s t r a p	s t r a p t	strap	strapped	⋊ s t ɹ a p ⋉	⋊ s t ɹ a p t ⋉
 1664	f ɪ lˠ m	f ɪ lˠ m d	film	filmed	⋊ f ɪ l m ⋉	⋊ f ɪ l m d ⋉
-1667	k a n t ə	k a n t ə d	canter	cantered	⋊ k a n t ə ⋉	⋊ k a n t ə d ⋉
+1667	k a n t ə	k a n t ə d	canter	cantered	⋊ k a n t ə ⋉	⋊ k a n t ɪ d ⋉
 1674	m ɑː s k	m ɑː s k t	mask	masked	⋊ m ɑ s k ⋉	⋊ m ɑ s k t ⋉
 1675	a s ɪ d ɪ f aɪ	a s ɪ d ɪ f aɪ d	acidify	acidified	⋊ a s ɪ d ɪ f a ɪ ⋉	⋊ a s ɪ d ɪ f a ɪ d ⋉
 1680	r iː d ɛ k ə r eɪ t	r iː d ɛ k ə r eɪ t ɪ d	redecorate	redecorated	⋊ ɹ i d ɛ k ə ɹ e t ⋉	⋊ ɹ i d ɛ k ə ɹ e t ɪ d ⋉
@@ -535,7 +535,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 1815	n a r əʊ	n a r əʊ d	narrow	narrowed	⋊ n a ɹ o ⋉	⋊ n a ɹ o d ⋉
 1821	v ɔ l n̩ t ɪ ə	v ɔ l n̩ t ɪ ə d	volunteer	volunteered	⋊ v ɔ l n t ɪ ə ⋉	⋊ v ɔ l n t ɪ ə d ⋉
 1826	d ɪ z ɔ lˠ v	d ɪ z ɔ lˠ v d	dissolve	dissolved	⋊ d ɪ z ɔ l v ⋉	⋊ d ɪ z ɔ l v d ⋉
-1827	ʃ əʊ lˠ d ə	ʃ əʊ lˠ d ə d	shoulder	shouldered	⋊ ʃ o l d ə ⋉	⋊ ʃ o l d ə d ⋉
+1827	ʃ əʊ lˠ d ə	ʃ əʊ lˠ d ə d	shoulder	shouldered	⋊ ʃ o l d ə ⋉	⋊ ʃ o l d ɪ d ⋉
 1829	s t ɔː m	s t ɔː m d	storm	stormed	⋊ s t ɔ m ⋉	⋊ s t ɔ m d ⋉
 1830	k ɔ m p l ɪ k eɪ t	k ɔ m p l ɪ k eɪ t ɪ d	complicate	complicated	⋊ k ɔ m p l ɪ k e t ⋉	⋊ k ɔ m p l ɪ k e t ɪ d ⋉
 1834	r iː s t eɪ t	r iː s t eɪ t ɪ d	restate	restated	⋊ ɹ i s t e t ⋉	⋊ ɹ i s t e t ɪ d ⋉
@@ -581,7 +581,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 1992	k w ɪ k f r iː z	k w ɪ k f r əʊ z	quick-freeze	quick-froze	⋊ k w ɪ k f ɹ i z ⋉	⋊ k w ɪ k f ɹ o z ⋉
 1999	r iː s t r ʌ k t ʃ ə	r iː s t r ʌ k t ʃ ə d	restructure	restructured	⋊ ɹ i s t ɹ ʌ k t ʃ ə ⋉	⋊ ɹ i s t ɹ ʌ k t ʃ ə d ⋉
 2003	r əʊ v	r əʊ v d	rove	roved	⋊ ɹ o v ⋉	⋊ ɹ o v d ⋉
-2004	ɛ n d ʒ ɛ n d ə	ɛ n d ʒ ɛ n d ə d	engender	engendered	⋊ ɛ n d ʒ ɛ n d ə ⋉	⋊ ɛ n d ʒ ɛ n d ə d ⋉
+2004	ɛ n d ʒ ɛ n d ə	ɛ n d ʒ ɛ n d ə d	engender	engendered	⋊ ɛ n d ʒ ɛ n d ə ⋉	⋊ ɛ n d ʒ ɛ n d ɪ d ⋉
 2008	r ɪ ɛ k əʊ	r ɪ ɛ k əʊ d	re-echo	re-echoed	⋊ ɹ ɪ ɛ k o ⋉	⋊ ɹ ɪ ɛ k o d ⋉
 2009	s a l ə f aɪ	s a l ə f aɪ d	salify	salified	⋊ s a l ə f a ɪ ⋉	⋊ s a l ə f a ɪ d ⋉
 2010	k r əʊ k	k r əʊ k t	croak	croaked	⋊ k ɹ o k ⋉	⋊ k ɹ o k t ⋉
@@ -591,7 +591,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 2028	s k ɔː t ʃ	s k ɔː t ʃ t	scorch	scorched	⋊ s k ɔ t ʃ ⋉	⋊ s k ɔ t ʃ t ⋉
 2031	b iː f	b iː f t	beef	beefed	⋊ b i f ⋉	⋊ b i f t ⋉
 2038	s ɛ r ɪ b r eɪ t	s ɛ r ɪ b r eɪ t ɪ d	cerebrate	cerebrated	⋊ s ɛ ɹ ɪ b ɹ e t ⋉	⋊ s ɛ ɹ ɪ b ɹ e t ɪ d ⋉
-2043	b l ʌ n d ə	b l ʌ n d ə d	blunder	blundered	⋊ b l ʌ n d ə ⋉	⋊ b l ʌ n d ə d ⋉
+2043	b l ʌ n d ə	b l ʌ n d ə d	blunder	blundered	⋊ b l ʌ n d ə ⋉	⋊ b l ʌ n d ɪ d ⋉
 2044	g ɛ t	g ɔ t	get	got	⋊ g ɛ t ⋉	⋊ g ɔ t ⋉
 2046	k ɔ n d ɪ s ɛ n d	k ɔ n d ɪ s ɛ n d ɪ d	condescend	condescended	⋊ k ɔ n d ɪ s ɛ n d ⋉	⋊ k ɔ n d ɪ s ɛ n d ɪ d ⋉
 2051	aɪ ə n aɪ z	aɪ ə n aɪ z d	ionize	ionized	⋊ a ɪ ə n a ɪ z ⋉	⋊ a ɪ ə n a ɪ z d ⋉
@@ -612,10 +612,10 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 2092	r aɪ z	r əʊ z	rise	rose	⋊ ɹ a ɪ z ⋉	⋊ ɹ o z ⋉
 2093	m a s t ɪ k eɪ t	m a s t ɪ k eɪ t ɪ d	masticate	masticated	⋊ m a s t ɪ k e t ⋉	⋊ m a s t ɪ k e t ɪ d ⋉
 2096	ə d ʒ uː d ɪ k eɪ t	ə d ʒ uː d ɪ k eɪ t ɪ d	adjudicate	adjudicated	⋊ ə d ʒ u d ɪ k e t ⋉	⋊ ə d ʒ u d ɪ k e t ɪ d ⋉
-2100	ɛ n t ə	ɛ n t ə d	enter	entered	⋊ ɛ n t ə ⋉	⋊ ɛ n t ə d ⋉
+2100	ɛ n t ə	ɛ n t ə d	enter	entered	⋊ ɛ n t ə ⋉	⋊ ɛ n t ɪ d ⋉
 2101	s lˠ ɔ g	s lˠ ɔ g d	slog	slogged	⋊ s l ɔ g ⋉	⋊ s l ɔ g d ⋉
 2109	θ ʌ d	θ ʌ d ɪ d	thud	thudded	⋊ θ ʌ d ⋉	⋊ θ ʌ d ɪ d ⋉
-2118	m ɔ n ɪ t ə	m ɔ n ɪ t ə d	monitor	monitored	⋊ m ɔ n ɪ t ə ⋉	⋊ m ɔ n ɪ t ə d ⋉
+2118	m ɔ n ɪ t ə	m ɔ n ɪ t ə d	monitor	monitored	⋊ m ɔ n ɪ t ə ⋉	⋊ m ɔ n ɪ t ɪ d ⋉
 2123	v ɔ m ɪ t	v ɔ m ɪ t ɪ d	vomit	vomited	⋊ v ɔ m ɪ t ⋉	⋊ v ɔ m ɪ t ɪ d ⋉
 2125	ə r eɪ n	ə r eɪ n d	arraign	arraigned	⋊ ə ɹ e n ⋉	⋊ ə ɹ e n d ⋉
 2133	s ɪ s t ə m ə t aɪ z	s ɪ s t ə m ə t aɪ z d	systematize	systematized	⋊ s ɪ s t ə m ə t a ɪ z ⋉	⋊ s ɪ s t ə m ə t a ɪ z d ⋉
@@ -671,7 +671,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 2287	d ɛ s ɪ k r eɪ t	d ɛ s ɪ k r eɪ t ɪ d	desecrate	desecrated	⋊ d ɛ s ɪ k ɹ e t ⋉	⋊ d ɛ s ɪ k ɹ e t ɪ d ⋉
 2289	t eɪ p	t eɪ p t	tape	taped	⋊ t e p ⋉	⋊ t e p t ⋉
 2299	s lˠ a v ə	s lˠ a v ə d	slaver	slavered	⋊ s l a v ə ⋉	⋊ s l a v ə d ⋉
-2301	ɛ m b r ɔɪ d ə	ɛ m b r ɔɪ d ə d	embroider	embroidered	⋊ ɛ m b ɹ ɔ ɪ d ə ⋉	⋊ ɛ m b ɹ ɔ ɪ d ə d ⋉
+2301	ɛ m b r ɔɪ d ə	ɛ m b r ɔɪ d ə d	embroider	embroidered	⋊ ɛ m b ɹ ɔ ɪ d ə ⋉	⋊ ɛ m b ɹ ɔ ɪ d ɪ d ⋉
 2302	əʊ v ə p r ɪ n t	əʊ v ə p r ɪ n t ɪ d	overprint	overprinted	⋊ o v ə p ɹ ɪ n t ⋉	⋊ o v ə p ɹ ɪ n t ɪ d ⋉
 2304	w aɪ p	w aɪ p t	wipe	wiped	⋊ w a ɪ p ⋉	⋊ w a ɪ p t ⋉
 2305	k a t ə l ɔ g	k a t ə l ɔ g d	catalogue	catalogued	⋊ k a t ə l ɔ g ⋉	⋊ k a t ə l ɔ g d ⋉
@@ -703,7 +703,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 2404	k ɔ p ə	k ɔ p ə d	copper	coppered	⋊ k ɔ p ə ⋉	⋊ k ɔ p ə d ⋉
 2407	s t r eɪ t n̩	s t r eɪ t n̩ d	straighten	straightened	⋊ s t ɹ e t n ⋉	⋊ s t ɹ e t n d ⋉
 2413	k ə m ɛ n s	k ə m ɛ n s t	commence	commenced	⋊ k ə m ɛ n s ⋉	⋊ k ə m ɛ n s t ⋉
-2420	k l ɔɪ s t ə	k l ɔɪ s t ə d	cloister	cloistered	⋊ k l ɔ ɪ s t ə ⋉	⋊ k l ɔ ɪ s t ə d ⋉
+2420	k l ɔɪ s t ə	k l ɔɪ s t ə d	cloister	cloistered	⋊ k l ɔ ɪ s t ə ⋉	⋊ k l ɔ ɪ s t ɪ d ⋉
 2428	əʊ g l̩ˠ	əʊ g l̩ˠ d	ogle	ogled	⋊ o g l ⋉	⋊ o g l d ⋉
 2436	r iː g ɜː d ʒ ɪ t eɪ t	r iː g ɜː d ʒ ɪ t eɪ t ɪ d	regurgitate	regurgitated	⋊ ɹ i g ə d ʒ ɪ t e t ⋉	⋊ ɹ i g ə d ʒ ɪ t e t ɪ d ⋉
 2437	p l iː t ʃ	p l iː t ʃ t	pleach	pleached	⋊ p l i t ʃ ⋉	⋊ p l i t ʃ t ⋉
@@ -731,7 +731,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 2507	ə f l ɪ k t	ə f l ɪ k t ɪ d	afflict	afflicted	⋊ ə f l ɪ k t ⋉	⋊ ə f l ɪ k t ɪ d ⋉
 2508	r iː ɑː m	r iː ɑː m d	rearm	rearmed	⋊ ɹ i ɑ m ⋉	⋊ ɹ i ɑ m d ⋉
 2517	b l ʌ ʃ	b l ʌ ʃ t	blush	blushed	⋊ b l ʌ ʃ ⋉	⋊ b l ʌ ʃ t ⋉
-2520	n j uː t ə	n j uː t ə d	neuter	neutered	⋊ n j u t ə ⋉	⋊ n j u t ə d ⋉
+2520	n j uː t ə	n j uː t ə d	neuter	neutered	⋊ n j u t ə ⋉	⋊ n j u t ɪ d ⋉
 2523	ɛ n p l eɪ n	ɛ n p l eɪ n d	enplane	enplaned	⋊ ɛ n p l e n ⋉	⋊ ɛ n p l e n d ⋉
 2531	s ə l ɑː m	s ə l ɑː m d	salaam	salaamed	⋊ s ə l ɑ m ⋉	⋊ s ə l ɑ m d ⋉
 2532	b ɔ k s	b ɔ k s t	box	boxed	⋊ b ɔ k s ⋉	⋊ b ɔ k s t ⋉
@@ -909,7 +909,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 3134	d	d ɪ d s t	do	didst	⋊ d ⋉	⋊ d ɪ d s t ⋉
 3142	p a s ɪ v aɪ z	p a s ɪ v aɪ z d	passivize	passivized	⋊ p a s ɪ v a ɪ z ⋉	⋊ p a s ɪ v a ɪ z d ⋉
 3143	ɪ ŋ k l aɪ n	ɪ ŋ k l aɪ n d	incline	inclined	⋊ ɪ ŋ k l a ɪ n ⋉	⋊ ɪ ŋ k l a ɪ n d ⋉
-3144	k w ɔː t ə	k w ɔː t ə d	quarter	quartered	⋊ k w ɔ t ə ⋉	⋊ k w ɔ t ə d ⋉
+3144	k w ɔː t ə	k w ɔː t ə d	quarter	quartered	⋊ k w ɔ t ə ⋉	⋊ k w ɔ t ɪ d ⋉
 3145	d iː k a p ɪ t eɪ t	d iː k a p ɪ t eɪ t ɪ d	decapitate	decapitated	⋊ d i k a p ɪ t e t ⋉	⋊ d i k a p ɪ t e t ɪ d ⋉
 3146	ɪ n t j ʊ m ɛ s	ɪ n t j ʊ m ɛ s t	intumesce	intumesced	⋊ ɪ n t j ʊ m ɛ s ⋉	⋊ ɪ n t j ʊ m ɛ s t ⋉
 3147	k ə n t ɔː t	k ə n t ɔː t ɪ d	contort	contorted	⋊ k ə n t ɔ t ⋉	⋊ k ə n t ɔ t ɪ d ⋉
@@ -934,7 +934,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 3221	h ɔɪ s t	h ɔɪ s t ɪ d	hoist	hoisted	⋊ h ɔ ɪ s t ⋉	⋊ h ɔ ɪ s t ɪ d ⋉
 3223	d ɛ lˠ v	d ɛ lˠ v d	delve	delved	⋊ d ɛ l v ⋉	⋊ d ɛ l v d ⋉
 3224	b r ɪ m	b r ɪ m d	brim	brimmed	⋊ b ɹ ɪ m ⋉	⋊ b ɹ ɪ m d ⋉
-3227	m ɔː n d ə	m ɔː n d ə d	maunder	maundered	⋊ m ɔ n d ə ⋉	⋊ m ɔ n d ə d ⋉
+3227	m ɔː n d ə	m ɔː n d ə d	maunder	maundered	⋊ m ɔ n d ə ⋉	⋊ m ɔ n d ɪ d ⋉
 3233	s p ɪ t	s p ɪ t ɪ d	spit	spitted	⋊ s p ɪ t ⋉	⋊ s p ɪ t ɪ d ⋉
 3234	ʌ n d ə l aɪ n	ʌ n d ə l aɪ n d	underline	underlined	⋊ ʌ n d ə l a ɪ n ⋉	⋊ ʌ n d ə l a ɪ n d ⋉
 3236	θ r ʌ m	θ r ʌ m d	thrum	thrummed	⋊ θ ɹ ʌ m ⋉	⋊ θ ɹ ʌ m d ⋉
@@ -1016,7 +1016,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 3499	m ɛ	m aɪ t	may	might	⋊ m ɛ ⋉	⋊ m a ɪ t ⋉
 3501	t r ɑː n s l ɪ t ə r eɪ t	t r ɑː n s l ɪ t ə r eɪ t ɪ d	transliterate	transliterated	⋊ t ɹ ɑ n s l ɪ t ə ɹ e t ⋉	⋊ t ɹ ɑ n s l ɪ t ə ɹ e t ɪ d ⋉
 3503	h ɑː v	h ɑː v d	halve	halved	⋊ h ɑ v ⋉	⋊ h ɑ v d ⋉
-3510	l aɪ t ə	l aɪ t ə d	lighter	lightered	⋊ l a ɪ t ə ⋉	⋊ l a ɪ t ə d ⋉
+3510	l aɪ t ə	l aɪ t ə d	lighter	lightered	⋊ l a ɪ t ə ⋉	⋊ l a ɪ t ɪ d ⋉
 3512	əʊ v ə s t r eɪ n	əʊ v ə s t r eɪ n d	over-strain	over-strained	⋊ o v ə s t ɹ e n ⋉	⋊ o v ə s t ɹ e n d ⋉
 3514	ɛ k s t ɜː m ɪ n eɪ t	ɛ k s t ɜː m ɪ n eɪ t ɪ d	exterminate	exterminated	⋊ ɛ k s t ə m ɪ n e t ⋉	⋊ ɛ k s t ə m ɪ n e t ɪ d ⋉
 3517	ə d ɔː n	ə d ɔː n d	adorn	adorned	⋊ ə d ɔ n ⋉	⋊ ə d ɔ n d ⋉
@@ -1066,8 +1066,8 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 3663	iː t ɪ ə l eɪ t	iː t ɪ ə l eɪ t ɪ d	etiolate	etiolated	⋊ i t ɪ ə l e t ⋉	⋊ i t ɪ ə l e t ɪ d ⋉
 3665	r iː s ɛ s	r iː s ɛ s t	recess	recessed	⋊ ɹ i s ɛ s ⋉	⋊ ɹ i s ɛ s t ⋉
 3667	h ɪ ə	h ɜː d	hear	heard	⋊ h ɪ ə ⋉	⋊ h ə d ⋉
-3671	t ʃ ɑː t ə	t ʃ ɑː t ə d	charter	chartered	⋊ t ʃ ɑ t ə ⋉	⋊ t ʃ ɑ t ə d ⋉
-3678	ʃ ʌ d ə	ʃ ʌ d ə d	shudder	shuddered	⋊ ʃ ʌ d ə ⋉	⋊ ʃ ʌ d ə d ⋉
+3671	t ʃ ɑː t ə	t ʃ ɑː t ə d	charter	chartered	⋊ t ʃ ɑ t ə ⋉	⋊ t ʃ ɑ t ɪ d ⋉
+3678	ʃ ʌ d ə	ʃ ʌ d ə d	shudder	shuddered	⋊ ʃ ʌ d ə ⋉	⋊ ʃ ʌ d ɪ d ⋉
 3679	d ə v ɛ l ə p	d ə v ɛ l ə p t	develop	developed	⋊ d ə v ɛ l ə p ⋉	⋊ d ə v ɛ l ə p t ⋉
 3685	d r ɛ d ʒ	d r ɛ d ʒ d	dredge	dredged	⋊ d ɹ ɛ d ʒ ⋉	⋊ d ɹ ɛ d ʒ d ⋉
 3689	aʊ t h ɛ r ə d	aʊ t h ɛ r ə d ɪ d	out-Herod	out-Heroded	⋊ a ʊ t h ɛ ɹ ə d ⋉	⋊ a ʊ t h ɛ ɹ ə d ɪ d ⋉
@@ -1183,7 +1183,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4151	s lˠ uː s	s lˠ uː s t	sluice	sluiced	⋊ s l u s ⋉	⋊ s l u s t ⋉
 4152	h ɪ t ʃ h aɪ k	h ɪ t ʃ h aɪ k t	hitchhike	hitchhiked	⋊ h ɪ t ʃ h a ɪ k ⋉	⋊ h ɪ t ʃ h a ɪ k t ⋉
 4156	f r ɛ s k əʊ	f r ɛ s k əʊ d	fresco	frescoed	⋊ f ɹ ɛ s k o ⋉	⋊ f ɹ ɛ s k o d ⋉
-4159	k aʊ n t ə	k aʊ n t ə d	counter	countered	⋊ k a ʊ n t ə ⋉	⋊ k a ʊ n t ə d ⋉
+4159	k aʊ n t ə	k aʊ n t ə d	counter	countered	⋊ k a ʊ n t ə ⋉	⋊ k a ʊ n t ɪ d ⋉
 4164	v ɛ n ʒ	v ɛ n ʒ d	venge	venged	⋊ v ɛ n ʒ ⋉	⋊ v ɛ n ʒ d ⋉
 4165	p l eɪ k eɪ t	p l eɪ k eɪ t ɪ d	placate	placated	⋊ p l e k e t ⋉	⋊ p l e k e t ɪ d ⋉
 4168	d aɪ v b ɔ m	d aɪ v b ɔ m d	dive-bomb	dive-bombed	⋊ d a ɪ v b ɔ m ⋉	⋊ d a ɪ v b ɔ m d ⋉
@@ -1197,7 +1197,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4196	d ʒ ɔː n t	d ʒ ɔː n t ɪ d	jaunt	jaunted	⋊ d ʒ ɔ n t ⋉	⋊ d ʒ ɔ n t ɪ d ⋉
 4198	t a m p	t a m p t	tamp	tamped	⋊ t a m p ⋉	⋊ t a m p t ⋉
 4204	p a d	p a d ɪ d	pad	padded	⋊ p a d ⋉	⋊ p a d ɪ d ⋉
-4224	l a d ə	l a d ə d	ladder	laddered	⋊ l a d ə ⋉	⋊ l a d ə d ⋉
+4224	l a d ə	l a d ə d	ladder	laddered	⋊ l a d ə ⋉	⋊ l a d ɪ d ⋉
 4226	w ɪ g	w ɪ g d	wig	wigged	⋊ w ɪ g ⋉	⋊ w ɪ g d ⋉
 4230	k ɔ p ɪ ɛ d ɪ t	k ɔ p ɪ ɛ d ɪ t ɪ d	copy-edit	copy-edited	⋊ k ɔ p ɪ ɛ d ɪ t ⋉	⋊ k ɔ p ɪ ɛ d ɪ t ɪ d ⋉
 4231	d ɛ l ɪ g eɪ t	d ɛ l ɪ g eɪ t ɪ d	delegate	delegated	⋊ d ɛ l ɪ g e t ⋉	⋊ d ɛ l ɪ g e t ɪ d ⋉
@@ -1218,7 +1218,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4277	p r ɔ ŋ	p r ɔ ŋ d	prong	pronged	⋊ p ɹ ɔ ŋ ⋉	⋊ p ɹ ɔ ŋ d ⋉
 4283	ɪ n t ɜː n	ɪ n t ɜː n d	intern	interned	⋊ ɪ n t ə n ⋉	⋊ ɪ n t ə n d ⋉
 4284	t r eɪ n	t r eɪ n d	train	trained	⋊ t ɹ e n ⋉	⋊ t ɹ e n d ⋉
-4300	f l ʌ s t ə	f l ʌ s t ə d	fluster	flustered	⋊ f l ʌ s t ə ⋉	⋊ f l ʌ s t ə d ⋉
+4300	f l ʌ s t ə	f l ʌ s t ə d	fluster	flustered	⋊ f l ʌ s t ə ⋉	⋊ f l ʌ s t ɪ d ⋉
 4305	p ə r a m b j ʊ l eɪ t	p ə r a m b j ʊ l eɪ t ɪ d	perambulate	perambulated	⋊ p ə ɹ a m b j ʊ l e t ⋉	⋊ p ə ɹ a m b j ʊ l e t ɪ d ⋉
 4310	s ə b ɔː n	s ə b ɔː n d	suborn	suborned	⋊ s ə b ɔ n ⋉	⋊ s ə b ɔ n d ⋉
 4312	k ɔ g n aɪ z	k ɔ g n aɪ z d	cognize	cognized	⋊ k ɔ g n a ɪ z ⋉	⋊ k ɔ g n a ɪ z d ⋉
@@ -1317,7 +1317,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4651	h iː lˠ	h iː lˠ d	heel	heeled	⋊ h i l ⋉	⋊ h i l d ⋉
 4659	n ɔ b l̩ˠ	n ɔ b l̩ˠ d	nobble	nobbled	⋊ n ɔ b l ⋉	⋊ n ɔ b l d ⋉
 4668	m j uː t ɪ l eɪ t	m j uː t ɪ l eɪ t ɪ d	mutilate	mutilated	⋊ m j u t ɪ l e t ⋉	⋊ m j u t ɪ l e t ɪ d ⋉
-4671	ʃ ɛ lˠ t ə	ʃ ɛ lˠ t ə d	shelter	sheltered	⋊ ʃ ɛ l t ə ⋉	⋊ ʃ ɛ l t ə d ⋉
+4671	ʃ ɛ lˠ t ə	ʃ ɛ lˠ t ə d	shelter	sheltered	⋊ ʃ ɛ l t ə ⋉	⋊ ʃ ɛ l t ɪ d ⋉
 4674	əʊ v ə w ɜː k	əʊ v ə w ɜː k t	overwork	overworked	⋊ o v ə w ə k ⋉	⋊ o v ə w ə k t ⋉
 4681	əʊ v ə s ɛ lˠ	əʊ v ə s əʊ lˠ d	oversell	oversold	⋊ o v ə s ɛ l ⋉	⋊ o v ə s o l d ⋉
 4684	p l a k ɑː d	p l a k ɑː d ɪ d	placard	placarded	⋊ p l a k ɑ d ⋉	⋊ p l a k ɑ d ɪ d ⋉
@@ -1329,7 +1329,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4715	aʊ t g r əʊ	aʊ t g r uː	outgrow	outgrew	⋊ a ʊ t g ɹ o ⋉	⋊ a ʊ t g ɹ u ⋉
 4719	ɪ n f ɛ s t	ɪ n f ɛ s t ɪ d	infest	infested	⋊ ɪ n f ɛ s t ⋉	⋊ ɪ n f ɛ s t ɪ d ⋉
 4724	s k r a m b l̩ˠ	s k r a m b l̩ˠ d	scramble	scrambled	⋊ s k ɹ a m b l ⋉	⋊ s k ɹ a m b l d ⋉
-4737	r ɛ d ʒ ɪ s t ə	r ɛ d ʒ ɪ s t ə d	register	registered	⋊ ɹ ɛ d ʒ ɪ s t ə ⋉	⋊ ɹ ɛ d ʒ ɪ s t ə d ⋉
+4737	r ɛ d ʒ ɪ s t ə	r ɛ d ʒ ɪ s t ə d	register	registered	⋊ ɹ ɛ d ʒ ɪ s t ə ⋉	⋊ ɹ ɛ d ʒ ɪ s t ɪ d ⋉
 4739	s iː z	s iː z d	seize	seized	⋊ s i z ⋉	⋊ s i z d ⋉
 4743	ɛ n t ə t eɪ n	ɛ n t ə t eɪ n d	entertain	entertained	⋊ ɛ n t ə t e n ⋉	⋊ ɛ n t ə t e n d ⋉
 4747	r a p	r a p t	rap	rapped	⋊ ɹ a p ⋉	⋊ ɹ a p t ⋉
@@ -1373,17 +1373,17 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4898	p l eɪ n	p l eɪ n d	plain	plained	⋊ p l e n ⋉	⋊ p l e n d ⋉
 4899	s k a n	s k a n d	scan	scanned	⋊ s k a n ⋉	⋊ s k a n d ⋉
 4900	s ɜː v eɪ	s ɜː v eɪ d	survey	surveyed	⋊ s ə v e ⋉	⋊ s ə v e d ⋉
-4904	t ɪ t ə	t ɪ t ə d	titter	tittered	⋊ t ɪ t ə ⋉	⋊ t ɪ t ə d ⋉
-4905	s t ʌ t ə	s t ʌ t ə d	stutter	stuttered	⋊ s t ʌ t ə ⋉	⋊ s t ʌ t ə d ⋉
+4904	t ɪ t ə	t ɪ t ə d	titter	tittered	⋊ t ɪ t ə ⋉	⋊ t ɪ t ɪ d ⋉
+4905	s t ʌ t ə	s t ʌ t ə d	stutter	stuttered	⋊ s t ʌ t ə ⋉	⋊ s t ʌ t ɪ d ⋉
 4907	d ʒ ə p a n	d ʒ ə p a n d	japan	japanned	⋊ d ʒ ə p a n ⋉	⋊ d ʒ ə p a n d ⋉
 4908	s a v ɪ d ʒ	s a v ɪ d ʒ d	savage	savaged	⋊ s a v ɪ d ʒ ⋉	⋊ s a v ɪ d ʒ d ⋉
 4911	r ə t ɔː t	r ə t ɔː t ɪ d	retort	retorted	⋊ ɹ ə t ɔ t ⋉	⋊ ɹ ə t ɔ t ɪ d ⋉
-4917	s ɔː n t ə	s ɔː n t ə d	saunter	sauntered	⋊ s ɔ n t ə ⋉	⋊ s ɔ n t ə d ⋉
+4917	s ɔː n t ə	s ɔː n t ə d	saunter	sauntered	⋊ s ɔ n t ə ⋉	⋊ s ɔ n t ɪ d ⋉
 4918	f l a n l̩ˠ	f l a n l̩ˠ d	flannel	flannelled	⋊ f l a n l ⋉	⋊ f l a n l d ⋉
 4921	r ə t r ɛ n ʃ	r ə t r ɛ n ʃ t	retrench	retrenched	⋊ ɹ ə t ɹ ɛ n ʃ ⋉	⋊ ɹ ə t ɹ ɛ n ʃ t ⋉
 4922	g r aʊ lˠ	g r aʊ lˠ d	growl	growled	⋊ g ɹ a ʊ l ⋉	⋊ g ɹ a ʊ l d ⋉
 4927	h eɪ t	h eɪ t ɪ d	hate	hated	⋊ h e t ⋉	⋊ h e t ɪ d ⋉
-4931	ʌ t ə	ʌ t ə d	utter	uttered	⋊ ʌ t ə ⋉	⋊ ʌ t ə d ⋉
+4931	ʌ t ə	ʌ t ə d	utter	uttered	⋊ ʌ t ə ⋉	⋊ ʌ t ɪ d ⋉
 4933	k ə ŋ k ʌ s	k ə ŋ k ʌ s t	concuss	concussed	⋊ k ə ŋ k ʌ s ⋉	⋊ k ə ŋ k ʌ s t ⋉
 4935	k ə n v əʊ k	k ə n v əʊ k t	convoke	convoked	⋊ k ə n v o k ⋉	⋊ k ə n v o k t ⋉
 4937	b l ɛ s	b l ɛ s t	bless	blessed	⋊ b l ɛ s ⋉	⋊ b l ɛ s t ⋉
@@ -1404,12 +1404,12 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 4996	p r ɛ s iː	p r ɛ s iː d	precis	precised	⋊ p ɹ ɛ s i ⋉	⋊ p ɹ ɛ s i d ⋉
 4997	k r ʌ m b l̩ˠ	k r ʌ m b l̩ˠ d	crumble	crumbled	⋊ k ɹ ʌ m b l ⋉	⋊ k ɹ ʌ m b l d ⋉
 4999	k ə r ʌ p t	k ə r ʌ p t ɪ d	corrupt	corrupted	⋊ k ə ɹ ʌ p t ⋉	⋊ k ə ɹ ʌ p t ɪ d ⋉
-5020	w ʌ n d ə	w ʌ n d ə d	wonder	wondered	⋊ w ʌ n d ə ⋉	⋊ w ʌ n d ə d ⋉
+5020	w ʌ n d ə	w ʌ n d ə d	wonder	wondered	⋊ w ʌ n d ə ⋉	⋊ w ʌ n d ɪ d ⋉
 5027	d ɔ d ʒ	d ɔ d ʒ d	dodge	dodged	⋊ d ɔ d ʒ ⋉	⋊ d ɔ d ʒ d ⋉
 5033	ɪ n t ə m ɪ k s	ɪ n t ə m ɪ k s t	intermix	intermixed	⋊ ɪ n t ə m ɪ k s ⋉	⋊ ɪ n t ə m ɪ k s t ⋉
 5034	t ʃ eɪ n ʒ	t ʃ eɪ n ʒ d	change	changed	⋊ t ʃ e n ʒ ⋉	⋊ t ʃ e n ʒ d ⋉
 5038	k aʊ n t ə s aɪ n	k aʊ n t ə s aɪ n d	countersign	countersigned	⋊ k a ʊ n t ə s a ɪ n ⋉	⋊ k a ʊ n t ə s a ɪ n d ⋉
-5041	n a t ə	n a t ə d	natter	nattered	⋊ n a t ə ⋉	⋊ n a t ə d ⋉
+5041	n a t ə	n a t ə d	natter	nattered	⋊ n a t ə ⋉	⋊ n a t ɪ d ⋉
 5045	t a k l̩ˠ	t a k l̩ˠ d	tackle	tackled	⋊ t a k l ⋉	⋊ t a k l d ⋉
 5056	ɛ m s iː	ɛ m s iː d	emcee	emceed	⋊ ɛ m s i ⋉	⋊ ɛ m s i d ⋉
 5066	b uː z	b uː z d	booze	boozed	⋊ b u z ⋉	⋊ b u z d ⋉
@@ -1430,7 +1430,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 5118	a s f a lˠ t	a s f a lˠ t ɪ d	asphalt	asphalted	⋊ a s f a l t ⋉	⋊ a s f a l t ɪ d ⋉
 5120	r iː k l eɪ m	r iː k l eɪ m d	reclaim	reclaimed	⋊ ɹ i k l e m ⋉	⋊ ɹ i k l e m d ⋉
 5121	ʌ n d ə ʃ uː t	ʌ n d ə ʃ ɔ t	undershoot	undershot	⋊ ʌ n d ə ʃ u t ⋉	⋊ ʌ n d ə ʃ ɔ t ⋉
-5122	f ɪ l a n d ə	f ɪ l a n d ə d	philander	philandered	⋊ f ɪ l a n d ə ⋉	⋊ f ɪ l a n d ə d ⋉
+5122	f ɪ l a n d ə	f ɪ l a n d ə d	philander	philandered	⋊ f ɪ l a n d ə ⋉	⋊ f ɪ l a n d ɪ d ⋉
 5134	f a n	f a n d	fan	fanned	⋊ f a n ⋉	⋊ f a n d ⋉
 5139	k ə n f ɛ d ə r eɪ t	k ə n f ɛ d ə r eɪ t ɪ d	confederate	confederated	⋊ k ə n f ɛ d ə ɹ e t ⋉	⋊ k ə n f ɛ d ə ɹ e t ɪ d ⋉
 5141	s aɪ t s iː	s aɪ t s ɔː	sightsee	sightsaw	⋊ s a ɪ t s i ⋉	⋊ s a ɪ t s ɔ ⋉
@@ -1442,9 +1442,9 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 5161	d ɪ s ɛ n f r a n ʃ aɪ z	d ɪ s ɛ n f r a n ʃ aɪ z d	disenfranchise	disenfranchised	⋊ d ɪ s ɛ n f ɹ a n ʃ a ɪ z ⋉	⋊ d ɪ s ɛ n f ɹ a n ʃ a ɪ z d ⋉
 5168	d ɛ p r ə k eɪ t	d ɛ p r ə k eɪ t ɪ d	deprecate	deprecated	⋊ d ɛ p ɹ ə k e t ⋉	⋊ d ɛ p ɹ ə k e t ɪ d ⋉
 5177	ə b aɪ d	ə b əʊ d	abide	abode	⋊ ə b a ɪ d ⋉	⋊ ə b o d ⋉
-5178	p ɛ s t ə	p ɛ s t ə d	pester	pestered	⋊ p ɛ s t ə ⋉	⋊ p ɛ s t ə d ⋉
+5178	p ɛ s t ə	p ɛ s t ə d	pester	pestered	⋊ p ɛ s t ə ⋉	⋊ p ɛ s t ɪ d ⋉
 5188	b ɔː lˠ	b ɔː lˠ d	bawl	bawled	⋊ b ɔ l ⋉	⋊ b ɔ l d ⋉
-5189	s k w ɔ n d ə	s k w ɔ n d ə d	squander	squandered	⋊ s k w ɔ n d ə ⋉	⋊ s k w ɔ n d ə d ⋉
+5189	s k w ɔ n d ə	s k w ɔ n d ə d	squander	squandered	⋊ s k w ɔ n d ə ⋉	⋊ s k w ɔ n d ɪ d ⋉
 5191	s a ʃ eɪ	s a ʃ eɪ d	sashay	sashayed	⋊ s a ʃ e ⋉	⋊ s a ʃ e d ⋉
 5192	m ə n uː v ə	m ə n uː v ə d	manoeuvre	manoeuvred	⋊ m ə n u v ə ⋉	⋊ m ə n u v ə d ⋉
 5200	p ɜː s ɪ k j uː t	p ɜː s ɪ k j uː t ɪ d	persecute	persecuted	⋊ p ə s ɪ k j u t ⋉	⋊ p ə s ɪ k j u t ɪ d ⋉
@@ -1476,7 +1476,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 5292	p r ə g n ɔ s t ɪ k eɪ t	p r ə g n ɔ s t ɪ k eɪ t ɪ d	prognosticate	prognosticated	⋊ p ɹ ə g n ɔ s t ɪ k e t ⋉	⋊ p ɹ ə g n ɔ s t ɪ k e t ɪ d ⋉
 5306	k w ɔ r n̩ t aɪ n	k w ɔ r n̩ t aɪ n d	quarantine	quarantined	⋊ k w ɔ ɹ n t a ɪ n ⋉	⋊ k w ɔ ɹ n t a ɪ n d ⋉
 5308	d ʒ ɛ r ɪ b ɪ lˠ d	d ʒ ɛ r ɪ b ɪ lˠ t	jerry-build	jerry-built	⋊ d ʒ ɛ ɹ ɪ b ɪ l d ⋉	⋊ d ʒ ɛ ɹ ɪ b ɪ l t ⋉
-5313	b ɔː d ə	b ɔː d ə d	border	bordered	⋊ b ɔ d ə ⋉	⋊ b ɔ d ə d ⋉
+5313	b ɔː d ə	b ɔː d ə d	border	bordered	⋊ b ɔ d ə ⋉	⋊ b ɔ d ɪ d ⋉
 5317	g ʌ z l̩ˠ	g ʌ z l̩ˠ d	guzzle	guzzled	⋊ g ʌ z l ⋉	⋊ g ʌ z l d ⋉
 5321	iː v a k j ʊ eɪ t	iː v a k j ʊ eɪ t ɪ d	evacuate	evacuated	⋊ i v a k j ʊ e t ⋉	⋊ i v a k j ʊ e t ɪ d ⋉
 5324	v ɜː b l̩ˠ aɪ z	v ɜː b l̩ˠ aɪ z d	verbalize	verbalized	⋊ v ə b l a ɪ z ⋉	⋊ v ə b l a ɪ z d ⋉
@@ -1639,7 +1639,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 5982	a m b ʊ ʃ	a m b ʊ ʃ t	ambush	ambushed	⋊ a m b ʊ ʃ ⋉	⋊ a m b ʊ ʃ t ⋉
 5993	d iː f l eɪ t	d iː f l eɪ t ɪ d	deflate	deflated	⋊ d i f l e t ⋉	⋊ d i f l e t ɪ d ⋉
 5996	ɪ m p ɛ n d	ɪ m p ɛ n d ɪ d	impend	impended	⋊ ɪ m p ɛ n d ⋉	⋊ ɪ m p ɛ n d ɪ d ⋉
-5998	k l ʌ t ə	k l ʌ t ə d	clutter	cluttered	⋊ k l ʌ t ə ⋉	⋊ k l ʌ t ə d ⋉
+5998	k l ʌ t ə	k l ʌ t ə d	clutter	cluttered	⋊ k l ʌ t ə ⋉	⋊ k l ʌ t ɪ d ⋉
 6003	ɔ b f ə s k eɪ t	ɔ b f ə s k eɪ t ɪ d	obfuscate	obfuscated	⋊ ɔ b f ə s k e t ⋉	⋊ ɔ b f ə s k e t ɪ d ⋉
 6009	ɪ ŋ k	ɪ ŋ k t	ink	inked	⋊ ɪ ŋ k ⋉	⋊ ɪ ŋ k t ⋉
 6010	p r iː d ɪ t ɜː m ɪ n	p r iː d ɪ t ɜː m ɪ n d	predetermine	predetermined	⋊ p ɹ i d ɪ t ə m ɪ n ⋉	⋊ p ɹ i d ɪ t ə m ɪ n d ⋉
@@ -1647,7 +1647,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 6015	m ʌ d l̩ˠ	m ʌ d l̩ˠ d	muddle	muddled	⋊ m ʌ d l ⋉	⋊ m ʌ d l d ⋉
 6017	p ɪ k t ʃ ə	p ɪ k t ʃ ə d	picture	pictured	⋊ p ɪ k t ʃ ə ⋉	⋊ p ɪ k t ʃ ə d ⋉
 6019	s n ɪ v l̩ˠ	s n ɪ v l̩ˠ d	snivel	snivelled	⋊ s n ɪ v l ⋉	⋊ s n ɪ v l d ⋉
-6023	r ə m eɪ n d ə	r ə m eɪ n d ə d	remainder	remaindered	⋊ ɹ ə m e n d ə ⋉	⋊ ɹ ə m e n d ə d ⋉
+6023	r ə m eɪ n d ə	r ə m eɪ n d ə d	remainder	remaindered	⋊ ɹ ə m e n d ə ⋉	⋊ ɹ ə m e n d ɪ d ⋉
 6025	g ɑː d	g ɑː d ɪ d	guard	guarded	⋊ g ɑ d ⋉	⋊ g ɑ d ɪ d ⋉
 6027	p r ɔ s t ɪ t j uː t	p r ɔ s t ɪ t j uː t ɪ d	prostitute	prostituted	⋊ p ɹ ɔ s t ɪ t j u t ⋉	⋊ p ɹ ɔ s t ɪ t j u t ɪ d ⋉
 6029	p l ʌ k	p l ʌ k t	pluck	plucked	⋊ p l ʌ k ⋉	⋊ p l ʌ k t ⋉
@@ -1824,7 +1824,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 6779	p ɛ k	p ɛ k t	peck	pecked	⋊ p ɛ k ⋉	⋊ p ɛ k t ⋉
 6784	ə b ɔ m ɪ n eɪ t	ə b ɔ m ɪ n eɪ t ɪ d	abominate	abominated	⋊ ə b ɔ m ɪ n e t ⋉	⋊ ə b ɔ m ɪ n e t ɪ d ⋉
 6788	t ɪ n t	t ɪ n t ɪ d	tint	tinted	⋊ t ɪ n t ⋉	⋊ t ɪ n t ɪ d ⋉
-6790	b l ʌ s t ə	b l ʌ s t ə d	bluster	blustered	⋊ b l ʌ s t ə ⋉	⋊ b l ʌ s t ə d ⋉
+6790	b l ʌ s t ə	b l ʌ s t ə d	bluster	blustered	⋊ b l ʌ s t ə ⋉	⋊ b l ʌ s t ɪ d ⋉
 6792	s ɜː k ə m v ɛ n t	s ɜː k ə m v ɛ n t ɪ d	circumvent	circumvented	⋊ s ə k ə m v ɛ n t ⋉	⋊ s ə k ə m v ɛ n t ɪ d ⋉
 6798	r ʌ ʃ	r ʌ ʃ t	rush	rushed	⋊ ɹ ʌ ʃ ⋉	⋊ ɹ ʌ ʃ t ⋉
 6803	s iː p	s iː p t	seep	seeped	⋊ s i p ⋉	⋊ s i p t ⋉
@@ -1851,7 +1851,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 6883	t r ɪ k	t r ɪ k t	trick	tricked	⋊ t ɹ ɪ k ⋉	⋊ t ɹ ɪ k t ⋉
 6885	h ɪ s	h ɪ s t	hiss	hissed	⋊ h ɪ s ⋉	⋊ h ɪ s t ⋉
 6893	ɪ n s ɛ n s	ɪ n s ɛ n s t	incense	incensed	⋊ ɪ n s ɛ n s ⋉	⋊ ɪ n s ɛ n s t ⋉
-6895	p a t ə	p a t ə d	patter	pattered	⋊ p a t ə ⋉	⋊ p a t ə d ⋉
+6895	p a t ə	p a t ə d	patter	pattered	⋊ p a t ə ⋉	⋊ p a t ɪ d ⋉
 6897	ɪ m j ʊ n aɪ z	ɪ m j ʊ n aɪ z d	immunize	immunized	⋊ ɪ m j ʊ n a ɪ z ⋉	⋊ ɪ m j ʊ n a ɪ z d ⋉
 6899	ə r aʊ z	ə r aʊ z d	arouse	aroused	⋊ ə ɹ a ʊ z ⋉	⋊ ə ɹ a ʊ z d ⋉
 6908	r ə p j uː d ɪ eɪ t	r ə p j uː d ɪ eɪ t ɪ d	repudiate	repudiated	⋊ ɹ ə p j u d ɪ e t ⋉	⋊ ɹ ə p j u d ɪ e t ɪ d ⋉
@@ -1956,7 +1956,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 7389	s k w iː d ʒ iː	s k w iː d ʒ iː d	squeegee	squeegeed	⋊ s k w i d ʒ i ⋉	⋊ s k w i d ʒ i d ⋉
 7391	g ɔː p	g ɔː p t	gawp	gawped	⋊ g ɔ p ⋉	⋊ g ɔ p t ⋉
 7399	r iː z n̩	r iː z n̩ d	reason	reasoned	⋊ ɹ i z n ⋉	⋊ ɹ i z n d ⋉
-7406	t ʃ a t ə	t ʃ a t ə d	chatter	chattered	⋊ t ʃ a t ə ⋉	⋊ t ʃ a t ə d ⋉
+7406	t ʃ a t ə	t ʃ a t ə d	chatter	chattered	⋊ t ʃ a t ə ⋉	⋊ t ʃ a t ɪ d ⋉
 7408	l əʊ n	l əʊ n d	loan	loaned	⋊ l o n ⋉	⋊ l o n d ⋉
 7411	r ɪ d l̩ˠ	r ɪ d l̩ˠ d	riddle	riddled	⋊ ɹ ɪ d l ⋉	⋊ ɹ ɪ d l d ⋉
 7416	d ɪ v ɔː s	d ɪ v ɔː s t	divorce	divorced	⋊ d ɪ v ɔ s ⋉	⋊ d ɪ v ɔ s t ⋉
@@ -2044,7 +2044,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 7758	m a n j ʊ f a k t ʃ ə	m a n j ʊ f a k t ʃ ə d	manufacture	manufactured	⋊ m a n j ʊ f a k t ʃ ə ⋉	⋊ m a n j ʊ f a k t ʃ ə d ⋉
 7759	ʃ eɪ m	ʃ eɪ m d	shame	shamed	⋊ ʃ e m ⋉	⋊ ʃ e m d ⋉
 7760	ɪ ŋ k ɑː n eɪ t	ɪ ŋ k ɑː n eɪ t ɪ d	incarnate	incarnated	⋊ ɪ ŋ k ɑ n e t ⋉	⋊ ɪ ŋ k ɑ n e t ɪ d ⋉
-7761	k eɪ t ə	k eɪ t ə d	cater	catered	⋊ k e t ə ⋉	⋊ k e t ə d ⋉
+7761	k eɪ t ə	k eɪ t ə d	cater	catered	⋊ k e t ə ⋉	⋊ k e t ɪ d ⋉
 7762	p ɪ p	p ɪ p t	pip	pipped	⋊ p ɪ p ⋉	⋊ p ɪ p t ⋉
 7768	f l aɪ b l əʊ	f l aɪ b l uː	flyblow	flyblew	⋊ f l a ɪ b l o ⋉	⋊ f l a ɪ b l u ⋉
 7778	ɑː t ʃ	ɑː t ʃ t	arch	arched	⋊ ɑ t ʃ ⋉	⋊ ɑ t ʃ t ⋉
@@ -2085,7 +2085,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 7969	t aɪ p r aɪ t	t aɪ p r əʊ t	typewrite	typewrote	⋊ t a ɪ p ɹ a ɪ t ⋉	⋊ t a ɪ p ɹ o t ⋉
 7975	r ʌ s l̩ˠ	r ʌ s l̩ˠ d	rustle	rustled	⋊ ɹ ʌ s l ⋉	⋊ ɹ ʌ s l d ⋉
 7980	t ɪ ŋ t ʃ ə	t ɪ ŋ t ʃ ə d	tincture	tinctured	⋊ t ɪ ŋ t ʃ ə ⋉	⋊ t ɪ ŋ t ʃ ə d ⋉
-7985	l ɪ t ə	l ɪ t ə d	litter	littered	⋊ l ɪ t ə ⋉	⋊ l ɪ t ə d ⋉
+7985	l ɪ t ə	l ɪ t ə d	litter	littered	⋊ l ɪ t ə ⋉	⋊ l ɪ t ɪ d ⋉
 7994	r eɪ lˠ	r eɪ lˠ d	rail	railed	⋊ ɹ e l ⋉	⋊ ɹ e l d ⋉
 7996	b a l ə t	b a l ə t ɪ d	ballot	balloted	⋊ b a l ə t ⋉	⋊ b a l ə t ɪ d ⋉
 7997	k a ŋ k ə	k a ŋ k ə d	canker	cankered	⋊ k a ŋ k ə ⋉	⋊ k a ŋ k ə d ⋉
@@ -2190,12 +2190,12 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 8419	s ə r aʊ n d	s ə r aʊ n d ɪ d	surround	surrounded	⋊ s ə ɹ a ʊ n d ⋉	⋊ s ə ɹ a ʊ n d ɪ d ⋉
 8422	ɪ n aʊ n s	ɪ n aʊ n s t	enounce	enounced	⋊ ɪ n a ʊ n s ⋉	⋊ ɪ n a ʊ n s t ⋉
 8426	f ɜː b ɪ ʃ	f ɜː b ɪ ʃ t	furbish	furbished	⋊ f ə b ɪ ʃ ⋉	⋊ f ə b ɪ ʃ t ⋉
-8431	w ɛ lˠ t ə	w ɛ lˠ t ə d	welter	weltered	⋊ w ɛ l t ə ⋉	⋊ w ɛ l t ə d ⋉
+8431	w ɛ lˠ t ə	w ɛ lˠ t ə d	welter	weltered	⋊ w ɛ l t ə ⋉	⋊ w ɛ l t ɪ d ⋉
 8432	k ə n f ɛ s	k ə n f ɛ s t	confess	confessed	⋊ k ə n f ɛ s ⋉	⋊ k ə n f ɛ s t ⋉
 8440	m a lˠ t r iː t	m a lˠ t r iː t ɪ d	maltreat	maltreated	⋊ m a l t ɹ i t ⋉	⋊ m a l t ɹ i t ɪ d ⋉
 8442	d ɪ s f eɪ v ə	d ɪ s f eɪ v ə d	disfavour	disfavoured	⋊ d ɪ s f e v ə ⋉	⋊ d ɪ s f e v ə d ⋉
 8443	m ɪ s d eɪ t	m ɪ s d eɪ t ɪ d	misdate	misdated	⋊ m ɪ s d e t ⋉	⋊ m ɪ s d e t ɪ d ⋉
-8448	t j uː t ə	t j uː t ə d	tutor	tutored	⋊ t j u t ə ⋉	⋊ t j u t ə d ⋉
+8448	t j uː t ə	t j uː t ə d	tutor	tutored	⋊ t j u t ə ⋉	⋊ t j u t ɪ d ⋉
 8452	ʃ a d əʊ b ɔ k s	ʃ a d əʊ b ɔ k s t	shadowbox	shadowboxed	⋊ ʃ a d o b ɔ k s ⋉	⋊ ʃ a d o b ɔ k s t ⋉
 8455	aɪ t ɪ n ə r eɪ t	aɪ t ɪ n ə r eɪ t ɪ d	itinerate	itinerated	⋊ a ɪ t ɪ n ə ɹ e t ⋉	⋊ a ɪ t ɪ n ə ɹ e t ɪ d ⋉
 8469	h ɛ ə	h ɛ ə d	hare	hared	⋊ h ɛ ə ⋉	⋊ h ɛ ə d ⋉
@@ -2242,7 +2242,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 8666	h aɪ d r eɪ t	h aɪ d r eɪ t ɪ d	hydrate	hydrated	⋊ h a ɪ d ɹ e t ⋉	⋊ h a ɪ d ɹ e t ɪ d ⋉
 8670	r aɪ ð	r aɪ ð d	writhe	writhed	⋊ ɹ a ɪ ð ⋉	⋊ ɹ a ɪ ð d ⋉
 8680	g ɜː d l̩ˠ	g ɜː d l̩ˠ d	girdle	girdled	⋊ g ə d l ⋉	⋊ g ə d l d ⋉
-8681	m iː a n d ə	m iː a n d ə d	meander	meandered	⋊ m i a n d ə ⋉	⋊ m i a n d ə d ⋉
+8681	m iː a n d ə	m iː a n d ə d	meander	meandered	⋊ m i a n d ə ⋉	⋊ m i a n d ɪ d ⋉
 8689	b ʌ ŋ k	b ʌ ŋ k t	bunk	bunked	⋊ b ʌ ŋ k ⋉	⋊ b ʌ ŋ k t ⋉
 8691	w ɛ ð ə p r uː f	w ɛ ð ə p r uː f t	weatherproof	weatherproofed	⋊ w ɛ ð ə p ɹ u f ⋉	⋊ w ɛ ð ə p ɹ u f t ⋉
 8701	l iː n	l ɛ n t	lean	leant	⋊ l i n ⋉	⋊ l ɛ n t ⋉
@@ -2317,9 +2317,9 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 9074	s t a n d ə d aɪ z	s t a n d ə d aɪ z d	standardize	standardized	⋊ s t a n d ə d a ɪ z ⋉	⋊ s t a n d ə d a ɪ z d ⋉
 9075	d ɪ l ɪ m ɪ t	d ɪ l ɪ m ɪ t ɪ d	delimit	delimited	⋊ d ɪ l ɪ m ɪ t ⋉	⋊ d ɪ l ɪ m ɪ t ɪ d ⋉
 9083	d ɪ s ə b eɪ	d ɪ s ə b eɪ d	disobey	disobeyed	⋊ d ɪ s ə b e ⋉	⋊ d ɪ s ə b e d ⋉
-9094	k l a t ə	k l a t ə d	clatter	clattered	⋊ k l a t ə ⋉	⋊ k l a t ə d ⋉
+9094	k l a t ə	k l a t ə d	clatter	clattered	⋊ k l a t ə ⋉	⋊ k l a t ɪ d ⋉
 9095	f ʊ t f ɔ lˠ t	f ʊ t f ɔ lˠ t ɪ d	foot-fault	foot-faulted	⋊ f ʊ t f ɔ l t ⋉	⋊ f ʊ t f ɔ l t ɪ d ⋉
-9098	t ɛ n d ə	t ɛ n d ə d	tender	tendered	⋊ t ɛ n d ə ⋉	⋊ t ɛ n d ə d ⋉
+9098	t ɛ n d ə	t ɛ n d ə d	tender	tendered	⋊ t ɛ n d ə ⋉	⋊ t ɛ n d ɪ d ⋉
 9107	p iː t ʃ	p iː t ʃ t	peach	peached	⋊ p i t ʃ ⋉	⋊ p i t ʃ t ⋉
 9116	g ɑː s p	g ɑː s p t	gasp	gasped	⋊ g ɑ s p ⋉	⋊ g ɑ s p t ⋉
 9120	s t r ɪ d j ʊ l eɪ t	s t r ɪ d j ʊ l eɪ t ɪ d	stridulate	stridulated	⋊ s t ɹ ɪ d j ʊ l e t ⋉	⋊ s t ɹ ɪ d j ʊ l e t ɪ d ⋉
@@ -2386,7 +2386,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 9399	ʌ lˠ s ə r eɪ t	ʌ lˠ s ə r eɪ t ɪ d	ulcerate	ulcerated	⋊ ʌ l s ə ɹ e t ⋉	⋊ ʌ l s ə ɹ e t ɪ d ⋉
 9405	m ɑː ʃ l̩ˠ	m ɑː ʃ l̩ˠ d	marshal	marshalled	⋊ m ɑ ʃ l ⋉	⋊ m ɑ ʃ l d ⋉
 9407	ɪ n ə n d eɪ t	ɪ n ə n d eɪ t ɪ d	inundate	inundated	⋊ ɪ n ə n d e t ⋉	⋊ ɪ n ə n d e t ɪ d ⋉
-9413	p l ɑː s t ə	p l ɑː s t ə d	plaster	plastered	⋊ p l ɑ s t ə ⋉	⋊ p l ɑ s t ə d ⋉
+9413	p l ɑː s t ə	p l ɑː s t ə d	plaster	plastered	⋊ p l ɑ s t ə ⋉	⋊ p l ɑ s t ɪ d ⋉
 9414	b iː t l̩ˠ	b iː t l̩ˠ d	beetle	beetled	⋊ b i t l ⋉	⋊ b i t l d ⋉
 9415	k r aʊ t ʃ	k r aʊ t ʃ t	crouch	crouched	⋊ k ɹ a ʊ t ʃ ⋉	⋊ k ɹ a ʊ t ʃ t ⋉
 9424	ɪ n iː b r ɪ eɪ t	ɪ n iː b r ɪ eɪ t ɪ d	inebriate	inebriated	⋊ ɪ n i b ɹ ɪ e t ⋉	⋊ ɪ n i b ɹ ɪ e t ɪ d ⋉
@@ -2456,7 +2456,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 9744	ə g r iː v	ə g r iː v d	aggrieve	aggrieved	⋊ ə g ɹ i v ⋉	⋊ ə g ɹ i v d ⋉
 9747	b ɜː d n̩	b ɜː d n̩ d	burden	burdened	⋊ b ə d n ⋉	⋊ b ə d n d ⋉
 9748	ə t ʃ iː v	ə t ʃ iː v d	achieve	achieved	⋊ ə t ʃ i v ⋉	⋊ ə t ʃ i v d ⋉
-9751	s ə k w ɛ s t ə	s ə k w ɛ s t ə d	sequester	sequestered	⋊ s ə k w ɛ s t ə ⋉	⋊ s ə k w ɛ s t ə d ⋉
+9751	s ə k w ɛ s t ə	s ə k w ɛ s t ə d	sequester	sequestered	⋊ s ə k w ɛ s t ə ⋉	⋊ s ə k w ɛ s t ɪ d ⋉
 9753	k ə m p a k t	k ə m p a k t ɪ d	compact	compacted	⋊ k ə m p a k t ⋉	⋊ k ə m p a k t ɪ d ⋉
 9755	s k ʌ p ə	s k ʌ p ə d	scupper	scuppered	⋊ s k ʌ p ə ⋉	⋊ s k ʌ p ə d ⋉
 9756	t ʃ uː z	t ʃ əʊ z	choose	chose	⋊ t ʃ u z ⋉	⋊ t ʃ o z ⋉
@@ -2477,7 +2477,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 9809	w a g l̩ˠ	w a g l̩ˠ d	waggle	waggled	⋊ w a g l ⋉	⋊ w a g l d ⋉
 9814	ɪ n t ə l əʊ p	ɪ n t ə l əʊ p t	interlope	interloped	⋊ ɪ n t ə l o p ⋉	⋊ ɪ n t ə l o p t ⋉
 9817	d ʒ ɛ s t ɪ k j ʊ l eɪ t	d ʒ ɛ s t ɪ k j ʊ l eɪ t ɪ d	gesticulate	gesticulated	⋊ d ʒ ɛ s t ɪ k j ʊ l e t ⋉	⋊ d ʒ ɛ s t ɪ k j ʊ l e t ɪ d ⋉
-9818	g l ɪ s t ə	g l ɪ s t ə d	glister	glistered	⋊ g l ɪ s t ə ⋉	⋊ g l ɪ s t ə d ⋉
+9818	g l ɪ s t ə	g l ɪ s t ə d	glister	glistered	⋊ g l ɪ s t ə ⋉	⋊ g l ɪ s t ɪ d ⋉
 9829	d ɪ s g r ʌ n t l̩ˠ	d ɪ s g r ʌ n t l̩ˠ d	disgruntle	disgruntled	⋊ d ɪ s g ɹ ʌ n t l ⋉	⋊ d ɪ s g ɹ ʌ n t l d ⋉
 9830	t aʊ lˠ	t aʊ lˠ d	towel	towelled	⋊ t a ʊ l ⋉	⋊ t a ʊ l d ⋉
 9832	d ɪ s p r uː v	d ɪ s p r uː v d	disprove	disproved	⋊ d ɪ s p ɹ u v ⋉	⋊ d ɪ s p ɹ u v d ⋉
@@ -2502,7 +2502,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 9926	f l ɪ t	f l ɪ t ɪ d	flit	flitted	⋊ f l ɪ t ⋉	⋊ f l ɪ t ɪ d ⋉
 9927	t ʃ eɪ s	t ʃ eɪ s t	chase	chased	⋊ t ʃ e s ⋉	⋊ t ʃ e s t ⋉
 9929	v ɪ l ɪ f aɪ	v ɪ l ɪ f aɪ d	vilify	vilified	⋊ v ɪ l ɪ f a ɪ ⋉	⋊ v ɪ l ɪ f a ɪ d ⋉
-9935	d ʒ ʌ d ə	d ʒ ʌ d ə d	judder	juddered	⋊ d ʒ ʌ d ə ⋉	⋊ d ʒ ʌ d ə d ⋉
+9935	d ʒ ʌ d ə	d ʒ ʌ d ə d	judder	juddered	⋊ d ʒ ʌ d ə ⋉	⋊ d ʒ ʌ d ɪ d ⋉
 9937	b uː t	b uː t ɪ d	boot	booted	⋊ b u t ⋉	⋊ b u t ɪ d ⋉
 9942	b l ɑː s f iː m	b l ɑː s f iː m d	blaspheme	blasphemed	⋊ b l ɑ s f i m ⋉	⋊ b l ɑ s f i m d ⋉
 9947	k a t ə w ɔː lˠ	k a t ə w ɔː lˠ d	caterwaul	caterwauled	⋊ k a t ə w ɔ l ⋉	⋊ k a t ə w ɔ l d ⋉
@@ -2515,7 +2515,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 9972	d iː b ʌ g	d iː b ʌ g d	debug	debugged	⋊ d i b ʌ g ⋉	⋊ d i b ʌ g d ⋉
 9976	k ɔ ʃ	k ɔ ʃ t	cosh	coshed	⋊ k ɔ ʃ ⋉	⋊ k ɔ ʃ t ⋉
 9980	p ə p l ɛ k s	p ə p l ɛ k s t	perplex	perplexed	⋊ p ə p l ɛ k s ⋉	⋊ p ə p l ɛ k s t ⋉
-9992	r iː k n̩ s ɪ d ə	r iː k n̩ s ɪ d ə d	reconsider	reconsidered	⋊ ɹ i k n s ɪ d ə ⋉	⋊ ɹ i k n s ɪ d ə d ⋉
+9992	r iː k n̩ s ɪ d ə	r iː k n̩ s ɪ d ə d	reconsider	reconsidered	⋊ ɹ i k n s ɪ d ə ⋉	⋊ ɹ i k n s ɪ d ɪ d ⋉
 9994	d j uː p	d j uː p t	dupe	duped	⋊ d j u p ⋉	⋊ d j u p t ⋉
 9996	p ə l j uː t	p ə l j uː t ɪ d	pollute	polluted	⋊ p ə l j u t ⋉	⋊ p ə l j u t ɪ d ⋉
 10009	r ə h ɜː s	r ə h ɜː s t	rehearse	rehearsed	⋊ ɹ ə h ə s ⋉	⋊ ɹ ə h ə s t ⋉
@@ -2575,12 +2575,12 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 10273	f ʊ t n əʊ t	f ʊ t n əʊ t ɪ d	footnote	footnoted	⋊ f ʊ t n o t ⋉	⋊ f ʊ t n o t ɪ d ⋉
 10275	d ɛ z ɪ g n eɪ t	d ɛ z ɪ g n eɪ t ɪ d	designate	designated	⋊ d ɛ z ɪ g n e t ⋉	⋊ d ɛ z ɪ g n e t ɪ d ⋉
 10281	əʊ v ə ʃ uː t	əʊ v ə ʃ ɔ t	overshoot	overshot	⋊ o v ə ʃ u t ⋉	⋊ o v ə ʃ ɔ t ⋉
-10283	ə d m ɪ n ɪ s t ə	ə d m ɪ n ɪ s t ə d	administer	administered	⋊ ə d m ɪ n ɪ s t ə ⋉	⋊ ə d m ɪ n ɪ s t ə d ⋉
+10283	ə d m ɪ n ɪ s t ə	ə d m ɪ n ɪ s t ə d	administer	administered	⋊ ə d m ɪ n ɪ s t ə ⋉	⋊ ə d m ɪ n ɪ s t ɪ d ⋉
 10284	s ʌ b d ʒ ɔɪ n	s ʌ b d ʒ ɔɪ n d	subjoin	subjoined	⋊ s ʌ b d ʒ ɔ ɪ n ⋉	⋊ s ʌ b d ʒ ɔ ɪ n d ⋉
 10287	a b n ə g eɪ t	a b n ə g eɪ t ɪ d	abnegate	abnegated	⋊ a b n ə g e t ⋉	⋊ a b n ə g e t ɪ d ⋉
 10294	s t ɪ n t	s t ɪ n t ɪ d	stint	stinted	⋊ s t ɪ n t ⋉	⋊ s t ɪ n t ɪ d ⋉
 10298	g ɔː	g ɔː d	gore	gored	⋊ g ɔ ⋉	⋊ g ɔ d ⋉
-10299	d ɔ d ə	d ɔ d ə d	dodder	doddered	⋊ d ɔ d ə ⋉	⋊ d ɔ d ə d ⋉
+10299	d ɔ d ə	d ɔ d ə d	dodder	doddered	⋊ d ɔ d ə ⋉	⋊ d ɔ d ɪ d ⋉
 10311	b ə l iː v	b ə l iː v d	believe	believed	⋊ b ə l i v ⋉	⋊ b ə l i v d ⋉
 10314	p uː p uː	p uː p uː d	pooh-pooh	pooh-poohed	⋊ p u p u ⋉	⋊ p u p u d ⋉
 10321	k r a b	k r a b d	crab	crabbed	⋊ k ɹ a b ⋉	⋊ k ɹ a b d ⋉
@@ -2620,7 +2620,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 10502	s t a ʃ	s t a ʃ t	stash	stashed	⋊ s t a ʃ ⋉	⋊ s t a ʃ t ⋉
 10512	n əʊ z	n əʊ z d	nose	nosed	⋊ n o z ⋉	⋊ n o z d ⋉
 10520	a b r ʊ g eɪ t	a b r ʊ g eɪ t ɪ d	abrogate	abrogated	⋊ a b ɹ ʊ g e t ⋉	⋊ a b ɹ ʊ g e t ɪ d ⋉
-10521	g ʌ t ə	g ʌ t ə d	gutter	guttered	⋊ g ʌ t ə ⋉	⋊ g ʌ t ə d ⋉
+10521	g ʌ t ə	g ʌ t ə d	gutter	guttered	⋊ g ʌ t ə ⋉	⋊ g ʌ t ɪ d ⋉
 10522	s t a g n eɪ t	s t a g n eɪ t ɪ d	stagnate	stagnated	⋊ s t a g n e t ⋉	⋊ s t a g n e t ɪ d ⋉
 10523	r ɛ n ɪ g eɪ d	r ɛ n ɪ g eɪ d ɪ d	renegade	renegaded	⋊ ɹ ɛ n ɪ g e d ⋉	⋊ ɹ ɛ n ɪ g e d ɪ d ⋉
 10526	ɛ n t r ʌ s t	ɛ n t r ʌ s t ɪ d	entrust	entrusted	⋊ ɛ n t ɹ ʌ s t ⋉	⋊ ɛ n t ɹ ʌ s t ɪ d ⋉
@@ -2634,7 +2634,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 10583	p r ɔ s ɪ l ɪ t aɪ z	p r ɔ s ɪ l ɪ t aɪ z d	proselytize	proselytized	⋊ p ɹ ɔ s ɪ l ɪ t a ɪ z ⋉	⋊ p ɹ ɔ s ɪ l ɪ t a ɪ z d ⋉
 10586	w uː	w uː d	woo	wooed	⋊ w u ⋉	⋊ w u d ⋉
 10589	r a v n̩	r a v n̩ d	raven	ravened	⋊ ɹ a v n ⋉	⋊ ɹ a v n d ⋉
-10593	ɔː d ə	ɔː d ə d	order	ordered	⋊ ɔ d ə ⋉	⋊ ɔ d ə d ⋉
+10593	ɔː d ə	ɔː d ə d	order	ordered	⋊ ɔ d ə ⋉	⋊ ɔ d ɪ d ⋉
 10602	f ɔː lˠ	f ɛ lˠ	fall	fell	⋊ f ɔ l ⋉	⋊ f ɛ l ⋉
 10615	ə m əʊ n ɪ eɪ t	ə m əʊ n ɪ eɪ t ɪ d	ammoniate	ammoniated	⋊ ə m o n ɪ e t ⋉	⋊ ə m o n ɪ e t ɪ d ⋉
 10617	d ɪ l eɪ	d ɪ l eɪ d	delay	delayed	⋊ d ɪ l e ⋉	⋊ d ɪ l e d ⋉
@@ -2654,7 +2654,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 10687	s ʊ p ə r a n j ʊ eɪ t	s ʊ p ə r a n j ʊ eɪ t ɪ d	superannuate	superannuated	⋊ s ʊ p ə ɹ a n j ʊ e t ⋉	⋊ s ʊ p ə ɹ a n j ʊ e t ɪ d ⋉
 10689	r ɛ t ɪ k j ʊ l eɪ t	r ɛ t ɪ k j ʊ l eɪ t ɪ d	reticulate	reticulated	⋊ ɹ ɛ t ɪ k j ʊ l e t ⋉	⋊ ɹ ɛ t ɪ k j ʊ l e t ɪ d ⋉
 10690	ɪ m p r ʊ v aɪ z	ɪ m p r ʊ v aɪ z d	improvise	improvised	⋊ ɪ m p ɹ ʊ v a ɪ z ⋉	⋊ ɪ m p ɹ ʊ v a ɪ z d ⋉
-10693	s lˠ ɔː t ə	s lˠ ɔː t ə d	slaughter	slaughtered	⋊ s l ɔ t ə ⋉	⋊ s l ɔ t ə d ⋉
+10693	s lˠ ɔː t ə	s lˠ ɔː t ə d	slaughter	slaughtered	⋊ s l ɔ t ə ⋉	⋊ s l ɔ t ɪ d ⋉
 10698	r uː t l̩ˠ	r uː t l̩ˠ d	rootle	rootled	⋊ ɹ u t l ⋉	⋊ ɹ u t l d ⋉
 10706	t ɪ ŋ k l̩ˠ	t ɪ ŋ k l̩ˠ d	tinkle	tinkled	⋊ t ɪ ŋ k l ⋉	⋊ t ɪ ŋ k l d ⋉
 10709	ɑː n s ə	ɑː n s ə d	answer	answered	⋊ ɑ n s ə ⋉	⋊ ɑ n s ə d ⋉
@@ -2694,7 +2694,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 10855	s ə l ɪ s ɪ t	s ə l ɪ s ɪ t ɪ d	solicit	solicited	⋊ s ə l ɪ s ɪ t ⋉	⋊ s ə l ɪ s ɪ t ɪ d ⋉
 10861	ɪ n t ɜː k ə l eɪ t	ɪ n t ɜː k ə l eɪ t ɪ d	intercalate	intercalated	⋊ ɪ n t ə k ə l e t ⋉	⋊ ɪ n t ə k ə l e t ɪ d ⋉
 10865	t ɛ l ɪ f əʊ n	t ɛ l ɪ f əʊ n d	telephone	telephoned	⋊ t ɛ l ɪ f o n ⋉	⋊ t ɛ l ɪ f o n d ⋉
-10871	f ɔ lˠ t ə	f ɔ lˠ t ə d	falter	faltered	⋊ f ɔ l t ə ⋉	⋊ f ɔ l t ə d ⋉
+10871	f ɔ lˠ t ə	f ɔ lˠ t ə d	falter	faltered	⋊ f ɔ l t ə ⋉	⋊ f ɔ l t ɪ d ⋉
 10882	f l ʊ ə r ɪ d aɪ z	f l ʊ ə r ɪ d aɪ z d	fluoridize	fluoridized	⋊ f l ʊ ə ɹ ɪ d a ɪ z ⋉	⋊ f l ʊ ə ɹ ɪ d a ɪ z d ⋉
 10885	l ɔ ŋ	l ɔ ŋ d	long	longed	⋊ l ɔ ŋ ⋉	⋊ l ɔ ŋ d ⋉
 10898	iː l ɔ ŋ g eɪ t	iː l ɔ ŋ g eɪ t ɪ d	elongate	elongated	⋊ i l ɔ ŋ g e t ⋉	⋊ i l ɔ ŋ g e t ɪ d ⋉
@@ -2749,7 +2749,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 11154	r a k ɪ t	r a k ɪ t ɪ d	racket	racketed	⋊ ɹ a k ɪ t ⋉	⋊ ɹ a k ɪ t ɪ d ⋉
 11159	b ɔ b s lˠ eɪ	b ɔ b s lˠ eɪ d	bobsleigh	bobsleighed	⋊ b ɔ b s l e ⋉	⋊ b ɔ b s l e d ⋉
 11166	d ʒ ɪ b ɪ t	d ʒ ɪ b ɪ t ɪ d	gibbet	gibbeted	⋊ d ʒ ɪ b ɪ t ⋉	⋊ d ʒ ɪ b ɪ t ɪ d ⋉
-11167	f l aʊ n d ə	f l aʊ n d ə d	flounder	floundered	⋊ f l a ʊ n d ə ⋉	⋊ f l a ʊ n d ə d ⋉
+11167	f l aʊ n d ə	f l aʊ n d ə d	flounder	floundered	⋊ f l a ʊ n d ə ⋉	⋊ f l a ʊ n d ɪ d ⋉
 11175	p r aɪ z	p r aɪ z d	prize	prized	⋊ p ɹ a ɪ z ⋉	⋊ p ɹ a ɪ z d ⋉
 11179	l ʌ n ʃ	l ʌ n ʃ t	lunch	lunched	⋊ l ʌ n ʃ ⋉	⋊ l ʌ n ʃ t ⋉
 11203	p r ʊ g r ɛ s	p r ʊ g r ɛ s t	progress	progressed	⋊ p ɹ ʊ g ɹ ɛ s ⋉	⋊ p ɹ ʊ g ɹ ɛ s t ⋉
@@ -2767,11 +2767,11 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 11271	p ɔː t ɛ n d	p ɔː t ɛ n d ɪ d	portend	portended	⋊ p ɔ t ɛ n d ⋉	⋊ p ɔ t ɛ n d ɪ d ⋉
 11273	ɪ g n ɔː	ɪ g n ɔː d	ignore	ignored	⋊ ɪ g n ɔ ⋉	⋊ ɪ g n ɔ d ⋉
 11275	əʊ m ə n	əʊ m ə n d	omen	omened	⋊ o m ə n ⋉	⋊ o m ə n d ⋉
-11277	k əʊ lˠ d ʃ əʊ lˠ d ə	k əʊ lˠ d ʃ əʊ lˠ d ə d	cold-shoulder	cold-shouldered	⋊ k o l d ʃ o l d ə ⋉	⋊ k o l d ʃ o l d ə d ⋉
+11277	k əʊ lˠ d ʃ əʊ lˠ d ə	k əʊ lˠ d ʃ əʊ lˠ d ə d	cold-shoulder	cold-shouldered	⋊ k o l d ʃ o l d ə ⋉	⋊ k o l d ʃ o l d ɪ d ⋉
 11279	k r iː s	k r iː s t	crease	creased	⋊ k ɹ i s ⋉	⋊ k ɹ i s t ⋉
 11285	g r eɪ t	g r eɪ t ɪ d	grate	grated	⋊ g ɹ e t ⋉	⋊ g ɹ e t ɪ d ⋉
 11289	m ɪ s k ə n d ʌ k t	m ɪ s k ə n d ʌ k t ɪ d	misconduct	misconducted	⋊ m ɪ s k ə n d ʌ k t ⋉	⋊ m ɪ s k ə n d ʌ k t ɪ d ⋉
-11292	b a t ə	b a t ə d	batter	battered	⋊ b a t ə ⋉	⋊ b a t ə d ⋉
+11292	b a t ə	b a t ə d	batter	battered	⋊ b a t ə ⋉	⋊ b a t ɪ d ⋉
 11293	d ɪ s k ə n t ɛ n t	d ɪ s k ə n t ɛ n t ɪ d	discontent	discontented	⋊ d ɪ s k ə n t ɛ n t ⋉	⋊ d ɪ s k ə n t ɛ n t ɪ d ⋉
 11296	k əʊ a g j ə l eɪ t	k əʊ a g j ə l eɪ t ɪ d	coagulate	coagulated	⋊ k o a g j ə l e t ⋉	⋊ k o a g j ə l e t ɪ d ⋉
 11304	ɛ k s p ɜː g eɪ t	ɛ k s p ɜː g eɪ t ɪ d	expurgate	expurgated	⋊ ɛ k s p ə g e t ⋉	⋊ ɛ k s p ə g e t ɪ d ⋉
@@ -2798,7 +2798,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 11448	m ʌ n ɪ t aɪ z	m ʌ n ɪ t aɪ z d	monetize	monetized	⋊ m ʌ n ɪ t a ɪ z ⋉	⋊ m ʌ n ɪ t a ɪ z d ⋉
 11450	s lˠ ʌ m	s lˠ ʌ m d	slum	slummed	⋊ s l ʌ m ⋉	⋊ s l ʌ m d ⋉
 11455	r iː f j uː ə lˠ	r iː f j uː ə lˠ d	refuel	refuelled	⋊ ɹ i f j u ə l ⋉	⋊ ɹ i f j u ə l d ⋉
-11459	ʃ a t ə	ʃ a t ə d	shatter	shattered	⋊ ʃ a t ə ⋉	⋊ ʃ a t ə d ⋉
+11459	ʃ a t ə	ʃ a t ə d	shatter	shattered	⋊ ʃ a t ə ⋉	⋊ ʃ a t ɪ d ⋉
 11463	ɛ s p aɪ	ɛ s p aɪ d	espy	espied	⋊ ɛ s p a ɪ ⋉	⋊ ɛ s p a ɪ d ⋉
 11466	t aɪ	t aɪ d	tie	tied	⋊ t a ɪ ⋉	⋊ t a ɪ d ⋉
 11480	h w iː d l̩ˠ	h w iː d l̩ˠ d	wheedle	wheedled	⋊ h w i d l ⋉	⋊ h w i d l d ⋉
@@ -2891,7 +2891,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 11844	k ɜː d l̩ˠ	k ɜː d l̩ˠ d	curdle	curdled	⋊ k ə d l ⋉	⋊ k ə d l d ⋉
 11846	s t r ɪ ŋ	s t r ʌ ŋ	string	strung	⋊ s t ɹ ɪ ŋ ⋉	⋊ s t ɹ ʌ ŋ ⋉
 11854	w ɔ b l̩ˠ	w ɔ b l̩ˠ d	wobble	wobbled	⋊ w ɔ b l ⋉	⋊ w ɔ b l d ⋉
-11858	s p lˠ a t ə	s p lˠ a t ə d	splatter	splattered	⋊ s p l a t ə ⋉	⋊ s p l a t ə d ⋉
+11858	s p lˠ a t ə	s p lˠ a t ə d	splatter	splattered	⋊ s p l a t ə ⋉	⋊ s p l a t ɪ d ⋉
 11864	d ɪ s aɪ d	d ɪ s aɪ d ɪ d	decide	decided	⋊ d ɪ s a ɪ d ⋉	⋊ d ɪ s a ɪ d ɪ d ⋉
 11882	ə s ɛ s	ə s ɛ s t	assess	assessed	⋊ ə s ɛ s ⋉	⋊ ə s ɛ s t ⋉
 11890	t ʃ ɔː k	t ʃ ɔː k t	chalk	chalked	⋊ t ʃ ɔ k ⋉	⋊ t ʃ ɔ k t ⋉
@@ -2906,7 +2906,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 11937	ɪ n t r ʊ d j uː s	ɪ n t r ʊ d j uː s t	introduce	introduced	⋊ ɪ n t ɹ ʊ d j u s ⋉	⋊ ɪ n t ɹ ʊ d j u s t ⋉
 11944	s ɔː f t s əʊ p	s ɔː f t s əʊ p t	soft-soap	soft-soaped	⋊ s ɔ f t s o p ⋉	⋊ s ɔ f t s o p t ⋉
 11949	d ɪ s t r ɪ b j uː t	d ɪ s t r ɪ b j uː t ɪ d	distribute	distributed	⋊ d ɪ s t ɹ ɪ b j u t ⋉	⋊ d ɪ s t ɹ ɪ b j u t ɪ d ⋉
-11952	d ɪ s ɪ n t ɜː	d ɪ s ɪ n t ɜː d	disinter	disinterred	⋊ d ɪ s ɪ n t ə ⋉	⋊ d ɪ s ɪ n t ə d ⋉
+11952	d ɪ s ɪ n t ɜː	d ɪ s ɪ n t ɜː d	disinter	disinterred	⋊ d ɪ s ɪ n t ə ⋉	⋊ d ɪ s ɪ n t ɪ d ⋉
 11957	ɛ p ɪ t ə m aɪ z	ɛ p ɪ t ə m aɪ z d	epitomize	epitomized	⋊ ɛ p ɪ t ə m a ɪ z ⋉	⋊ ɛ p ɪ t ə m a ɪ z d ⋉
 11958	g r əʊ s	g r əʊ s t	gross	grossed	⋊ g ɹ o s ⋉	⋊ g ɹ o s t ⋉
 11972	d ɔ k j ʊ m ɛ n t	d ɔ k j ʊ m ɛ n t ɪ d	document	documented	⋊ d ɔ k j ʊ m ɛ n t ⋉	⋊ d ɔ k j ʊ m ɛ n t ɪ d ⋉
@@ -2923,7 +2923,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 12009	v ɔɪ d ʒ	v ɔɪ d ʒ d	voyage	voyaged	⋊ v ɔ ɪ d ʒ ⋉	⋊ v ɔ ɪ d ʒ d ⋉
 12025	h ɔ r ɪ f aɪ	h ɔ r ɪ f aɪ d	horrify	horrified	⋊ h ɔ ɹ ɪ f a ɪ ⋉	⋊ h ɔ ɹ ɪ f a ɪ d ⋉
 12027	s p r ɪ ŋ k l iː n	s p r ɪ ŋ k l iː n d	spring-clean	spring-cleaned	⋊ s p ɹ ɪ ŋ k l i n ⋉	⋊ s p ɹ ɪ ŋ k l i n d ⋉
-12034	ɔ lˠ t ə	ɔ lˠ t ə d	alter	altered	⋊ ɔ l t ə ⋉	⋊ ɔ l t ə d ⋉
+12034	ɔ lˠ t ə	ɔ lˠ t ə d	alter	altered	⋊ ɔ l t ə ⋉	⋊ ɔ l t ɪ d ⋉
 12050	d ʒ ɔɪ n	d ʒ ɔɪ n d	join	joined	⋊ d ʒ ɔ ɪ n ⋉	⋊ d ʒ ɔ ɪ n d ⋉
 12058	d ʌ b l̩ˠ s t ɔ p	d ʌ b l̩ˠ s t ɔ p t	double-stop	double-stopped	⋊ d ʌ b l s t ɔ p ⋉	⋊ d ʌ b l s t ɔ p t ⋉
 12061	p əʊ lˠ t ɪ s	p əʊ lˠ t ɪ s t	poultice	poulticed	⋊ p o l t ɪ s ⋉	⋊ p o l t ɪ s t ⋉
@@ -3018,7 +3018,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 12542	k ə d ʒ əʊ lˠ	k ə d ʒ əʊ lˠ d	cajole	cajoled	⋊ k ə d ʒ o l ⋉	⋊ k ə d ʒ o l d ⋉
 12545	b ə l iː g ə	b ə l iː g ə d	beleaguer	beleaguered	⋊ b ə l i g ə ⋉	⋊ b ə l i g ə d ⋉
 12546	ə n ɔɪ n t	ə n ɔɪ n t ɪ d	anoint	anointed	⋊ ə n ɔ ɪ n t ⋉	⋊ ə n ɔ ɪ n t ɪ d ⋉
-12550	s p ʌ t ə	s p ʌ t ə d	sputter	sputtered	⋊ s p ʌ t ə ⋉	⋊ s p ʌ t ə d ⋉
+12550	s p ʌ t ə	s p ʌ t ə d	sputter	sputtered	⋊ s p ʌ t ə ⋉	⋊ s p ʌ t ɪ d ⋉
 12551	p r iː ɔː d eɪ n	p r iː ɔː d eɪ n d	preordain	preordained	⋊ p ɹ i ɔ d e n ⋉	⋊ p ɹ i ɔ d e n d ⋉
 12553	d a ŋ g l̩ˠ	d a ŋ g l̩ˠ d	dangle	dangled	⋊ d a ŋ g l ⋉	⋊ d a ŋ g l d ⋉
 12557	m aʊ ð	m aʊ ð d	mouth	mouthed	⋊ m a ʊ ð ⋉	⋊ m a ʊ ð d ⋉
@@ -3065,7 +3065,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 12736	l a k	l a k t	lack	lacked	⋊ l a k ⋉	⋊ l a k t ⋉
 12737	p r ɔ f ə s aɪ	p r ɔ f ə s aɪ d	prophesy	prophesied	⋊ p ɹ ɔ f ə s a ɪ ⋉	⋊ p ɹ ɔ f ə s a ɪ d ⋉
 12746	t aɪ d aɪ	t aɪ d aɪ d	tie-dye	tie-dyed	⋊ t a ɪ d a ɪ ⋉	⋊ t a ɪ d a ɪ d ⋉
-12748	b ə s t ɜː	b ə s t ɜː d	bestir	bestirred	⋊ b ə s t ə ⋉	⋊ b ə s t ə d ⋉
+12748	b ə s t ɜː	b ə s t ɜː d	bestir	bestirred	⋊ b ə s t ə ⋉	⋊ b ə s t ɪ d ⋉
 12750	a m p l ɪ f aɪ	a m p l ɪ f aɪ d	amplify	amplified	⋊ a m p l ɪ f a ɪ ⋉	⋊ a m p l ɪ f a ɪ d ⋉
 12759	d ɑː k n̩	d ɑː k n̩ d	darken	darkened	⋊ d ɑ k n ⋉	⋊ d ɑ k n d ⋉
 12764	b a k	b a k t	back	backed	⋊ b a k ⋉	⋊ b a k t ⋉
@@ -3084,8 +3084,8 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 12818	h aɪ d	h ɪ d	hide	hid	⋊ h a ɪ d ⋉	⋊ h ɪ d ⋉
 12826	p l a ŋ k	p l a ŋ k t	plank	planked	⋊ p l a ŋ k ⋉	⋊ p l a ŋ k t ⋉
 12828	t ɔː n t	t ɔː n t ɪ d	taunt	taunted	⋊ t ɔ n t ⋉	⋊ t ɔ n t ɪ d ⋉
-12839	p ʌ t ə	p ʌ t ə d	putter	puttered	⋊ p ʌ t ə ⋉	⋊ p ʌ t ə d ⋉
-12856	ə p h əʊ lˠ s t ə	ə p h əʊ lˠ s t ə d	upholster	upholstered	⋊ ə p h o l s t ə ⋉	⋊ ə p h o l s t ə d ⋉
+12839	p ʌ t ə	p ʌ t ə d	putter	puttered	⋊ p ʌ t ə ⋉	⋊ p ʌ t ɪ d ⋉
+12856	ə p h əʊ lˠ s t ə	ə p h əʊ lˠ s t ə d	upholster	upholstered	⋊ ə p h o l s t ə ⋉	⋊ ə p h o l s t ɪ d ⋉
 12872	s k ɛ d ʒ l̩ˠ	s k ɛ d ʒ l̩ˠ d	schedule	scheduled	⋊ s k ɛ d ʒ l ⋉	⋊ s k ɛ d ʒ l d ⋉
 12882	t əʊ n	t əʊ n d	tone	toned	⋊ t o n ⋉	⋊ t o n d ⋉
 12887	r ə v iː lˠ	r ə v iː lˠ d	reveal	revealed	⋊ ɹ ə v i l ⋉	⋊ ɹ ə v i l d ⋉
@@ -3170,7 +3170,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 13339	l ʌ v	l ʌ v d	love	loved	⋊ l ʌ v ⋉	⋊ l ʌ v d ⋉
 13352	r ɛ g j ə l eɪ t	r ɛ g j ə l eɪ t ɪ d	regulate	regulated	⋊ ɹ ɛ g j ə l e t ⋉	⋊ ɹ ɛ g j ə l e t ɪ d ⋉
 13359	ɪ n t ɜː p ʊ l eɪ t	ɪ n t ɜː p ʊ l eɪ t ɪ d	interpolate	interpolated	⋊ ɪ n t ə p ʊ l e t ⋉	⋊ ɪ n t ə p ʊ l e t ɪ d ⋉
-13361	f ɛ s t ə	f ɛ s t ə d	fester	festered	⋊ f ɛ s t ə ⋉	⋊ f ɛ s t ə d ⋉
+13361	f ɛ s t ə	f ɛ s t ə d	fester	festered	⋊ f ɛ s t ə ⋉	⋊ f ɛ s t ɪ d ⋉
 13362	r ɪ ŋ	r a ŋ	ring	rang	⋊ ɹ ɪ ŋ ⋉	⋊ ɹ a ŋ ⋉
 13377	l ɑː s t	l ɑː s t ɪ d	last	lasted	⋊ l ɑ s t ⋉	⋊ l ɑ s t ɪ d ⋉
 13380	k l ɔ r ɪ n eɪ t	k l ɔ r ɪ n eɪ t ɪ d	chlorinate	chlorinated	⋊ k l ɔ ɹ ɪ n e t ⋉	⋊ k l ɔ ɹ ɪ n e t ɪ d ⋉
@@ -3323,11 +3323,11 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 14157	p eɪ d ʒ ɪ n eɪ t	p eɪ d ʒ ɪ n eɪ t ɪ d	paginate	paginated	⋊ p e d ʒ ɪ n e t ⋉	⋊ p e d ʒ ɪ n e t ɪ d ⋉
 14164	b ɔ m	b ɔ m d	bomb	bombed	⋊ b ɔ m ⋉	⋊ b ɔ m d ⋉
 14169	r ɛ g j ə l ə r aɪ z	r ɛ g j ə l ə r aɪ z d	regularize	regularized	⋊ ɹ ɛ g j ə l ə ɹ a ɪ z ⋉	⋊ ɹ ɛ g j ə l ə ɹ a ɪ z d ⋉
-14174	ɛ m b ɪ t ə	ɛ m b ɪ t ə d	embitter	embittered	⋊ ɛ m b ɪ t ə ⋉	⋊ ɛ m b ɪ t ə d ⋉
+14174	ɛ m b ɪ t ə	ɛ m b ɪ t ə d	embitter	embittered	⋊ ɛ m b ɪ t ə ⋉	⋊ ɛ m b ɪ t ɪ d ⋉
 14178	h uː v ə	h uː v ə d	hoover	hoovered	⋊ h u v ə ⋉	⋊ h u v ə d ⋉
 14179	f l ɛ ə	f l ɛ ə d	flare	flared	⋊ f l ɛ ə ⋉	⋊ f l ɛ ə d ⋉
 14182	d ɪ s t ʃ ɑː d ʒ	d ɪ s t ʃ ɑː d ʒ d	discharge	discharged	⋊ d ɪ s t ʃ ɑ d ʒ ⋉	⋊ d ɪ s t ʃ ɑ d ʒ d ⋉
-14186	b a n t ə	b a n t ə d	banter	bantered	⋊ b a n t ə ⋉	⋊ b a n t ə d ⋉
+14186	b a n t ə	b a n t ə d	banter	bantered	⋊ b a n t ə ⋉	⋊ b a n t ɪ d ⋉
 14193	l aɪ t	l ɪ t	light	lit	⋊ l a ɪ t ⋉	⋊ l ɪ t ⋉
 14194	s ə b t r a k t	s ə b t r a k t ɪ d	subtract	subtracted	⋊ s ə b t ɹ a k t ⋉	⋊ s ə b t ɹ a k t ɪ d ⋉
 14197	t ɪ p	t ɪ p t	tip	tipped	⋊ t ɪ p ⋉	⋊ t ɪ p t ⋉
@@ -3362,7 +3362,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 14369	b l aɪ n f əʊ lˠ d	b l aɪ n f əʊ lˠ d ɪ d	blindfold	blindfolded	⋊ b l a ɪ n f o l d ⋉	⋊ b l a ɪ n f o l d ɪ d ⋉
 14371	t r ʌ s	t r ʌ s t	truss	trussed	⋊ t ɹ ʌ s ⋉	⋊ t ɹ ʌ s t ⋉
 14376	s p ɜː t	s p ɜː t ɪ d	spurt	spurted	⋊ s p ə t ⋉	⋊ s p ə t ɪ d ⋉
-14383	f l a t ə	f l a t ə d	flatter	flattered	⋊ f l a t ə ⋉	⋊ f l a t ə d ⋉
+14383	f l a t ə	f l a t ə d	flatter	flattered	⋊ f l a t ə ⋉	⋊ f l a t ɪ d ⋉
 14390	s t ɔ k p aɪ lˠ	s t ɔ k p aɪ lˠ d	stockpile	stockpiled	⋊ s t ɔ k p a ɪ l ⋉	⋊ s t ɔ k p a ɪ l d ⋉
 14391	k iː lˠ h ɔː lˠ	k iː lˠ h ɔː lˠ d	keelhaul	keelhauled	⋊ k i l h ɔ l ⋉	⋊ k i l h ɔ l d ⋉
 14401	ɪ m j ɔː	ɪ m j ɔː d	immure	immured	⋊ ɪ m j ɔ ⋉	⋊ ɪ m j ɔ d ⋉
@@ -3385,7 +3385,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 14504	r ɛ m ə n ɪ s	r ɛ m ə n ɪ s t	reminisce	reminisced	⋊ ɹ ɛ m ə n ɪ s ⋉	⋊ ɹ ɛ m ə n ɪ s t ⋉
 14506	s p ɔɪ lˠ	s p ɔɪ lˠ t	spoil	spoilt	⋊ s p ɔ ɪ l ⋉	⋊ s p ɔ ɪ l t ⋉
 14512	m ə r ɔː d	m ə r ɔː d ɪ d	maraud	marauded	⋊ m ə ɹ ɔ d ⋉	⋊ m ə ɹ ɔ d ɪ d ⋉
-14514	f aʊ n d ə	f aʊ n d ə d	founder	foundered	⋊ f a ʊ n d ə ⋉	⋊ f a ʊ n d ə d ⋉
+14514	f aʊ n d ə	f aʊ n d ə d	founder	foundered	⋊ f a ʊ n d ə ⋉	⋊ f a ʊ n d ɪ d ⋉
 14516	k ɔ s ɪ t	k ɔ s ɪ t ɪ d	cosset	cosseted	⋊ k ɔ s ɪ t ⋉	⋊ k ɔ s ɪ t ɪ d ⋉
 14517	ɔ b d ʒ ɜː g eɪ t	ɔ b d ʒ ɜː g eɪ t ɪ d	objurgate	objurgated	⋊ ɔ b d ʒ ə g e t ⋉	⋊ ɔ b d ʒ ə g e t ɪ d ⋉
 14518	s uː p ə r ə b aʊ n d	s uː p ə r ə b aʊ n d ɪ d	superabound	superabounded	⋊ s u p ə ɹ ə b a ʊ n d ⋉	⋊ s u p ə ɹ ə b a ʊ n d ɪ d ⋉
@@ -3400,7 +3400,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 14561	p ɔː	p ɔː d	pour	poured	⋊ p ɔ ⋉	⋊ p ɔ d ⋉
 14562	p ə r eɪ d	p ə r eɪ d ɪ d	parade	paraded	⋊ p ə ɹ e d ⋉	⋊ p ə ɹ e d ɪ d ⋉
 14577	k ʌ v ə	k ʌ v ə d	cover	covered	⋊ k ʌ v ə ⋉	⋊ k ʌ v ə d ⋉
-14591	r ɛ n d ə	r ɛ n d ə d	render	rendered	⋊ ɹ ɛ n d ə ⋉	⋊ ɹ ɛ n d ə d ⋉
+14591	r ɛ n d ə	r ɛ n d ə d	render	rendered	⋊ ɹ ɛ n d ə ⋉	⋊ ɹ ɛ n d ɪ d ⋉
 14611	s ʌ k l̩ˠ	s ʌ k l̩ˠ d	suckle	suckled	⋊ s ʌ k l ⋉	⋊ s ʌ k l d ⋉
 14614	r eɪ d ʒ	r eɪ d ʒ d	rage	raged	⋊ ɹ e d ʒ ⋉	⋊ ɹ e d ʒ d ⋉
 14622	k ə n s ɪ l ɪ eɪ t	k ə n s ɪ l ɪ eɪ t ɪ d	conciliate	conciliated	⋊ k ə n s ɪ l ɪ e t ⋉	⋊ k ə n s ɪ l ɪ e t ɪ d ⋉
@@ -3501,7 +3501,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 15215	d ɪ s ə p r uː v	d ɪ s ə p r uː v d	disapprove	disapproved	⋊ d ɪ s ə p ɹ u v ⋉	⋊ d ɪ s ə p ɹ u v d ⋉
 15222	s lˠ eɪ	s lˠ uː	slay	slew	⋊ s l e ⋉	⋊ s l u ⋉
 15224	l ɛ t ʃ	l ɛ t ʃ t	lech	leched	⋊ l ɛ t ʃ ⋉	⋊ l ɛ t ʃ t ⋉
-15236	m ɔː t ə	m ɔː t ə d	mortar	mortared	⋊ m ɔ t ə ⋉	⋊ m ɔ t ə d ⋉
+15236	m ɔː t ə	m ɔː t ə d	mortar	mortared	⋊ m ɔ t ə ⋉	⋊ m ɔ t ɪ d ⋉
 15248	k ə l a p s	k ə l a p s t	collapse	collapsed	⋊ k ə l a p s ⋉	⋊ k ə l a p s t ⋉
 15249	ɪ n t ə t w aɪ n	ɪ n t ə t w aɪ n d	intertwine	intertwined	⋊ ɪ n t ə t w a ɪ n ⋉	⋊ ɪ n t ə t w a ɪ n d ⋉
 15250	ɪ n d ɛ v ə	ɪ n d ɛ v ə d	endeavour	endeavoured	⋊ ɪ n d ɛ v ə ⋉	⋊ ɪ n d ɛ v ə d ⋉
@@ -3523,7 +3523,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 15318	l uː p	l uː p t	loop	looped	⋊ l u p ⋉	⋊ l u p t ⋉
 15322	s ɛ n s ə t aɪ z	s ɛ n s ə t aɪ z d	sensitize	sensitized	⋊ s ɛ n s ə t a ɪ z ⋉	⋊ s ɛ n s ə t a ɪ z d ⋉
 15324	d əʊ z	d əʊ z d	doze	dozed	⋊ d o z ⋉	⋊ d o z d ⋉
-15331	d ɪ s ɔː d ə	d ɪ s ɔː d ə d	disorder	disordered	⋊ d ɪ s ɔ d ə ⋉	⋊ d ɪ s ɔ d ə d ⋉
+15331	d ɪ s ɔː d ə	d ɪ s ɔː d ə d	disorder	disordered	⋊ d ɪ s ɔ d ə ⋉	⋊ d ɪ s ɔ d ɪ d ⋉
 15332	t r ɑː n z g r ɛ s	t r ɑː n z g r ɛ s t	transgress	transgressed	⋊ t ɹ ɑ n z g ɹ ɛ s ⋉	⋊ t ɹ ɑ n z g ɹ ɛ s t ⋉
 15339	r ɪ k a n t	r ɪ k a n t ɪ d	recant	recanted	⋊ ɹ ɪ k a n t ⋉	⋊ ɹ ɪ k a n t ɪ d ⋉
 15341	s t eɪ ʃ n̩	s t eɪ ʃ n̩ d	station	stationed	⋊ s t e ʃ n ⋉	⋊ s t e ʃ n d ⋉
@@ -3532,7 +3532,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 15345	w ɪ θ d r ɔː	w ɪ θ d r uː	withdraw	withdrew	⋊ w ɪ θ d ɹ ɔ ⋉	⋊ w ɪ θ d ɹ u ⋉
 15350	ɛ m j ʊ l eɪ t	ɛ m j ʊ l eɪ t ɪ d	emulate	emulated	⋊ ɛ m j ʊ l e t ⋉	⋊ ɛ m j ʊ l e t ɪ d ⋉
 15354	r aɪ v	r aɪ v d	rive	rived	⋊ ɹ a ɪ v ⋉	⋊ ɹ a ɪ v d ⋉
-15355	s k ɪ t ə	s k ɪ t ə d	skitter	skittered	⋊ s k ɪ t ə ⋉	⋊ s k ɪ t ə d ⋉
+15355	s k ɪ t ə	s k ɪ t ə d	skitter	skittered	⋊ s k ɪ t ə ⋉	⋊ s k ɪ t ɪ d ⋉
 15360	m aʊ n t	m aʊ n t ɪ d	mount	mounted	⋊ m a ʊ n t ⋉	⋊ m a ʊ n t ɪ d ⋉
 15361	b r a k ɪ t	b r a k ɪ t ɪ d	bracket	bracketed	⋊ b ɹ a k ɪ t ⋉	⋊ b ɹ a k ɪ t ɪ d ⋉
 15375	r iː ɪ n s t eɪ t	r iː ɪ n s t eɪ t ɪ d	reinstate	reinstated	⋊ ɹ i ɪ n s t e t ⋉	⋊ ɹ i ɪ n s t e t ɪ d ⋉
@@ -3669,7 +3669,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 16219	ɛ n l ɪ s t	ɛ n l ɪ s t ɪ d	enlist	enlisted	⋊ ɛ n l ɪ s t ⋉	⋊ ɛ n l ɪ s t ɪ d ⋉
 16230	t ʃ ɔː	t ʃ ɔː d	chaw	chawed	⋊ t ʃ ɔ ⋉	⋊ t ʃ ɔ d ⋉
 16236	t ɪ ŋ k ə	t ɪ ŋ k ə d	tinker	tinkered	⋊ t ɪ ŋ k ə ⋉	⋊ t ɪ ŋ k ə d ⋉
-16242	l ɔɪ t ə	l ɔɪ t ə d	loiter	loitered	⋊ l ɔ ɪ t ə ⋉	⋊ l ɔ ɪ t ə d ⋉
+16242	l ɔɪ t ə	l ɔɪ t ə d	loiter	loitered	⋊ l ɔ ɪ t ə ⋉	⋊ l ɔ ɪ t ɪ d ⋉
 16243	b ə h ɛ d	b ə h ɛ d ɪ d	behead	beheaded	⋊ b ə h ɛ d ⋉	⋊ b ə h ɛ d ɪ d ⋉
 16252	d r ʌ m	d r ʌ m d	drum	drummed	⋊ d ɹ ʌ m ⋉	⋊ d ɹ ʌ m d ⋉
 16258	d ɛ s ɪ k eɪ t	d ɛ s ɪ k eɪ t ɪ d	desiccate	desiccated	⋊ d ɛ s ɪ k e t ⋉	⋊ d ɛ s ɪ k e t ɪ d ⋉
@@ -3760,7 +3760,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 16809	s ɪ v	s ɪ v d	sieve	sieved	⋊ s ɪ v ⋉	⋊ s ɪ v d ⋉
 16811	s ʌ l ɪ	s ʌ l ɪ d	sully	sullied	⋊ s ʌ l ɪ ⋉	⋊ s ʌ l ɪ d ⋉
 16815	s aɪ n	s aɪ n d	sign	signed	⋊ s a ɪ n ⋉	⋊ s a ɪ n d ⋉
-16825	f ɛ t ə	f ɛ t ə d	fetter	fettered	⋊ f ɛ t ə ⋉	⋊ f ɛ t ə d ⋉
+16825	f ɛ t ə	f ɛ t ə d	fetter	fettered	⋊ f ɛ t ə ⋉	⋊ f ɛ t ɪ d ⋉
 16826	s m ʌ t	s m ʌ t ɪ d	smut	smutted	⋊ s m ʌ t ⋉	⋊ s m ʌ t ɪ d ⋉
 16850	v iː t əʊ	v iː t əʊ d	veto	vetoed	⋊ v i t o ⋉	⋊ v i t o d ⋉
 16859	l ɛ d ʒ ɪ s lˠ eɪ t	l ɛ d ʒ ɪ s lˠ eɪ t ɪ d	legislate	legislated	⋊ l ɛ d ʒ ɪ s l e t ⋉	⋊ l ɛ d ʒ ɪ s l e t ɪ d ⋉
@@ -3776,9 +3776,9 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 16897	p r ɪ m p	p r ɪ m p t	primp	primped	⋊ p ɹ ɪ m p ⋉	⋊ p ɹ ɪ m p t ⋉
 16899	θ ɪ ŋ k	θ ɔː t	think	thought	⋊ θ ɪ ŋ k ⋉	⋊ θ ɔ t ⋉
 16906	s ɜː k ə m n a v ɪ g eɪ t	s ɜː k ə m n a v ɪ g eɪ t ɪ d	circumnavigate	circumnavigated	⋊ s ə k ə m n a v ɪ g e t ⋉	⋊ s ə k ə m n a v ɪ g e t ɪ d ⋉
-16910	p a n d ə	p a n d ə d	pander	pandered	⋊ p a n d ə ⋉	⋊ p a n d ə d ⋉
+16910	p a n d ə	p a n d ə d	pander	pandered	⋊ p a n d ə ⋉	⋊ p a n d ɪ d ⋉
 16916	w ɔ f l̩ˠ	w ɔ f l̩ˠ d	waffle	waffled	⋊ w ɔ f l ⋉	⋊ w ɔ f l d ⋉
-16920	t w ɪ t ə	t w ɪ t ə d	twitter	twittered	⋊ t w ɪ t ə ⋉	⋊ t w ɪ t ə d ⋉
+16920	t w ɪ t ə	t w ɪ t ə d	twitter	twittered	⋊ t w ɪ t ə ⋉	⋊ t w ɪ t ɪ d ⋉
 16931	d ɪ f j uː z	d ɪ f j uː z d	defuse	defused	⋊ d ɪ f j u z ⋉	⋊ d ɪ f j u z d ⋉
 16934	r ə v ɛ n ʒ	r ə v ɛ n ʒ d	revenge	revenged	⋊ ɹ ə v ɛ n ʒ ⋉	⋊ ɹ ə v ɛ n ʒ d ⋉
 16955	k w ɔ r ɪ	k w ɔ r ɪ d	quarry	quarried	⋊ k w ɔ ɹ ɪ ⋉	⋊ k w ɔ ɹ ɪ d ⋉
@@ -3804,7 +3804,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 17053	d ɪ m ɜː	d ɪ m ɜː d	demur	demurred	⋊ d ɪ m ə ⋉	⋊ d ɪ m ə d ⋉
 17056	d r aɪ	d r aɪ d	dry	dried	⋊ d ɹ a ɪ ⋉	⋊ d ɹ a ɪ d ⋉
 17064	ə n ʌ lˠ	ə n ʌ lˠ d	annul	annulled	⋊ ə n ʌ l ⋉	⋊ ə n ʌ l d ⋉
-17066	m a t ə	m a t ə d	matter	mattered	⋊ m a t ə ⋉	⋊ m a t ə d ⋉
+17066	m a t ə	m a t ə d	matter	mattered	⋊ m a t ə ⋉	⋊ m a t ɪ d ⋉
 17073	l ɪ m b ə	l ɪ m b ə d	limber	limbered	⋊ l ɪ m b ə ⋉	⋊ l ɪ m b ə d ⋉
 17078	b ɔ n d	b ɔ n d ɪ d	bond	bonded	⋊ b ɔ n d ⋉	⋊ b ɔ n d ɪ d ⋉
 17082	p ɔ z ɪ t	p ɔ z ɪ t ɪ d	posit	posited	⋊ p ɔ z ɪ t ⋉	⋊ p ɔ z ɪ t ɪ d ⋉
@@ -3819,7 +3819,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 17133	b ə h əʊ lˠ d	b ə h ɛ lˠ d	behold	beheld	⋊ b ə h o l d ⋉	⋊ b ə h ɛ l d ⋉
 17136	l ʌ m b ə	l ʌ m b ə d	lumber	lumbered	⋊ l ʌ m b ə ⋉	⋊ l ʌ m b ə d ⋉
 17142	r iː m əʊ lˠ d	r iː m əʊ lˠ d ɪ d	remould	remoulded	⋊ ɹ i m o l d ⋉	⋊ ɹ i m o l d ɪ d ⋉
-17145	g l ɪ t ə	g l ɪ t ə d	glitter	glittered	⋊ g l ɪ t ə ⋉	⋊ g l ɪ t ə d ⋉
+17145	g l ɪ t ə	g l ɪ t ə d	glitter	glittered	⋊ g l ɪ t ə ⋉	⋊ g l ɪ t ɪ d ⋉
 17150	s t r aɪ d	s t r əʊ d	stride	strode	⋊ s t ɹ a ɪ d ⋉	⋊ s t ɹ o d ⋉
 17155	b l ɛ n ʃ	b l ɛ n ʃ t	blench	blenched	⋊ b l ɛ n ʃ ⋉	⋊ b l ɛ n ʃ t ⋉
 17159	ɪ n a k t ə v eɪ t	ɪ n a k t ə v eɪ t ɪ d	inactivate	inactivated	⋊ ɪ n a k t ə v e t ⋉	⋊ ɪ n a k t ə v e t ɪ d ⋉
@@ -3841,7 +3841,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 17254	r ə s p ɔ n d	r ə s p ɔ n d ɪ d	respond	responded	⋊ ɹ ə s p ɔ n d ⋉	⋊ ɹ ə s p ɔ n d ɪ d ⋉
 17256	b r ɔː lˠ	b r ɔː lˠ d	brawl	brawled	⋊ b ɹ ɔ l ⋉	⋊ b ɹ ɔ l d ⋉
 17262	d ɪ s ɛ v ə	d ɪ s ɛ v ə d	dissever	dissevered	⋊ d ɪ s ɛ v ə ⋉	⋊ d ɪ s ɛ v ə d ⋉
-17265	s t ɜː	s t ɜː d	stir	stirred	⋊ s t ə ⋉	⋊ s t ə d ⋉
+17265	s t ɜː	s t ɜː d	stir	stirred	⋊ s t ə ⋉	⋊ s t ɪ d ⋉
 17280	d ʒ ɪ b	d ʒ ɪ b d	jib	jibbed	⋊ d ʒ ɪ b ⋉	⋊ d ʒ ɪ b d ⋉
 17303	f r ɛ k l̩ˠ	f r ɛ k l̩ˠ d	freckle	freckled	⋊ f ɹ ɛ k l ⋉	⋊ f ɹ ɛ k l d ⋉
 17305	w eɪ l eɪ	w eɪ l eɪ d	waylay	waylaid	⋊ w e l e ⋉	⋊ w e l e d ⋉
@@ -3850,7 +3850,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 17335	h j ʊ m ɪ l ɪ eɪ t	h j ʊ m ɪ l ɪ eɪ t ɪ d	humiliate	humiliated	⋊ h j ʊ m ɪ l ɪ e t ⋉	⋊ h j ʊ m ɪ l ɪ e t ɪ d ⋉
 17337	ɜː b ə n aɪ z	ɜː b ə n aɪ z d	urbanize	urbanized	⋊ ə b ə n a ɪ z ⋉	⋊ ə b ə n a ɪ z d ⋉
 17345	ʌ n l uː s	ʌ n l uː s t	unloose	unloosed	⋊ ʌ n l u s ⋉	⋊ ʌ n l u s t ⋉
-17353	b ə w ɪ lˠ d ə	b ə w ɪ lˠ d ə d	bewilder	bewildered	⋊ b ə w ɪ l d ə ⋉	⋊ b ə w ɪ l d ə d ⋉
+17353	b ə w ɪ lˠ d ə	b ə w ɪ lˠ d ə d	bewilder	bewildered	⋊ b ə w ɪ l d ə ⋉	⋊ b ə w ɪ l d ɪ d ⋉
 17368	f aɪ ə p r uː f	f aɪ ə p r uː f t	fireproof	fireproofed	⋊ f a ɪ ə p ɹ u f ⋉	⋊ f a ɪ ə p ɹ u f t ⋉
 17373	ɪ m p l ɪ k eɪ t	ɪ m p l ɪ k eɪ t ɪ d	implicate	implicated	⋊ ɪ m p l ɪ k e t ⋉	⋊ ɪ m p l ɪ k e t ɪ d ⋉
 17384	ə r ɛ s t	ə r ɛ s t ɪ d	arrest	arrested	⋊ ə ɹ ɛ s t ⋉	⋊ ə ɹ ɛ s t ɪ d ⋉
@@ -3885,7 +3885,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 17566	ʌ n s t ɔ p	ʌ n s t ɔ p t	unstop	unstopped	⋊ ʌ n s t ɔ p ⋉	⋊ ʌ n s t ɔ p t ⋉
 17570	p r ɪ k	p r ɪ k t	prick	pricked	⋊ p ɹ ɪ k ⋉	⋊ p ɹ ɪ k t ⋉
 17579	b uː h uː	b uː h uː d	boohoo	boohooed	⋊ b u h u ⋉	⋊ b u h u d ⋉
-17580	w ɔː t ə	w ɔː t ə d	water	watered	⋊ w ɔ t ə ⋉	⋊ w ɔ t ə d ⋉
+17580	w ɔː t ə	w ɔː t ə d	water	watered	⋊ w ɔ t ə ⋉	⋊ w ɔ t ɪ d ⋉
 17581	ɛ s t ʃ uː	ɛ s t ʃ uː d	eschew	eschewed	⋊ ɛ s t ʃ u ⋉	⋊ ɛ s t ʃ u d ⋉
 17582	k ɔ p	k ɔ p t	cop	copped	⋊ k ɔ p ⋉	⋊ k ɔ p t ⋉
 17583	r a k ɪ t ɪ ə	r a k ɪ t ɪ ə d	racketeer	racketeered	⋊ ɹ a k ɪ t ɪ ə ⋉	⋊ ɹ a k ɪ t ɪ ə d ⋉
@@ -3949,7 +3949,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 17954	h ɔː lˠ	h ɔː lˠ d	haul	hauled	⋊ h ɔ l ⋉	⋊ h ɔ l d ⋉
 17979	m a s p r ʊ d j uː s	m a s p r ʊ d j uː s t	mass-produce	mass-produced	⋊ m a s p ɹ ʊ d j u s ⋉	⋊ m a s p ɹ ʊ d j u s t ⋉
 17993	d ɪ s ə s əʊ ʃ j eɪ t	d ɪ s ə s əʊ ʃ j eɪ t ɪ d	disassociate	disassociated	⋊ d ɪ s ə s o ʃ j e t ⋉	⋊ d ɪ s ə s o ʃ j e t ɪ d ⋉
-18006	k ə n s ɪ d ə	k ə n s ɪ d ə d	consider	considered	⋊ k ə n s ɪ d ə ⋉	⋊ k ə n s ɪ d ə d ⋉
+18006	k ə n s ɪ d ə	k ə n s ɪ d ə d	consider	considered	⋊ k ə n s ɪ d ə ⋉	⋊ k ə n s ɪ d ɪ d ⋉
 18012	d aʊ t	d aʊ t ɪ d	doubt	doubted	⋊ d a ʊ t ⋉	⋊ d a ʊ t ɪ d ⋉
 18013	d ɪ l eɪ t	d ɪ l eɪ t ɪ d	dilate	dilated	⋊ d ɪ l e t ⋉	⋊ d ɪ l e t ɪ d ⋉
 18027	k ə n uː	k ə n uː d	canoe	canoed	⋊ k ə n u ⋉	⋊ k ə n u d ⋉
@@ -4052,7 +4052,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 18686	p r ʊ p ɪ ʃ ɪ eɪ t	p r ʊ p ɪ ʃ ɪ eɪ t ɪ d	propitiate	propitiated	⋊ p ɹ ʊ p ɪ ʃ ɪ e t ⋉	⋊ p ɹ ʊ p ɪ ʃ ɪ e t ɪ d ⋉
 18689	s t a m p	s t a m p t	stamp	stamped	⋊ s t a m p ⋉	⋊ s t a m p t ⋉
 18690	l ʌ g	l ʌ g d	lug	lugged	⋊ l ʌ g ⋉	⋊ l ʌ g d ⋉
-18691	b l ɪ s t ə	b l ɪ s t ə d	blister	blistered	⋊ b l ɪ s t ə ⋉	⋊ b l ɪ s t ə d ⋉
+18691	b l ɪ s t ə	b l ɪ s t ə d	blister	blistered	⋊ b l ɪ s t ə ⋉	⋊ b l ɪ s t ɪ d ⋉
 18693	ə d r ɛ s	ə d r ɛ s t	address	addressed	⋊ ə d ɹ ɛ s ⋉	⋊ ə d ɹ ɛ s t ⋉
 18694	t ɪ k ɪ t	t ɪ k ɪ t ɪ d	ticket	ticketed	⋊ t ɪ k ɪ t ⋉	⋊ t ɪ k ɪ t ɪ d ⋉
 18704	p ɔ s t j ʊ l eɪ t	p ɔ s t j ʊ l eɪ t ɪ d	postulate	postulated	⋊ p ɔ s t j ʊ l e t ⋉	⋊ p ɔ s t j ʊ l e t ɪ d ⋉
@@ -4109,7 +4109,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 19107	ʌ n h ʊ k	ʌ n h ʊ k t	unhook	unhooked	⋊ ʌ n h ʊ k ⋉	⋊ ʌ n h ʊ k t ⋉
 19110	p iː n l̩ˠ aɪ z	p iː n l̩ˠ aɪ z d	penalize	penalized	⋊ p i n l a ɪ z ⋉	⋊ p i n l a ɪ z d ⋉
 19119	ɛ n d j uː	ɛ n d j uː d	endue	endued	⋊ ɛ n d j u ⋉	⋊ ɛ n d j u d ⋉
-19124	s p lˠ ʌ t ə	s p lˠ ʌ t ə d	splutter	spluttered	⋊ s p l ʌ t ə ⋉	⋊ s p l ʌ t ə d ⋉
+19124	s p lˠ ʌ t ə	s p lˠ ʌ t ə d	splutter	spluttered	⋊ s p l ʌ t ə ⋉	⋊ s p l ʌ t ɪ d ⋉
 19127	r ɛ d ʒ ɪ m ɛ n t	r ɛ d ʒ ɪ m ɛ n t ɪ d	regiment	regimented	⋊ ɹ ɛ d ʒ ɪ m ɛ n t ⋉	⋊ ɹ ɛ d ʒ ɪ m ɛ n t ɪ d ⋉
 19131	m ɪ t ɪ g eɪ t	m ɪ t ɪ g eɪ t ɪ d	mitigate	mitigated	⋊ m ɪ t ɪ g e t ⋉	⋊ m ɪ t ɪ g e t ɪ d ⋉
 19132	p ɜː s n̩ eɪ t	p ɜː s n̩ eɪ t ɪ d	personate	personated	⋊ p ə s n e t ⋉	⋊ p ə s n e t ɪ d ⋉
@@ -4140,7 +4140,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 19277	s p əʊ l ɪ eɪ t	s p əʊ l ɪ eɪ t ɪ d	spoliate	spoliated	⋊ s p o l ɪ e t ⋉	⋊ s p o l ɪ e t ɪ d ⋉
 19279	m ɔ r l̩ˠ aɪ z	m ɔ r l̩ˠ aɪ z d	moralize	moralized	⋊ m ɔ ɹ l a ɪ z ⋉	⋊ m ɔ ɹ l a ɪ z d ⋉
 19281	k r ɛ d ɪ t	k r ɛ d ɪ t ɪ d	credit	credited	⋊ k ɹ ɛ d ɪ t ⋉	⋊ k ɹ ɛ d ɪ t ɪ d ⋉
-19284	k l ʌ s t ə	k l ʌ s t ə d	cluster	clustered	⋊ k l ʌ s t ə ⋉	⋊ k l ʌ s t ə d ⋉
+19284	k l ʌ s t ə	k l ʌ s t ə d	cluster	clustered	⋊ k l ʌ s t ə ⋉	⋊ k l ʌ s t ɪ d ⋉
 19287	d ʒ ɑː	d ʒ ɑː d	jar	jarred	⋊ d ʒ ɑ ⋉	⋊ d ʒ ɑ d ⋉
 19299	ɪ n d ɛ k s	ɪ n d ɛ k s t	index	indexed	⋊ ɪ n d ɛ k s ⋉	⋊ ɪ n d ɛ k s t ⋉
 19300	t ɪ n	t ɪ n d	tin	tinned	⋊ t ɪ n ⋉	⋊ t ɪ n d ⋉
@@ -4160,7 +4160,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 19459	d ɪ z eɪ b l̩ˠ	d ɪ z eɪ b l̩ˠ d	disable	disabled	⋊ d ɪ z e b l ⋉	⋊ d ɪ z e b l d ⋉
 19462	k əʊ t aʊ	k əʊ t aʊ d	kotow	kotowed	⋊ k o t a ʊ ⋉	⋊ k o t a ʊ d ⋉
 19465	m ɑː v l̩ˠ	m ɑː v l̩ˠ d	marvel	marvelled	⋊ m ɑ v l ⋉	⋊ m ɑ v l d ⋉
-19475	p aʊ d ə	p aʊ d ə d	powder	powdered	⋊ p a ʊ d ə ⋉	⋊ p a ʊ d ə d ⋉
+19475	p aʊ d ə	p aʊ d ə d	powder	powdered	⋊ p a ʊ d ə ⋉	⋊ p a ʊ d ɪ d ⋉
 19487	ə p r ɔ k s ɪ m eɪ t	ə p r ɔ k s ɪ m eɪ t ɪ d	approximate	approximated	⋊ ə p ɹ ɔ k s ɪ m e t ⋉	⋊ ə p ɹ ɔ k s ɪ m e t ɪ d ⋉
 19503	ʌ n ɑː m	ʌ n ɑː m d	unarm	unarmed	⋊ ʌ n ɑ m ⋉	⋊ ʌ n ɑ m d ⋉
 19504	r iː p l eɪ	r iː p l eɪ d	replay	replayed	⋊ ɹ i p l e ⋉	⋊ ɹ i p l e d ⋉
@@ -4181,7 +4181,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 19623	ɛ m f ə s aɪ z	ɛ m f ə s aɪ z d	emphasize	emphasized	⋊ ɛ m f ə s a ɪ z ⋉	⋊ ɛ m f ə s a ɪ z d ⋉
 19631	k ə n s iː v	k ə n s iː v d	conceive	conceived	⋊ k ə n s i v ⋉	⋊ k ə n s i v d ⋉
 19640	p ɪ t	p ɪ t ɪ d	pit	pitted	⋊ p ɪ t ⋉	⋊ p ɪ t ɪ d ⋉
-19650	ɪ n t ɜː	ɪ n t ɜː d	inter	interred	⋊ ɪ n t ə ⋉	⋊ ɪ n t ə d ⋉
+19650	ɪ n t ɜː	ɪ n t ɜː d	inter	interred	⋊ ɪ n t ə ⋉	⋊ ɪ n t ɪ d ⋉
 19651	h ʊ d w ɪ ŋ k	h ʊ d w ɪ ŋ k t	hoodwink	hoodwinked	⋊ h ʊ d w ɪ ŋ k ⋉	⋊ h ʊ d w ɪ ŋ k t ⋉
 19661	k ɜː lˠ	k ɜː lˠ d	curl	curled	⋊ k ə l ⋉	⋊ k ə l d ⋉
 19685	k a s t ɪ g eɪ t	k a s t ɪ g eɪ t ɪ d	castigate	castigated	⋊ k a s t ɪ g e t ⋉	⋊ k a s t ɪ g e t ɪ d ⋉
@@ -4296,7 +4296,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 20549	d ɪ s k ə m p əʊ z	d ɪ s k ə m p əʊ z d	discompose	discomposed	⋊ d ɪ s k ə m p o z ⋉	⋊ d ɪ s k ə m p o z d ⋉
 20567	ʌ n b ɜː d n̩	ʌ n b ɜː d n̩ d	unburden	unburdened	⋊ ʌ n b ə d n ⋉	⋊ ʌ n b ə d n d ⋉
 20575	s ʌ b s ɜː v	s ʌ b s ɜː v d	subserve	subserved	⋊ s ʌ b s ə v ⋉	⋊ s ʌ b s ə v d ⋉
-20583	s p a t ə	s p a t ə d	spatter	spattered	⋊ s p a t ə ⋉	⋊ s p a t ə d ⋉
+20583	s p a t ə	s p a t ə d	spatter	spattered	⋊ s p a t ə ⋉	⋊ s p a t ɪ d ⋉
 20602	t r eɪ s	t r eɪ s t	trace	traced	⋊ t ɹ e s ⋉	⋊ t ɹ e s t ⋉
 20603	l ə s uː	l ə s uː d	lasso	lassoed	⋊ l ə s u ⋉	⋊ l ə s u d ⋉
 20618	b ʌ k	b ʌ k t	buck	bucked	⋊ b ʌ k ⋉	⋊ b ʌ k t ⋉
@@ -4316,7 +4316,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 20717	aʊ t p l eɪ	aʊ t p l eɪ d	outplay	outplayed	⋊ a ʊ t p l e ⋉	⋊ a ʊ t p l e d ⋉
 20720	ɪ n d aɪ t	ɪ n d aɪ t ɪ d	indict	indicted	⋊ ɪ n d a ɪ t ⋉	⋊ ɪ n d a ɪ t ɪ d ⋉
 20744	g r aɪ m	g r aɪ m d	grime	grimed	⋊ g ɹ a ɪ m ⋉	⋊ g ɹ a ɪ m d ⋉
-20749	f ɪ lˠ t ə	f ɪ lˠ t ə d	filter	filtered	⋊ f ɪ l t ə ⋉	⋊ f ɪ l t ə d ⋉
+20749	f ɪ lˠ t ə	f ɪ lˠ t ə d	filter	filtered	⋊ f ɪ l t ə ⋉	⋊ f ɪ l t ɪ d ⋉
 20756	d ɪ s t ɔː t	d ɪ s t ɔː t ɪ d	distort	distorted	⋊ d ɪ s t ɔ t ⋉	⋊ d ɪ s t ɔ t ɪ d ⋉
 20759	p ɪ l əʊ	p ɪ l əʊ d	pillow	pillowed	⋊ p ɪ l o ⋉	⋊ p ɪ l o d ⋉
 20761	t əʊ	t əʊ d	tow	towed	⋊ t o ⋉	⋊ t o d ⋉
@@ -4349,7 +4349,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 20981	m ə l ɪ ŋ g ə	m ə l ɪ ŋ g ə d	malinger	malingered	⋊ m ə l ɪ ŋ g ə ⋉	⋊ m ə l ɪ ŋ g ə d ⋉
 20999	k l ɑː s p	k l ɑː s p t	clasp	clasped	⋊ k l ɑ s p ⋉	⋊ k l ɑ s p t ⋉
 21010	ɪ n t ɜː p ɪ l eɪ t	ɪ n t ɜː p ɪ l eɪ t ɪ d	interpellate	interpellated	⋊ ɪ n t ə p ɪ l e t ⋉	⋊ ɪ n t ə p ɪ l e t ɪ d ⋉
-21029	b ʌ t ə	b ʌ t ə d	butter	buttered	⋊ b ʌ t ə ⋉	⋊ b ʌ t ə d ⋉
+21029	b ʌ t ə	b ʌ t ə d	butter	buttered	⋊ b ʌ t ə ⋉	⋊ b ʌ t ɪ d ⋉
 21060	ə r aɪ z	ə r əʊ z	arise	arose	⋊ ə ɹ a ɪ z ⋉	⋊ ə ɹ o z ⋉
 21074	k ə m p l iː t	k ə m p l iː t ɪ d	complete	completed	⋊ k ə m p l i t ⋉	⋊ k ə m p l i t ɪ d ⋉
 21075	k əʊ lˠ	k əʊ lˠ d	coal	coaled	⋊ k o l ⋉	⋊ k o l d ⋉
@@ -4385,7 +4385,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 21309	ɛ n d ʒ ə n ɪ ə	ɛ n d ʒ ə n ɪ ə d	engineer	engineered	⋊ ɛ n d ʒ ə n ɪ ə ⋉	⋊ ɛ n d ʒ ə n ɪ ə d ⋉
 21310	p r aɪ s	p r aɪ s t	price	priced	⋊ p ɹ a ɪ s ⋉	⋊ p ɹ a ɪ s t ⋉
 21313	b ɔ s	b ɔ s t	boss	bossed	⋊ b ɔ s ⋉	⋊ b ɔ s t ⋉
-21331	k a l ə n d ə	k a l ə n d ə d	calender	calendered	⋊ k a l ə n d ə ⋉	⋊ k a l ə n d ə d ⋉
+21331	k a l ə n d ə	k a l ə n d ə d	calender	calendered	⋊ k a l ə n d ə ⋉	⋊ k a l ə n d ɪ d ⋉
 21332	g ɔ b l̩ˠ	g ɔ b l̩ˠ d	gobble	gobbled	⋊ g ɔ b l ⋉	⋊ g ɔ b l d ⋉
 21337	s n a p	s n a p t	snap	snapped	⋊ s n a p ⋉	⋊ s n a p t ⋉
 21350	f r a t ə n aɪ z	f r a t ə n aɪ z d	fraternize	fraternized	⋊ f ɹ a t ə n a ɪ z ⋉	⋊ f ɹ a t ə n a ɪ z d ⋉
@@ -4397,7 +4397,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 21435	ɛ n f iː b l̩ˠ	ɛ n f iː b l̩ˠ d	enfeeble	enfeebled	⋊ ɛ n f i b l ⋉	⋊ ɛ n f i b l d ⋉
 21455	ʃ r ɪ ŋ k	ʃ r ʌ ŋ k	shrink	shrunk	⋊ ʃ ɹ ɪ ŋ k ⋉	⋊ ʃ ɹ ʌ ŋ k ⋉
 21467	k w ɪ k n̩	k w ɪ k n̩ d	quicken	quickened	⋊ k w ɪ k n ⋉	⋊ k w ɪ k n d ⋉
-21482	ɛ n k aʊ n t ə	ɛ n k aʊ n t ə d	encounter	encountered	⋊ ɛ n k a ʊ n t ə ⋉	⋊ ɛ n k a ʊ n t ə d ⋉
+21482	ɛ n k aʊ n t ə	ɛ n k aʊ n t ə d	encounter	encountered	⋊ ɛ n k a ʊ n t ə ⋉	⋊ ɛ n k a ʊ n t ɪ d ⋉
 21485	ɪ n s aɪ z	ɪ n s aɪ z d	incise	incised	⋊ ɪ n s a ɪ z ⋉	⋊ ɪ n s a ɪ z d ⋉
 21493	t r ɑː n s m ɔ g r ɪ f aɪ	t r ɑː n s m ɔ g r ɪ f aɪ d	transmogrify	transmogrified	⋊ t ɹ ɑ n s m ɔ g ɹ ɪ f a ɪ ⋉	⋊ t ɹ ɑ n s m ɔ g ɹ ɪ f a ɪ d ⋉
 21498	s p aɪ ə r l̩ˠ	s p aɪ ə r l̩ˠ d	spiral	spiralled	⋊ s p a ɪ ə ɹ l ⋉	⋊ s p a ɪ ə ɹ l d ⋉
@@ -4539,11 +4539,11 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 22571	r iː d ɪ s t r ɪ b j uː t	r iː d ɪ s t r ɪ b j uː t ɪ d	redistribute	redistributed	⋊ ɹ i d ɪ s t ɹ ɪ b j u t ⋉	⋊ ɹ i d ɪ s t ɹ ɪ b j u t ɪ d ⋉
 22576	b ʌ t n̩ h əʊ lˠ	b ʌ t n̩ h əʊ lˠ d	buttonhole	buttonholed	⋊ b ʌ t n h o l ⋉	⋊ b ʌ t n h o l d ⋉
 22582	k eɪ b l̩ˠ	k eɪ b l̩ˠ d	cable	cabled	⋊ k e b l ⋉	⋊ k e b l d ⋉
-22586	l ɔː n d ə	l ɔː n d ə d	launder	laundered	⋊ l ɔ n d ə ⋉	⋊ l ɔ n d ə d ⋉
+22586	l ɔː n d ə	l ɔː n d ə d	launder	laundered	⋊ l ɔ n d ə ⋉	⋊ l ɔ n d ɪ d ⋉
 22594	p a r ə g r a f	p a r ə g r a f t	paragraph	paragraphed	⋊ p a ɹ ə g ɹ a f ⋉	⋊ p a ɹ ə g ɹ a f t ⋉
 22602	ɪ n f l eɪ m	ɪ n f l eɪ m d	inflame	inflamed	⋊ ɪ n f l e m ⋉	⋊ ɪ n f l e m d ⋉
 22604	t ɛ ə	t ɔː	tear	tore	⋊ t ɛ ə ⋉	⋊ t ɔ ⋉
-22612	əʊ v ə m ɑː s t ə	əʊ v ə m ɑː s t ə d	overmaster	overmastered	⋊ o v ə m ɑ s t ə ⋉	⋊ o v ə m ɑ s t ə d ⋉
+22612	əʊ v ə m ɑː s t ə	əʊ v ə m ɑː s t ə d	overmaster	overmastered	⋊ o v ə m ɑ s t ə ⋉	⋊ o v ə m ɑ s t ɪ d ⋉
 22633	ɪ m p ɔ v r ɪ ʃ	ɪ m p ɔ v r ɪ ʃ t	impoverish	impoverished	⋊ ɪ m p ɔ v ɹ ɪ ʃ ⋉	⋊ ɪ m p ɔ v ɹ ɪ ʃ t ⋉
 22635	ʃ r ɪ v l̩ˠ	ʃ r ɪ v l̩ˠ d	shrivel	shrivelled	⋊ ʃ ɹ ɪ v l ⋉	⋊ ʃ ɹ ɪ v l d ⋉
 22638	r ɪ d a k t	r ɪ d a k t ɪ d	redact	redacted	⋊ ɹ ɪ d a k t ⋉	⋊ ɹ ɪ d a k t ɪ d ⋉
@@ -4565,7 +4565,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 22742	s k a t	s k a t ɪ d	scat	scatted	⋊ s k a t ⋉	⋊ s k a t ɪ d ⋉
 22748	r iː t uː lˠ	r iː t uː lˠ d	retool	retooled	⋊ ɹ i t u l ⋉	⋊ ɹ i t u l d ⋉
 22755	h ɑː d n̩	h ɑː d n̩ d	harden	hardened	⋊ h ɑ d n ⋉	⋊ h ɑ d n d ⋉
-22770	m əʊ t ə	m əʊ t ə d	motor	motored	⋊ m o t ə ⋉	⋊ m o t ə d ⋉
+22770	m əʊ t ə	m əʊ t ə d	motor	motored	⋊ m o t ə ⋉	⋊ m o t ɪ d ⋉
 22781	r eɪ n ʒ	r eɪ n ʒ d	range	ranged	⋊ ɹ e n ʒ ⋉	⋊ ɹ e n ʒ d ⋉
 22783	k ɔ n s t ɪ t j uː ʃ ə n ə l aɪ z	k ɔ n s t ɪ t j uː ʃ ə n ə l aɪ z d	constitutionalize	constitutionalized	⋊ k ɔ n s t ɪ t j u ʃ ə n ə l a ɪ z ⋉	⋊ k ɔ n s t ɪ t j u ʃ ə n ə l a ɪ z d ⋉
 22803	b ə d ɛ v l̩ˠ	b ə d ɛ v l̩ˠ d	bedevil	bedevilled	⋊ b ə d ɛ v l ⋉	⋊ b ə d ɛ v l d ⋉
@@ -4613,7 +4613,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 23250	t r ɑː n s f j uː z	t r ɑː n s f j uː z d	transfuse	transfused	⋊ t ɹ ɑ n s f j u z ⋉	⋊ t ɹ ɑ n s f j u z d ⋉
 23261	s t əʊ k	s t əʊ k t	stoke	stoked	⋊ s t o k ⋉	⋊ s t o k t ⋉
 23271	f r eɪ	f r eɪ d	fray	frayed	⋊ f ɹ e ⋉	⋊ f ɹ e d ⋉
-23302	s k a t ə	s k a t ə d	scatter	scattered	⋊ s k a t ə ⋉	⋊ s k a t ə d ⋉
+23302	s k a t ə	s k a t ə d	scatter	scattered	⋊ s k a t ə ⋉	⋊ s k a t ɪ d ⋉
 23305	k ɑː p	k ɑː p t	carp	carped	⋊ k ɑ p ⋉	⋊ k ɑ p t ⋉
 23307	p ɜː s ɪ v ɪ ə	p ɜː s ɪ v ɪ ə d	persevere	persevered	⋊ p ə s ɪ v ɪ ə ⋉	⋊ p ə s ɪ v ɪ ə d ⋉
 23322	p r ɛ ʃ ə	p r ɛ ʃ ə d	pressure	pressured	⋊ p ɹ ɛ ʃ ə ⋉	⋊ p ɹ ɛ ʃ ə d ⋉
@@ -4684,7 +4684,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 23923	əʊ v ə b ɪ d	əʊ v ə b ɪ d	overbid	overbid	⋊ o v ə b ɪ d ⋉	⋊ o v ə b ɪ d ⋉
 23924	s t ɛ m	s t ɛ m d	stem	stemmed	⋊ s t ɛ m ⋉	⋊ s t ɛ m d ⋉
 23943	s k aɪ v	s k aɪ v d	skive	skived	⋊ s k a ɪ v ⋉	⋊ s k a ɪ v d ⋉
-23945	h ɪ n d ə	h ɪ n d ə d	hinder	hindered	⋊ h ɪ n d ə ⋉	⋊ h ɪ n d ə d ⋉
+23945	h ɪ n d ə	h ɪ n d ə d	hinder	hindered	⋊ h ɪ n d ə ⋉	⋊ h ɪ n d ɪ d ⋉
 23957	ʃ ɛ ə	ʃ ɛ ə d	share	shared	⋊ ʃ ɛ ə ⋉	⋊ ʃ ɛ ə d ⋉
 23969	s ɪ z l̩ˠ	s ɪ z l̩ˠ d	sizzle	sizzled	⋊ s ɪ z l ⋉	⋊ s ɪ z l d ⋉
 23972	k a k l̩ˠ	k a k l̩ˠ d	cackle	cackled	⋊ k a k l ⋉	⋊ k a k l d ⋉
@@ -4704,7 +4704,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 24056	v ɪ k t ɪ m aɪ z	v ɪ k t ɪ m aɪ z d	victimize	victimized	⋊ v ɪ k t ɪ m a ɪ z ⋉	⋊ v ɪ k t ɪ m a ɪ z d ⋉
 24060	f r ɪ n ʒ	f r ɪ n ʒ d	fringe	fringed	⋊ f ɹ ɪ n ʒ ⋉	⋊ f ɹ ɪ n ʒ d ⋉
 24071	k ɜː t s ɪ	k ɜː t s ɪ d	curtsy	curtsied	⋊ k ə t s ɪ ⋉	⋊ k ə t s ɪ d ⋉
-24074	m ɑː s t ə	m ɑː s t ə d	master	mastered	⋊ m ɑ s t ə ⋉	⋊ m ɑ s t ə d ⋉
+24074	m ɑː s t ə	m ɑː s t ə d	master	mastered	⋊ m ɑ s t ə ⋉	⋊ m ɑ s t ɪ d ⋉
 24079	r əʊ l ə s k eɪ t	r əʊ l ə s k eɪ t ɪ d	roller-skate	roller-skated	⋊ ɹ o l ə s k e t ⋉	⋊ ɹ o l ə s k e t ɪ d ⋉
 24091	b ɜː k	b ɜː k t	burke	burked	⋊ b ə k ⋉	⋊ b ə k t ⋉
 24093	b ə s iː t ʃ	b ə s ɔː t	beseech	besought	⋊ b ə s i t ʃ ⋉	⋊ b ə s ɔ t ⋉
@@ -4733,7 +4733,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 24376	f ɔ k s h ʌ n t	f ɔ k s h ʌ n t ɪ d	foxhunt	foxhunted	⋊ f ɔ k s h ʌ n t ⋉	⋊ f ɔ k s h ʌ n t ɪ d ⋉
 24380	h ɔ lˠ t	h ɔ lˠ t ɪ d	halt	halted	⋊ h ɔ l t ⋉	⋊ h ɔ l t ɪ d ⋉
 24385	əʊ v ə b a l ə n s	əʊ v ə b a l ə n s t	overbalance	overbalanced	⋊ o v ə b a l ə n s ⋉	⋊ o v ə b a l ə n s t ⋉
-24389	s ɛ n t ə	s ɛ n t ə d	centre	centred	⋊ s ɛ n t ə ⋉	⋊ s ɛ n t ə d ⋉
+24389	s ɛ n t ə	s ɛ n t ə d	centre	centred	⋊ s ɛ n t ə ⋉	⋊ s ɛ n t ɪ d ⋉
 24408	ə k r iː t	ə k r iː t ɪ d	accrete	accreted	⋊ ə k ɹ i t ⋉	⋊ ə k ɹ i t ɪ d ⋉
 24414	d ɪ g r ɛ s	d ɪ g r ɛ s t	digress	digressed	⋊ d ɪ g ɹ ɛ s ⋉	⋊ d ɪ g ɹ ɛ s t ⋉
 24417	b a k t r a k	b a k t r a k t	backtrack	backtracked	⋊ b a k t ɹ a k ⋉	⋊ b a k t ɹ a k t ⋉
@@ -4861,7 +4861,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 25601	f ʌ n d	f ʌ n d ɪ d	fund	funded	⋊ f ʌ n d ⋉	⋊ f ʌ n d ɪ d ⋉
 25607	p r ɔ m ʌ lˠ g eɪ t	p r ɔ m ʌ lˠ g eɪ t ɪ d	promulgate	promulgated	⋊ p ɹ ɔ m ʌ l g e t ⋉	⋊ p ɹ ɔ m ʌ l g e t ɪ d ⋉
 25620	r iː f ɜː b ɪ ʃ	r iː f ɜː b ɪ ʃ t	refurbish	refurbished	⋊ ɹ i f ə b ɪ ʃ ⋉	⋊ ɹ i f ə b ɪ ʃ t ⋉
-25638	m ɜː d ə	m ɜː d ə d	murder	murdered	⋊ m ə d ə ⋉	⋊ m ə d ə d ⋉
+25638	m ɜː d ə	m ɜː d ə d	murder	murdered	⋊ m ə d ə ⋉	⋊ m ə d ɪ d ⋉
 25649	əʊ v ə θ r əʊ	əʊ v ə θ r uː	overthrow	overthrew	⋊ o v ə θ ɹ o ⋉	⋊ o v ə θ ɹ u ⋉
 25689	d ɪ s r ɛ l ɪ ʃ	d ɪ s r ɛ l ɪ ʃ t	disrelish	disrelished	⋊ d ɪ s ɹ ɛ l ɪ ʃ ⋉	⋊ d ɪ s ɹ ɛ l ɪ ʃ t ⋉
 25695	a g r ɪ g eɪ t	a g r ɪ g eɪ t ɪ d	aggregate	aggregated	⋊ a g ɹ ɪ g e t ⋉	⋊ a g ɹ ɪ g e t ɪ d ⋉
@@ -4940,10 +4940,10 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 26402	k r ɪ b	k r ɪ b d	crib	cribbed	⋊ k ɹ ɪ b ⋉	⋊ k ɹ ɪ b d ⋉
 26410	d iː f ə k eɪ t	d iː f ə k eɪ t ɪ d	defecate	defecated	⋊ d i f ə k e t ⋉	⋊ d i f ə k e t ɪ d ⋉
 26413	b ɪ l əʊ	b ɪ l əʊ d	billow	billowed	⋊ b ɪ l o ⋉	⋊ b ɪ l o d ⋉
-26415	f ɪ l ɪ b ʌ s t ə	f ɪ l ɪ b ʌ s t ə d	filibuster	filibustered	⋊ f ɪ l ɪ b ʌ s t ə ⋉	⋊ f ɪ l ɪ b ʌ s t ə d ⋉
+26415	f ɪ l ɪ b ʌ s t ə	f ɪ l ɪ b ʌ s t ə d	filibuster	filibustered	⋊ f ɪ l ɪ b ʌ s t ə ⋉	⋊ f ɪ l ɪ b ʌ s t ɪ d ⋉
 26426	f ɜː lˠ	f ɜː lˠ d	furl	furled	⋊ f ə l ⋉	⋊ f ə l d ⋉
 26449	s lˠ a k n̩	s lˠ a k n̩ d	slacken	slackened	⋊ s l a k n ⋉	⋊ s l a k n d ⋉
-26453	θ ʌ n d ə	θ ʌ n d ə d	thunder	thundered	⋊ θ ʌ n d ə ⋉	⋊ θ ʌ n d ə d ⋉
+26453	θ ʌ n d ə	θ ʌ n d ə d	thunder	thundered	⋊ θ ʌ n d ə ⋉	⋊ θ ʌ n d ɪ d ⋉
 26463	m iː t	m ɛ t	meet	met	⋊ m i t ⋉	⋊ m ɛ t ⋉
 26471	f ɪ lˠ	f ɪ lˠ d	fill	filled	⋊ f ɪ l ⋉	⋊ f ɪ l d ⋉
 26508	t r ɔː lˠ	t r ɔː lˠ d	trawl	trawled	⋊ t ɹ ɔ l ⋉	⋊ t ɹ ɔ l d ⋉
@@ -5003,7 +5003,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 27201	s iː t	s iː t ɪ d	seat	seated	⋊ s i t ⋉	⋊ s i t ɪ d ⋉
 27205	r a f l̩ˠ	r a f l̩ˠ d	raffle	raffled	⋊ ɹ a f l ⋉	⋊ ɹ a f l d ⋉
 27206	b ə l uː n	b ə l uː n d	balloon	ballooned	⋊ b ə l u n ⋉	⋊ b ə l u n d ⋉
-27223	p ɔ n d ə	p ɔ n d ə d	ponder	pondered	⋊ p ɔ n d ə ⋉	⋊ p ɔ n d ə d ⋉
+27223	p ɔ n d ə	p ɔ n d ə d	ponder	pondered	⋊ p ɔ n d ə ⋉	⋊ p ɔ n d ɪ d ⋉
 27228	m a lˠ f ʌ ŋ ʃ n̩	m a lˠ f ʌ ŋ ʃ n̩ d	malfunction	malfunctioned	⋊ m a l f ʌ ŋ ʃ n ⋉	⋊ m a l f ʌ ŋ ʃ n d ⋉
 27236	s ɪ n d ə k eɪ t	s ɪ n d ə k eɪ t ɪ d	syndicate	syndicated	⋊ s ɪ n d ə k e t ⋉	⋊ s ɪ n d ə k e t ɪ d ⋉
 27247	s a ŋ t ɪ f aɪ	s a ŋ t ɪ f aɪ d	sanctify	sanctified	⋊ s a ŋ t ɪ f a ɪ ⋉	⋊ s a ŋ t ɪ f a ɪ d ⋉
@@ -5039,7 +5039,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 27550	p a l ɪ eɪ t	p a l ɪ eɪ t ɪ d	palliate	palliated	⋊ p a l ɪ e t ⋉	⋊ p a l ɪ e t ɪ d ⋉
 27554	p a r ə d ɪ	p a r ə d ɪ d	parody	parodied	⋊ p a ɹ ə d ɪ ⋉	⋊ p a ɹ ə d ɪ d ⋉
 27583	p ɪ ŋ k	p ɪ ŋ k t	pink	pinked	⋊ p ɪ ŋ k ⋉	⋊ p ɪ ŋ k t ⋉
-27585	s ə r ɛ n d ə	s ə r ɛ n d ə d	surrender	surrendered	⋊ s ə ɹ ɛ n d ə ⋉	⋊ s ə ɹ ɛ n d ə d ⋉
+27585	s ə r ɛ n d ə	s ə r ɛ n d ə d	surrender	surrendered	⋊ s ə ɹ ɛ n d ə ⋉	⋊ s ə ɹ ɛ n d ɪ d ⋉
 27607	f r ɛ ʃ n̩	f r ɛ ʃ n̩ d	freshen	freshened	⋊ f ɹ ɛ ʃ n ⋉	⋊ f ɹ ɛ ʃ n d ⋉
 27615	r ʌ s p r uː f	r ʌ s p r uː f t	rustproof	rustproofed	⋊ ɹ ʌ s p ɹ u f ⋉	⋊ ɹ ʌ s p ɹ u f t ⋉
 27623	ɪ d ɛ n t ɪ f aɪ	ɪ d ɛ n t ɪ f aɪ d	identify	identified	⋊ ɪ d ɛ n t ɪ f a ɪ ⋉	⋊ ɪ d ɛ n t ɪ f a ɪ d ⋉
@@ -5082,7 +5082,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 28078	s ə k ʌ m	s ə k ʌ m d	succumb	succumbed	⋊ s ə k ʌ m ⋉	⋊ s ə k ʌ m d ⋉
 28080	d ɪ v ɪ	d ɪ v ɪ d	divvy	divvied	⋊ d ɪ v ɪ ⋉	⋊ d ɪ v ɪ d ⋉
 28083	v ɛ d ʒ ə t eɪ t	v ɛ d ʒ ə t eɪ t ɪ d	vegetate	vegetated	⋊ v ɛ d ʒ ə t e t ⋉	⋊ v ɛ d ʒ ə t e t ɪ d ⋉
-28090	b əʊ lˠ s t ə	b əʊ lˠ s t ə d	bolster	bolstered	⋊ b o l s t ə ⋉	⋊ b o l s t ə d ⋉
+28090	b əʊ lˠ s t ə	b əʊ lˠ s t ə d	bolster	bolstered	⋊ b o l s t ə ⋉	⋊ b o l s t ɪ d ⋉
 28091	j ɔː	j ɔː d	yaw	yawed	⋊ j ɔ ⋉	⋊ j ɔ d ⋉
 28092	a k s ɛ l ə r eɪ t	a k s ɛ l ə r eɪ t ɪ d	accelerate	accelerated	⋊ a k s ɛ l ə ɹ e t ⋉	⋊ a k s ɛ l ə ɹ e t ɪ d ⋉
 28128	ʌ n d ə m aɪ n	ʌ n d ə m aɪ n d	undermine	undermined	⋊ ʌ n d ə m a ɪ n ⋉	⋊ ʌ n d ə m a ɪ n d ⋉
@@ -5127,7 +5127,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 28629	k aʊ n t ə m aɪ n	k aʊ n t ə m aɪ n d	countermine	countermined	⋊ k a ʊ n t ə m a ɪ n ⋉	⋊ k a ʊ n t ə m a ɪ n d ⋉
 28633	ɪ n s t ɪ lˠ	ɪ n s t ɪ lˠ d	instil	instilled	⋊ ɪ n s t ɪ l ⋉	⋊ ɪ n s t ɪ l d ⋉
 28654	h a ŋ k ʌ f	h a ŋ k ʌ f t	handcuff	handcuffed	⋊ h a ŋ k ʌ f ⋉	⋊ h a ŋ k ʌ f t ⋉
-28672	b ɛ t ə	b ɛ t ə d	better	bettered	⋊ b ɛ t ə ⋉	⋊ b ɛ t ə d ⋉
+28672	b ɛ t ə	b ɛ t ə d	better	bettered	⋊ b ɛ t ə ⋉	⋊ b ɛ t ɪ d ⋉
 28673	r ə f r ɪ d ʒ ə r eɪ t	r ə f r ɪ d ʒ ə r eɪ t ɪ d	refrigerate	refrigerated	⋊ ɹ ə f ɹ ɪ d ʒ ə ɹ e t ⋉	⋊ ɹ ə f ɹ ɪ d ʒ ə ɹ e t ɪ d ⋉
 28674	t iː z	t iː z d	tease	teased	⋊ t i z ⋉	⋊ t i z d ⋉
 28707	k a ʃ ɪ ə	k a ʃ ɪ ə d	cashier	cashiered	⋊ k a ʃ ɪ ə ⋉	⋊ k a ʃ ɪ ə d ⋉
@@ -5135,7 +5135,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 28746	n əʊ t ɪ s	n əʊ t ɪ s t	notice	noticed	⋊ n o t ɪ s ⋉	⋊ n o t ɪ s t ⋉
 28750	k ɔ n s ə b z t a n ʃ ɪ eɪ t	k ɔ n s ə b z t a n ʃ ɪ eɪ t ɪ d	consubstantiate	consubstantiated	⋊ k ɔ n s ə b z t a n ʃ ɪ e t ⋉	⋊ k ɔ n s ə b z t a n ʃ ɪ e t ɪ d ⋉
 28780	p aɪ r ɪ t	p aɪ r ɪ t ɪ d	pirate	pirated	⋊ p a ɪ ɹ ɪ t ⋉	⋊ p a ɪ ɹ ɪ t ɪ d ⋉
-28805	t iː t ə	t iː t ə d	teeter	teetered	⋊ t i t ə ⋉	⋊ t i t ə d ⋉
+28805	t iː t ə	t iː t ə d	teeter	teetered	⋊ t i t ə ⋉	⋊ t i t ɪ d ⋉
 28830	m ɪ k s	m ɪ k s t	mix	mixed	⋊ m ɪ k s ⋉	⋊ m ɪ k s t ⋉
 28834	ʃ aɪ n	ʃ aɪ n d	shine	shined	⋊ ʃ a ɪ n ⋉	⋊ ʃ a ɪ n d ⋉
 28843	s ə b s aɪ d	s ə b s aɪ d ɪ d	subside	subsided	⋊ s ə b s a ɪ d ⋉	⋊ s ə b s a ɪ d ɪ d ⋉
@@ -5206,7 +5206,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 29625	əʊ v ə d r ɔː	əʊ v ə d r uː	overdraw	overdrew	⋊ o v ə d ɹ ɔ ⋉	⋊ o v ə d ɹ u ⋉
 29645	ʃ ɪ n	ʃ ɪ n d	shin	shinned	⋊ ʃ ɪ n ⋉	⋊ ʃ ɪ n d ⋉
 29662	p r ɛ f ə s	p r ɛ f ə s t	preface	prefaced	⋊ p ɹ ɛ f ə s ⋉	⋊ p ɹ ɛ f ə s t ⋉
-29668	b ɑː t ə	b ɑː t ə d	barter	bartered	⋊ b ɑ t ə ⋉	⋊ b ɑ t ə d ⋉
+29668	b ɑː t ə	b ɑː t ə d	barter	bartered	⋊ b ɑ t ə ⋉	⋊ b ɑ t ɪ d ⋉
 29671	s w aɪ p	s w aɪ p t	swipe	swiped	⋊ s w a ɪ p ⋉	⋊ s w a ɪ p t ⋉
 29686	r iː t ɛ lˠ	r iː t əʊ lˠ d	retell	retold	⋊ ɹ i t ɛ l ⋉	⋊ ɹ i t o l d ⋉
 29689	ɪ n s ʌ lˠ t	ɪ n s ʌ lˠ t ɪ d	insult	insulted	⋊ ɪ n s ʌ l t ⋉	⋊ ɪ n s ʌ l t ɪ d ⋉
@@ -5224,7 +5224,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 29869	z a p	z a p t	zap	zapped	⋊ z a p ⋉	⋊ z a p t ⋉
 29872	p aɪ p	p aɪ p t	pipe	piped	⋊ p a ɪ p ⋉	⋊ p a ɪ p t ⋉
 29890	k ɔ m p ɛ ə	k ɔ m p ɛ ə d	compere	compered	⋊ k ɔ m p ɛ ə ⋉	⋊ k ɔ m p ɛ ə d ⋉
-29904	f l ʌ t ə	f l ʌ t ə d	flutter	fluttered	⋊ f l ʌ t ə ⋉	⋊ f l ʌ t ə d ⋉
+29904	f l ʌ t ə	f l ʌ t ə d	flutter	fluttered	⋊ f l ʌ t ə ⋉	⋊ f l ʌ t ɪ d ⋉
 29911	f l a t n̩	f l a t n̩ d	flatten	flattened	⋊ f l a t n ⋉	⋊ f l a t n d ⋉
 29915	m ɔ l ɪ k ɔ d l̩ˠ	m ɔ l ɪ k ɔ d l̩ˠ d	mollycoddle	mollycoddled	⋊ m ɔ l ɪ k ɔ d l ⋉	⋊ m ɔ l ɪ k ɔ d l d ⋉
 29916	m ʌ n ʃ	m ʌ n ʃ t	munch	munched	⋊ m ʌ n ʃ ⋉	⋊ m ʌ n ʃ t ⋉
@@ -5253,7 +5253,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 30149	k iː p	k ɛ p t	keep	kept	⋊ k i p ⋉	⋊ k ɛ p t ⋉
 30152	r ɪ d ɪ k j uː lˠ	r ɪ d ɪ k j uː lˠ d	ridicule	ridiculed	⋊ ɹ ɪ d ɪ k j u l ⋉	⋊ ɹ ɪ d ɪ k j u l d ⋉
 30154	s k iː	s k iː d	ski	ski'd	⋊ s k i ⋉	⋊ s k i d ⋉
-30156	s p lˠ ɪ n t ə	s p lˠ ɪ n t ə d	splinter	splintered	⋊ s p l ɪ n t ə ⋉	⋊ s p l ɪ n t ə d ⋉
+30156	s p lˠ ɪ n t ə	s p lˠ ɪ n t ə d	splinter	splintered	⋊ s p l ɪ n t ə ⋉	⋊ s p l ɪ n t ɪ d ⋉
 30160	ɔ b l ɪ t ə r eɪ t	ɔ b l ɪ t ə r eɪ t ɪ d	obliterate	obliterated	⋊ ɔ b l ɪ t ə ɹ e t ⋉	⋊ ɔ b l ɪ t ə ɹ e t ɪ d ⋉
 30182	ɛ f ə v ɛ s	ɛ f ə v ɛ s t	effervesce	effervesced	⋊ ɛ f ə v ɛ s ⋉	⋊ ɛ f ə v ɛ s t ⋉
 30190	k l əʊ z	k l əʊ z d	close	closed	⋊ k l o z ⋉	⋊ k l o z d ⋉
@@ -5275,7 +5275,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 30406	m j aʊ	m j aʊ d	miaou	miaoued	⋊ m j a ʊ ⋉	⋊ m j a ʊ d ⋉
 30409	b ʌ b l̩ˠ	b ʌ b l̩ˠ d	bubble	bubbled	⋊ b ʌ b l ⋉	⋊ b ʌ b l d ⋉
 30462	s m ɜː k	s m ɜː k t	smirk	smirked	⋊ s m ə k ⋉	⋊ s m ə k t ⋉
-30506	s əʊ lˠ d ə	s əʊ lˠ d ə d	solder	soldered	⋊ s o l d ə ⋉	⋊ s o l d ə d ⋉
+30506	s əʊ lˠ d ə	s əʊ lˠ d ə d	solder	soldered	⋊ s o l d ə ⋉	⋊ s o l d ɪ d ⋉
 30507	r ɔ t	r ɔ t ɪ d	rot	rotted	⋊ ɹ ɔ t ⋉	⋊ ɹ ɔ t ɪ d ⋉
 30528	ə s eɪ lˠ	ə s eɪ lˠ d	assail	assailed	⋊ ə s e l ⋉	⋊ ə s e l d ⋉
 30532	k ə m b a t	k ə m b a t ɪ d	combat	combatted	⋊ k ə m b a t ⋉	⋊ k ə m b a t ɪ d ⋉
@@ -5353,7 +5353,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 31324	k ɔ p ɪ	k ɔ p ɪ d	copy	copied	⋊ k ɔ p ɪ ⋉	⋊ k ɔ p ɪ d ⋉
 31345	n a b	n a b d	nab	nabbed	⋊ n a b ⋉	⋊ n a b d ⋉
 31346	h ɑː m ə n aɪ z	h ɑː m ə n aɪ z d	harmonize	harmonized	⋊ h ɑ m ə n a ɪ z ⋉	⋊ h ɑ m ə n a ɪ z d ⋉
-31347	t ɔ t ə	t ɔ t ə d	totter	tottered	⋊ t ɔ t ə ⋉	⋊ t ɔ t ə d ⋉
+31347	t ɔ t ə	t ɔ t ə d	totter	tottered	⋊ t ɔ t ə ⋉	⋊ t ɔ t ɪ d ⋉
 31356	r ə m ɛ m b ə	r ə m ɛ m b ə d	remember	remembered	⋊ ɹ ə m ɛ m b ə ⋉	⋊ ɹ ə m ɛ m b ə d ⋉
 31366	g r a v l̩ˠ	g r a v l̩ˠ d	gravel	gravelled	⋊ g ɹ a v l ⋉	⋊ g ɹ a v l d ⋉
 31405	r ʌ b ɪ ʃ	r ʌ b ɪ ʃ t	rubbish	rubbished	⋊ ɹ ʌ b ɪ ʃ ⋉	⋊ ɹ ʌ b ɪ ʃ t ⋉
@@ -5461,7 +5461,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 33399	b əʊ s t	b əʊ s t ɪ d	boast	boasted	⋊ b o s t ⋉	⋊ b o s t ɪ d ⋉
 33421	w iː n	w iː n d	wean	weaned	⋊ w i n ⋉	⋊ w i n d ⋉
 33440	s k eɪ t	s k eɪ t ɪ d	skate	skated	⋊ s k e t ⋉	⋊ s k e t ɪ d ⋉
-33460	m ʌ s t ə	m ʌ s t ə d	muster	mustered	⋊ m ʌ s t ə ⋉	⋊ m ʌ s t ə d ⋉
+33460	m ʌ s t ə	m ʌ s t ə d	muster	mustered	⋊ m ʌ s t ə ⋉	⋊ m ʌ s t ɪ d ⋉
 33488	s w ɜː v	s w ɜː v d	swerve	swerved	⋊ s w ə v ⋉	⋊ s w ə v d ⋉
 33492	s uː ð	s uː ð d	soothe	soothed	⋊ s u ð ⋉	⋊ s u ð d ⋉
 33561	b ɑː s k	b ɑː s k t	bask	basked	⋊ b ɑ s k ⋉	⋊ b ɑ s k t ⋉
@@ -5470,7 +5470,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 33601	j ɛ l əʊ	j ɛ l əʊ d	yellow	yellowed	⋊ j ɛ l o ⋉	⋊ j ɛ l o d ⋉
 33608	w aɪ ə t a p	w aɪ ə t a p t	wiretap	wiretapped	⋊ w a ɪ ə t a p ⋉	⋊ w a ɪ ə t a p t ⋉
 33632	k ʌ m p ə s	k ʌ m p ə s t	compass	compassed	⋊ k ʌ m p ə s ⋉	⋊ k ʌ m p ə s t ⋉
-33686	w ɪ n t ə	w ɪ n t ə d	winter	wintered	⋊ w ɪ n t ə ⋉	⋊ w ɪ n t ə d ⋉
+33686	w ɪ n t ə	w ɪ n t ə d	winter	wintered	⋊ w ɪ n t ə ⋉	⋊ w ɪ n t ɪ d ⋉
 33733	b ɔː	b ɔː d	bore	bored	⋊ b ɔ ⋉	⋊ b ɔ d ⋉
 33751	r iː d r ɛ s	r iː d r ɛ s t	redress	redressed	⋊ ɹ i d ɹ ɛ s ⋉	⋊ ɹ i d ɹ ɛ s t ⋉
 33817	s ɪ n t ə l eɪ t	s ɪ n t ə l eɪ t ɪ d	scintillate	scintillated	⋊ s ɪ n t ə l e t ⋉	⋊ s ɪ n t ə l e t ɪ d ⋉
@@ -5501,7 +5501,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 34212	s ʌ b z t ɪ t j uː t	s ʌ b z t ɪ t j uː t ɪ d	substitute	substituted	⋊ s ʌ b z t ɪ t j u t ⋉	⋊ s ʌ b z t ɪ t j u t ɪ d ⋉
 34214	əʊ v ə l əʊ d	əʊ v ə l əʊ d ɪ d	overload	overloaded	⋊ o v ə l o d ⋉	⋊ o v ə l o d ɪ d ⋉
 34293	b ɛ n ɪ f ɪ t	b ɛ n ɪ f ɪ t ɪ d	benefit	benefited	⋊ b ɛ n ɪ f ɪ t ⋉	⋊ b ɛ n ɪ f ɪ t ɪ d ⋉
-34299	s ʌ n d ə	s ʌ n d ə d	sunder	sundered	⋊ s ʌ n d ə ⋉	⋊ s ʌ n d ə d ⋉
+34299	s ʌ n d ə	s ʌ n d ə d	sunder	sundered	⋊ s ʌ n d ə ⋉	⋊ s ʌ n d ɪ d ⋉
 34307	p r ɪ k l̩ˠ	p r ɪ k l̩ˠ d	prickle	prickled	⋊ p ɹ ɪ k l ⋉	⋊ p ɹ ɪ k l d ⋉
 34317	əʊ v ə s t ɪ ə	əʊ v ə s t ɪ ə d	oversteer	oversteered	⋊ o v ə s t ɪ ə ⋉	⋊ o v ə s t ɪ ə d ⋉
 34323	k ə n f ɜː m	k ə n f ɜː m d	confirm	confirmed	⋊ k ə n f ə m ⋉	⋊ k ə n f ə m d ⋉
@@ -5647,7 +5647,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 37421	s k ɪ d	s k ɪ d ɪ d	skid	skidded	⋊ s k ɪ d ⋉	⋊ s k ɪ d ɪ d ⋉
 37422	s t ɪ ŋ	s t ʌ ŋ	sting	stung	⋊ s t ɪ ŋ ⋉	⋊ s t ʌ ŋ ⋉
 37425	ɛ k s ɪ k r eɪ t	ɛ k s ɪ k r eɪ t ɪ d	execrate	execrated	⋊ ɛ k s ɪ k ɹ e t ⋉	⋊ ɛ k s ɪ k ɹ e t ɪ d ⋉
-37436	r ɛ k ə n ɔɪ t ə	r ɛ k ə n ɔɪ t ə d	reconnoitre	reconnoitred	⋊ ɹ ɛ k ə n ɔ ɪ t ə ⋉	⋊ ɹ ɛ k ə n ɔ ɪ t ə d ⋉
+37436	r ɛ k ə n ɔɪ t ə	r ɛ k ə n ɔɪ t ə d	reconnoitre	reconnoitred	⋊ ɹ ɛ k ə n ɔ ɪ t ə ⋉	⋊ ɹ ɛ k ə n ɔ ɪ t ɪ d ⋉
 37466	m ɪ s r uː lˠ	m ɪ s r uː lˠ d	misrule	misruled	⋊ m ɪ s ɹ u l ⋉	⋊ m ɪ s ɹ u l d ⋉
 37471	θ a ŋ k	θ a ŋ k t	thank	thanked	⋊ θ a ŋ k ⋉	⋊ θ a ŋ k t ⋉
 37486	g ɑː g l̩ˠ	g ɑː g l̩ˠ d	gargle	gargled	⋊ g ɑ g l ⋉	⋊ g ɑ g l d ⋉
@@ -5688,7 +5688,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 38470	s t r iː k	s t r iː k t	streak	streaked	⋊ s t ɹ i k ⋉	⋊ s t ɹ i k t ⋉
 38515	k ə l aɪ d	k ə l aɪ d ɪ d	collide	collided	⋊ k ə l a ɪ d ⋉	⋊ k ə l a ɪ d ɪ d ⋉
 38519	s lˠ ɔ t	s lˠ ɔ t ɪ d	slot	slotted	⋊ s l ɔ t ⋉	⋊ s l ɔ t ɪ d ⋉
-38522	m əʊ lˠ d ə	m əʊ lˠ d ə d	moulder	mouldered	⋊ m o l d ə ⋉	⋊ m o l d ə d ⋉
+38522	m əʊ lˠ d ə	m əʊ lˠ d ə d	moulder	mouldered	⋊ m o l d ə ⋉	⋊ m o l d ɪ d ⋉
 38543	f ɔː s t ɔː lˠ	f ɔː s t ɔː lˠ d	forestall	forestalled	⋊ f ɔ s t ɔ l ⋉	⋊ f ɔ s t ɔ l d ⋉
 38554	b ɪ	w ə z	be	was	⋊ b ɪ ⋉	⋊ w ə z ⋉
 38556	r ʌ f n̩	r ʌ f n̩ d	roughen	roughened	⋊ ɹ ʌ f n ⋉	⋊ ɹ ʌ f n d ⋉
@@ -5725,7 +5725,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 39448	s ɔ l ɪ s	s ɔ l ɪ s t	solace	solaced	⋊ s ɔ l ɪ s ⋉	⋊ s ɔ l ɪ s t ⋉
 39517	p r iː ə r eɪ n ʒ	p r iː ə r eɪ n ʒ d	prearrange	prearranged	⋊ p ɹ i ə ɹ e n ʒ ⋉	⋊ p ɹ i ə ɹ e n ʒ d ⋉
 39520	a d v ʊ k eɪ t	a d v ʊ k eɪ t ɪ d	advocate	advocated	⋊ a d v ʊ k e t ⋉	⋊ a d v ʊ k e t ɪ d ⋉
-39550	f a k t ə	f a k t ə d	factor	factored	⋊ f a k t ə ⋉	⋊ f a k t ə d ⋉
+39550	f a k t ə	f a k t ə d	factor	factored	⋊ f a k t ə ⋉	⋊ f a k t ɪ d ⋉
 39552	k ə n t ɛ s t	k ə n t ɛ s t ɪ d	contest	contested	⋊ k ə n t ɛ s t ⋉	⋊ k ə n t ɛ s t ɪ d ⋉
 39562	ɪ r a d ɪ k eɪ t	ɪ r a d ɪ k eɪ t ɪ d	eradicate	eradicated	⋊ ɪ ɹ a d ɪ k e t ⋉	⋊ ɪ ɹ a d ɪ k e t ɪ d ⋉
 39563	t ʃ a m p j ə n	t ʃ a m p j ə n d	champion	championed	⋊ t ʃ a m p j ə n ⋉	⋊ t ʃ a m p j ə n d ⋉
@@ -5771,7 +5771,7 @@ index	wordform1	wordform2	wordform1_orth	wordform2_orth	stem	output
 40720	r iː s iː t	r iː s iː t ɪ d	reseat	reseated	⋊ ɹ i s i t ⋉	⋊ ɹ i s i t ɪ d ⋉
 40748	p ɪ s	p ɪ s t	piss	pissed	⋊ p ɪ s ⋉	⋊ p ɪ s t ⋉
 40782	k ə n s ɜː v	k ə n s ɜː v d	conserve	conserved	⋊ k ə n s ə v ⋉	⋊ k ə n s ə v d ⋉
-40795	f ɔ s t ə	f ɔ s t ə d	foster	fostered	⋊ f ɔ s t ə ⋉	⋊ f ɔ s t ə d ⋉
+40795	f ɔ s t ə	f ɔ s t ə d	foster	fostered	⋊ f ɔ s t ə ⋉	⋊ f ɔ s t ɪ d ⋉
 40801	ɔɪ ŋ k	ɔɪ ŋ k t	oink	oinked	⋊ ɔ ɪ ŋ k ⋉	⋊ ɔ ɪ ŋ k t ⋉
 40842	ʃ aɪ	ʃ aɪ d	shy	shied	⋊ ʃ a ɪ ⋉	⋊ ʃ a ɪ d ⋉
 40903	p ɛ n	p ɛ n d	pen	penned	⋊ p ɛ n ⋉	⋊ p ɛ n d ⋉

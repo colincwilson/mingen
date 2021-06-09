@@ -7,9 +7,8 @@ import pandas as pd
 import config
 from str_util import *
 
-#os.chdir('/Users/colin/Code/Python/tensormorph_redup')
-#sys.path.append('./tensormorph')
-sys.path.append('/Users/colin/Code/Python/tensormorph_redup/tensormorph')
+tensormorph_path = Path.home() / 'Code/Python/tensormorph_redup/tensormorph'
+sys.path.append(str(tensormorph_path))
 import tensormorph
 
 # String environment
@@ -23,8 +22,24 @@ tensormorph.config.bos = config.bos
 tensormorph.config.eos = config.eos
 tensormorph.config.wildcard = '□'
 
+
+def format_strings(dat):
+    # Fix transcriptions (conform to phonological feature set)
+    dat['stem'] = fix_transcription(dat['wordform1'], config.seg_fixes)
+    dat['output'] = fix_transcription(dat['wordform2'], config.seg_fixes)
+    dat['stem'] = [add_delim(x) for x in dat['stem']]
+    dat['output'] = [add_delim(x) for x in dat['output']]
+
+    # Remove prefix from output
+    if config.remove_prefix is not None:
+        dat['output'] = [
+            re.sub('⋊ ' + config.remove_prefix, '⋊', x) for x in dat['output']
+        ]
+    return dat
+
+
 # Select language to prepare features, training data, wug data
-LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][-1]
+LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][0]
 ddata = Path.home() / 'Languages/UniMorph/sigmorphon2021/2021Task0/part2'
 if LANGUAGE == 'tiny':
     ddata = Path.home() / 'Code/Python/mingen/data'
@@ -34,31 +49,36 @@ fwug_tst = ddata / f'{LANGUAGE}.judgements.tst'
 
 if LANGUAGE == 'eng':
     wordform_omit = None
-    remove_prefix = None
     wug_morphosyn = 'V;PST;'
     config.seg_fixes = {
-        'eɪ': 'e', 'oʊ': 'o', 'əʊ': 'o', 'aɪ': 'a ɪ', 'aʊ': 'a ʊ', \
-        'ɔɪ': 'ɔ ɪ', 'ɝ': 'ɛ ɹ', 'ˠ': '', 'm̩': 'm', 'n̩': 'n', 'l̩': 'l', \
-        'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g'}
+      'eɪ': 'e', 'oʊ': 'o', 'əʊ': 'o', 'aɪ': 'a ɪ', 'aʊ': 'a ʊ', \
+      'ɔɪ': 'ɔ ɪ', 'ɝ': 'ɛ ɹ', 'ˠ': '', 'm̩': 'm', 'n̩': 'n', 'l̩': 'l', \
+      'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g'}
+    config.seg_fixes |= {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'a', 'ɜ˞': 'ɛ ɹ', \
+        'ə˞': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
+    config.remove_prefix = None
+
 if LANGUAGE == 'deu':
     wordform_omit = '[+]'
-    remove_prefix = 'g ə'
     wug_morphosyn = '^V.PTCP;PST$'
     config.seg_fixes = {'ai̯': 'a i', 'au̯': 'a u', 'oi̯': 'o i', \
-        'iːə': 'iː ə', 'eːə': 'eː ə', 'ɛːə': 'ɛː ə', 'ɡ': 'g'}
+      'iːə': 'iː ə', 'eːə': 'eː ə', 'ɛːə': 'ɛː ə', 'ɡ': 'g'}
+    config.remove_prefix = 'g ə'
+
 if LANGUAGE == 'nld':
     wordform_omit = '[+]'
-    remove_prefix = None
     wug_morphosyn = 'V;PST;PL'
     config.seg_fixes = {'ɑʊ': 'ɑ ʊ', 'ɛɪ': 'ɛ ɪ', 'ʊɪ': 'ʊ ɪ', '[+]': ''}
+    config.remove_prefix = None
+
 if LANGUAGE == 'tiny':
     wordform_omit = None
-    remove_prefix = None
     wug_morphosyn = 'V;3;SG'
     config.seg_fixes = {}
+    config.remove_prefix = None
 
 # # # # # # # # # #
-# Training data
+# Train data
 dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
@@ -75,66 +95,62 @@ dat = dat[(dat.morphosyn.str.contains(wug_morphosyn))]
 dat = dat.drop('morphosyn', 1)
 dat = dat.drop_duplicates().reset_index()
 
-# Fix transcriptions (conform to phonological feature set)
-dat['stem'] = fix_transcription(dat['wordform1'], config.seg_fixes)
-dat['output'] = fix_transcription(dat['wordform2'], config.seg_fixes)
-dat['stem'] = [add_delim(x) for x in dat['stem']]
-dat['output'] = [add_delim(x) for x in dat['output']]
-
-# Remove prefix from output
-if remove_prefix is not None:
-    dat['output'] = [re.sub('⋊ '+ remove_prefix, '⋊', x) \
-        for x in dat['output']]
+# Format strings and save
+dat = format_strings(dat)
 dat.to_csv(config.save_dir / f'{LANGUAGE}_dat_train.tsv', sep='\t', index=False)
+config.dat_train = dat
 print('Training data')
 print(dat)
 print()
 
 # # # # # # # # # #
 # Wug dev data
-wug_dev = pd.read_csv(fwug_dev, sep='\t', \
+wug_dev = pd.read_csv(
+    fwug_dev,
+    sep='\t',
     names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
 wug_dev = wug_dev.drop('morphosyn', 1)
 
-# Fix transcriptions
-wug_dev['stem'] = fix_transcription(wug_dev['wordform1'], config.seg_fixes)
-wug_dev['output'] = fix_transcription(wug_dev['wordform2'], config.seg_fixes)
-wug_dev['stem'] = [add_delim(x) for x in wug_dev['stem']]
-wug_dev['output'] = [add_delim(x) for x in wug_dev['output']]
-
-# Remove prefix from output
-if remove_prefix is not None:
-    wug_dev['output'] = [re.sub('⋊ '+ remove_prefix, '⋊', x) \
-        for x in wug_dev['output']]
-wug_dev.to_csv(config.save_dir / f'{LANGUAGE}_wug_dev.tsv',
-               sep='\t',
-               index=False)
+wug_dev = format_strings(wug_dev)
+config.wug_dev = wug_dev
+wug_dev.to_csv(
+    config.save_dir / f'{LANGUAGE}_wug_dev.tsv', sep='\t', index=False)
 print('Wug dev data')
 print(wug_dev)
 print()
 
 # # # # # # # # # #
 # Wug test data
-wug_tst = pd.read_csv(fwug_tst, sep='\t', \
-    names=['wordform1', 'wordform2', 'morphosyn'])
+wug_tst = pd.read_csv(
+    fwug_tst, sep='\t', names=['wordform1', 'wordform2', 'morphosyn'])
 wug_tst = wug_tst.drop('morphosyn', 1)
 
-# Fix transcriptions
-wug_tst['stem'] = fix_transcription(wug_tst['wordform1'], config.seg_fixes)
-wug_tst['output'] = fix_transcription(wug_tst['wordform2'], config.seg_fixes)
-wug_tst['stem'] = [add_delim(x) for x in wug_tst['stem']]
-wug_tst['output'] = [add_delim(x) for x in wug_tst['output']]
-
-# Remove prefix from output
-if remove_prefix is not None:
-    wug_tst['output'] = [re.sub('⋊ '+ remove_prefix, '⋊', x) \
-        for x in wug_tst['output']]
-wug_tst.to_csv(config.save_dir / f'{LANGUAGE}_wug_tst.tsv',
-               sep='\t',
-               index=False)
+wug_tst = format_strings(wug_tst)
+config.wug_tst = wug_tst
+wug_tst.to_csv(
+    config.save_dir / f'{LANGUAGE}_wug_tst.tsv', sep='\t', index=False)
 print('Wug test data')
 print(wug_tst)
 print()
+
+# # # # # # # # # #
+# Albright-Hayes wug data
+if LANGUAGE == 'eng':
+    falbrighthayes = Path.home() / \
+        'Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug_partial.tsv'
+    wug_albrighthayes = pd.read_csv(
+        falbrighthayes,
+        sep='\t',
+        comment='#',
+        names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
+
+    wug_albrighthayes = format_strings(wug_albrighthayes)
+    config.wug_albrighthayes = wug_albrighthayes
+    wug_albrighthayes.to_csv(
+        config.save_dir / 'albrighthayes2003_wug.tsv', sep='\t', index=False)
+    print('Albright-Hayes wug data')
+    print(wug_albrighthayes)
+    print()
 
 # # # # # # # # # #
 # Phonological features
@@ -163,6 +179,9 @@ segs = phon_ftrs['seg']
 phon_ftrs = phon_ftrs.drop('seg', 1)  # Segment column, not a feature
 phon_ftrs = phon_ftrs.drop('sym', 1)  # Redundant with X = (Sigma*)
 ftr_names = [x for x in phon_ftrs.columns.values]
+config.segs = segs
+config.phon_ftrs = phon_ftrs
+config.ftr_names = ftr_names
 
 # Map from segments to feature-value dictionaries and feature vectors
 seg2ftrs = {}  # Feature-value dictionaries
@@ -172,18 +191,11 @@ for i, seg in enumerate(segs):
 seg2ftrs_ = {}  # Vectorized feature matrices
 for seg, ftrs in seg2ftrs.items():
     seg2ftrs_[seg] = tuple([val for key, val in ftrs.items()])
-
-# # # # # # # # # #
-# Save config
-config.dat_train = dat
-config.wug_dev = wug_dev
-config.wug_tst = wug_tst
-config.segs = segs
-config.phon_ftrs = phon_ftrs
-config.ftr_names = ftr_names
 config.seg2ftrs = seg2ftrs
 config.seg2ftrs_ = seg2ftrs_
 
+# # # # # # # # # #
+# Save config
 config_save = {}
 for key in dir(config):
     if re.search('__', key):

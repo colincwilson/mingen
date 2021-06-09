@@ -2,6 +2,8 @@
 require(tidyverse)
 require(glmmTMB)
 
+source('~/Languages/UniMorph/sigmorphon2021/eng_regular_past_rule.R')
+
 # # # # # # # # # #
 # English
 LANGUAGE = 'eng'
@@ -53,6 +55,31 @@ wug_tst %>%
     wug_tst_predict
 
 #write_tsv(wug_tst_predict, fwug_tst_predict)
+
+# Albright-Hayes wugs
+dat_AH03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
+
+wug_AH03 = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_albrighthayes_predict.tsv'))
+
+wug_AH03 %>%
+    mutate(model_rating = replace_na(model_rating, 0)) %>%
+    identity() ->
+    wug_AH03
+
+dat_AH03$mingen_rating = dat_AH03$`Rule-based model predicted`
+dat_AH03$mingen0_rating = wug_AH03$model_rating
+
+ggplot(dat_AH03, aes(x=mingen_rating, y=mean_rating)) + geom_point()
+with(subset(dat_AH03, lemma_type != 'Peripheral'),
+    cor.test(model_rating, mean_rating)) # 0.7815663
+# cf. A&H 2003, note 16: .806 (rules), .780 (analogy), .693 (1 if reg else 0)
+
+dat_AH03 %>%
+    filter(lemma_type != 'Peripheral') %>%
+    group_by(past_type) %>%
+    summarise(r = cor.test(model_rating, mean_rating)$estimate)
+
+with(subset)
 
 
 # # # # # # # # # #
