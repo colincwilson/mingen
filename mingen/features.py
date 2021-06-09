@@ -4,11 +4,12 @@
 
 import re
 import config
+from functools import lru_cache
 
 
 def match_ftrs_(F, seg):
     """
-    Test whether feature matrix subsumes segment features
+    Subsumption relation btwn feature matrix and segment
     [Args: feature dicts]
     """
     seg_ftrs = config.seg2ftrs[seg]
@@ -20,22 +21,22 @@ def match_ftrs_(F, seg):
 
 def match_ftrs(F, seg):
     """
-    Test whether feature matrix subsumes segment features
+    Subsumption relation btwn feature matrix and segment
     [Args: feature vectors]
     """
     seg_ftrs = config.seg2ftrs_[seg]
     n = len(seg_ftrs)
-    for i in range(n):
-        if F[i] == '0':
+    for i, F_i in enumerate(F):
+        if F_i == '0':
             continue
-        if seg_ftrs[i] != F[i]:
+        if seg_ftrs[i] != F_i:
             return False
     return True
 
 
 def unify_ftrs_(F1, F2):
     """
-    Retain common values from two feature matrices
+    Shared values of two feature matrices
     [Args: feature dicts]
     """
     # Unify(Sigma*,F2) = unify(F1,Sigma*) = Sigma*
@@ -52,7 +53,7 @@ def unify_ftrs_(F1, F2):
 
 def unify_ftrs(F1, F2):
     """
-    Retain common values from two feature matrices
+    Shared values of two feature matrices
     [Args: feature vectors]
     """
     if (F1 == 'X') or (F2 == 'X'):
@@ -60,17 +61,40 @@ def unify_ftrs(F1, F2):
     n = len(F1)
     F = ['0'] * n
     any_match = False
-    for i in range(n):
-        if (F1[i] == '0') or (F2[i] == '0'):
+    for i, F1_i in enumerate(F1):
+        F2_i = F2[i]
+        if (F1_i == '0') or (F2_i == '0'):
             continue
-        if F1[i] == F2[i]:
-            F[i] = F1[i]
+        if F1_i == F2_i:
+            F[i] = F1_i
             any_match = True
     return tuple(F), any_match
 
 
+#@lru_cache(maxsize=1024)
+def subsumes(F1, F2):
+    """
+    Subsumption relation btwen feature matrices F1 and F2
+    [Args: feature vectors]
+    """
+    if (F1 == 'X'):
+        return True
+    if (F2 == 'X'):
+        return False
+    n = len(F1)
+    for i, F1_i in enumerate(F1):
+        if F1_i == '0':
+            continue
+        if F1_i != F2[i]:
+            return False
+    return True
+
+
 def ftrs2regex(F):
-    """ Segment regex for sequence of feature matrices """
+    """
+    Segment regex for sequence of feature matrices
+    Note: excludes X (Sigma*), which is assumed to appear only at edges of rule contexts and is always implicit at those positions in cdrewrite compilation
+    """
     return ' '.join([ftrs2regex1(Fi) for Fi in F if Fi != 'X'])
 
 
@@ -93,8 +117,7 @@ def ftrs2str1(F):
     if F == 'X':
         return 'X'
     ftr_names = config.ftr_names
-    #ftrvals = [f'{val}{ftr}' for ftr, val in F.items() if val != '0']
-    ftrvals = [f"{F[i]}{ftr_names[i]}" \
+    ftrvals = [f'{F[i]}{ftr_names[i]}' \
                 for i in range(len(F)) if F[i] != '0']
     val = '[' + ', '.join(ftrvals) + ']'
     return val
@@ -116,10 +139,10 @@ def str2ftrs1(x):
     """ String to feature matrix (inverse of ftrs2str1) """
     y = re.sub('\\[', '', x)
     y = re.sub('\\]', '', y)
-    # Parse Sigma*
+    # X (Sigma*)
     if y == 'X':
         return 'X'
-    # Parse ordinary feature matrix, non-zero specs only
+    # Ordinary feature matrix, non-zero specs only
     y = y.split(', ')
     ftrs = ['0'] * len(config.ftr_names)
     ftr_names = config.ftr_names

@@ -6,6 +6,7 @@ require(glmmTMB)
 # English
 LANGUAGE = 'eng'
 fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
+#fwug_dev = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
 fwug_tst = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_tst_predict.tsv')
 fwug_tst_predict = 
     str_glue('~/Code/Python/mingen/predict/mingen0_{LANGUAGE}_tst.tsv')
@@ -25,11 +26,12 @@ wug_dev %>%
 
 ggplot(wug_dev, aes(x=model_rating, y=human_rating)) + geom_point()
 print(with(wug_dev, cor.test(model_rating, human_rating)))
+# 0.4976706
 
 fit_model = glmmTMB(human_rating ~ model_rating + double_past + (1 | lemma), data = wug_dev, family = beta_family())
 coef_dev = fixef(fit_model)$cond
 summary(fit_model)
-AIC(fit_model)
+print(AIC(fit_model)) # -111.9987
 
 wug_tst %>%
     mutate(lemma = wordform1) %>%
@@ -50,7 +52,7 @@ wug_tst %>%
     select(lemma, form, tag, model_rating = fit_model_rating) ->
     wug_tst_predict
 
-write_tsv(wug_tst_predict, fwug_tst_predict)
+#write_tsv(wug_tst_predict, fwug_tst_predict)
 
 
 # # # # # # # # # #
@@ -75,11 +77,13 @@ wug_dev %>%
 
 ggplot(wug_dev, aes(x=model_rating, y=human_rating)) + geom_point()
 print(with(wug_dev, cor.test(model_rating, human_rating)))
+# deu: 0.7561073, nld: 0.5125955
 
 fit_model = glmmTMB(human_rating ~ model_rating + (1 | lemma), data = wug_dev, family = beta_family())
 coef_dev = fixef(fit_model)$cond
 summary(fit_model)
-AIC(fit_model)
+print(AIC(fit_model))
+# deu: -127.5508, nld: -58.50812
 
 wug_tst %>%
     mutate(lemma = wordform1) %>%
@@ -95,6 +99,6 @@ wug_tst %>%
     select(lemma, form, tag, model_rating) ->
     wug_tst_predict
 
-write_tsv(wug_tst_predict, fwug_tst_predict)
+#write_tsv(wug_tst_predict, fwug_tst_predict)
 
 }

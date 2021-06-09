@@ -9,34 +9,32 @@ class SegRule():
     """ Rule stated over segments """
 
     def __init__(self, A, B, C, D):
+        """ Construct from segment tuples (see base_rule()) """
         self.A = A
         self.B = B
         self.C = C
         self.D = D
 
     def __str__(self):
-        A_ = ' '.join(self.A) if self.A != '' else config.zero
-        B_ = ' '.join(self.B) if self.B != '' else config.zero
-        C_ = ' '.join(self.C) if self.C != '' else config.zero
-        D_ = ' '.join(self.D) if self.D != '' else config.zero
+        if self.A == '' or self.B == '' or self.C == '' or self.D == '':
+            print(f'Empty rule part: {A}, {B}, {C}, {D}')
+            sys.exit(0)
+        A_, B_, C_, D_ = map(lambda X: ' '.join(X),
+                             [self.A, self.B, self.C, self.D])
         return f'{A_} -> {B_} / {C_} __ {D_}'
 
 
 class FtrRule():
     """
     Rule with contexts defined by features and X (Sigma*)
-    [immutable]
     """
 
     def __init__(self, A, B, C, D):
+        """ Construct from change stated over segments and context stated over features (see from_segrule())"""
         self.A = A
         self.B = B
         self.C = C
         self.D = D
-        if len(D) == 0:
-            print('error creating feature rule from')
-            print(A, B, C, D)
-            sys.exit(0)
         self._hash = self.__hash__()
 
     def __eq__(self, other):
@@ -54,14 +52,10 @@ class FtrRule():
 
     def __str__(self):
         """ String with feature matrices and X (for the humans) """
-        if hasattr(self, '_str'):
-            return self._str
-        A_ = ' '.join(self.A) if self.A != '' else config.zero
-        B_ = ' '.join(self.B) if self.B != '' else config.zero
-        C_ = ftrs2str(self.C)
-        D_ = ftrs2str(self.D)
+        A_, B_ = map(lambda Z: ' '.join(Z), [self.A, self.B])
+        C_, D_ = map(lambda Z: ftrs2str(Z), [self.C, self.D])
         if C_ == '' or D_ == '':
-            print('empty string (expected feature matrix)')
+            print('Empty string (expected feature matrix)')
             print('C:', self.C)
             print('C_:', C_)
             print('D:', self.D)
@@ -71,30 +65,61 @@ class FtrRule():
 
     def __repr__(self):
         """ String with segment regexs (for compilation to FST) """
-        if hasattr(self, '_repr'):
-            return self._repr
-        A_ = ' '.join(self.A)
-        B_ = ' '.join(self.B)
-        C_ = ftrs2regex(self.C)
-        D_ = ftrs2regex(self.D)
+        A_, B_ = map(lambda Z: ' '.join(Z), [self.A, self.B])
+        C_, D_ = map(lambda Z: ftrs2regex(Z), [self.C, self.D])
         return f'{A_} -> {B_} / {C_} __ {D_}'
 
+    def regexes(self):
+        """ Separate regular expressions for change and context """
+        R_regex = repr(self)
+        AB, CD = R_regex.split(' / ')
+        A, B = AB.split(' -> ')
+        C, D = CD.split(' __ ')
+        return (A, B, C, D)
 
-def base_rule(x: str, y: str) -> SegRule:
+    @classmethod
+    def from_segrule(cls, R: SegRule):
+        """
+        Convert SegRule to FtrRule by replacing segments in context with feature matrices
+        """
+        A = R.A
+        B = R.B
+        C = [config.seg2ftrs_[seg] for seg in R.C]
+        D = [config.seg2ftrs_[seg] for seg in R.D]
+        return FtrRule(A, B, tuple(C), tuple(D))
+
+    @classmethod
+    def from_str(cls, x: str):
+        """
+        FtrRule from string A -> B / C __ D 
+        with contexts defined by feature matrices
+        (inverse of FtrRule.__str__)
+        """
+        AB, CD = x.split(' / ')
+        A, B = AB.split(' -> ')
+        C, D = CD.split(' __ ')
+        A = tuple(A.split(' '))
+        B = tuple(B.split(' '))
+        C = str2ftrs(C)
+        D = str2ftrs(D)
+        return FtrRule(A, B, C, D)
+
+
+def base_rule(inpt: str, outpt: str) -> SegRule:
     """
-    Create rule A -> B / C __D by aligning input x with output y
+    Learn word-specific rule A -> B / C __D by aligning input and output
     """
-    x = x.split(' ')
-    y = y.split(' ')
+    inpt = inpt.split(' ')
+    outpt = outpt.split(' ')
     # Left-hand context
-    C = lcp(x, y, 'LR->')
+    C = lcp(inpt, outpt, prefix=True)
     # Right-hand context
-    x = x[len(C):]
-    y = y[len(C):]
-    D = lcp(x, y, '<-RL')
+    inpt = inpt[len(C):]
+    outpt = outpt[len(C):]
+    D = lcp(inpt, outpt, prefix=False)
     # Change
-    A = x[:-len(D)]
-    B = y[:-len(D)]
+    A = inpt[:-len(D)]
+    B = outpt[:-len(D)]
 
     # Zeros in change
     A = config.zero if len(A) == 0 else A
@@ -102,36 +127,8 @@ def base_rule(x: str, y: str) -> SegRule:
 
     # Identity rule xxx change locn at end
     if (A == config.zero) and (B == config.zero):
-        C = C[:-1]  # Remove end_delim
-        D = [config.eos]
+        C = C[:-1]  # Remove eos from left-hand side
+        D = [config.eos]  # Add eos to right_hand side
 
     rule = SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
     return rule
-
-
-def featurize_rule(R: SegRule) -> FtrRule:
-    """
-    Convert SegRule to FtrRule by replacing segments in context with feature matrices
-    """
-    A = R.A
-    B = R.B
-    C = [config.seg2ftrs_[seg] for seg in R.C]
-    D = [config.seg2ftrs_[seg] for seg in R.D]
-    return FtrRule(A, B, tuple(C), tuple(D))
-
-
-def str2ftr_rule(x: str) -> FtrRule:
-    """
-    Create FtrRule from string A -> B / C __ D 
-    with contexts defined by feature matrices
-    (inverse of FtrRule.__str__)
-    """
-    AB, CD = x.split(' / ')
-    A, B = AB.split(' -> ')
-    C, D = CD.split(' __ ')
-    A = tuple(A.split(' '))
-    B = tuple(B.split(' '))
-    C = str2ftrs(C)
-    D = str2ftrs(D)
-    R = FtrRule(A, B, C, D)
-    return R

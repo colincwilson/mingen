@@ -1,5 +1,5 @@
 # profile mingen after run with
-# python -m cProfile -o prof.txt model.py
+# python -m cProfile -o prof.txt 02_run_model.py
 
 import pstats
 

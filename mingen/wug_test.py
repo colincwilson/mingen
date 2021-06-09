@@ -8,7 +8,7 @@ from str_util import *
 import pynini_util
 
 
-def score_mappings(wug_dat, rules):
+def score_mappings(wug_dat, rules, rule_score='confidence'):
     # Symbol environment
     syms = [x for x in config.seg2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
@@ -19,25 +19,19 @@ def score_mappings(wug_dat, rules):
     max_score = {}
     max_score_idx = {}
 
-    # Parsed regex rules grouped by left-hand side
-    R_all = [str2ftr_rule(R) for R in rules['rule']]
-    score_all = [score for score in rules['confidence']]
-    #R_parse, C_map = group_rules(R_all)
+    R_all = [FtrRule.from_str(R) for R in rules['rule']]
+    score_all = [score for score in rules[rule_score]]
 
     for idx, R in enumerate(R_all):
         if idx % 500 == 0:
             print(idx)
-        if np.isnan(score_all[idx]):
-            continue
 
-        # Convert rule to explicit regexp format
-        R_regex = repr(R)
-        AB, CD = R_regex.split(' / ')
-        A, B = AB.split(' -> ')
-        C, D = CD.split(' __ ')
+        # Convert rule to segment regexes
+        (A, B, C, D) = R.regexes()
+        score = score_all[idx]
 
         # Subset of wug data s.t. CAD occurs in input
-        CAD = [X for X in [C, A, D] if X != '∅']
+        CAD = [Z for Z in [C, A, D] if Z != '∅']
         CAD = ' '.join(CAD)
         subdat = [wf for wf in wordforms if re.search(CAD, wf[0])] \
             if CAD != '' else wordforms
@@ -46,7 +40,6 @@ def score_mappings(wug_dat, rules):
 
         # Compile rule to FST
         R_fst = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
-        score = score_all[idx]
 
         for (wf1, wf2) in subdat:
             # Apply rule to input
@@ -72,16 +65,16 @@ def score_mappings(wug_dat, rules):
                 max_score[(wf1, wf2)] = score
                 max_score_idx[(wf1, wf2)] = idx
 
-    # Report results
+    # Results
     print()
     wug_scores = []
     for wf in max_score.keys():
         wf1, wf2 = wf
         score = max_score[wf]
-        idx = max_score_idx[wf]
-        R = R_all[idx]
+        rule_idx = max_score_idx[wf]
+        R = R_all[rule_idx]
         print(wf1, wf2, score)
         print(R)
         print()
-        wug_scores.append((wf1, wf2, score, idx))
+        wug_scores.append((wf1, wf2, score, rule_idx))
     return wug_scores

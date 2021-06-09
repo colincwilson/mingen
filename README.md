@@ -1,1 +1,1 @@
-Python implementation of Minimal Generalization rule learner (Albright & Hayes  2002, 2003)
+Python implementation of Minimal Generalization rule learner (Albright & Hayes 2002, 2003)

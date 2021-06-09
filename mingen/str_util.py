@@ -6,12 +6,11 @@ import re
 import config
 
 
-def lcp(x, y, direction='LR->'):
+def lcp(x, y, prefix=True):
     """
     Longest common prefix (or suffix) of two segment sequences
     """
-    assert ((direction == 'LR->') or (direction == '<-RL'))
-    if direction == '<-RL':
+    if not prefix:
         x = x[::-1]
         y = y[::-1]
     n_x, n_y = len(x), len(y)
@@ -26,7 +25,7 @@ def lcp(x, y, direction='LR->'):
         if x[i] != y[i]:
             match = x[:i]
             break
-    if direction == '<-RL':
+    if not prefix:
         match = match[::-1]
     return match
 
@@ -51,7 +50,7 @@ def delete_markers(x):
 
 def fix_transcription(x, seg_fixes):
     """
-    Fix transcription of list of space-separated segment strings by applying substitutions
+    Fix transcription of space-separated segment strings by applying substitutions
     """
     y = x
     for (s, r) in seg_fixes.items():

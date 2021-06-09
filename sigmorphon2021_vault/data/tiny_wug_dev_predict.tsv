@@ -1,0 +1,3 @@
+model_rating	rule_idx	wordform1	wordform2	human_rating	stem	output
+		i t	i t s	6.0	⋊ i t ⋉	⋊ i t s ⋉
+		i d	i d z	5.0	⋊ i d ⋉	⋊ i d z ⋉

@@ -9,7 +9,7 @@ from pynini.lib import pynutil, rewrite
 # compile rules from mingen format and apply to symbol lists.
 # Note: Pynini word delimiters are "[BOS]", "[EOS]"
 
-# todo: look at documentation for context management
+# TODO: review documentation for context management
 # with pynini.default_token_type(token_type):
 #   ...
 # https://github.com/kylebgorman/Pynini/issues/8
@@ -74,8 +74,7 @@ def accep_(x, symtable):
 def union(fsts):
     """ Union list of Fsts """
     fst = pynini.union(*fsts)
-    # xxx check symbol table
-    return fst
+    return fst  # xxx check symbol table
 
 
 # xxx pynini built-in?
@@ -89,8 +88,7 @@ def concat(fsts):
     fst = pynini.concat(fsts[0], fsts[1])
     for i in range(2, n):
         fst = pynini.concat(fst, fsts[i])
-    # xxx check symbol table
-    return fst
+    return fst  # xxx check symbol table
 
 
 def compile_context(C, symtable):
@@ -108,8 +106,7 @@ def compile_context(C, symtable):
         fst = union(accep(regex, symtable))
         fsts.append(fst)
     fst = concat(fsts)
-    # xxx check symbol table
-    return fst
+    return fst  # xxx check symbol table
 
 
 def compile_rule(A, B, C, D, sigstar, symtable):
@@ -117,7 +114,7 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     Compile cdrewrite rule from A -> B / C __D where A and B are space-separated strings, C and D are segment regexs in (seg1|seg2|...) format
     """
     # Use explicit epsilon for deletion rules, instead of pynutil.delete(),
-    # and mark rewrite loci (used for checking whether rule applies to input)
+    # and mark rewrite loci (for checking whether rule applies to input)
     if B == '∅':
         B = '<eps>'
     B = ' '.join(['⟨', B, '⟩'])
@@ -139,7 +136,6 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     return fst
 
 
-# xxx maybe broken
 def test():
     syms = ['aa', 'bb', 'cc', 'dd']
     sigstar_, symtable = sigstar(syms)
@@ -158,7 +154,7 @@ def test():
                                  output_token_type=symtable)
     print([x for x in strpath_iter.ostrings()])
 
-    # Rule aa -> ∅ / cc __ dd
+    # Rule aa -> ∅ / cc __ dd, apply to input
     rule2 = compile_rule('aa', '∅', 'cc', 'dd', sigstar_, symtable)
     output2 = (input1 @ rule2).project("output").rmepsilon()
     print(output2.print(isymbols=symtable, osymbols=symtable))

@@ -14,10 +14,10 @@ from rules import *
 def generalize_rules_rec(Rs):
     """
     Recursively apply minimal generalization to set of FtrRules
-    todo: generalize each unique pair of contexts at most once
+    todo: generalize each context pair at most once
     """
     # Word-specific rules
-    # (invariant) Rules grouped by common change
+    # Rules grouped by common change [invariant]
     R_base = {}
     for R in Rs:
         change = ' '.join(R.A) + ' -> ' + ' '.join(R.B)
@@ -53,7 +53,7 @@ def generalize_rules_rec(Rs):
     # Recursive minimal generalization
     for i in range(10):  # xxx loop forever
         # Report number of rules by change
-        print(f"iteration {i}")
+        print(f'iteration {i}')
 
         # One-step minimal generalization
         R_old = R_new
@@ -105,21 +105,22 @@ def generalize_rules(R1, R2):
 
 def generalize_context(X1, X2, direction='LR->'):
     """
-    Apply minimal generalization to pair of feature contexts
+    Apply minimal generalization to pair of feature contexts, working inward (<-RL) or outward (LR->) from change location
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
-    n_X1 = len(X1)
-    n_X2 = len(X2)
-    n_min = min(n_X1, n_X2)
-    n_max = max(n_X1, n_X2)
     if direction == '<-RL':
         X1 = X1[::-1]
         X2 = X2[::-1]
 
+    n1 = len(X1)
+    n2 = len(X2)
+    n_min = min(n1, n2)
+    n_max = max(n1, n2)
+
     Y = []
     seg_ident_flag = True
     for i in range(n_max):
-        # X (= Sigma*) and terminate if have exceeded shorter context
+        # X (Sigma*) and terminate if have exceeded shorter context
         # or have already unified features
         if (i >= n_min) or (not seg_ident_flag):
             Y.append('X')

@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 import pickle, re, sys
+from pathlib import Path
 import pandas as pd
 
 import config
@@ -13,21 +16,21 @@ import tensormorph
 config.bos = '⋊'
 config.eos = '⋉'
 config.zero = '∅'
-config.save_dir = '/Users/colin/Code/Python/mingen/data'
+config.save_dir = Path.home() / 'Code/Python/mingen/data'
 
+tensormorph.config.epsilon = 'ϵ'
 tensormorph.config.bos = config.bos
 tensormorph.config.eos = config.eos
-tensormorph.config.epsilon = 'ϵ'
 tensormorph.config.wildcard = '□'
 
 # Select language to prepare features, training data, wug data
-LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][0]
-ddata = '/Users/colin/Languages/UniMorph/sigmorphon2021/2021Task0/part2'
+LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][-1]
+ddata = Path.home() / 'Languages/UniMorph/sigmorphon2021/2021Task0/part2'
 if LANGUAGE == 'tiny':
-    ddata = '/Users/colin/Code/Python/mingen/data'
-fdat = f'{ddata}/{LANGUAGE}.train'
-fwug_dev = f'{ddata}/{LANGUAGE}.judgements.dev'
-fwug_tst = f'{ddata}/{LANGUAGE}.judgements.tst'
+    ddata = Path.home() / 'Code/Python/mingen/data'
+fdat = ddata / f'{LANGUAGE}.train'
+fwug_dev = ddata / f'{LANGUAGE}.judgements.dev'
+fwug_tst = ddata / f'{LANGUAGE}.judgements.tst'
 
 if LANGUAGE == 'eng':
     wordform_omit = None
@@ -59,26 +62,30 @@ if LANGUAGE == 'tiny':
 dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
+
 # Filter rows by characters in wordforms
 if wordform_omit is not None:
     dat = dat[~(dat.wordform1.str.contains(wordform_omit))]
     dat = dat[~(dat.wordform2.str.contains(wordform_omit))]
     dat = dat.reset_index()
 print(dat)
+
 # Keep rows with wug-tested morphosyn xxx could be list
 dat = dat[(dat.morphosyn.str.contains(wug_morphosyn))]
 dat = dat.drop('morphosyn', 1)
 dat = dat.drop_duplicates().reset_index()
+
 # Fix transcriptions (conform to phonological feature set)
 dat['stem'] = fix_transcription(dat['wordform1'], config.seg_fixes)
 dat['output'] = fix_transcription(dat['wordform2'], config.seg_fixes)
 dat['stem'] = [add_delim(x) for x in dat['stem']]
 dat['output'] = [add_delim(x) for x in dat['output']]
+
 # Remove prefix from output
 if remove_prefix is not None:
     dat['output'] = [re.sub('⋊ '+ remove_prefix, '⋊', x) \
         for x in dat['output']]
-dat.to_csv(f'{config.save_dir}/{LANGUAGE}_dat_train.tsv', sep='\t', index=False)
+dat.to_csv(config.save_dir / f'{LANGUAGE}_dat_train.tsv', sep='\t', index=False)
 print('Training data')
 print(dat)
 print()
@@ -88,16 +95,18 @@ print()
 wug_dev = pd.read_csv(fwug_dev, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
 wug_dev = wug_dev.drop('morphosyn', 1)
+
 # Fix transcriptions
 wug_dev['stem'] = fix_transcription(wug_dev['wordform1'], config.seg_fixes)
 wug_dev['output'] = fix_transcription(wug_dev['wordform2'], config.seg_fixes)
 wug_dev['stem'] = [add_delim(x) for x in wug_dev['stem']]
 wug_dev['output'] = [add_delim(x) for x in wug_dev['output']]
+
 # Remove prefix from output
 if remove_prefix is not None:
     wug_dev['output'] = [re.sub('⋊ '+ remove_prefix, '⋊', x) \
         for x in wug_dev['output']]
-wug_dev.to_csv(f'{config.save_dir}/{LANGUAGE}_wug_dev.tsv',
+wug_dev.to_csv(config.save_dir / f'{LANGUAGE}_wug_dev.tsv',
                sep='\t',
                index=False)
 print('Wug dev data')
@@ -109,16 +118,18 @@ print()
 wug_tst = pd.read_csv(fwug_tst, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn'])
 wug_tst = wug_tst.drop('morphosyn', 1)
+
 # Fix transcriptions
 wug_tst['stem'] = fix_transcription(wug_tst['wordform1'], config.seg_fixes)
 wug_tst['output'] = fix_transcription(wug_tst['wordform2'], config.seg_fixes)
 wug_tst['stem'] = [add_delim(x) for x in wug_tst['stem']]
 wug_tst['output'] = [add_delim(x) for x in wug_tst['output']]
+
 # Remove prefix from output
 if remove_prefix is not None:
     wug_tst['output'] = [re.sub('⋊ '+ remove_prefix, '⋊', x) \
         for x in wug_tst['output']]
-wug_tst.to_csv(f'{config.save_dir}/{LANGUAGE}_wug_tst.tsv',
+wug_tst.to_csv(config.save_dir / f'{LANGUAGE}_wug_tst.tsv',
                sep='\t',
                index=False)
 print('Wug test data')
@@ -139,13 +150,14 @@ print(f'Segments that appear in training data: '
       f'{segments} (n = {len(segments)})')
 print()
 
-tensormorph.config.feature_dir = '/Users/colin/Code/Python/tensormorph_redup/ftrs'
-tensormorph.config.fdata = f'{config.save_dir}/{LANGUAGE}.ftr'
+tensormorph.config.feature_dir = Path.home(
+) / 'Code/Python/tensormorph_redup/ftrs'
+tensormorph.config.fdata = config.save_dir / f'{LANGUAGE}.ftr'
 fm = tensormorph.phon_features.import_features('hayes_features.csv', segments)
 # NB. writes feature file before fixes below
 
-# Fix up features
-phon_ftrs = pd.read_csv(f'{config.save_dir}/{LANGUAGE}.ftr', sep='\t', header=0)
+# Fix up features for mingen
+phon_ftrs = pd.read_csv(config.save_dir / f'{LANGUAGE}.ftr', sep='\t', header=0)
 phon_ftrs.columns.values[0] = 'seg'
 segs = phon_ftrs['seg']
 phon_ftrs = phon_ftrs.drop('seg', 1)  # Segment column, not a feature
@@ -153,7 +165,7 @@ phon_ftrs = phon_ftrs.drop('sym', 1)  # Redundant with X = (Sigma*)
 ftr_names = [x for x in phon_ftrs.columns.values]
 
 # Map from segments to feature-value dictionaries and feature vectors
-seg2ftrs = {}
+seg2ftrs = {}  # Feature-value dictionaries
 for i, seg in enumerate(segs):
     ftrs = phon_ftrs.iloc[i, :].to_dict()
     seg2ftrs[seg] = ftrs
@@ -178,5 +190,5 @@ for key in dir(config):
         continue
     config_save[key] = getattr(config, key)
 
-with open(f'{config.save_dir}/{LANGUAGE}_config.pkl', 'wb') as f:
+with open(config.save_dir / f'{LANGUAGE}_config.pkl', 'wb') as f:
     pickle.dump(config_save, f)
