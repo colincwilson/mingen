@@ -1,151 +1,151 @@
 stem	output	model_rating	rule_idx	wordform1	wordform2	human_rating
-⋊ r uː t ə n ⋉	⋊ r uː t ə t ⋉	0.7079737592607558	922.0	r uː t ə n	g ə r uː t ə t	4.72
-⋊ r uː t ə n ⋉	⋊ r uː t ə n ⋉	0.0424137083553456	29244.0	r uː t ə n	g ə r uː t ə n	2.065
-⋊ ɛ r l a u ə n ⋉	⋊ ɛ r l a u t ⋉	0.8456014512148586	8675.0	ɛ r l au̯ ə n	ɛ r l au̯ t	5.04
-⋊ ɛ r l a u ə n ⋉	⋊ ɛ r l a u n ⋉	0.0188802142196311	27250.0	ɛ r l au̯ ə n	ɛ r l au̯ n	1.88
+⋊ r uː t ə n ⋉	⋊ r uː t ə t ⋉	0.7079737592607558	898.0	r uː t ə n	g ə r uː t ə t	4.72
+⋊ r uː t ə n ⋉	⋊ r uː t ə n ⋉	0.0424137083553456	2421.0	r uː t ə n	g ə r uː t ə n	2.065
+⋊ ɛ r l a u ə n ⋉	⋊ ɛ r l a u t ⋉	0.8456014512148586	366.0	ɛ r l au̯ ə n	ɛ r l au̯ t	5.04
+⋊ ɛ r l a u ə n ⋉	⋊ ɛ r l a u n ⋉	0.0188802142196311	2627.0	ɛ r l au̯ ə n	ɛ r l au̯ n	1.88
 ⋊ z ɪ s ə n ⋉	⋊ z ʊ s ə n ⋉			z ɪ s ə n	g ə z ʊ s ə n	2.055
 ⋊ z ɪ s ə n ⋉	⋊ z ɔ s ə n ⋉			z ɪ s ə n	g ə z ɔ s ə n	1.69
-⋊ t ɛ ŋ k ə n ⋉	⋊ t ɛ ŋ k t ⋉	0.5185102643609654	7546.0	t ɛ ŋ k ə n	g ə t ɛ ŋ k t	6.08
+⋊ t ɛ ŋ k ə n ⋉	⋊ t ɛ ŋ k t ⋉	0.5185102643609654	1240.0	t ɛ ŋ k ə n	g ə t ɛ ŋ k t	6.08
 ⋊ t ɛ ŋ k ə n ⋉	⋊ t a x t ⋉			t ɛ ŋ k ə n	g ə t a x t	0.58
-⋊ t s v a i ə n ⋉	⋊ t s v a i t ⋉	0.8663704479491715	4581.0	t s v ai̯ ə n	g ə t s v ai̯ t	5.495
-⋊ t s v a i ə n ⋉	⋊ t s v a i n ⋉	0.0188802142196311	27250.0	t s v ai̯ ə n	g ə t s v ai̯ n	1.73
-⋊ h a i f ə n ⋉	⋊ h a i f t ⋉	0.6588543512364848	3179.0	h ai̯ f ə n	g ə h ai̯ f t	3.51
+⋊ t s v a i ə n ⋉	⋊ t s v a i t ⋉	0.8663704479491715	207.0	t s v ai̯ ə n	g ə t s v ai̯ t	5.495
+⋊ t s v a i ə n ⋉	⋊ t s v a i n ⋉	0.0188802142196311	2627.0	t s v ai̯ ə n	g ə t s v ai̯ n	1.73
+⋊ h a i f ə n ⋉	⋊ h a i f t ⋉	0.6588543512364848	998.0	h ai̯ f ə n	g ə h ai̯ f t	3.51
 ⋊ h a i f ə n ⋉	⋊ h iː f ə n ⋉			h ai̯ f ə n	g ə h iː f ə n	1.765
-⋊ t s a u ə n ⋉	⋊ t s a u t ⋉	0.8456014512148586	8675.0	t s au̯ ə n	g ə t s au̯ t	5.78
-⋊ t s a u ə n ⋉	⋊ t s a u n ⋉	0.0188802142196311	27250.0	t s au̯ ə n	g ə t s au̯ n	2.285
+⋊ t s a u ə n ⋉	⋊ t s a u t ⋉	0.8456014512148586	366.0	t s au̯ ə n	g ə t s au̯ t	5.78
+⋊ t s a u ə n ⋉	⋊ t s a u n ⋉	0.0188802142196311	2627.0	t s au̯ ə n	g ə t s au̯ n	2.285
 ⋊ j ɪ ŋ ə n ⋉	⋊ j ʊ ŋ ə n ⋉			j ɪ ŋ ə n	g ə j ʊ ŋ ə n	2.55
-⋊ j ɪ ŋ ə n ⋉	⋊ j ɪ ŋ t ⋉	0.7609943652161982	3099.0	j ɪ ŋ ə n	g ə j ɪ ŋ t	5.25
-⋊ f r a i t ə n ⋉	⋊ f r a i t ə t ⋉	0.6324553057426875	401.0	f r ai̯ t ə n	g ə f r ai̯ t ə t	2.57
-⋊ f r a i t ə n ⋉	⋊ f r ɪ t ə n ⋉	0.350163420803941	26787.0	f r ai̯ t ə n	g ə f r ɪ t ə n	4.79
+⋊ j ɪ ŋ ə n ⋉	⋊ j ɪ ŋ t ⋉	0.7609943652161982	819.0	j ɪ ŋ ə n	g ə j ɪ ŋ t	5.25
+⋊ f r a i t ə n ⋉	⋊ f r a i t ə t ⋉	0.6324553057426875	1017.0	f r ai̯ t ə n	g ə f r ai̯ t ə t	2.57
+⋊ f r a i t ə n ⋉	⋊ f r ɪ t ə n ⋉	0.350163420803941	1456.0	f r ai̯ t ə n	g ə f r ɪ t ə n	4.79
 ⋊ k ɛ n d ə n ⋉	⋊ k a n d ə t ⋉			k ɛ n d ə n	g ə k a n d ə t	1.705
-⋊ k ɛ n d ə n ⋉	⋊ k ɛ n d ə t ⋉	0.5075916449468018	2992.0	k ɛ n d ə n	g ə k ɛ n d ə t	3.85
+⋊ k ɛ n d ə n ⋉	⋊ k ɛ n d ə t ⋉	0.5075916449468018	1252.0	k ɛ n d ə n	g ə k ɛ n d ə t	3.85
 ⋊ d ɛ n d ə n ⋉	⋊ d a n d ə t ⋉			d ɛ n d ə n	g ə d a n d ə t	3.5
 ⋊ d ɛ n d ə n ⋉	⋊ d a n t ⋉			d ɛ n d ə n	g ə d a n t	2.96
-⋊ t a i d ə n ⋉	⋊ t a i d ə t ⋉	0.5867264995521027	674.0	t ai̯ d ə n	g ə t ai̯ d ə t	4.095
-⋊ t a i d ə n ⋉	⋊ t iː d ə n ⋉	0.3871598442295055	27514.0	t ai̯ d ə n	g ə t iː d ə n	3.91
-⋊ n a i ə n ⋉	⋊ n a i t ⋉	0.8663704479491715	4581.0	n ai̯ ə n	g ə n ai̯ t	3.775
+⋊ t a i d ə n ⋉	⋊ t a i d ə t ⋉	0.5867264995521027	1092.0	t ai̯ d ə n	g ə t ai̯ d ə t	4.095
+⋊ t a i d ə n ⋉	⋊ t iː d ə n ⋉	0.3871598442295055	1424.0	t ai̯ d ə n	g ə t iː d ə n	3.91
+⋊ n a i ə n ⋉	⋊ n a i t ⋉	0.8663704479491715	207.0	n ai̯ ə n	g ə n ai̯ t	3.775
 ⋊ n a i ə n ⋉	⋊ n ɪ t ⋉			n ai̯ ə n	g ə n ɪ t	0.59
-⋊ d a u ə n ⋉	⋊ d a u t ⋉	0.8456014512148586	8675.0	d au̯ ə n	g ə d au̯ t	5.95
-⋊ d a u ə n ⋉	⋊ d a u n ⋉	0.0188802142196311	27250.0	d au̯ ə n	g ə d au̯ n	1.955
-⋊ l a u ə n ⋉	⋊ l a u t ⋉	0.8456014512148586	8675.0	l au̯ ə n	g ə l au̯ t	5.42
-⋊ l a u ə n ⋉	⋊ l a u n ⋉	0.0188802142196311	27250.0	l au̯ ə n	g ə l au̯ n	1.81
-⋊ t a l ə n ⋉	⋊ t a l t ⋉	0.8026553808099589	7316.0	t a l ə n	g ə t a l t	4.08
-⋊ t a l ə n ⋉	⋊ t a l ə n ⋉	0.0555253448378179	29208.0	t a l ə n	g ə t a l ə n	1.565
-⋊ f r ɛ n d ə n ⋉	⋊ f r ɛ n d ə t ⋉	0.5075916449468018	2992.0	f r ɛ n d ə n	g ə f r ɛ n d ə t	5.085
+⋊ d a u ə n ⋉	⋊ d a u t ⋉	0.8456014512148586	366.0	d au̯ ə n	g ə d au̯ t	5.95
+⋊ d a u ə n ⋉	⋊ d a u n ⋉	0.0188802142196311	2627.0	d au̯ ə n	g ə d au̯ n	1.955
+⋊ l a u ə n ⋉	⋊ l a u t ⋉	0.8456014512148586	366.0	l au̯ ə n	g ə l au̯ t	5.42
+⋊ l a u ə n ⋉	⋊ l a u n ⋉	0.0188802142196311	2627.0	l au̯ ə n	g ə l au̯ n	1.81
+⋊ t a l ə n ⋉	⋊ t a l t ⋉	0.8026553808099589	423.0	t a l ə n	g ə t a l t	4.08
+⋊ t a l ə n ⋉	⋊ t a l ə n ⋉	0.0555253448378179	2297.0	t a l ə n	g ə t a l ə n	1.565
+⋊ f r ɛ n d ə n ⋉	⋊ f r ɛ n d ə t ⋉	0.5075916449468018	1252.0	f r ɛ n d ə n	g ə f r ɛ n d ə t	5.085
 ⋊ f r ɛ n d ə n ⋉	⋊ f r a n d ə t ⋉			f r ɛ n d ə n	g ə f r a n d ə t	1.455
-⋊ f a u ə n ⋉	⋊ f a u t ⋉	0.8456014512148586	8675.0	f au̯ ə n	g ə f au̯ t	5.22
-⋊ f a u ə n ⋉	⋊ f a u n ⋉	0.0188802142196311	27250.0	f au̯ ə n	g ə f au̯ n	2.6
-⋊ t s v ɛ r ə n ⋉	⋊ t s v ɛ r t ⋉	0.9587772231980404	6042.0	t s v ɛ r ə n	g ə t s v ɛ r t	5.41
-⋊ t s v ɛ r ə n ⋉	⋊ t s v ɔ r ə n ⋉	0.1233181225428055	28915.0	t s v ɛ r ə n	g ə t s v ɔ r ə n	1.135
-⋊ j a i f ə n ⋉	⋊ j a i f t ⋉	0.6588543512364848	3179.0	j ai̯ f ə n	g ə j ai̯ f t	4.34
+⋊ f a u ə n ⋉	⋊ f a u t ⋉	0.8456014512148586	366.0	f au̯ ə n	g ə f au̯ t	5.22
+⋊ f a u ə n ⋉	⋊ f a u n ⋉	0.0188802142196311	2627.0	f au̯ ə n	g ə f au̯ n	2.6
+⋊ t s v ɛ r ə n ⋉	⋊ t s v ɛ r t ⋉	0.9587772231980404	21.0	t s v ɛ r ə n	g ə t s v ɛ r t	5.41
+⋊ t s v ɛ r ə n ⋉	⋊ t s v ɔ r ə n ⋉	0.1233181225428055	1907.0	t s v ɛ r ə n	g ə t s v ɔ r ə n	1.135
+⋊ j a i f ə n ⋉	⋊ j a i f t ⋉	0.6588543512364848	998.0	j ai̯ f ə n	g ə j ai̯ f t	4.34
 ⋊ j a i f ə n ⋉	⋊ j iː f ə n ⋉			j ai̯ f ə n	g ə j iː f ə n	1.935
-⋊ f r ɪ ŋ ə n ⋉	⋊ f r ʊ ŋ ə n ⋉	0.1880623121108921	27147.0	f r ɪ ŋ ə n	g ə f r ʊ ŋ ə n	5.19
+⋊ f r ɪ ŋ ə n ⋉	⋊ f r ʊ ŋ ə n ⋉	0.1880623121108921	1700.0	f r ɪ ŋ ə n	g ə f r ʊ ŋ ə n	5.19
 ⋊ f r ɪ ŋ ə n ⋉	⋊ f r ɔ ŋ ə n ⋉			f r ɪ ŋ ə n	g ə f r ɔ ŋ ə n	3.075
-⋊ m iː ə n ⋉	⋊ m iː t ⋉	0.763432245921466	6692.0	m iːə n	g ə m iː t	4.41
+⋊ m iː ə n ⋉	⋊ m iː t ⋉	0.763432245921466	815.0	m iːə n	g ə m iː t	4.41
 ⋊ m iː ə n ⋉	⋊ m oː t ⋉			m iːə n	g ə m oː t	1.74
-⋊ f eː ə n ⋉	⋊ f eː t ⋉	0.763432245921466	6692.0	f eːə n	g ə f eː t	6.11
-⋊ f eː ə n ⋉	⋊ f eː n ⋉	0.0188802142196311	27250.0	f eːə n	g ə f eː n	1.94
-⋊ f iː ə n ⋉	⋊ f iː t ⋉	0.763432245921466	6692.0	f iːə n	g ə f iː t	4.4
+⋊ f eː ə n ⋉	⋊ f eː t ⋉	0.763432245921466	815.0	f eːə n	g ə f eː t	6.11
+⋊ f eː ə n ⋉	⋊ f eː n ⋉	0.0188802142196311	2627.0	f eːə n	g ə f eː n	1.94
+⋊ f iː ə n ⋉	⋊ f iː t ⋉	0.763432245921466	815.0	f iːə n	g ə f iː t	4.4
 ⋊ f iː ə n ⋉	⋊ f oː t ⋉			f iːə n	g ə f oː t	0.58
-⋊ h eː n ə n ⋉	⋊ h eː n t ⋉	0.8154089183855899	9067.0	h eː n ə n	g ə h eː n t	6.7
-⋊ h eː n ə n ⋉	⋊ h eː n t ⋉	0.8154089183855899	9067.0	h eː n ə n	g ə h eː n t	6.7
-⋊ r ɛː ə n ⋉	⋊ r ɛː t ⋉	0.763432245921466	6692.0	r ɛːə n	g ə r ɛː t	5.135
+⋊ h eː n ə n ⋉	⋊ h eː n t ⋉	0.8154089183855899	411.0	h eː n ə n	g ə h eː n t	6.7
+⋊ h eː n ə n ⋉	⋊ h eː n t ⋉	0.8154089183855899	411.0	h eː n ə n	g ə h eː n t	6.7
+⋊ r ɛː ə n ⋉	⋊ r ɛː t ⋉	0.763432245921466	815.0	r ɛːə n	g ə r ɛː t	5.135
 ⋊ r ɛː ə n ⋉	⋊ r ɛː t ə n ⋉			r ɛːə n	g ə r ɛː t ə n	1.11
-⋊ f l a i ə n ⋉	⋊ f l iː n ⋉	0.438969992233285	28192.0	f l ai̯ ə n	g ə f l iː n	1.19
-⋊ f l a i ə n ⋉	⋊ f l a i t ⋉	0.8663704479491715	4581.0	f l ai̯ ə n	g ə f l ai̯ t	1.925
+⋊ f l a i ə n ⋉	⋊ f l iː n ⋉	0.438969992233285	1350.0	f l ai̯ ə n	g ə f l iː n	1.19
+⋊ f l a i ə n ⋉	⋊ f l a i t ⋉	0.8663704479491715	207.0	f l ai̯ ə n	g ə f l ai̯ t	1.925
 ⋊ b ə h eː t ə n ⋉	⋊ b ə h oː t ə n ⋉			b ə h eː t ə n	b ə h oː t ə n	1.96
-⋊ b ə h eː t ə n ⋉	⋊ b ə h eː t ə n ⋉	0.2320238077547728	29232.0	b ə h eː t ə n	b ə h eː t ə n	0.73
-⋊ h a u b ə n ⋉	⋊ h a u p t ⋉	0.6773114561770316	27018.0	h au̯ b ə n	g ə h au̯ p t	5.25
-⋊ h a u b ə n ⋉	⋊ h a u b ə n ⋉	0.0461786779722606	29365.0	h au̯ b ə n	g ə h au̯ b ə n	0.33
-⋊ f r eː t ə n ⋉	⋊ f r eː t ə n ⋉	0.2320238077547728	29232.0	f r eː t ə n	g ə f r eː t ə n	2.38
+⋊ b ə h eː t ə n ⋉	⋊ b ə h eː t ə n ⋉	0.2320238077547728	1602.0	b ə h eː t ə n	b ə h eː t ə n	0.73
+⋊ h a u b ə n ⋉	⋊ h a u p t ⋉	0.6773114561770316	930.0	h au̯ b ə n	g ə h au̯ p t	5.25
+⋊ h a u b ə n ⋉	⋊ h a u b ə n ⋉	0.0461786779722606	2379.0	h au̯ b ə n	g ə h au̯ b ə n	0.33
+⋊ f r eː t ə n ⋉	⋊ f r eː t ə n ⋉	0.2320238077547728	1602.0	f r eː t ə n	g ə f r eː t ə n	2.38
 ⋊ f r eː t ə n ⋉	⋊ f r oː t ə n ⋉			f r eː t ə n	g ə f r oː t ə n	1.935
-⋊ h ɛ l ə n ⋉	⋊ h ɛ l t ⋉	0.8795102700976709	6440.0	h ɛ l ə n	g ə h ɛ l t	6.605
-⋊ h ɛ l ə n ⋉	⋊ h ɔ l ə n ⋉	0.1424337694689724	28998.0	h ɛ l ə n	g ə h ɔ l ə n	2.2
-⋊ a u f ə n ⋉	⋊ a u f t ⋉	0.6588543512364848	3179.0	au̯ f ə n	g ə au̯ f t	3.17
-⋊ a u f ə n ⋉	⋊ a u f ə n ⋉	0.1517452888793796	29199.0	au̯ f ə n	g ə au̯ f ə n	0.68
-⋊ ɛ r f aː l ə n ⋉	⋊ ɛ r f aː l ə n ⋉	0.0555253448378179	29208.0	ɛ r f aː l ə n	ɛ r f aː l ə n	4.59
-⋊ ɛ r f aː l ə n ⋉	⋊ ɛ r f aː l t ⋉	0.8026553808099589	7316.0	ɛ r f aː l ə n	ɛ r f aː l t	2.595
+⋊ h ɛ l ə n ⋉	⋊ h ɛ l t ⋉	0.8795102700976709	179.0	h ɛ l ə n	g ə h ɛ l t	6.605
+⋊ h ɛ l ə n ⋉	⋊ h ɔ l ə n ⋉	0.1424337694689724	1819.0	h ɛ l ə n	g ə h ɔ l ə n	2.2
+⋊ a u f ə n ⋉	⋊ a u f t ⋉	0.6588543512364848	998.0	au̯ f ə n	g ə au̯ f t	3.17
+⋊ a u f ə n ⋉	⋊ a u f ə n ⋉	0.1517452888793796	1788.0	au̯ f ə n	g ə au̯ f ə n	0.68
+⋊ ɛ r f aː l ə n ⋉	⋊ ɛ r f aː l ə n ⋉	0.0555253448378179	2297.0	ɛ r f aː l ə n	ɛ r f aː l ə n	4.59
+⋊ ɛ r f aː l ə n ⋉	⋊ ɛ r f aː l t ⋉	0.8026553808099589	423.0	ɛ r f aː l ə n	ɛ r f aː l t	2.595
 ⋊ h a i ə n ⋉	⋊ h iː n ⋉			h ai̯ ə n	g ə h iː n	0.73
-⋊ h a i ə n ⋉	⋊ h a i n ⋉	0.0188802142196311	27250.0	h ai̯ ə n	g ə h ai̯ n	1.87
+⋊ h a i ə n ⋉	⋊ h a i n ⋉	0.0188802142196311	2627.0	h ai̯ ə n	g ə h ai̯ n	1.87
 ⋊ ʃ t a i x ə n ⋉	⋊ ʃ t iː x ə n ⋉			ʃ t ai̯ x ə n	g ə ʃ t iː x ə n	2.665
-⋊ ʃ t a i x ə n ⋉	⋊ ʃ t a i x t ⋉	0.6538247311243649	8849.0	ʃ t ai̯ x ə n	g ə ʃ t ai̯ x t	2.385
-⋊ j a u ə n ⋉	⋊ j a u t ⋉	0.8456014512148586	8675.0	j au̯ ə n	g ə j au̯ t	5.965
-⋊ j a u ə n ⋉	⋊ j a u n ⋉	0.0188802142196311	27250.0	j au̯ ə n	g ə j au̯ n	1.96
-⋊ b ə n eː z ə n ⋉	⋊ b ə n eː z ə n ⋉	0.3280576878903631	29446.0	b ə n eː z ə n	b ə n eː z ə n	2.715
+⋊ ʃ t a i x ə n ⋉	⋊ ʃ t a i x t ⋉	0.6538247311243649	1002.0	ʃ t ai̯ x ə n	g ə ʃ t ai̯ x t	2.385
+⋊ j a u ə n ⋉	⋊ j a u t ⋉	0.8456014512148586	366.0	j au̯ ə n	g ə j au̯ t	5.965
+⋊ j a u ə n ⋉	⋊ j a u n ⋉	0.0188802142196311	2627.0	j au̯ ə n	g ə j au̯ n	1.96
+⋊ b ə n eː z ə n ⋉	⋊ b ə n eː z ə n ⋉	0.3280576878903631	1490.0	b ə n eː z ə n	b ə n eː z ə n	2.715
 ⋊ b ə n eː z ə n ⋉	⋊ b ə n aː z ə n ⋉			b ə n eː z ə n	b ə n aː z ə n	0.835
-⋊ f r ɛ s t ə n ⋉	⋊ f r ɛ s t ə t ⋉	0.7240838608479855	1487.0	f r ɛ s t ə n	g ə f r ɛ s t ə t	4.58
-⋊ f r ɛ s t ə n ⋉	⋊ f r ɔ s t ə n ⋉	0.1632210099961102	29168.0	f r ɛ s t ə n	g ə f r ɔ s t ə n	2.825
-⋊ b r ɛ s ə n ⋉	⋊ b r ɔ s ə n ⋉	0.3664320682760081	28905.0	b r ɛ s ə n	g ə b r ɔ s ə n	2.03
-⋊ b r ɛ s ə n ⋉	⋊ b r ɛ s ə n ⋉	0.1634679024806957	29302.0	b r ɛ s ə n	g ə b r ɛ s ə n	2.575
-⋊ v a u f ə n ⋉	⋊ v a u f t ⋉	0.6588543512364848	3179.0	v au̯ f ə n	g ə v au̯ f t	4.66
+⋊ f r ɛ s t ə n ⋉	⋊ f r ɛ s t ə t ⋉	0.7240838608479855	850.0	f r ɛ s t ə n	g ə f r ɛ s t ə t	4.58
+⋊ f r ɛ s t ə n ⋉	⋊ f r ɔ s t ə n ⋉	0.1632210099961102	1764.0	f r ɛ s t ə n	g ə f r ɔ s t ə n	2.825
+⋊ b r ɛ s ə n ⋉	⋊ b r ɔ s ə n ⋉	0.3664320682760081	1441.0	b r ɛ s ə n	g ə b r ɔ s ə n	2.03
+⋊ b r ɛ s ə n ⋉	⋊ b r ɛ s ə n ⋉	0.1634679024806957	1760.0	b r ɛ s ə n	g ə b r ɛ s ə n	2.575
+⋊ v a u f ə n ⋉	⋊ v a u f t ⋉	0.6588543512364848	998.0	v au̯ f ə n	g ə v au̯ f t	4.66
 ⋊ v a u f ə n ⋉	⋊ v ɔ f ə n ⋉			v au̯ f ə n	g ə v ɔ f ə n	1.69
-⋊ ɛː r ə n ⋉	⋊ ɛː r t ⋉	0.9653962686131644	6441.0	ɛː r ə n	g ə ɛː r t	5.79
-⋊ ɛː r ə n ⋉	⋊ ɛː r ə n ⋉	0.0252263904449563	29420.0	ɛː r ə n	g ə ɛː r ə n	0.775
-⋊ t s a i d ə n ⋉	⋊ t s a i d ə t ⋉	0.5867264995521027	674.0	t s ai̯ d ə n	g ə t s ai̯ d ə t	3.43
-⋊ t s a i d ə n ⋉	⋊ t s iː d ə n ⋉	0.3900233292526348	27518.0	t s ai̯ d ə n	g ə t s iː d ə n	2.005
-⋊ z iː ə n ⋉	⋊ z iː t ⋉	0.763432245921466	6692.0	z iːə n	g ə z iː t	4.605
+⋊ ɛː r ə n ⋉	⋊ ɛː r t ⋉	0.9653962686131644	15.0	ɛː r ə n	g ə ɛː r t	5.79
+⋊ ɛː r ə n ⋉	⋊ ɛː r ə n ⋉	0.0252263904449563	2591.0	ɛː r ə n	g ə ɛː r ə n	0.775
+⋊ t s a i d ə n ⋉	⋊ t s a i d ə t ⋉	0.5867264995521027	1092.0	t s ai̯ d ə n	g ə t s ai̯ d ə t	3.43
+⋊ t s a i d ə n ⋉	⋊ t s iː d ə n ⋉	0.3900233292526348	1417.0	t s ai̯ d ə n	g ə t s iː d ə n	2.005
+⋊ z iː ə n ⋉	⋊ z iː t ⋉	0.763432245921466	815.0	z iːə n	g ə z iː t	4.605
 ⋊ z iː ə n ⋉	⋊ z ɔ t ⋉			z iːə n	g ə z ɔ t	0.975
-⋊ ʊ m a i ə n ⋉	⋊ ʊ m a i t ⋉	0.8663704479491715	4581.0	ʊ m ai̯ ə n	ʊ m ai̯ t	5.08
-⋊ ʊ m a i ə n ⋉	⋊ ʊ m a i t ⋉	0.8663704479491715	4581.0	ʊ m ai̯ ə n	g ə ʊ m ai̯ t	1.805
-⋊ ɛ r h aː d ə n ⋉	⋊ ɛ r h aː d ə t ⋉	0.6021198092000845	140.0	ɛ r h aː d ə n	ɛ r h aː d ə t	2.75
-⋊ ɛ r h aː d ə n ⋉	⋊ ɛ r h aː d ə n ⋉	0.0420005068501909	29274.0	ɛ r h aː d ə n	ɛ r h aː d ə n	2.775
-⋊ f r uː t ə n ⋉	⋊ f r uː t ə t ⋉	0.7079737592607558	922.0	f r uː t ə n	g ə f r uː t ə t	4.635
-⋊ f r uː t ə n ⋉	⋊ f r uː t ə n ⋉	0.0424137083553456	29244.0	f r uː t ə n	g ə f r uː t ə n	1.355
-⋊ ʃ p r eː b ə n ⋉	⋊ ʃ p r eː p t ⋉	0.5852723921831766	27036.0	ʃ p r eː b ə n	g ə ʃ p r eː p t	4.765
+⋊ ʊ m a i ə n ⋉	⋊ ʊ m a i t ⋉	0.8663704479491715	207.0	ʊ m ai̯ ə n	ʊ m ai̯ t	5.08
+⋊ ʊ m a i ə n ⋉	⋊ ʊ m a i t ⋉	0.8663704479491715	207.0	ʊ m ai̯ ə n	g ə ʊ m ai̯ t	1.805
+⋊ ɛ r h aː d ə n ⋉	⋊ ɛ r h aː d ə t ⋉	0.6021198092000845	1066.0	ɛ r h aː d ə n	ɛ r h aː d ə t	2.75
+⋊ ɛ r h aː d ə n ⋉	⋊ ɛ r h aː d ə n ⋉	0.0420005068501909	2427.0	ɛ r h aː d ə n	ɛ r h aː d ə n	2.775
+⋊ f r uː t ə n ⋉	⋊ f r uː t ə t ⋉	0.7079737592607558	898.0	f r uː t ə n	g ə f r uː t ə t	4.635
+⋊ f r uː t ə n ⋉	⋊ f r uː t ə n ⋉	0.0424137083553456	2421.0	f r uː t ə n	g ə f r uː t ə n	1.355
+⋊ ʃ p r eː b ə n ⋉	⋊ ʃ p r eː p t ⋉	0.5852723921831766	1117.0	ʃ p r eː b ə n	g ə ʃ p r eː p t	4.765
 ⋊ ʃ p r eː b ə n ⋉	⋊ ʃ p r oː b ə n ⋉			ʃ p r eː b ə n	g ə ʃ p r oː b ə n	1.14
 ⋊ ə l a i n ə n ⋉	⋊ l a i n t ⋉			ə l ai̯ n ə n	g ə l ai̯ n t	1.97
 ⋊ ə l a i n ə n ⋉	⋊ b ə l a i n t ⋉			ə l ai̯ n ə n	b ə l ai̯ n t	1.68
-⋊ j a u f ə n ⋉	⋊ j a u f t ⋉	0.6588543512364848	3179.0	j au̯ f ə n	g ə j au̯ f t	6.27
+⋊ j a u f ə n ⋉	⋊ j a u f t ⋉	0.6588543512364848	998.0	j au̯ f ə n	g ə j au̯ f t	6.27
 ⋊ j a u f ə n ⋉	⋊ j ɔ f ə n ⋉			j au̯ f ə n	g ə j ɔ f ə n	1.85
 ⋊ b iː ə n ⋉	⋊ b oː n ⋉			b iːə n	g ə b oː n	1.025
 ⋊ b iː ə n ⋉	⋊ b oː t ⋉			b iːə n	g ə b oː t	1.58
 ⋊ d ɛ r b ə n ⋉	⋊ d a r b ə n ⋉			d ɛ r b ə n	g ə d a r b ə n	1.24
-⋊ d ɛ r b ə n ⋉	⋊ d ɛ r p t ⋉	0.7119447104550215	27078.0	d ɛ r b ə n	g ə d ɛ r p t	4.57
+⋊ d ɛ r b ə n ⋉	⋊ d ɛ r p t ⋉	0.7119447104550215	892.0	d ɛ r b ə n	g ə d ɛ r p t	4.57
 ⋊ h iː ə n ⋉	⋊ h oː n ⋉			h iːə n	g ə h oː n	1.93
-⋊ h iː ə n ⋉	⋊ h iː t ⋉	0.763432245921466	6692.0	h iːə n	g ə h iː t	3.895
-⋊ ʃ a i ə n ⋉	⋊ ʃ iː n ⋉	0.438969992233285	28192.0	ʃ ai̯ ə n	g ə ʃ iː n	5.35
-⋊ ʃ a i ə n ⋉	⋊ ʃ a i n ⋉	0.0188802142196311	27250.0	ʃ ai̯ ə n	g ə ʃ ai̯ n	2.2
-⋊ h iː t ə n ⋉	⋊ h iː t ə t ⋉	0.5611202431021053	2935.0	h iː t ə n	g ə h iː t ə t	5.05
+⋊ h iː ə n ⋉	⋊ h iː t ⋉	0.763432245921466	815.0	h iːə n	g ə h iː t	3.895
+⋊ ʃ a i ə n ⋉	⋊ ʃ iː n ⋉	0.438969992233285	1350.0	ʃ ai̯ ə n	g ə ʃ iː n	5.35
+⋊ ʃ a i ə n ⋉	⋊ ʃ a i n ⋉	0.0188802142196311	2627.0	ʃ ai̯ ə n	g ə ʃ ai̯ n	2.2
+⋊ h iː t ə n ⋉	⋊ h iː t ə t ⋉	0.5611202431021053	1168.0	h iː t ə n	g ə h iː t ə t	5.05
 ⋊ h iː t ə n ⋉	⋊ h oː t ə n ⋉			h iː t ə n	g ə h oː t ə n	0.675
-⋊ f eː r ə n ⋉	⋊ f eː r t ⋉	0.9688583098170344	4048.0	f eː r ə n	g ə f eː r t	4.84
+⋊ f eː r ə n ⋉	⋊ f eː r t ⋉	0.9688583098170344	13.0	f eː r ə n	g ə f eː r t	4.84
 ⋊ f eː r ə n ⋉	⋊ f oː r ə n ⋉			f eː r ə n	g ə f oː r ə n	2.03
-⋊ r a s ə n ⋉	⋊ r a s t ⋉	0.7110605343673823	5153.0	r a s ə n	g ə r a s t	4.57
-⋊ r a s ə n ⋉	⋊ r a s ə n ⋉	0.1176005807019382	29330.0	r a s ə n	g ə r a s ə n	2.845
-⋊ d a i t ə n ⋉	⋊ d a i t ə t ⋉	0.6324553057426875	401.0	d ai̯ t ə n	g ə d ai̯ t ə t	2.13
+⋊ r a s ə n ⋉	⋊ r a s t ⋉	0.7110605343673823	894.0	r a s ə n	g ə r a s t	4.57
+⋊ r a s ə n ⋉	⋊ r a s ə n ⋉	0.1176005807019382	1927.0	r a s ə n	g ə r a s ə n	2.845
+⋊ d a i t ə n ⋉	⋊ d a i t ə t ⋉	0.6324553057426875	1017.0	d ai̯ t ə n	g ə d ai̯ t ə t	2.13
 ⋊ d a i t ə n ⋉	⋊ d iː t ə n ⋉			d ai̯ t ə n	g ə d iː t ə n	0.63
-⋊ b a i ə n ⋉	⋊ b a i n ⋉	0.0188802142196311	27250.0	b ai̯ ə n	g ə b ai̯ n	1.47
-⋊ b a i ə n ⋉	⋊ b a i t ⋉	0.8663704479491715	4581.0	b ai̯ ə n	g ə b ai̯ t	5.34
-⋊ k a i ə n ⋉	⋊ k a i t ⋉	0.8663704479491715	4581.0	k ai̯ ə n	g ə k ai̯ t	6.67
-⋊ k a i ə n ⋉	⋊ k a i n ⋉	0.0188802142196311	27250.0	k ai̯ ə n	g ə k ai̯ n	1.525
-⋊ z a u ə n ⋉	⋊ z a u t ⋉	0.8456014512148586	8675.0	z au̯ ə n	g ə z au̯ t	6.58
+⋊ b a i ə n ⋉	⋊ b a i n ⋉	0.0188802142196311	2627.0	b ai̯ ə n	g ə b ai̯ n	1.47
+⋊ b a i ə n ⋉	⋊ b a i t ⋉	0.8663704479491715	207.0	b ai̯ ə n	g ə b ai̯ t	5.34
+⋊ k a i ə n ⋉	⋊ k a i t ⋉	0.8663704479491715	207.0	k ai̯ ə n	g ə k ai̯ t	6.67
+⋊ k a i ə n ⋉	⋊ k a i n ⋉	0.0188802142196311	2627.0	k ai̯ ə n	g ə k ai̯ n	1.525
+⋊ z a u ə n ⋉	⋊ z a u t ⋉	0.8456014512148586	366.0	z au̯ ə n	g ə z au̯ t	6.58
 ⋊ z a u ə n ⋉	⋊ z ɔ t ⋉			z au̯ ə n	g ə z ɔ t	0.94
-⋊ t r a i f ə n ⋉	⋊ t r a i f t ⋉	0.6588543512364848	3179.0	t r ai̯ f ə n	g ə t r ai̯ f t	3.39
+⋊ t r a i f ə n ⋉	⋊ t r a i f t ⋉	0.6588543512364848	998.0	t r ai̯ f ə n	g ə t r ai̯ f t	3.39
 ⋊ t r a i f ə n ⋉	⋊ t r iː f ə n ⋉			t r ai̯ f ə n	g ə t r iː f ə n	1.08
-⋊ r a i d ə n ⋉	⋊ r a i d ə t ⋉	0.5867264995521027	674.0	r ai̯ d ə n	g ə r ai̯ d ə t	4.2
-⋊ r a i d ə n ⋉	⋊ r iː d ə n ⋉	0.2477816897580393	27529.0	r ai̯ d ə n	g ə r iː d ə n	4.52
-⋊ ʒ ɛ ŋ ə n ⋉	⋊ ʒ ɛ ŋ t ⋉	0.7915953685536075	7152.0	ʒ ɛ ŋ ə n	g ə ʒ ɛ ŋ t	5.295
-⋊ ʒ ɛ ŋ ə n ⋉	⋊ ʒ ɛ ŋ ə n ⋉	0.0583437271321612	29367.0	ʒ ɛ ŋ ə n	g ə ʒ ɛ ŋ ə n	0.11
-⋊ ɛ r t s ɪ ŋ ə n ⋉	⋊ ɛ r t s ɪ ŋ t ⋉	0.7609943652161982	3099.0	ɛ r t s ɪ ŋ ə n	ɛ r t s ɪ ŋ t	3.375
-⋊ ɛ r t s ɪ ŋ ə n ⋉	⋊ ɛ r t s ʊ ŋ ə n ⋉	0.1709047622604463	27141.0	ɛ r t s ɪ ŋ ə n	ɛ r t s ʊ ŋ ə n	4.945
-⋊ f ɪ ŋ ə n ⋉	⋊ f ʊ ŋ ə n ⋉	0.239001647839295	27128.0	f ɪ ŋ ə n	g ə f ʊ ŋ ə n	5.68
-⋊ f ɪ ŋ ə n ⋉	⋊ f ɪ ŋ t ⋉	0.7609943652161982	3099.0	f ɪ ŋ ə n	g ə f ɪ ŋ t	4.65
-⋊ ɛ r a i ə n ⋉	⋊ ɛ r a i t ⋉	0.8663704479491715	4581.0	ɛ r ai̯ ə n	ɛ r ai̯ t	6.14
-⋊ ɛ r a i ə n ⋉	⋊ ɛ r a i n ⋉	0.0188802142196311	27250.0	ɛ r ai̯ ə n	ɛ r ai̯ n	1.29
-⋊ k r ɪ ŋ ə n ⋉	⋊ k r ʊ ŋ ə n ⋉	0.1880623121108921	27147.0	k r ɪ ŋ ə n	g ə k r ʊ ŋ ə n	3.24
+⋊ r a i d ə n ⋉	⋊ r a i d ə t ⋉	0.5867264995521027	1092.0	r ai̯ d ə n	g ə r ai̯ d ə t	4.2
+⋊ r a i d ə n ⋉	⋊ r iː d ə n ⋉	0.2477816897580393	1580.0	r ai̯ d ə n	g ə r iː d ə n	4.52
+⋊ ʒ ɛ ŋ ə n ⋉	⋊ ʒ ɛ ŋ t ⋉	0.7915953685536075	701.0	ʒ ɛ ŋ ə n	g ə ʒ ɛ ŋ t	5.295
+⋊ ʒ ɛ ŋ ə n ⋉	⋊ ʒ ɛ ŋ ə n ⋉	0.0583437271321612	2280.0	ʒ ɛ ŋ ə n	g ə ʒ ɛ ŋ ə n	0.11
+⋊ ɛ r t s ɪ ŋ ə n ⋉	⋊ ɛ r t s ɪ ŋ t ⋉	0.7609943652161982	819.0	ɛ r t s ɪ ŋ ə n	ɛ r t s ɪ ŋ t	3.375
+⋊ ɛ r t s ɪ ŋ ə n ⋉	⋊ ɛ r t s ʊ ŋ ə n ⋉	0.1709047622604463	1739.0	ɛ r t s ɪ ŋ ə n	ɛ r t s ʊ ŋ ə n	4.945
+⋊ f ɪ ŋ ə n ⋉	⋊ f ʊ ŋ ə n ⋉	0.239001647839295	1588.0	f ɪ ŋ ə n	g ə f ʊ ŋ ə n	5.68
+⋊ f ɪ ŋ ə n ⋉	⋊ f ɪ ŋ t ⋉	0.7609943652161982	819.0	f ɪ ŋ ə n	g ə f ɪ ŋ t	4.65
+⋊ ɛ r a i ə n ⋉	⋊ ɛ r a i t ⋉	0.8663704479491715	207.0	ɛ r ai̯ ə n	ɛ r ai̯ t	6.14
+⋊ ɛ r a i ə n ⋉	⋊ ɛ r a i n ⋉	0.0188802142196311	2627.0	ɛ r ai̯ ə n	ɛ r ai̯ n	1.29
+⋊ k r ɪ ŋ ə n ⋉	⋊ k r ʊ ŋ ə n ⋉	0.1880623121108921	1700.0	k r ɪ ŋ ə n	g ə k r ʊ ŋ ə n	3.24
 ⋊ k r ɪ ŋ ə n ⋉	⋊ k r ɔ ŋ ə n ⋉			k r ɪ ŋ ə n	g ə k r ɔ ŋ ə n	0.8
-⋊ j a i d ə n ⋉	⋊ j a i d ə t ⋉	0.5867264995521027	674.0	j ai̯ d ə n	g ə j ai̯ d ə t	1.495
+⋊ j a i d ə n ⋉	⋊ j a i d ə t ⋉	0.5867264995521027	1092.0	j ai̯ d ə n	g ə j ai̯ d ə t	1.495
 ⋊ j a i d ə n ⋉	⋊ j iː d ə n ⋉			j ai̯ d ə n	g ə j iː d ə n	1.325
-⋊ f a u f ə n ⋉	⋊ f a u f t ⋉	0.6588543512364848	3179.0	f au̯ f ə n	g ə f au̯ f t	4.515
+⋊ f a u f ə n ⋉	⋊ f a u f t ⋉	0.6588543512364848	998.0	f au̯ f ə n	g ə f au̯ f t	4.515
 ⋊ f a u f ə n ⋉	⋊ f ɔ f ə n ⋉			f au̯ f ə n	g ə f ɔ f ə n	4.37
-⋊ f a i x ə n ⋉	⋊ f a i x t ⋉	0.6538247311243649	8849.0	f ai̯ x ə n	g ə f ai̯ x t	5.1
+⋊ f a i x ə n ⋉	⋊ f a i x t ⋉	0.6538247311243649	1002.0	f ai̯ x ə n	g ə f ai̯ x t	5.1
 ⋊ f a i x ə n ⋉	⋊ f ɪ x ə n ⋉			f ai̯ x ə n	g ə f ɪ x ə n	1.91
-⋊ b ə r eː t ə n ⋉	⋊ b ə r eː t ə n ⋉	0.2320238077547728	29232.0	b ə r eː t ə n	b ə r eː t ə n	4.38
+⋊ b ə r eː t ə n ⋉	⋊ b ə r eː t ə n ⋉	0.2320238077547728	1602.0	b ə r eː t ə n	b ə r eː t ə n	4.38
 ⋊ b ə r eː t ə n ⋉	⋊ b ə r oː t ə n ⋉			b ə r eː t ə n	b ə r oː t ə n	1.68
-⋊ b a i t ə n ⋉	⋊ b a i t ə t ⋉	0.6324553057426875	401.0	b ai̯ t ə n	g ə b ai̯ t ə t	5.445
+⋊ b a i t ə n ⋉	⋊ b a i t ə t ⋉	0.6324553057426875	1017.0	b ai̯ t ə n	g ə b ai̯ t ə t	5.445
 ⋊ b a i t ə n ⋉	⋊ b iː t ə n ⋉			b ai̯ t ə n	g ə b iː t ə n	0.79
 ⋊ ɛ r h eː ə n ⋉	⋊ ɛ r h oː n ⋉			ɛ r h eːə n	ɛ r h oː n	4.2
-⋊ ɛ r h eː ə n ⋉	⋊ ɛ r h eː n ⋉	0.0188802142196311	27250.0	ɛ r h eːə n	ɛ r h eː n	2.3
-⋊ t r ɛ n d ə n ⋉	⋊ t r ɛ n d ə t ⋉	0.5075916449468018	2992.0	t r ɛ n d ə n	g ə t r ɛ n d ə t	4.995
+⋊ ɛ r h eː ə n ⋉	⋊ ɛ r h eː n ⋉	0.0188802142196311	2627.0	ɛ r h eːə n	ɛ r h eː n	2.3
+⋊ t r ɛ n d ə n ⋉	⋊ t r ɛ n d ə t ⋉	0.5075916449468018	1252.0	t r ɛ n d ə n	g ə t r ɛ n d ə t	4.995
 ⋊ t r ɛ n d ə n ⋉	⋊ t r a n d ə t ⋉			t r ɛ n d ə n	g ə t r a n d ə t	0.5
 ⋊ b ə r iː t ə n ⋉	⋊ b ə r oː t ə n ⋉			b ə r iː t ə n	b ə r oː t ə n	4.55
-⋊ b ə r iː t ə n ⋉	⋊ b ə r iː t ə n ⋉	0.0902654032002057	29368.0	b ə r iː t ə n	b ə r iː t ə n	1.68
+⋊ b ə r iː t ə n ⋉	⋊ b ə r iː t ə n ⋉	0.0902654032002057	2082.0	b ə r iː t ə n	b ə r iː t ə n	1.68

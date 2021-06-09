@@ -9,7 +9,7 @@ from functools import lru_cache
 
 def match_ftrs_(F, seg):
     """
-    Subsumption relation btwn feature matrix and segment
+    Subsumption relation between feature matrix and segment
     [Args: feature dicts]
     """
     seg_ftrs = config.seg2ftrs[seg]
@@ -21,7 +21,7 @@ def match_ftrs_(F, seg):
 
 def match_ftrs(F, seg):
     """
-    Subsumption relation btwn feature matrix and segment
+    Subsumption relation between feature matrix and segment
     [Args: feature vectors]
     """
     seg_ftrs = config.seg2ftrs_[seg]
@@ -74,7 +74,7 @@ def unify_ftrs(F1, F2):
 #@lru_cache(maxsize=1024)
 def subsumes(F1, F2):
     """
-    Subsumption relation btwen feature matrices F1 and F2
+    Subsumption relation between feature matrices F1 and F2
     [Args: feature vectors]
     """
     if (F1 == 'X'):

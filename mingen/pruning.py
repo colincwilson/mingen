@@ -15,7 +15,7 @@ def prune_rules(rules, rule_score='confidence'):
     R_all = [(R, score, idx) \
         for (R, score, idx) in zip(R_all, score_all, idx_all)]
 
-    pruned = []  # Non-maximal rules
+    pruned = []  # Non-maximal rules (can contain duplicates)
     n = len(R_all)
     for i in range(n - 1):
         if i % 500 == 0:
@@ -40,7 +40,7 @@ def prune_rules(rules, rule_score='confidence'):
 
 
 def rule_cmp(R1_, R2_):
-    """ Compare rules by score and generality
+    """ Compare rules by score and generality, each breaking ties for the other
         +1 if score1 > score2 and R1 ⊒ R2 -or- score1 = score2 and R1 ⊐ R2
         -1 if score2 > score1 and R2 ⊒ R1 -or- score1 = score2 and R2 ⊐ R1
         0 otherwise
@@ -97,7 +97,7 @@ def context_mgt(Z1, Z2, direction='LR->'):
         return True
 
     # Longer context cannot be more general
-    # (but see special case below)
+    # (except for special case below)
     if (n1 - n2) > 1:
         return False
 

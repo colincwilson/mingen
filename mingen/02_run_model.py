@@ -13,10 +13,10 @@ import wug_test
 
 
 def main():
-    LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][0]
-    learn_rules = 0
-    score_rules = 0
-    prune_rules = 0
+    LANGUAGE = ['eng', 'deu', 'nld', 'tiny'][2]
+    learn_rules = 1
+    score_rules = 1
+    prune_rules = 1
     rate_wugs = 1
 
     # Import config (as created by 01_prepare_data)
