@@ -10,10 +10,8 @@ def prune_rules(rules, rule_score='confidence'):
     print('Pruning ...')
     rules = rules.sort_values(by=rule_score, ascending=True)
     R_all = [FtrRule.from_str(R) for R in rules['rule']]
-    score_all = [score for score in rules[rule_score]]
-    idx_all = [idx for idx in rules['rule_idx']]
-    R_all = [(R, score, idx) \
-        for (R, score, idx) in zip(R_all, score_all, idx_all)]
+    R_all = [(R, score, idx) for (R, score, idx) \
+        in zip(R_all, rules[rule_score], rules['rule_idx'])]
 
     pruned = []  # Non-maximal rules (can contain duplicates)
     n = len(R_all)
@@ -34,7 +32,7 @@ def prune_rules(rules, rule_score='confidence'):
 
     # Rules that are maximal wrt rule_cmp
     idx_pruned = [idx for (R, score, idx) in pruned]
-    rules_max = rules[~(rules['rule_idx'].isin(idx_pruned))].reset_index()
+    rules_max = rules[~(rules['rule_idx'].isin(idx_pruned))]
     rules_max = rules_max.sort_values(by=rule_score, ascending=False)
     return rules_max
 

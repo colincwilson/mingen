@@ -16,19 +16,20 @@ def rate_wugs(wugs, rules, rule_score='confidence'):
     stems = [str(x) for x in wugs['stem']]
     outputs = [str(x) for x in wugs['output']]
     wordforms = list(zip(stems, outputs))
-    max_rating = {}
-    max_rating_idx = {}
 
     R_all = [FtrRule.from_str(R) for R in rules['rule']]
-    score_all = [score for score in rules[rule_score]]
+    R_all = [(R, score, idx) for (R, score, idx) \
+        in zip(R_all, rules[rule_score], rules['rule_idx'])]
 
-    for idx, R in enumerate(R_all):
-        if idx % 500 == 0:
-            print(idx)
+    max_rating = {}
+    max_rule = {}
+    for i, R_ in enumerate(R_all):
+        if i % 500 == 0:
+            print(i)
 
         # Convert rule to segment regexes
+        R, score, rule_idx = R_
         (A, B, C, D) = R.regexes()
-        score = score_all[idx]
 
         # Subset of wug data s.t. CAD occurs in input
         CAD = [Z for Z in [C, A, D] if Z != '∅']
@@ -60,19 +61,17 @@ def rate_wugs(wugs, rules, rule_score='confidence'):
             # Update only if exact match and better than previous score
             if output1 != wf2:
                 continue
-            if ((wf1, wf2) not in max_rating) \
-                    or (score > max_rating[(wf1, wf2)]):
+            if (wf1, wf2) not in max_rating \
+                or score > max_rating[(wf1, wf2)]:
                 max_rating[(wf1, wf2)] = score
-                max_rating_idx[(wf1, wf2)] = idx
+                max_rule[(wf1, wf2)] = R_
 
     # Results
     print()
     wug_ratings = []
-    for wf in max_rating.keys():
+    for wf, rating in max_rating.items():
         wf1, wf2 = wf
-        rating = max_rating[wf]
-        rule_idx = max_rating_idx[wf]
-        R = R_all[rule_idx]
+        R, score, rule_idx = max_rule[(wf1, wf2)]
         print(wf1, wf2, rating)
         print(R)
         print()
