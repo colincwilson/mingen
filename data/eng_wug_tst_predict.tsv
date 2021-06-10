@@ -126,7 +126,7 @@ stem	output	model_rating	rule_idx	wordform1	wordform2
 ⋊ t ɹ i m ⋉	⋊ t ɹ i m d ⋉	0.974706961343464	10147.0	t r iː m	t r iː m d
 ⋊ t ɹ i m ⋉	⋊ t ɹ ɛ m p t ⋉			t r iː m	t r ɛ m p t
 ⋊ t ɹ ɪ ŋ ⋉	⋊ t ɹ ɪ ŋ d ⋉	0.953912335240325	14230.0	t r ɪ ŋ	t r ɪ ŋ d
-⋊ t ɹ ɪ ŋ ⋉	⋊ t ɹ ʌ ŋ ⋉	0.8795102700976709	30385.0	t r ɪ ŋ	t r ʌ ŋ
+⋊ t ɹ ɪ ŋ ⋉	⋊ t ɹ ʌ ŋ ⋉	0.8795102700976709	30406.0	t r ɪ ŋ	t r ʌ ŋ
 ⋊ t ɹ ɪ ŋ k ⋉	⋊ t ɹ ɪ ŋ k t ⋉	0.9331266179600765	3414.0	t r ɪ ŋ k	t r ɪ ŋ k t
 ⋊ t ɹ ɪ ŋ k ⋉	⋊ t ɹ ʌ ŋ k ⋉	0.8795102700976709	30406.0	t r ɪ ŋ k	t r ʌ ŋ k
 ⋊ w ʌ m ⋉	⋊ w ʌ m d ⋉	0.974706961343464	10147.0	w ʌ m	w ʌ m d

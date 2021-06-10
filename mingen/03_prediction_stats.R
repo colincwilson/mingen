@@ -6,7 +6,7 @@ source('~/Languages/UniMorph/sigmorphon2021/eng_regular_past_rule.R')
 
 # # # # # # # # # #
 # English
-LANGUAGE = c('eng', 'eng2')[2]
+LANGUAGE = c('eng', 'eng2')[1]
 fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
 #fwug_dev = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
 fwug_tst = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_tst_predict.tsv')
@@ -20,7 +20,7 @@ wug_dev %>%
     mutate(form = wordform2) %>%
     mutate(tag = 'V;PST;1;SG') %>%
     mutate(human_rating = human_rating/7) %>%
-	mutate(model_rating = replace_na(model_rating, 0)) %>% # No rule to predict
+	mutate(model_rating = replace_na(model_rating, value=0)) %>% # No rule
     mutate(past_type = rep(c('reg', 'other'), nrow(wug_dev)/2)) %>%
     mutate(double_past = ifelse(past_type == 'reg' & grepl('[td] ɪ d ⋉$', output), -1, 0)) %>%
     identity() ->
@@ -57,26 +57,26 @@ wug_tst %>%
 #write_tsv(wug_tst_predict, fwug_tst_predict)
 
 # Albright-Hayes lexical data and wugs
-lex_AH03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_CELEXFull.tsv')
+lex_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_CELEXFull.tsv')
 
-dat_AH03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
+dat_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
 
-wug_AH03 = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_albrighthayes_predict.tsv'))
+wug_ah03 = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_albrighthayes_predict.tsv'))
 
-wug_AH03 %>%
-    mutate(model_rating = replace_na(model_rating, 0)) %>%
+wug_ah03 %>%
+    mutate(model_rating = replace_na(model_rating, value=0)) %>%
     identity() ->
-    wug_AH03
+    wug_ah03
 
-dat_AH03$mingen_rating = dat_AH03$`Rule-based model predicted`
-dat_AH03$mingen0_rating = wug_AH03$model_rating
+dat_ah03$mingen_rating = dat_ah03$`Rule-based model predicted`
+dat_ah03$mingen0_rating = wug_ah03$model_rating
 
-ggplot(dat_AH03, aes(x=mingen0_rating, y=mean_rating)) + geom_point()
-with(subset(dat_AH03, lemma_type != 'Peripheral'),
+ggplot(dat_ah03, aes(x=mingen0_rating, y=mean_rating)) + geom_point()
+with(subset(dat_ah03, lemma_type != 'Peripheral'),
     cor.test(mingen0_rating, mean_rating)) # 0.7815663
 # cf. A&H 2003, note 16: .806 (rules), .780 (analogy), .693 (1 if reg else 0)
 
-dat_AH03 %>%
+dat_ah03 %>%
     filter(lemma_type != 'Peripheral') %>%
     group_by(past_type) %>%
     summarise(r = cor.test(mingen0_rating, mean_rating)$estimate)
