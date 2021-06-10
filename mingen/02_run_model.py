@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Ex. python 02_run_model.py --language eng --learn_rules --score_rules --prune_rules --rate_wugs
 
 import configargparse, pickle, sys
 from pathlib import Path
@@ -18,7 +19,7 @@ def main():
     parser.add(
         '--language',
         type=str,
-        choices=['eng', 'deu', 'nld', 'tiny'],
+        choices=['eng', 'eng2', 'deu', 'nld', 'tiny'],
         default='tiny')
     parser.add('--learn_rules', action='store_true', default=False)
     parser.add('--score_rules', action='store_true', default=False)
@@ -39,10 +40,16 @@ def main():
         print('Base rules ...')
         R_base = [base_rule(w1, w2) for (w1, w2) \
             in zip(dat_train['stem'], dat_train['output'])]
-        R_ftr = [FtrRule.from_segrule(R) for R in R_base]
 
+        base_rules = pd.DataFrame({'rule': [str(R) for R in R_base]})
+        base_rules.to_csv(
+            Path('../data') / f'{LANGUAGE}_rules_base.tsv',
+            index=False,
+            sep='\t')
+
+        R_ftr = [FtrRule.from_segrule(R) for R in R_base]
         R_all = mingen.generalize_rules_rec(R_ftr)
-        print(f'number of rules: {len(R_all)}')
+        print(f'Learned {len(R_all)} rules')
 
         rules = pd.DataFrame({
             'rule_idx': [idx for idx in range(len(R_all))],
@@ -91,7 +98,7 @@ def main():
         print(rules)
 
         splits = ['dev', 'tst']  # Sigmorphon2021
-        if LANGUAGE == 'eng':
+        if LANGUAGE in ['eng', 'eng2']:
             splits.append('albrighthayes')
 
         for split in splits:
