@@ -80,7 +80,7 @@ wug_ah03 %>%
     identity() ->
     wug_ah03
 
-rules = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_rules_scored.tsv'))
+rules = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_rules_pruned.tsv'))
 rules %>%
     mutate(confidence75 = mapply(confidence, hits, scope, alpha=0.75)) %>%
     mutate(confidence95 = mapply(confidence, hits, scope, alpha=0.95)) %>%
@@ -89,6 +89,7 @@ rules %>%
     rules
 
 wug_ah03 = left_join(wug_ah03, rules)
+rules_used = subset(rules, rule_idx %in% wug_ah03$rule_idx)
 
 dat_ah03 %>%
     mutate(double_past = ifelse(past_type2 == 'Regulars' & 
@@ -116,7 +117,7 @@ with(subset(dat_ah03, lemma_type != 'Peripheral'),
 dat_ah03 %>%
     filter(lemma_type!='Peripheral') %>%
     group_by(past_type2) %>%
-    summarise(cor.test(mingen0_rating, mean_rating)$estimate)
+    summarise(cor.test(mingen_rating, mean_rating)$estimate)
 
 with(dat_ah03_split[[1]],
     pairs(cbind(mingen_rating, mingen0_rating, human_rating)))
