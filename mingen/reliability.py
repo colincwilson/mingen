@@ -58,8 +58,8 @@ def score_rules(R_all):
             # Apply rule to input and yield first (xxx) output
             input1 = stem_fsts[stem_id]
             output1 = input1 @ R_fst
-            strpath_iter = output1.paths(input_token_type=symtable,
-                                         output_token_type=symtable)
+            strpath_iter = output1.paths(
+                input_token_type=symtable, output_token_type=symtable)
             output1 = [x for x in strpath_iter.ostrings()][0]  # xxx
 
             # Check whether rule applied

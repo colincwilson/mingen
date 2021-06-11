@@ -4,6 +4,16 @@ require(glmmTMB)
 
 source('~/Languages/UniMorph/sigmorphon2021/eng_regular_past_rule.R')
 
+# A&H 2003, p.127
+confidence = function(hits, scope, alpha=0.55) {
+    p_star = (hits + 0.5) / (scope + 1.0)
+    var_est = (p_star * (1 - p_star)) / scope
+    var_est = var_est**0.5
+    z = qt(alpha, scope - 1.0)
+    c = p_star - z * var_est
+    return (c)
+}
+
 # # # # # # # # # #
 # English
 LANGUAGE = c('eng', 'eng2')[1]
@@ -68,6 +78,19 @@ wug_ah03 %>%
     identity() ->
     wug_ah03
 
+rules = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_rules_scored.tsv'))
+rules %>%
+    mutate(confidence75 = mapply(confidence, hits, scope, alpha=0.75)) %>%
+    mutate(confidence75 = replace_na(confidence75, value=0)) %>%
+    mutate(confidence95 = mapply(confidence, hits, scope, alpha=0.95)) %>%
+    mutate(confidence95 = replace_na(confidence95, value=0)) %>%
+    identity() ->
+    rules
+
+rules %>% select(rule_idx, confidence75) -> tmp
+wug_ah03 = merge(wug_ah03, rules)
+
+
 dat_ah03$mingen_rating = dat_ah03$`Rule-based model predicted`
 dat_ah03$mingen0_rating = wug_ah03$model_rating
 
@@ -75,6 +98,10 @@ ggplot(dat_ah03, aes(x=mingen0_rating, y=mean_rating)) + geom_point()
 with(subset(dat_ah03, lemma_type != 'Peripheral'),
     cor.test(mingen0_rating, mean_rating)) # 0.7815663
 # cf. A&H 2003, note 16: .806 (rules), .780 (analogy), .693 (1 if reg else 0)
+
+ggplot(wug_ah03, aes(x=model_rating, y=human_rating, color=)) + geom_point()
+with(subset(dat_ah03, lemma_type != 'Peripheral'),
+    cor.test(mingen0_rating, mean_rating)) # 0.7815663
 
 dat_ah03 %>%
     filter(lemma_type != 'Peripheral') %>%
