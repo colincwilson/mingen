@@ -16,7 +16,7 @@ confidence = function(hits, scope, alpha=0.55) {
 
 # # # # # # # # # #
 # English
-LANGUAGE = c('eng', 'eng2')[2]
+LANGUAGE = c('eng', 'eng2', 'eng3')[3]
 fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
 #fwug_dev = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
 fwug_tst = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_tst_predict.tsv')
@@ -30,7 +30,7 @@ wug_dev %>%
     mutate(form = wordform2) %>%
     mutate(tag = 'V;PST;1;SG') %>%
     mutate(human_rating = human_rating/7) %>%
-	mutate(model_rating = replace_na(model_rating, value=0)) %>% # No rule
+	mutate(model_rating = replace_na(model_rating, replace=0)) %>% # No rule
     mutate(past_type = rep(c('reg', 'other'), nrow(wug_dev)/2)) %>%
     mutate(double_past = ifelse(past_type == 'reg' & grepl('[td] ɪ d ⋉$', output), -1, 0)) %>%
     identity() ->
@@ -49,7 +49,7 @@ wug_tst %>%
     mutate(lemma = wordform1) %>%
     mutate(form = wordform2) %>%
     mutate(tag = 'V;PST;1;SG') %>%
-    mutate(model_rating = replace_na(model_rating, 0)) %>%
+    mutate(model_rating = replace_na(model_rating, replace=0)) %>%
     mutate(past_type = rep(c('reg', 'other'), nrow(wug_tst)/2)) %>%
     mutate(double_past = ifelse(past_type == 'reg' & grepl('[td] ɪ d ⋉$', output), -1, 0)) %>%
     identity() ->
@@ -67,16 +67,16 @@ wug_tst %>%
 #write_tsv(wug_tst_predict, fwug_tst_predict)
 
 # Albright-Hayes lexical data and wugs
-#lex_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_CELEXFull.tsv')
-lex_ah03 = read_tsv('~/Downloads/AlbrightHayes2003_CELEXFull.tsv')
+lex_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_CELEXFull.tsv')
+#lex_ah03 = read_tsv('~/Downloads/AlbrightHayes2003_CELEXFull.tsv')
 
-#dat_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
-dat_ah03 = read_tsv('~/Downloads/AlbrightHayes2003_Wug.tsv', comment='#')
+dat_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
+#dat_ah03 = read_tsv('~/Downloads/AlbrightHayes2003_Wug.tsv', comment='#')
 
 wug_ah03 = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_albrighthayes_predict.tsv'))
 
 wug_ah03 %>%
-    mutate(model_rating = replace_na(model_rating, value=0)) %>%
+    mutate(model_rating = replace_na(model_rating, replace=0)) %>%
     identity() ->
     wug_ah03
 
@@ -84,16 +84,22 @@ rules = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_rules_scored.tsv
 rules %>%
     mutate(confidence75 = mapply(confidence, hits, scope, alpha=0.75)) %>%
     mutate(confidence95 = mapply(confidence, hits, scope, alpha=0.95)) %>%
-    mutate(across(c('confidence75', 'confidence95'), replace_na, value=0)) %>%
+    mutate(across(c('confidence75', 'confidence95'), replace_na, replace=0)) %>%
     identity() ->
     rules
 
 wug_ah03 = left_join(wug_ah03, rules)
 
-dat_ah03$mingen0_rule = wug_ah03$rule_idx
-dat_ah03$mingen0_rating = wug_ah03$model_rating
-dat_ah03$mingen_rating = dat_ah03$`Rule-based model predicted`
-dat_ah03$human_rating = dat_ah03$mean_rating
+dat_ah03 %>%
+    mutate(double_past = ifelse(past_type2 == 'Regulars' & 
+        grepl('[td] ə d$', past_ipa), -1, 0)) %>%
+    mutate(mingen0_rule = wug_ah03$rule_idx) %>%
+    mutate(mingen0_rating = wug_ah03$model_rating) %>%
+    mutate(mingen_rating = `Rule-based model predicted`) %>%
+    mutate(human_rating = mean_rating) %>%
+    identity() ->
+    dat_ah03
+
 dat_ah03 %>%
     filter(lemma_type!='Peripheral') %>%
     mutate(past_type2 = fct_relevel(past_type2, 'Regulars')) %>%
@@ -101,7 +107,6 @@ dat_ah03 %>%
     group_split() %>%
     identity() ->
     dat_ah03_split
-
 
 ggplot(dat_ah03, aes(x=mingen0_rating, y=mean_rating, color=past_type2)) + geom_point()
 with(subset(dat_ah03, lemma_type != 'Peripheral'),
@@ -111,10 +116,16 @@ with(subset(dat_ah03, lemma_type != 'Peripheral'),
 dat_ah03 %>%
     filter(lemma_type!='Peripheral') %>%
     group_by(past_type2) %>%
-    summarise(cor.test(mingen_rating, mean_rating)$estimate)
+    summarise(cor.test(mingen0_rating, mean_rating)$estimate)
 
 with(dat_ah03_split[[1]],
     pairs(cbind(mingen_rating, mingen0_rating, human_rating)))
+
+# Mispredictions of mingen0 on regulars | irregulars
+fit = lm(human_rating ~ mingen0_rating, dat_ah03_split[[1]])
+hist(residuals(fit))
+subset(dat_ah03_split[[1]], residuals(fit) < -1.0) -> tmp
+view(tmp)
 
 
 # # # # # # # # # #

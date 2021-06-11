@@ -19,7 +19,7 @@ def main():
     parser.add(
         '--language',
         type=str,
-        choices=['eng', 'eng2', 'deu', 'nld', 'tiny'],
+        choices=['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'],
         default='tiny')
     parser.add('--learn_rules', action='store_true', default=False)
     parser.add('--score_rules', action='store_true', default=False)
@@ -55,7 +55,8 @@ def main():
             'rule_idx': [idx for idx in range(len(R_all))],
             'rule': [str(R) for R in R_all]
         })
-        rules['rule_len'] = [len(x) for x in rules['rule']]
+        rules['rule_regex'] = [repr(R) for R in R_all]
+        #rules['rule_len'] = [len(x) for x in rules['rule']]
         rules.to_csv(
             Path('../data') / f'{LANGUAGE}_rules_out.tsv',
             index=False,
@@ -98,7 +99,7 @@ def main():
         print(rules)
 
         splits = ['dev', 'tst']  # Sigmorphon2021
-        if LANGUAGE in ['eng', 'eng2']:
+        if LANGUAGE in ['eng', 'eng2', 'eng3']:
             splits.append('albrighthayes')
 
         for split in splits:

@@ -7,12 +7,13 @@ from rules import *
 
 
 def prune_rules(rules, rule_score='confidence'):
-    print('Pruning ...')
+    print('Prune ...')
     rules = rules.sort_values(by=rule_score, ascending=True)
     R_all = [FtrRule.from_str(R) for R in rules['rule']]
     R_all = [(R, score, idx) for (R, score, idx) \
         in zip(R_all, rules[rule_score], rules['rule_idx'])]
 
+    print('iter #pruned')
     pruned = []  # Non-maximal rules (can contain duplicates)
     n = len(R_all)
     for i in range(n - 1):

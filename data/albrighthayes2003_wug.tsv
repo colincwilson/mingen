@@ -5,8 +5,8 @@ b l eɪ f	b l eɪ f t	V;PST;1;SG	6.318182	⋊ b l e f ⋉	⋊ b l e f t ⋉
 b l eɪ f	b l ɛ f t	V;PST;1;SG	4.090909	⋊ b l e f ⋉	⋊ b l ɛ f t ⋉
 b l ɪ g	b l ɪ g d	V;PST;1;SG	5.666667	⋊ b l ɪ g ⋉	⋊ b l ɪ g d ⋉
 b l ɪ g	b l ʌ g	V;PST;1;SG	4.166667	⋊ b l ɪ g ⋉	⋊ b l ʌ g ⋉
-b r ɛ dʒ	b r ɛ dʒ d	V;PST;1;SG	6.333333	⋊ b ɹ ɛ d ʒ ⋉	⋊ b ɹ ɛ d ʒ d ⋉
-b r ɛ dʒ	b r oʊ dʒ	V;PST;1;SG	3.428571	⋊ b ɹ ɛ d ʒ ⋉	⋊ b ɹ o d ʒ ⋉
+b ɹ ɛ dʒ	b ɹ ɛ dʒ d	V;PST;1;SG	6.333333	⋊ b ɹ ɛ d ʒ ⋉	⋊ b ɹ ɛ d ʒ d ⋉
+b ɹ ɛ dʒ	b ɹ oʊ dʒ	V;PST;1;SG	3.428571	⋊ b ɹ ɛ d ʒ ⋉	⋊ b ɹ o d ʒ ⋉
 tʃ eɪ k	tʃ eɪ k t	V;PST;1;SG	5.73913	⋊ t ʃ e k ⋉	⋊ t ʃ e k t ⋉
 tʃ eɪ k	tʃ ʊ k	V;PST;1;SG	5.043478	⋊ t ʃ e k ⋉	⋊ t ʃ ʊ k ⋉
 tʃ u l	tʃ u l d	V;PST;1;SG	6.125	⋊ t ʃ u l ⋉	⋊ t ʃ u l d ⋉
@@ -57,8 +57,8 @@ p ɹ i k	p ɹ oʊ k	V;PST;1;SG	3.916667	⋊ p ɹ i k ⋉	⋊ p ɹ o k ⋉
 p ɹ i k	p ɹ ɛ k	V;PST;1;SG	3.54	⋊ p ɹ i k ⋉	⋊ p ɹ ɛ k ⋉
 k w i d	k w i d ə d	V;PST;1;SG	4.652174	⋊ k w i d ⋉	⋊ k w i d ɪ d ⋉
 k w i d	k w ɛ d	V;PST;1;SG	5.347826	⋊ k w i d ⋉	⋊ k w ɛ d ⋉
-r æ s k	r æ s k t	V;PST;1;SG	6.416667	⋊ ɹ ɑ s k ⋉	⋊ ɹ ɑ s k t ⋉
-r æ s k	r ʌ s k	V;PST;1;SG	4.083333	⋊ ɹ ɑ s k ⋉	⋊ ɹ ʌ s k ⋉
+ɹ æ s k	ɹ æ s k t	V;PST;1;SG	6.416667	⋊ ɹ ɑ s k ⋉	⋊ ɹ ɑ s k t ⋉
+ɹ æ s k	ɹ ʌ s k	V;PST;1;SG	4.083333	⋊ ɹ ɑ s k ⋉	⋊ ɹ ʌ s k ⋉
 ɹ aɪ f	ɹ aɪ f t	V;PST;1;SG	5.952381	⋊ ɹ a ɪ f ⋉	⋊ ɹ a ɪ f t ⋉
 ɹ aɪ f	ɹ oʊ f	V;PST;1;SG	4.142857	⋊ ɹ a ɪ f ⋉	⋊ ɹ o f ⋉
 ɹ aɪ f	ɹ ɪ f	V;PST;1;SG	3.24	⋊ ɹ a ɪ f ⋉	⋊ ɹ ɪ f ⋉
@@ -94,12 +94,12 @@ w ɪ s	w ɪ s t	V;PST;1;SG	6.565217	⋊ w ɪ s ⋉	⋊ w ɪ s t ⋉
 w ɪ s	w ʌ s	V;PST;1;SG	3.347826	⋊ w ɪ s ⋉	⋊ w ʌ s ⋉
 g ɹ ɛ l	g ɹ ɛ l d	V;PST;1;SG	5.86	⋊ g ɹ ɛ l ⋉	⋊ g ɹ ɛ l d ⋉
 g ɹ ɛ l	g ɹ ɛ l t	V;PST;1;SG	4.9	⋊ g ɹ ɛ l ⋉	⋊ g ɹ ɛ l t ⋉
-m ɜ˞ n	m ɜ˞ n d	V;PST;1;SG	6.57	⋊ m ɛ ɹ n ⋉	⋊ m ɛ ɹ n d ⋉
-m ɜ˞ n	m ɜ˞ n t	V;PST;1;SG	4.74	⋊ m ɛ ɹ n ⋉	⋊ m ɛ ɹ n t ⋉
+m ɚ n	m ɚ n d	V;PST;1;SG	6.57	⋊ m ɛ ɹ n ⋉	⋊ m ɛ ɹ n d ⋉
+m ɚ n	m ɚ n t	V;PST;1;SG	4.74	⋊ m ɛ ɹ n ⋉	⋊ m ɛ ɹ n t ⋉
 s k ɔɪ l	s k ɔɪ l d	V;PST;1;SG	6.45	⋊ s k ɔ ɪ l ⋉	⋊ s k ɔ ɪ l d ⋉
 s k ɔɪ l	s k ɔɪ l t	V;PST;1;SG	5.15	⋊ s k ɔ ɪ l ⋉	⋊ s k ɔ ɪ l t ⋉
-ʃ ɜ˞ n	ʃ ɜ˞ n d	V;PST;1;SG	6.57	⋊ ʃ ɛ ɹ n ⋉	⋊ ʃ ɛ ɹ n d ⋉
-ʃ ɜ˞ n	ʃ ɜ˞ n t	V;PST;1;SG	4.22	⋊ ʃ ɛ ɹ n ⋉	⋊ ʃ ɛ ɹ n t ⋉
+ʃ ɚ n	ʃ ɚ n d	V;PST;1;SG	6.57	⋊ ʃ ɛ ɹ n ⋉	⋊ ʃ ɛ ɹ n d ⋉
+ʃ ɚ n	ʃ ɚ n t	V;PST;1;SG	4.22	⋊ ʃ ɛ ɹ n ⋉	⋊ ʃ ɛ ɹ n t ⋉
 s k ɛ l	s k ɛ l d	V;PST;1;SG	6.05	⋊ s k ɛ l ⋉	⋊ s k ɛ l d ⋉
 s k ɛ l	s k ɛ l t	V;PST;1;SG	5.32	⋊ s k ɛ l ⋉	⋊ s k ɛ l t ⋉
 s n ɛ l	s n ɛ l d	V;PST;1;SG	6.17	⋊ s n ɛ l ⋉	⋊ s n ɛ l d ⋉

@@ -1,0 +1,139 @@
+wordform1	wordform2	stem	output
+b ɑː s t	b ɑː s t ɪ d	⋊ b ɑ s t ⋉	⋊ b ɑ s t ɪ d ⋉
+b ɑː s t	b ɑː s t	⋊ b ɑ s t ⋉	⋊ b ɑ s t ⋉
+b ɪ n d	b ɪ n d ɪ d	⋊ b ɪ n d ⋉	⋊ b ɪ n d ɪ d ⋉
+b ɪ n d	b ɪ n t	⋊ b ɪ n d ⋉	⋊ b ɪ n t ⋉
+b l aɪ	b l aɪ d	⋊ b l a ɪ ⋉	⋊ b l a ɪ d ⋉
+b l aɪ	b l uː	⋊ b l a ɪ ⋉	⋊ b l u ⋉
+b l eɪ k	b l eɪ k t	⋊ b l e k ⋉	⋊ b l e k t ⋉
+b l eɪ k	b l eɪ k	⋊ b l e k ⋉	⋊ b l e k ⋉
+b r ʌ s t	b r ʌ s t ɪ d	⋊ b ɹ ʌ s t ⋉	⋊ b ɹ ʌ s t ɪ d ⋉
+b r ʌ s t	b r ʌ s t	⋊ b ɹ ʌ s t ⋉	⋊ b ɹ ʌ s t ⋉
+d r iː v	d r iː v d	⋊ d ɹ i v ⋉	⋊ d ɹ i v d ⋉
+d r iː v	d r ɛ f t	⋊ d ɹ i v ⋉	⋊ d ɹ ɛ f t ⋉
+d ʒ ɪ d	d ʒ ɪ d ɪ d	⋊ d ʒ ɪ d ⋉	⋊ d ʒ ɪ d ɪ d ⋉
+d ʒ ɪ d	d ʒ ɪ d	⋊ d ʒ ɪ d ⋉	⋊ d ʒ ɪ d ⋉
+ə l aɪ z	ə l aɪ z d	⋊ ə l a ɪ z ⋉	⋊ ə l a ɪ z d ⋉
+ə l aɪ z	ə l əʊ z	⋊ ə l a ɪ z ⋉	⋊ ə l o z ⋉
+f ɛ t	f ɛ t ɪ d	⋊ f ɛ t ⋉	⋊ f ɛ t ɪ d ⋉
+f ɛ t	f ɛ t	⋊ f ɛ t ⋉	⋊ f ɛ t ⋉
+f ɪ l d	f ɪ l d ɪ d	⋊ f ɪ l d ⋉	⋊ f ɪ l d ɪ d ⋉
+f ɪ l d	f ɪ l t	⋊ f ɪ l d ⋉	⋊ f ɪ l t ⋉
+f ɪ ŋ	f ɪ ŋ d	⋊ f ɪ ŋ ⋉	⋊ f ɪ ŋ d ⋉
+f ɪ ŋ	f ʌ ŋ	⋊ f ɪ ŋ ⋉	⋊ f ʌ ŋ ⋉
+f l ɪ ŋ k	f l ɪ ŋ k t	⋊ f l ɪ ŋ k ⋉	⋊ f l ɪ ŋ k t ⋉
+f l ɪ ŋ k	f l ʌ ŋ k	⋊ f l ɪ ŋ k ⋉	⋊ f l ʌ ŋ k ⋉
+f r aɪ v	f r aɪ v d	⋊ f ɹ a ɪ v ⋉	⋊ f ɹ a ɪ v d ⋉
+f r aɪ v	f r əʊ v	⋊ f ɹ a ɪ v ⋉	⋊ f ɹ o v ⋉
+f r iː m	f r iː m d	⋊ f ɹ i m ⋉	⋊ f ɹ i m d ⋉
+f r iː m	f r ɛ m p t	⋊ f ɹ i m ⋉	⋊ f ɹ ɛ m p t ⋉
+f r ɪ ŋ k	f r ɪ ŋ k t	⋊ f ɹ ɪ ŋ k ⋉	⋊ f ɹ ɪ ŋ k t ⋉
+f r ɪ ŋ k	f r a ŋ k	⋊ f ɹ ɪ ŋ k ⋉	⋊ f ɹ a ŋ k ⋉
+ɡ ɑː s t	ɡ ɑː s t ɪ d	⋊ g ɑ s t ⋉	⋊ g ɑ s t ɪ d ⋉
+ɡ ɑː s t	ɡ ɑː s t	⋊ g ɑ s t ⋉	⋊ g ɑ s t ⋉
+ɡ eɪ k	ɡ eɪ k t	⋊ g e k ⋉	⋊ g e k t ⋉
+ɡ eɪ k	ɡ ʊ k	⋊ g e k ⋉	⋊ g ʊ k ⋉
+ɡ l ɪ t	ɡ l ɪ t ɪ d	⋊ g l ɪ t ⋉	⋊ g l ɪ t ɪ d ⋉
+ɡ l ɪ t	ɡ l ɪ t	⋊ g l ɪ t ⋉	⋊ g l ɪ t ⋉
+ɡ r aɪ	ɡ r aɪ d	⋊ g ɹ a ɪ ⋉	⋊ g ɹ a ɪ d ⋉
+ɡ r aɪ	ɡ r əʊ d	⋊ g ɹ a ɪ ⋉	⋊ g ɹ o d ⋉
+ɡ r aɪ b	ɡ r aɪ b d	⋊ g ɹ a ɪ b ⋉	⋊ g ɹ a ɪ b d ⋉
+ɡ r aɪ b	ɡ r əʊ b	⋊ g ɹ a ɪ b ⋉	⋊ g ɹ o b ⋉
+ɡ r aɪ v	ɡ r aɪ v d	⋊ g ɹ a ɪ v ⋉	⋊ g ɹ a ɪ v d ⋉
+ɡ r aɪ v	ɡ r əʊ v	⋊ g ɹ a ɪ v ⋉	⋊ g ɹ o v ⋉
+ɡ r eɪ k	ɡ r eɪ k t	⋊ g ɹ e k ⋉	⋊ g ɹ e k t ⋉
+ɡ r eɪ k	ɡ r eɪ k	⋊ g ɹ e k ⋉	⋊ g ɹ e k ⋉
+ɡ r ɛ d	ɡ r ɛ d ɪ d	⋊ g ɹ ɛ d ⋉	⋊ g ɹ ɛ d ɪ d ⋉
+ɡ r ɛ d	ɡ r ɛ d	⋊ g ɹ ɛ d ⋉	⋊ g ɹ ɛ d ⋉
+ɡ r iː m	ɡ r iː m d	⋊ g ɹ i m ⋉	⋊ g ɹ i m d ⋉
+ɡ r iː m	ɡ r ɛ m p t	⋊ g ɹ i m ⋉	⋊ g ɹ ɛ m p t ⋉
+ɡ r iː p	ɡ r iː p t	⋊ g ɹ i p ⋉	⋊ g ɹ i p t ⋉
+ɡ r iː p	ɡ r ɛ p t	⋊ g ɹ i p ⋉	⋊ g ɹ ɛ p t ⋉
+ɡ r ɪ ŋ	ɡ r ɪ ŋ d	⋊ g ɹ ɪ ŋ ⋉	⋊ g ɹ ɪ ŋ d ⋉
+ɡ r ɪ ŋ	ɡ r ɔː t	⋊ g ɹ ɪ ŋ ⋉	⋊ g ɹ ɔ t ⋉
+h aɪ n d	h aɪ n d ɪ d	⋊ h a ɪ n d ⋉	⋊ h a ɪ n d ɪ d ⋉
+h aɪ n d	h aʊ n d	⋊ h a ɪ n d ⋉	⋊ h a ʊ n d ⋉
+h ɛ t	h ɛ t ɪ d	⋊ h ɛ t ⋉	⋊ h ɛ t ɪ d ⋉
+h ɛ t	h ɛ t	⋊ h ɛ t ⋉	⋊ h ɛ t ⋉
+h w ɛ l	h w ɛ l d	⋊ h w ɛ l ⋉	⋊ h w ɛ l d ⋉
+h w ɛ l	h w ɛ l t	⋊ h w ɛ l ⋉	⋊ h w ɛ l t ⋉
+ɪ n d	ɪ n d ɪ d	⋊ ɪ n d ⋉	⋊ ɪ n d ɪ d ⋉
+ɪ n d	ɪ n t	⋊ ɪ n d ⋉	⋊ ɪ n t ⋉
+k ɛ n d	k ɛ n d ɪ d	⋊ k ɛ n d ⋉	⋊ k ɛ n d ɪ d ⋉
+k ɛ n d	k ɛ n t	⋊ k ɛ n d ⋉	⋊ k ɛ n t ⋉
+k r ɪ ŋ k	k r ɪ ŋ k t	⋊ k ɹ ɪ ŋ k ⋉	⋊ k ɹ ɪ ŋ k t ⋉
+k r ɪ ŋ k	k r ʌ ŋ k	⋊ k ɹ ɪ ŋ k ⋉	⋊ k ɹ ʌ ŋ k ⋉
+l aɪ d	l aɪ d ɪ d	⋊ l a ɪ d ⋉	⋊ l a ɪ d ɪ d ⋉
+l aɪ d	l ɪ d	⋊ l a ɪ d ⋉	⋊ l ɪ d ⋉
+l aɪ n d	l aɪ n d ɪ d	⋊ l a ɪ n d ⋉	⋊ l a ɪ n d ɪ d ⋉
+l aɪ n d	l ɪ n t	⋊ l a ɪ n d ⋉	⋊ l ɪ n t ⋉
+l ɪ n d	l ɪ n d ɪ d	⋊ l ɪ n d ⋉	⋊ l ɪ n d ɪ d ⋉
+l ɪ n d	l ɪ n t	⋊ l ɪ n d ⋉	⋊ l ɪ n t ⋉
+m iː v	m iː v d	⋊ m i v ⋉	⋊ m i v d ⋉
+m iː v	m ɛ f t	⋊ m i v ⋉	⋊ m ɛ f t ⋉
+n ɛ n d	n ɛ n d ɪ d	⋊ n ɛ n d ⋉	⋊ n ɛ n d ɪ d ⋉
+n ɛ n d	n ɛ n t	⋊ n ɛ n d ⋉	⋊ n ɛ n t ⋉
+p ɪ n d	p ɪ n d ɪ d	⋊ p ɪ n d ⋉	⋊ p ɪ n d ɪ d ⋉
+p ɪ n d	p ɪ n t	⋊ p ɪ n d ⋉	⋊ p ɪ n t ⋉
+p l ɛ t	p l ɛ t ɪ d	⋊ p l ɛ t ⋉	⋊ p l ɛ t ɪ d ⋉
+p l ɛ t	p l ɛ t	⋊ p l ɛ t ⋉	⋊ p l ɛ t ⋉
+p l ɪ d	p l ɪ d ɪ d	⋊ p l ɪ d ⋉	⋊ p l ɪ d ɪ d ⋉
+p l ɪ d	p l ɪ d	⋊ p l ɪ d ⋉	⋊ p l ɪ d ⋉
+p l ɪ n d	p l ɪ n d ɪ d	⋊ p l ɪ n d ⋉	⋊ p l ɪ n d ɪ d ⋉
+p l ɪ n d	p l ɪ n t	⋊ p l ɪ n d ⋉	⋊ p l ɪ n t ⋉
+p r eɪ k	p r eɪ k t	⋊ p ɹ e k ⋉	⋊ p ɹ e k t ⋉
+p r eɪ k	p r eɪ k	⋊ p ɹ e k ⋉	⋊ p ɹ e k ⋉
+p r əʊ	p r əʊ d	⋊ p ɹ o ⋉	⋊ p ɹ o d ⋉
+p r əʊ	p r uː	⋊ p ɹ o ⋉	⋊ p ɹ u ⋉
+p r ɛ d	p r ɛ d ɪ d	⋊ p ɹ ɛ d ⋉	⋊ p ɹ ɛ d ɪ d ⋉
+p r ɛ d	p r ɛ d	⋊ p ɹ ɛ d ⋉	⋊ p ɹ ɛ d ⋉
+p r ɛ n d	p r ɛ n d ɪ d	⋊ p ɹ ɛ n d ⋉	⋊ p ɹ ɛ n d ɪ d ⋉
+p r ɛ n d	p r ɛ n t	⋊ p ɹ ɛ n d ⋉	⋊ p ɹ ɛ n t ⋉
+r ɛ d	r ɛ d ɪ d	⋊ ɹ ɛ d ⋉	⋊ ɹ ɛ d ɪ d ⋉
+r ɛ d	r ɛ d	⋊ ɹ ɛ d ⋉	⋊ ɹ ɛ d ⋉
+s aɪ n d	s aɪ n d ɪ d	⋊ s a ɪ n d ⋉	⋊ s a ɪ n d ɪ d ⋉
+s aɪ n d	s aʊ n d	⋊ s a ɪ n d ⋉	⋊ s a ʊ n d ⋉
+s ɪ d	s ɪ d ɪ d	⋊ s ɪ d ⋉	⋊ s ɪ d ɪ d ⋉
+s ɪ d	s ɪ d	⋊ s ɪ d ⋉	⋊ s ɪ d ⋉
+s k ɑː s t	s k ɑː s t ɪ d	⋊ s k ɑ s t ⋉	⋊ s k ɑ s t ɪ d ⋉
+s k ɑː s t	s k ɑː s t	⋊ s k ɑ s t ⋉	⋊ s k ɑ s t ⋉
+s k ɪ k	s k ɪ k t	⋊ s k ɪ k ⋉	⋊ s k ɪ k t ⋉
+s k ɪ k	s k ʌ k	⋊ s k ɪ k ⋉	⋊ s k ʌ k ⋉
+s k r aɪ v	s k r aɪ v d	⋊ s k ɹ a ɪ v ⋉	⋊ s k ɹ a ɪ v d ⋉
+s k r aɪ v	s k r əʊ v	⋊ s k ɹ a ɪ v ⋉	⋊ s k ɹ o v ⋉
+s p ɑː s t	s p ɑː s t ɪ d	⋊ s p ɑ s t ⋉	⋊ s p ɑ s t ɪ d ⋉
+s p ɑː s t	s p ɑː s t	⋊ s p ɑ s t ⋉	⋊ s p ɑ s t ⋉
+s p əʊ l d	s p əʊ l d ɪ d	⋊ s p o l d ⋉	⋊ s p o l d ɪ d ⋉
+s p əʊ l d	s p əʊ l t	⋊ s p o l d ⋉	⋊ s p o l t ⋉
+s p ɪ n d	s p ɪ n d ɪ d	⋊ s p ɪ n d ⋉	⋊ s p ɪ n d ɪ d ⋉
+s p ɪ n d	s p ɪ n t	⋊ s p ɪ n d ⋉	⋊ s p ɪ n t ⋉
+s t aɪ d	s t aɪ d ɪ d	⋊ s t a ɪ d ⋉	⋊ s t a ɪ d ɪ d ⋉
+s t aɪ d	s t ʊ d	⋊ s t a ɪ d ⋉	⋊ s t ʊ d ⋉
+s t r aɪ t	s t r aɪ t ɪ d	⋊ s t ɹ a ɪ t ⋉	⋊ s t ɹ a ɪ t ɪ d ⋉
+s t r aɪ t	s t r əʊ t	⋊ s t ɹ a ɪ t ⋉	⋊ s t ɹ o t ⋉
+s t r ɛ n d	s t r ɛ n d ɪ d	⋊ s t ɹ ɛ n d ⋉	⋊ s t ɹ ɛ n d ɪ d ⋉
+s t r ɛ n d	s t r ɛ n t	⋊ s t ɹ ɛ n d ⋉	⋊ s t ɹ ɛ n t ⋉
+s t r ɪ ŋ k	s t r ɪ ŋ k t	⋊ s t ɹ ɪ ŋ k ⋉	⋊ s t ɹ ɪ ŋ k t ⋉
+s t r ɪ ŋ k	s t r ʌ ŋ k	⋊ s t ɹ ɪ ŋ k ⋉	⋊ s t ɹ ʌ ŋ k ⋉
+s w iː d	s w iː d ɪ d	⋊ s w i d ⋉	⋊ s w i d ɪ d ⋉
+s w iː d	s w ɛ d	⋊ s w i d ⋉	⋊ s w ɛ d ⋉
+ʃ ɪ d	ʃ ɪ d ɪ d	⋊ ʃ ɪ d ⋉	⋊ ʃ ɪ d ɪ d ⋉
+ʃ ɪ d	ʃ ɪ d	⋊ ʃ ɪ d ⋉	⋊ ʃ ɪ d ⋉
+t ɪ ŋ k	t ɪ ŋ k t	⋊ t ɪ ŋ k ⋉	⋊ t ɪ ŋ k t ⋉
+t ɪ ŋ k	t ʌ ŋ k	⋊ t ɪ ŋ k ⋉	⋊ t ʌ ŋ k ⋉
+t r aɪ v	t r aɪ v d	⋊ t ɹ a ɪ v ⋉	⋊ t ɹ a ɪ v d ⋉
+t r aɪ v	t r əʊ v	⋊ t ɹ a ɪ v ⋉	⋊ t ɹ o v ⋉
+t r iː m	t r iː m d	⋊ t ɹ i m ⋉	⋊ t ɹ i m d ⋉
+t r iː m	t r ɛ m p t	⋊ t ɹ i m ⋉	⋊ t ɹ ɛ m p t ⋉
+t r ɪ ŋ	t r ɪ ŋ d	⋊ t ɹ ɪ ŋ ⋉	⋊ t ɹ ɪ ŋ d ⋉
+t r ɪ ŋ	t r ʌ ŋ	⋊ t ɹ ɪ ŋ ⋉	⋊ t ɹ ʌ ŋ ⋉
+t r ɪ ŋ k	t r ɪ ŋ k t	⋊ t ɹ ɪ ŋ k ⋉	⋊ t ɹ ɪ ŋ k t ⋉
+t r ɪ ŋ k	t r ʌ ŋ k	⋊ t ɹ ɪ ŋ k ⋉	⋊ t ɹ ʌ ŋ k ⋉
+w ʌ m	w ʌ m d	⋊ w ʌ m ⋉	⋊ w ʌ m d ⋉
+w ʌ m	w eɪ m	⋊ w ʌ m ⋉	⋊ w e m ⋉
+θ r aɪ	θ r aɪ d	⋊ θ ɹ a ɪ ⋉	⋊ θ ɹ a ɪ d ⋉
+θ r aɪ	θ r uː	⋊ θ ɹ a ɪ ⋉	⋊ θ ɹ u ⋉
+θ r iː m	θ r iː m d	⋊ θ ɹ i m ⋉	⋊ θ ɹ i m d ⋉
+θ r iː m	θ r ɛ m p t	⋊ θ ɹ i m ⋉	⋊ θ ɹ ɛ m p t ⋉
+θ r iː v	θ r iː v d	⋊ θ ɹ i v ⋉	⋊ θ ɹ i v d ⋉
+θ r iː v	θ r ɛ f t	⋊ θ ɹ i v ⋉	⋊ θ ɹ ɛ f t ⋉

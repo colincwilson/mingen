@@ -27,7 +27,7 @@ def score_rules(R_all):
     stem_fsts = pynini_util.accep(stems, symtable)
 
     # Hits and scope for each rule
-    print("Computing hit / scope ...")
+    print("Hits and scope ...")
     hits_all = [0.0] * len(R_all)
     scope_all = [0.0] * len(R_all)
     for idx, R in enumerate(R_all):

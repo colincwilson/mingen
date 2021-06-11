@@ -40,12 +40,12 @@ def format_strings(dat):
 
 
 # Select language and transcription conventions
-LANGUAGE = ['eng', 'eng2', 'deu', 'nld', 'tiny'][1]
+LANGUAGE = ['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'][2]
 ddata = Path.home() / 'Languages/UniMorph/sigmorphon2021/2021Task0/part2'
 if LANGUAGE == 'tiny':
     ddata = Path.home() / 'Code/Python/mingen/data'
 
-if LANGUAGE in ['eng', 'eng2']:
+if LANGUAGE in ['eng', 'eng2', 'eng3']:
     wordform_omit = None
     wug_morphosyn = 'V;PST;'
     # Simplify or split diphthongs, zap diacritics, fix unicode
@@ -55,7 +55,7 @@ if LANGUAGE in ['eng', 'eng2']:
       'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g'}
     # Split diphthongs and rhoticized vowels, ~British æ -> ɑ, fix regular past
     config.seg_fixes |= {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
-        'ə˞': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
+        'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
     config.remove_prefix = None
 
 if LANGUAGE == 'deu':
@@ -85,6 +85,9 @@ fdat = ddata / f'{LANGUAGE}.train'
 if LANGUAGE == 'eng2':
     fdat = Path.home() \
         / 'Researchers/HayesBruce/AlbrightHayes2003/English2_ipa/CELEXFull.in.unimorph'
+if LANGUAGE == 'eng3':
+    fdat = Path.home() \
+        / 'Researchers/HayesBruce/AlbrightHayes2003/English2_ipa/CELEXPrefixStrip.in.unimorph'
 dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
@@ -112,7 +115,7 @@ print()
 # # # # # # # # # #
 # Wug dev
 WUG_DEV = LANGUAGE
-if LANGUAGE == 'eng2':
+if LANGUAGE in ['eng2', 'eng3']:
     WUG_DEV = 'eng'
 fwug_dev = ddata / f'{WUG_DEV}.judgements.dev'
 wug_dev = pd.read_csv(
@@ -132,7 +135,7 @@ print()
 # # # # # # # # # #
 # Wug tst
 WUG_TST = LANGUAGE
-if LANGUAGE == 'eng2':
+if LANGUAGE in ['eng2', 'eng3']:
     WUG_TST = 'eng'
 fwug_tst = ddata / f'{WUG_TST}.judgements.tst'
 
@@ -150,7 +153,7 @@ print()
 
 # # # # # # # # # #
 # Albright-Hayes wug
-if LANGUAGE in ['eng', 'eng2']:
+if LANGUAGE in ['eng', 'eng2', 'eng3']:
     falbrighthayes = Path.home() / \
         'Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug_sigmorphon.tsv'
     wug_albrighthayes = pd.read_csv(

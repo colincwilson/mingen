@@ -16,6 +16,7 @@ def generalize_rules_rec(Rs):
     Recursively apply minimal generalization to set of FtrRules
     todo: generalize each context pair at most once
     """
+    print('Minimal generalization ...')
     # Word-specific rules
     # Rules grouped by common change [invariant]
     R_base = {}
@@ -31,7 +32,7 @@ def generalize_rules_rec(Rs):
                 for change, rules in R_base.items()}
 
     # First-step minimal generalization (exploit commutativity)
-    print('First-step mingen ...')
+    print('Iteration 0 (base rules only) ...')
     R_new = {}
     for change, rules_base in R_base.items():
         print(f'\t{change} [{len(rules_base)}]')
@@ -53,7 +54,7 @@ def generalize_rules_rec(Rs):
     # Recursive minimal generalization
     for i in range(10):  # xxx loop forever
         # Report number of rules by change
-        print(f'iteration {i}')
+        print(f'Recursion {i+1} ...')
 
         # One-step minimal generalization
         R_old = R_new
