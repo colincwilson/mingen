@@ -1,23 +1,29 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import numpy as np
+from collections import namedtuple
 from functools import lru_cache
 from features import *
 from rules import *
 
+ScoredRule = namedtuple('ScoredRule', ['R', 'score', 'length', 'idx'])
 
-def prune_rules(rules, rule_score='confidence'):
+def prune_rules(rules, rule_score='confidence', digits=10):
     print('Prune ...')
     rules = rules.sort_values(by=rule_score, ascending=True)
-    R_all = [FtrRule.from_str(R) for R in rules['rule']]
-    R_all = [(R, score, idx) for (R, score, idx) \
-        in zip(R_all, rules[rule_score], rules['rule_idx'])]
+    R_all = [ScoredRule(FtrRule.from_str(R),
+                        np.round(score, digits),
+                        len(R),
+                        idx) \
+        for (R, score, idx) \
+            in zip(rules['rule'], rules[rule_score], rules['rule_idx'])]
 
     print('iter #pruned')
     pruned = []  # Non-maximal rules (can contain duplicates)
     n = len(R_all)
     for i in range(n - 1):
-        if i % 500 == 0:
+        if i > 0 and i % 500 == 0:
             print(i, len(pruned))
         Ri_ = R_all[i]
         for j in range(n - 1, i + 1, -1):
@@ -32,35 +38,43 @@ def prune_rules(rules, rule_score='confidence'):
     print(f'{len(pruned)} pruned rules')  # 30261 pruned rules
 
     # Rules that are maximal wrt rule_cmp
-    idx_pruned = [idx for (R, score, idx) in pruned]
+    idx_pruned = [R.idx for R in pruned]
     rules_max = rules[~(rules['rule_idx'].isin(idx_pruned))]
     rules_max = rules_max.sort_values(by=rule_score, ascending=False)
     return rules_max
 
 
-def rule_cmp(R1_, R2_):
-    """ Compare rules by score and generality, each breaking ties for the other
-        +1 if score1 > score2 and R1 ⊒ R2 -or- score1 = score2 and R1 ⊐ R2
-        -1 if score2 > score1 and R2 ⊒ R1 -or- score1 = score2 and R2 ⊐ R1
+def rule_cmp(R1_: ScoredRule, R2_: ScoredRule):
+    """ Compare rules by score and generality, breaking ties with length
+        +1 if score1 > score2 and R1 ⊒ R2   -or-
+              score1 == score2 and R1 ⊐ R2  -or-
+              score1 == score2 and R1 = R2 and length1 < length2
+        -1 if score2 > score1 and R2 ⊒ R1   -or-
+              score2 == score1 and R2 ⊐ R1  -or-
+              score2 == score1 and R2 = R1 and length2 < length1
         0 otherwise
     """
-    R1, score1, idx1 = R1_
-    R2, score2, idx2 = R2_
+    R1, score1, length1, idx1 = R1_
+    R2, score2, length2, idx2 = R2_
 
     # R1 has higher score
     if score1 > score2:
         if rule_mgt(R1, R2):
             return +1
+    # R2 has higher score
     elif score2 > score1:
         if rule_mgt(R2, R1):
             return -1
+    # Tied on score
     else:
         mgt12 = rule_mgt(R1, R2)
         mgt21 = rule_mgt(R2, R1)
-        if mgt12 and not mgt21:
-            return +1
-        if mgt21 and not mgt12:
-            return -1
+        if mgt12:
+            if not mgt21 or length1 < length2:
+                return +1
+        if mgt21:
+            if not mgt12 or length2 < length1:
+                return -1
     return 0
 
 
