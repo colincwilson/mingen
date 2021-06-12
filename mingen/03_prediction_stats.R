@@ -161,12 +161,14 @@ all(rules_$scope.y == rules_$scope.y)
 
 # Wug-test statistics
 #fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
-fwug_dev = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
+fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
+fwug_dev_vault = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
 fwug_tst = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_tst_predict.tsv')
-fwug_tst_predict = 
-    str_glue('~/Code/Python/mingen/predict/mingen0_{LANGUAGE}_tst.tsv')
+fwug_tst_vault = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_tst_predict.tsv')
 wug_dev = read_tsv(fwug_dev)
+wug_dev_vault = read_tsv(fwug_dev_vault)
 wug_tst = read_tsv(fwug_tst)
+wug_tst_vault = read_tsv(fwug_tst_vault)
 
 wug_dev %>%
     mutate(lemma = wordform1) %>%
