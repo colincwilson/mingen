@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import pickle, re, sys
+import configargparse, pickle, re, sys
 from pathlib import Path
 import pandas as pd
 
@@ -24,10 +24,14 @@ tensormorph.config.wildcard = '□'
 config.save_dir = Path.home() / 'Code/Python/mingen/data'
 
 
-def format_strings(dat):
+def format_strings(dat, extra_seg_fixes=None):
+    seg_fixes = config.seg_fixes
+    if extra_seg_fixes is not None:
+        seg_fixes = seg_fixes | extra_seg_fixes
+
     # Fix transcriptions (conform to phonological feature set)
-    dat['stem'] = fix_transcription(dat['wordform1'], config.seg_fixes)
-    dat['output'] = fix_transcription(dat['wordform2'], config.seg_fixes)
+    dat['stem'] = fix_transcription(dat['wordform1'], seg_fixes)
+    dat['output'] = fix_transcription(dat['wordform2'], seg_fixes)
     dat['stem'] = [add_delim(x) for x in dat['stem']]
     dat['output'] = [add_delim(x) for x in dat['output']]
 
@@ -40,7 +44,16 @@ def format_strings(dat):
 
 
 # Select language and transcription conventions
-LANGUAGE = ['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'][2]
+parser = configargparse.ArgParser(
+    config_file_parser_class=configargparse.YAMLConfigFileParser)
+parser.add(
+    '--language',
+    type=str,
+    choices=['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'],
+    default='tiny')
+args = parser.parse_args()
+LANGUAGE = args.language
+
 ddata = Path.home() / 'Languages/UniMorph/sigmorphon2021/2021Task0/part2'
 if LANGUAGE == 'tiny':
     ddata = Path.home() / 'Code/Python/mingen/data'
@@ -53,9 +66,12 @@ if LANGUAGE in ['eng', 'eng2', 'eng3']:
       'eɪ': 'e', 'oʊ': 'o', 'əʊ': 'o', 'aɪ': 'a ɪ', 'aʊ': 'a ʊ', \
       'ɔɪ': 'ɔ ɪ', 'ɝ': 'ɛ ɹ', 'ˠ': '', 'm̩': 'm', 'n̩': 'n', 'l̩': 'l', \
       'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g'}
-    # Split diphthongs and rhoticized vowels, ~British æ -> ɑ, fix regular past
-    config.seg_fixes |= {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
-        'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
+    # Albright & Hayes 2003 training data: split diphthongs and rhoticized vowels, ~Britishize æ -> ɑ, fix regular past
+    albrighthayes_seg_fixes = \
+        {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
+         'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
+    if LANGUAGE in ['eng2', 'eng3']: 
+        config.seg_fixes |= albrighthayes_seg_fixes
     config.remove_prefix = None
 
 if LANGUAGE == 'deu':
@@ -83,11 +99,9 @@ if LANGUAGE == 'tiny':
 # Train
 fdat = ddata / f'{LANGUAGE}.train'
 if LANGUAGE == 'eng2':
-    fdat = Path.home() \
-        / 'Researchers/HayesBruce/AlbrightHayes2003/English2_ipa/CELEXFull.in.unimorph'
+    fdat = Path('../albrighthayes2003') / 'AlbrightHayes2003_CELEXFull_unimorph.tsv'
 if LANGUAGE == 'eng3':
-    fdat = Path.home() \
-        / 'Researchers/HayesBruce/AlbrightHayes2003/English2_ipa/CELEXPrefixStrip.in.unimorph'
+    fdat = Path('../albrighthayes2003') / 'AlbrightHayes2003_CELEXPrefixStrip_unimorph.tsv'
 dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
@@ -154,15 +168,14 @@ print()
 # # # # # # # # # #
 # Albright-Hayes wug
 if LANGUAGE in ['eng', 'eng2', 'eng3']:
-    falbrighthayes = Path.home() / \
-        'Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug_sigmorphon.tsv'
+    falbrighthayes = Path('../albrighthayes2003') / 'AlbrightHayes2003_Wug_sigmorphon.tsv'
     wug_albrighthayes = pd.read_csv(
         falbrighthayes,
         sep='\t',
         comment='#',
         names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
 
-    wug_albrighthayes = format_strings(wug_albrighthayes)
+    wug_albrighthayes = format_strings(wug_albrighthayes, extra_seg_fixes=albrighthayes_seg_fixes)
     config.wug_albrighthayes = wug_albrighthayes
     wug_albrighthayes.to_csv(
         config.save_dir / 'albrighthayes2003_wug.tsv', sep='\t', index=False)

@@ -37,14 +37,15 @@ def score_rules(R_all):
         # Subset of data s.t. CAD occurs in input
         CAD = [X for X in [C, A, D] if X != '∅']
         CAD = ' '.join(CAD)
-        subdat = [wf for wf in wordforms if re.search(CAD, wf[0])] \
-            if CAD != '' else wordforms
+        if CAD != '':
+            subdat = [wf for wf in wordforms if re.search(CAD, wf[0])]
+        else:
+            subdat = wordforms
 
-        # By construction, rules with scopes of 1 or 2
-        # are fully accurate xxx check
-        if len(subdat) < 3:
-            hits_all[idx] = len(subdat)
-            scope_all[idx] = len(subdat)
+        # Skip rules with zero scope
+        if len(subdat) == 0:
+            hits_all[idx] = 0
+            scope_all[idx] = 0
             continue
 
         # Compile rule to FST

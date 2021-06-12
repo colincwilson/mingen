@@ -34,6 +34,9 @@ def main():
     for key, val in config_save.items():
         setattr(config, key, val)
 
+    #pruning.test()
+    #sys.exit(0)
+
     # Make word-specific (base) rules, apply recursive minimal generalization
     if args.learn_rules:
         dat_train = config.dat_train

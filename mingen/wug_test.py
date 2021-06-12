@@ -9,6 +9,7 @@ import pynini_util
 
 
 def rate_wugs(wugs, rules, rule_score='confidence'):
+    print('Wug test ...')
     # Symbol environment
     syms = [x for x in config.seg2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
@@ -23,6 +24,7 @@ def rate_wugs(wugs, rules, rule_score='confidence'):
 
     max_rating = {}
     max_rule = {}
+    print('iter')
     for i, R_ in enumerate(R_all):
         if i % 500 == 0:
             print(i)
@@ -34,8 +36,10 @@ def rate_wugs(wugs, rules, rule_score='confidence'):
         # Subset of wug data s.t. CAD occurs in input
         CAD = [Z for Z in [C, A, D] if Z != '∅']
         CAD = ' '.join(CAD)
-        subdat = [wf for wf in wordforms if re.search(CAD, wf[0])] \
-            if CAD != '' else wordforms
+        if CAD != '':
+            subdat = [wf for wf in wordforms if re.search(CAD, wf[0])]
+        else:
+            subdat = wordforms
         if len(subdat) == 0:
             continue
 

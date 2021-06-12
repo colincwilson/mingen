@@ -1,0 +1,133 @@
+# Google doc
+lemma	lemma_type	regular_island	phonotactic_rating	lemma_phon	lemma_ipa	island	past_type	past_type2	past_orth	past_phon	past_ipa	production_prob	production_prob_phonotactic_resid	mean_rating	mean_rating_phonotactic_adjusted	RegDNPN(July) Rescale Adjusted	Nosofsky Rescale Adjusted	Rule-based model predicted	Analogical model predicted
+bize	IOR both	voiced_alveolar_fricative	4.571429	bÈYz	b aɪ z	IOR	regular	Regulars	baized	bÈYzd	b aɪ z d	0.666666667	-0.1425210343	5.304348	5.318679549	6.109459653	5.816529196	6.06	5.87
+bize	IOR both	voiced_alveolar_fricative	4.571429	bÈYz	b aɪ z	IOR	aɪ->oʊ	Irregulars	boze	bÈoz	b oʊ z	0.231	0.1466281332	4.565217	4.547789847	4.108540429	4.00410594	4.11	4.04
+blafe	IOR Reg.	voiceless_fricative	3.571429	blÈef	b l eɪ f	IOR	regular	Regulars	blafed	blÈeft	b l eɪ f t	0.891891892	0.1348667295	6.318182	6.665564802	6.276262472	5.127659089	6.22	5.15
+blafe	IOR Reg.	voiceless_fricative	3.571429	blÈef	b l eɪ f	Not IOR	eɪ->ɛ	Irregulars	bleft	blÈEft	b l ɛ f t	0.027	-0.07922299757	4.090909	3.86275965	3.935043196	3.818386374	3.94	3.85
+blig	IOR Irreg.	voiced_velar_stop	3.714286	blÈIg	b l ɪ g	Not IOR	regular	Regulars	bligged	blÈIgd	b l ɪ g d	0.775	0.01052305366	5.666667	5.946138845	5.688821743	5.466768835	5.66	5.44
+blig	IOR Irreg.	voiced_velar_stop	3.714286	blÈIg	b l ɪ g	IOR	ɪ->ʌ	Irregulars	blug	blÈÃg	b l ʌ g	0.075	-0.02810141058	4.166667	3.968727607	5.191728638	4.064488688	5.19	4.08
+bredge	IOR Reg.	postalveolar_fricative_affricate	3.857143	brÈEJ	b ɹ ɛ dʒ	IOR	regular	Regulars	bredged	brÈEJd	b ɹ ɛ dʒ d	0.926829268	0.1549005379	6.333333	6.597790194	6.219581851	5.889241921	6.16	5.85
+bredge	IOR Reg.	postalveolar_fricative_affricate	3.857143	brÈEJ	b ɹ ɛ dʒ	Not IOR	ɛ->oʊ	Irregulars	broge	brÈoJ	b ɹ oʊ dʒ	0.049	-0.05097982359	3.428571	3.249974682	3.935043196	3.818386374	3.94	3.85
+chake	IOR Irreg.	NA	5.333333	CÈek	tʃ eɪ k	Not IOR	regular	Regulars	chaked	CÈekt	tʃ eɪ k t	0.880952381	0.03202183268	5.73913	5.548152349	4.744423844	5.667830457	4.77	5.65
+chake	IOR Irreg.	NA	5.333333	CÈek	tʃ eɪ k	IOR	eɪ->ʊ	Irregulars	chook	CÈUk	tʃ ʊ k	0	-0.06772340284	5.043478	5.188161608	5.127504019	4.24939537	5.13	4.17
+chool	IOR Reg.	<missing>	3.761905	CÈul	tʃ u l	IOR	regular	Regulars	chooled	CÈuld	tʃ u l d	0.976744186	0.2097833117	6.125	6.408941684	6.171310513	6.323234837	6.12	6.38
+chool	IOR Reg.	<missing>	3.761905	CÈul	tʃ u l	Not IOR	u->oʊ	Irregulars	chole	CÈol	tʃ oʊ l	0.023	-0.07906088158	3.708333	3.514006564	3.935043196	4.066162922	3.94	4.05
+dape	IOR Reg.	nonhigh+p	5.142857	dÈep	d eɪ p	IOR	regular	Regulars	daped	dÈept	d eɪ p t	0.976190476	0.1371956394	6.25	6.135211732	6.192959418	5.596762994	6.14	5.56
+dape	IOR Reg.	nonhigh+p	5.142857	dÈep	d eɪ p	Not IOR	eɪ->æ	Irregulars	dapt	dÈQpt	d æ p t	0	-0.07188551883	4	4.091819491	3.935043196	3.818386374	3.94	3.85
+dize	IOR both	voiced_alveolar_fricative	4.619048	dÈYz	d aɪ z	IOR	regular	Regulars	dized	dÈYzd	d aɪ z d	0.820512821	0.008841191715	5.416667	5.421583449	6.109459653	6.024212828	6.06	5.95
+dize	IOR both	voiced_alveolar_fricative	4.619048	dÈYz	d aɪ z	IOR	aɪ->oʊ	Irregulars	doze	dÈoz	d oʊ z	0.154	0.07066866221	5.041667	5.040334388	4.726376408	4.171585397	4.73	4.18
+drice	IOR both	voiceless_fricative	3.857143	drÈYs	d ɹ aɪ s	IOR	regular	Regulars	driced	drÈYst	d ɹ aɪ s t	0.953488372	0.1815596419	6.26087	6.52241938	6.276262472	5.463053945	6.22	5.51
+drice	IOR both	voiceless_fricative	3.857143	drÈYs	d ɹ aɪ s	IOR	aɪ->oʊ	Irregulars	droce	drÈos	d ɹ oʊ s	0.047	-0.05297982359	4.478261	4.313680534	5.146506561	4.312019684	5.15	4.28
+drit	IOR Irreg.	NA	4.3	drÈIt	d ɹ ɪ t	Not IOR	regular	Regulars	dritted	drÈIt«d	d ɹ ɪ t ə d	0.707317073	-0.0877122026	4.956522	5.036253014	5.436453375	5.520567919	5.43	5.29
+drit	IOR Irreg.	NA	4.3	drÈIt	d ɹ ɪ t	IOR	no_change	Irregulars	drit	drÈIt	d ɹ ɪ t	0.073	-0.01730289736	5.130435	5.06507773	4.616556281	4.062788152	4.62	4.11
+drit	IOR Irreg.	NA	4.3	drÈIt	d ɹ ɪ t	IOR	ɪ->æ	Irregulars	drat	NA	d ɹ æ t	0.098	NA	3.65	3.57	NA	NA	4.06	3.99
+fleep	IOR Irreg.	NA	4.238095	flÈip	f l i p	Not IOR	regular	Regulars	fleeped	flÈipt	f l i p t	0.720930233	-0.07086992064	5	5.099574743	5.720781467	5.484358424	5.69	5.56
+fleep	IOR Irreg.	NA	4.238095	flÈip	f l i p	IOR	i->ɛ	Irregulars	flept	flÈEpt	f l ɛ p t	0.233	0.1413444084	6.086957	6.021718864	5.146506561	4.678269857	5.15	4.4
+flidge	IOR both	postalveolar_fricative_affricate	4.05	flÈIJ	f l ɪ dʒ	IOR	regular	Regulars	flidged	flÈIJd	f l ɪ dʒ d	0.857142857	0.0751542161	6.208333	6.411388973	6.219581851	5.430178934	6.16	5.46
+flidge	IOR both	postalveolar_fricative_affricate	4.05	flÈIJ	f l ɪ dʒ	IOR	ɪ->ʌ	Irregulars	fludge	flÈÃJ	f l ʌ dʒ	0.024	-0.07176568006	4.875	4.755134802	4.220771526	4.110781943	4.22	4.1
+fro	IOR both	<missing>	5.842105	frÈo	f ɹ oʊ	IOR	regular	Regulars	froed	frÈod	f ɹ oʊ d	0.886363636	0.01089424848	5.833333	5.497386969	5.406841496	5.994995508	5.4	6.16
+fro	IOR both	<missing>	5.842105	frÈo	f ɹ oʊ	IOR	oʊ->u	Irregulars	frew	frÈu	f ɹ u	0.091	0.03439384067	4.333333	4.572521918	4.96964808	4.262251736	4.97	4.38
+gare	IOR both	<missing>	5.238095	gÈer	g ɛ ɹ	IOR	regular	Regulars	gared	gÈerd	g ɛ ɹ d	0.976190476	0.1322277835	6.565217	6.435233311	6.067781115	6.254141088	6.02	6.27
+gare	IOR both	<missing>	5.238095	gÈer	g ɛ ɹ	IOR	ɛ->ɔ	Irregulars	gore	gÈor	g ɔ ɹ	0	-0.06980446083	3.391304	3.49446156	4.302463815	4.233632333	4.3	4.23
+gezz	IOR Reg.	voiced_alveolar_fricative	4.190476	gÈEz	g ɛ z	IOR	regular	Regulars	gezzed	gÈEzd	g ɛ z d	0.975609756	0.1862935303	6.608696	6.786747174	6.110849828	5.87435239	6.06	5.89
+gezz	IOR Reg.	voiced_alveolar_fricative	4.190476	gÈEz	g ɛ z	Not IOR	ɛ->a	Irregulars	gozz	gÈaz	g a z	0	-0.09269612061	2.521739	2.399163942	3.935043196	3.935526028	3.94	3.95
+gleed	IOR Irreg.	NA	5.285714	glÈid	g l i d	Not IOR	regular	Regulars	gleeded	glÈid«d	g l i d ə d	0.56097561	-0.2854710104	4.217391	3.979270881	4.309337504	5.255257416	4.36	5.15
+gleed	IOR Irreg.	NA	5.285714	glÈid	g l i d	IOR	i->ɛ	Irregulars	gled	glÈEd	g l ɛ d	0.244	0.1752360682	6	6.147722644	5.068351814	4.943781375	5.07	4.53
+gleed	IOR Irreg.	NA	5.285714	glÈid	g l i d	IOR	no_change	Irregulars	gledd	NA	g l i d	0.171	NA	4.09	4.21	NA	NA	3.94	3.99
+glip	IOR both	<missing>	4.95	glÈIp	g l ɪ p	IOR	regular	Regulars	glipped	glÈIpt	g l ɪ p t	0.925	0.09606507417	5.954545	5.884285827	6.118511925	5.849050278	6.07	5.8
+glip	IOR both	<missing>	4.95	glÈIp	g l ɪ p	IOR	ɪ->ʌ	Irregulars	glup	glÈÃp	g l ʌ p	0.025	-0.05109966235	3.454545	3.499663512	4.019265114	3.914006088	4.02	3.97
+glit	IOR Irreg.	NA	5.25	glÈIt	g l ɪ t	Not IOR	regular	Regulars	glitted	glÈIt«d	g l ɪ t ə d	0.642857143	-0.2017265445	5	4.803726242	5.436453375	5.504575635	5.43	5.37
+glit	IOR Irreg.	NA	5.25	glÈIt	g l ɪ t	IOR	no_change	Irregulars	glit	glÈIt	g l ɪ t	0.143	0.07345567688	5.208333	5.33818546	4.890515095	4.329083718	4.89	4.32
+glit	IOR Irreg.	NA	5.25	glÈIt	g l ɪ t	IOR	ɪ->æ	Irregulars	glat	NA	g l æ t	0.095	NA	3.75	3.86	NA	NA	4.06	3.91
+gude	IOR neither	NA	4.25	gÈud	g u d	Not IOR	regular	Regulars	guded	gÈud«d	g u d ə d	0.555555556	-0.2368655927	4.9	4.992081278	6.125584167	5.436737751	6.07	5.26
+gude	IOR neither	NA	4.25	gÈud	g u d	Not IOR	no_change	Irregulars	guded	gÈud	g u d	0.333	0.2416045461	5.55	5.480025466	3.95504675	3.910822806	3.96	3.99
+nace	IOR Reg.	voiceless_fricative	5	nÈes	n eɪ s	IOR	regular	Regulars	naced	nÈest	n eɪ s t	1	0.1684569472	6.565217	6.504844637	6.276262472	5.583902378	6.22	5.57
+nace	IOR Reg.	voiceless_fricative	5	nÈes	n eɪ s	Not IOR	eɪ->oʊ	Irregulars	noce	nÈos	n oʊ s	0	-0.07500710582	2.913043	2.961150628	4.000706775	3.853461974	4	3.89
+nold	IOR neither	NA	4.095238	nÈold	n oʊ l d	Not IOR	regular	Regulars	nolded	nÈold«d	n oʊ l d ə d	0.525	-0.2593483698	4.636364	4.76311346	4.746453535	5.450241785	4.78	5.54
+nold	IOR neither	NA	4.095238	nÈold	n oʊ l d	Not IOR	no_change	Irregulars	nold	nÈold	n oʊ l d	0.35	0.2552228214	6.045455	5.950464306	3.95504675	3.863430595	3.96	3.91
+nold	IOR neither	NA	4.095238	nÈold	n oʊ l d	Not IOR	oʊ->ɛ	Irregulars	neld	nÈold	n ɛ l d	0.1	NA	5.14	5.03	NA	NA	3.94	4.1
+nung	IOR neither	NA	3.210526	nÈÃN	n ʌ ŋ	Not IOR	regular	Regulars	nunged	nÈÃNd	n ʌ ŋ d	0.823529412	0.08532986621	5.368421	5.783207988	5.133674017	5.910286135	5.14	5.97
+nung	IOR neither	NA	3.210526	nÈÃN	n ʌ ŋ	Not IOR	ʌ->æ	Irregulars	nang	nÈQN	n æ ŋ	0.059	-0.05510913622	4.315789	4.016877707	3.935043196	3.859256499	3.94	3.89
+pank	IOR neither	NA	5.619048	pÈQNk	p æ ŋ k	Not IOR	regular	Regulars	panked	pÈQNkt	p æ ŋ k t	0.9	0.0361658319	6.304348	6.052517678	5.643010749	5.986366064	5.62	5.92
+pank	IOR neither	NA	5.619048	pÈQNk	p æ ŋ k	Not IOR	æ->ʌ	Irregulars	punk	pÈÃNk	p ʌ ŋ k	0.075	0.01351979299	4	4.189147722	3.935043196	3.856800188	3.94	3.89
+plim	IOR Irreg.	NA	4.428571	plÈIm	p l ɪ m	Not IOR	regular	Regulars	plimmed	plÈImd	p l ɪ m d	0.80952381	0.007787944621	6.130435	6.219683068	5.771627425	5.851885713	5.74	5.96
+plim	IOR Irreg.	NA	4.428571	plÈIm	p l ɪ m	IOR	ɪ->ʌ	Irregulars	plum	plÈÃm	p l ʌ m	0.071	-0.01649347563	4.173913	4.122062398	4.521650962	4.038608396	4.52	4.1
+plim	IOR Irreg.	NA	4.428571	plÈIm	p l ɪ m	IOR	ɪ->æ	Irregulars	plam	NA	p l æ m	0.024	NA	3.57	3.51	NA	NA	4.21	3.92
+preak	IOR neither	NA	4.904762	prÈik	p ɹ i k	Not IOR	regular	Regulars	preaked	prÈikt	p ɹ i k t	0.840909091	0.0143338941	5.833333	5.771435938	5.376594104	5.989547936	5.37	5.8
+preak	IOR neither	NA	4.904762	prÈik	p ɹ i k	Not IOR	i->oʊ	Irregulars	proke	prÈok	p ɹ oʊ k	0.136	0.05891183619	3.916667	3.958709784	3.982021304	3.935316059	3.98	3.93
+preak	IOR neither	NA	4.904762	prÈik	p ɹ i k	Not IOR	i->ɛ	Irregulars	proke	NA	p ɹ ɛ k	0	NA	3.54	3.58	NA	NA	3.94	3.98
+queed	IOR Irreg.	NA	3.809524	kwÈid	k w i d	Not IOR	regular	Regulars	queeded	kwÈid«d	k w i d ə d	0.523809524	-0.2456352782	4.652174	4.86309148	4.309337504	5.390541539	4.36	5.1
+queed	IOR Irreg.	NA	3.809524	kwÈid	k w i d	IOR	i->ɛ	Irregulars	qued	kwÈEd	k w ɛ d	0.214	0.1129796474	5.347826	5.185123487	4.432930199	4.068341296	4.43	4.09
+rask	IOR neither	NA	5.3	rÈQsk	ɹ æ s k	Not IOR	regular	Regulars	rasked	rÈQskt	ɹ æ s k t	0.930232558	0.08304074358	6.416667	6.262623226	6.014881834	6.170088871	5.97	6.11
+rask	IOR neither	NA	5.3	rÈQsk	ɹ æ s k	Not IOR	æ->ʌ	Irregulars	rusk	rÈÃsk	ɹ ʌ s k	0.023	-0.04545176658	4.083333	4.208383494	3.935043196	3.820996056	3.94	3.85
+rife	IOR both	voiceless_fricative	5.611111	rÈYf	ɹ aɪ f	IOR	regular	Regulars	rifed	rÈYft	ɹ aɪ f t	0.853658537	-0.009761617029	5.952381	5.68874738	6.276262472	5.039219591	6.22	5.07
+rife	IOR both	voiceless_fricative	5.611111	rÈYf	ɹ aɪ f	IOR	aɪ->oʊ	Irregulars	rofe	rÈof	ɹ oʊ f	0.098	0.03634636057	4.142857	4.332289966	4.610916106	4.387707188	4.61	4.35
+rife	IOR both	voiceless_fricative	5.611111	rÈYf	ɹ aɪ f	IOR	aɪ->ɪ	Irregulars	riff	NA	ɹ ɪ f	0	NA	3.24	3.42	NA	NA	3.94	3.9
+shilk	IOR neither	coronal+k	4.6	SÈIlk	ʃ ɪ l k	Not IOR	regular	Regulars	shilked	SÈIlkt	ʃ ɪ l k t	0.975	0.1643219628	5.791667	5.817200569	6.014881834	5.200734986	5.97	5.17
+shilk	IOR neither	coronal+k	4.6	SÈIlk	ʃ ɪ l k	Not IOR	ɪ->æ	Irregulars	shalk	SÈQlk	ʃ æ l k	0	-0.08374755813	3.666667	3.643081673	3.935043196	4.086330407	3.94	4.13
+scride	IOR Irreg.	NA	4.05	skrÈYd	s k ɹ aɪ d	Not IOR	regular	Regulars	scrided	skrÈYd«d	s k ɹ aɪ d ə d	0.404761905	-0.3772267359	4.173913	4.295331245	4.537242033	5.112241536	4.58	4.89
+scride	IOR Irreg.	NA	4.05	skrÈYd	s k ɹ aɪ d	IOR	aɪ->oʊ	Irregulars	scrode	skrÈod	s k ɹ oʊ d	0.19	0.09423431994	4.391304	4.264980313	4.979927883	4.859610358	4.98	4.73
+scride	IOR Irreg.	NA	4.05	skrÈYd	s k ɹ aɪ d	IOR	aɪ->ɪ	Irregulars	scrid	NA	s k ɹ ɪ d	0.024	NA	3.57	3.43	NA	NA	4.12	3.95
+spack	IOR Reg.	unround_low+k	5.05	spÈQk	s p æ k	IOR	regular	Regulars	spacked	spÈQkt	s p æ k t	0.860465116	0.02631393629	6.217391	6.128442593	6.060381841	5.858229475	6.01	5.79
+spack	IOR Reg.	unround_low+k	5.05	spÈQk	s p æ k	Not IOR	æ->ʌ	Irregulars	spuck	spÈÃk	s p ʌ k	0.07	-0.003914549276	3.956522	4.028782001	3.935043196	3.820922578	3.94	3.85
+spling	IOR Irreg.	NA	4.555556	splÈIN	s p l ɪ ŋ	Not IOR	regular	Regulars	splinged	splÈINd	s p l ɪ ŋ d	0.513513514	-0.2948462114	4.363636	4.344859171	5.133674017	5.230508803	5.14	5.35
+spling	IOR Irreg.	NA	4.555556	splÈIN	s p l ɪ ŋ	IOR	ɪ->ʌ	Irregulars	splung	splÈÃN	s p l ʌ ŋ	0.324	0.2392812902	5.454545	5.445748218	5.191728638	5.990595083	5.19	5.42
+spling	IOR Irreg.	NA	4.555556	splÈIN	s p l ɪ ŋ	IOR	ɪ->æ	Irregulars	splang	NA	s p l æ ŋ	0.108	NA	4.5	4.48	NA	NA	4.36	4.54
+stin	IOR both	<missing>	5.4	stÈIn	s t ɪ n	IOR	regular	Regulars	stinned	stÈInd	s t ɪ n d	0.697674419	-0.1547336493	5.304348	5.076432017	5.866200586	5.948612715	5.83	6.02
+stin	IOR both	<missing>	5.4	stÈIn	s t ɪ n	IOR	ɪ->ʌ	Irregulars	stun	stÈÃn	s t ʌ n	0.186	0.1197333465	4.782609	4.937435394	4.335794561	4.627133351	4.34	4.63
+stin	IOR both	<missing>	5.4	stÈIn	s t ɪ n	IOR	ɪ->æ	Irregulars	stan	stÈÃn	s t æ n	0	NA	2.74	2.87	NA	NA	4.27	4.03
+stip	IOR both	<missing>	5.45	stÈIp	s t ɪ p	IOR	regular	Regulars	stipped	stÈIpt	s t ɪ p t	0.840909091	-0.01410710424	5.916667	5.698703918	6.118511925	5.94756841	6.07	5.88
+stip	IOR both	<missing>	5.45	stÈIp	s t ɪ p	IOR	ɪ->ʌ	Irregulars	stup	stÈÃp	s t ʌ p	0.045	-0.02017409696	4.5	4.661272346	4.14785445	4.212332178	4.15	4.26
+stire	IOR Reg.	<missing>	5.619048	stÈYr	s t aɪ ɹ	IOR	regular	Regulars	stired	stÈYrd	s t aɪ ɹ d	0.902439024	0.0386048559	6	5.735956723	6.067781115	6.188292154	6.02	6.29
+stire	IOR Reg.	<missing>	5.619048	stÈYr	s t aɪ ɹ	Not IOR	aɪ->oʊ	Irregulars	store	stÈor	s t oʊ ɹ	0.049	-0.01248020701	3.217391	3.396089035	3.935043196	4.006281937	3.94	4.03
+tark	IOR neither	coronal+k	5.095238	tÈark	t a ɹ k	Not IOR	regular	Regulars	tarked	tÈarkt	t a ɹ k t	0.930232558	0.09372164936	6.333333	6.235811005	6.014881834	5.656019641	5.97	5.66
+tark	IOR neither	coronal+k	5.095238	tÈark	t a ɹ k	Not IOR	a->ɔ	Irregulars	tork	tÈork	t ɔ ɹ k	0.023	-0.04992604782	3.708333	3.786525242	3.935043196	3.818386374	3.94	3.85
+teep	IOR Irreg.	NA	4.952381	tÈip	t i p	Not IOR	regular	Regulars	teeped	tÈipt	t i p t	0.88372093	0.05466180516	5.913043	5.840422296	5.720781467	5.608554827	5.7	5.61
+teep	IOR Irreg.	NA	4.952381	tÈip	t i p	IOR	i->ɛ	Irregulars	tept	tÈEpt	t ɛ p t	0.047	-0.02904763481	4.695652	4.757828885	4.733172868	4.259353346	4.73	4.2
+tesh	IOR Reg.	voiceless_fricative	4.714286	tÈES	t ɛ ʃ	IOR	regular	Regulars	teshed	tÈESt	t ɛ ʃ t	0.925	0.1083605148	6.217391	6.226594577	6.276262472	5.606907567	6.22	5.59
+tesh	IOR Reg.	voiceless_fricative	4.714286	tÈES	t ɛ ʃ	Not IOR	ɛ->a	Irregulars	tosh	tÈaS	t a ʃ	0	-0.0812502798	3.130435	3.123048511	3.935043196	3.854644344	3.94	3.88
+trisk	IOR neither	NA	5.142857	trÈIsk	t ɹ ɪ s k	Not IOR	regular	Regulars	trisked	trÈIskt	t ɹ ɪ s k t	0.897435897	0.05844106042	6.285714	6.172358872	6.014881834	6.151951028	5.97	6.05
+trisk	IOR neither	NA	5.142857	trÈIsk	t ɹ ɪ s k	Not IOR	ɪ->æ	Irregulars	trask	trÈQsk	t ɹ æ s k	0.051	-0.02088551883	3.761905	3.850545358	3.935043196	3.92193753	3.94	4.01
+trisk	IOR neither	NA	5.142857	trÈIsk	t ɹ ɪ s k	Not IOR	ɪ->ʌ	Irregulars	trusk	NA	t ɹ ʌ s k	0.026	NA	3.62	3.71	3.935043196	3.92193753	3.94	3.94
+tunk	IOR neither	NA	4.65	tÈÃNk	t ʌ ŋ k	Not IOR	regular	Regulars	tunked	tÈÃNkt	t ʌ ŋ k t	0.906976744	0.09369057981	5.666667	5.672566144	5.643010749	5.8687587	5.62	5.8
+tunk	IOR neither	NA	4.65	tÈÃNk	t ʌ ŋ k	Not IOR	ʌ->æ	Irregulars	tank	tÈQNk	t æ ŋ k	0.047	-0.03565500159	3.916667	3.906639219	3.935043196	3.828330386	3.94	3.86
+wiss	IOR Reg.	voiceless_fricative	5.761905	wÈIs	w ɪ s	IOR	regular	Regulars	wissed	wÈIst	w ɪ s t	0.951219512	0.07993356009	6.565217	6.282088101	6.276262472	5.782558426	6.22	5.68
+wiss	IOR Reg.	voiceless_fricative	5.761905	wÈIs	w ɪ s	Not IOR	ɪ->ʌ	Irregulars	wus	wÈÃs	w ʌ s	0.024	-0.03435862002	3.347826	3.557464059	3.935043196	3.95983945	3.94	3.99
+grell	Peripheral	NA		NA	g ɹ ɛ l	NA	regular	Regulars	grelled	NA	g ɹ ɛ l d	0.902		5.86	5.91			5.86	6.17
+grell	Peripheral	NA		NA	g ɹ ɛ l	NA	∅->t	Irregulars	grelt	NA	g ɹ ɛ l t	0.073		4.9	4.88			4.06	5.39
+murn	Peripheral	NA		NA	m ɚ n	NA	regular	Regulars	murned	NA	m ɚ n d	0.952		6.57	6.38			6.02	6.29
+murn	Peripheral	NA		NA	m ɚ n	NA	∅->t	Irregulars	murnt	NA	m ɚ n t	0.048		4.74	4.9			4.6	5.23
+scoil	Peripheral	NA		NA	s k ɔɪ l	NA	regular	Regulars	scoiled	NA	s k ɔɪ l d	0.946		6.45	6.72			5.93	6.51
+scoil	Peripheral	NA		NA	s k ɔɪ l	NA	∅->t	Irregulars	scoilt	NA	s k ɔɪ l t	0		5.15	4.99			4.01	4.91
+shurn	Peripheral	NA		NA	ʃ ɚ n	NA	regular	Regulars	shurned	NA	ʃ ɚ n d	0.9		6.57	6.5			6.02	6.31
+shurn	Peripheral	NA		NA	ʃ ɚ n	NA	∅->t	Irregulars	shurnt	NA	ʃ ɚ n t	0		4.22	4.28			3.95	5.11
+skell	Peripheral	NA		NA	s k ɛ l	NA	regular	Regulars	skelled	NA	s k ɛ l d	0.8		6.05	5.95			5.86	6.24
+skell	Peripheral	NA		NA	s k ɛ l	NA	∅->t	Irregulars	skelt	NA	s k ɛ l t	0.125		5.32	5.41			4.06	5.23
+snell	Peripheral	NA		NA	s n ɛ l	NA	regular	Regulars	snelled	NA	s n ɛ l d	0.881		6.17	5.99			5.86	6.18
+snell	Peripheral	NA		NA	s n ɛ l	NA	∅->t	Irregulars	snelt	NA	s n ɛ l t	0.071		5.3	5.46			4.06	5.25
+snell	Peripheral	NA		NA	s n ɛ l	NA	ɛl->oʊld	Irregulars	snold	NA	s n oʊ l d	0		2.83	2.95			3.94	4.17
+squill	Peripheral	NA		NA	s k w ɪ l	NA	regular	Regulars	squilled	NA	s k w ɪ l d	0.85		5.92	5.93			5.86	6.3
+squill	Peripheral	NA		NA	s k w ɪ l	NA	∅->t	Irregulars	squilt	NA	s k w ɪ l t	0.025		5.21	5.22			4.06	5.2
+kive	Peripheral	NA		NA	k aɪ v	NA	regular	Regulars	kived	NA	k aɪ v d	0.905		6	6.1			5.58	5.87
+kive	Peripheral	NA		NA	k aɪ v	NA	aɪ->eɪ	Irregulars	kave	NA	k eɪ v	0.048		4.41	4.35			3.94	4.12
+lum	Peripheral	NA		NA	l ʌ m	NA	regular	Regulars	lummed	NA	l ʌ m d	0.905		6.35	6.33			5.74	6.14
+lum	Peripheral	NA		NA	l ʌ m	NA	ʌ->eɪ	Irregulars	lame	NA	l eɪ m	0		2.87	2.88			3.94	3.93
+pum	Peripheral	NA		NA	p ʌ m	NA	regular	Regulars	pummed	NA	p ʌ m d	0.902		6.17	6.15			5.74	6.06
+pum	Peripheral	NA		NA	p ʌ m	NA	ʌ->eɪ	Irregulars	pame	NA	p eɪ m	0		2.71	2.71			3.94	4.01
+shee	Peripheral	NA		NA	ʃ i	NA	regular	Regulars	sheed	NA	ʃ i d	0.929		6.17	5.81			5.94	5.89
+shee	Peripheral	NA		NA	ʃ i	NA	i->ɔ	Irregulars	shaw	NA	ʃ ɔ	0		3.25	3.5			3.94	4.18
+zay	Peripheral	NA		NA	z eɪ	NA	regular	Regulars	zayed	NA	z eɪ d	0.977		6.39	6.57			6.13	5.99
+zay	Peripheral	NA		NA	z eɪ	NA	eɪ->ɛ	Irregulars	zed	NA	z ɛ d	0		4.39	4.28			3.94	4.05
+chind	Peripheral	NA		NA	tʃ aɪ n d	NA	regular	Regulars	chinded	NA	tʃ aɪ n d ə d	0.306		3.89	3.84			4.36	5.41
+chind	Peripheral	NA		NA	tʃ aɪ n d	NA	aɪ->aʊ	Irregulars	chound	NA	tʃ aʊ n d	0		4.05	4.04			4.83	4.45
+flet	Peripheral	NA		NA	f l ɛ t	NA	regular	Regulars	fletted	NA	f l ɛ t ə d	0.622		4.5	4.58			5.43	5.39
+flet	Peripheral	NA		NA	f l ɛ t	NA	no_change	Irregulars	flet	NA	f l ɛ t	0.297		5.65	5.58			5.22	4.3
+gry'nt	Peripheral	NA		NA	g ɹ aɪ n t	NA	regular	Regulars	gry'nted	NA	g ɹ aɪ n t ə d	0.683		5.26	5.1			6.2	5.59
+gry'nt	Peripheral	NA		NA	g ɹ aɪ n t	NA	aɪ->oʊ	Irregulars	groant	NA	g ɹ oʊ n t	0.049		4.17	4.27			3.94	4.07
+gry'nt	Peripheral	NA		NA	g ɹ aɪ n t	NA	aɪ->aʊ	Irregulars	grount	NA	g ɹ aʊ n t	0.024		3.83	3.92			3.94	4.67
+ry'nt	Peripheral	NA		NA	ɹ aɪ n t	NA	regular	Regulars	ry'nted	NA	ɹ aɪ n t ə d	0.476		5	5.46			6.2	5.51
+ry'nt	Peripheral	NA		NA	ɹ aɪ n t	NA	aɪ->oʊ	Irregulars	roant	NA	ɹ oʊ n t	0.19		4.29	3.95			3.94	4.32
+ry'nt	Peripheral	NA		NA	ɹ aɪ n t	NA	aɪ->aʊ	Irregulars	rount	NA	ɹ aʊ n t	0.024		3.71	3.36			3.94	4.13
+shy'nt	Peripheral	NA		NA	ʃ aɪ n t	NA	regular	Regulars	shy'nted	NA	ʃ aɪ n t ə d	0.571		5.17	5.49			6.2	5.49
+shy'nt	Peripheral	NA		NA	ʃ aɪ n t	NA	aɪ->oʊ	Irregulars	shoant	NA	ʃ oʊ n t	0.071		3.83	3.58			3.94	4.23
+shy'nt	Peripheral	NA		NA	ʃ aɪ n t	NA	aɪ->aʊ	Irregulars	shount	NA	ʃ aʊ n t	0.024		3.39	3.14			3.94	4.02

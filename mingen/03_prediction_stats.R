@@ -16,7 +16,18 @@ confidence = function(hits, scope, alpha=0.55) {
 
 # # # # # # # # # #
 # English
-LANGUAGE = c('eng', 'eng2', 'eng3')[3]
+LANGUAGE = c('eng', 'eng2', 'eng3')[1]
+
+# Verify learned rules against vault
+frules = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_rules_scored.tsv')
+frules_vault = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_rules_out.tsv')
+rules = read_tsv(frules)
+rules_vault = read_tsv(frules_vault)
+nrow(rules) == nrow(rules_vault)
+rules_ = inner_join(rules, rules_vault, by = c('rule'='rule'))
+nrow(rules_) == nrow(rules_vault)
+
+# Wug-test statistics
 fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
 #fwug_dev = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
 fwug_tst = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_tst_predict.tsv')
@@ -68,10 +79,10 @@ wug_tst %>%
 
 # Albright-Hayes lexical data and wugs
 #lex_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_CELEXFull.tsv')
-lex_ah03 = read_tsv('~/Downloads/AlbrightHayes2003_CELEXFull.tsv')
+lex_ah03 = read_tsv('~/Code/Python/mingen/albrighthayes2003/AlbrightHayes2003_CELEXFull.tsv', comment='#')
 
 #dat_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
-dat_ah03 = read_tsv('~/Downloads/AlbrightHayes2003_Wug.tsv', comment='#')
+dat_ah03 = read_tsv('~/Code/Python/mingen/albrighthayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
 
 wug_ah03 = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_albrighthayes_predict.tsv'))
 
@@ -132,8 +143,25 @@ view(tmp)
 # # # # # # # # # #
 # German, Dutch
 for (LANGUAGE in c('deu', 'nld')) {
+LANGUAGE='nld'
+TAG = ifelse(LANGUAGE == 'deu', 'V.PTCP;PST',
+      ifelse(LANGUAGE == 'nld', 'V;PST;PL',
+      '???'))
 
-fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
+# Verify learned rules against vault
+frules = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_rules_scored.tsv')
+frules_vault = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_rules_scored.tsv')
+rules = read_tsv(frules)
+rules_vault = read_tsv(frules_vault)
+nrow(rules) == nrow(rules_vault)
+rules_ = inner_join(rules, rules_vault, by=c('rule'='rule'))
+nrow(rules_) == nrow(rules_vault)
+all(rules_$hits.x == rules_$hits.y)
+all(rules_$scope.y == rules_$scope.y)
+
+# Wug-test statistics
+#fwug_dev = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_dev_predict.tsv')
+fwug_dev = str_glue('~/Code/Python/mingen/sigmorphon2021_vault/data/{LANGUAGE}_wug_dev_predict.tsv')
 fwug_tst = str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_tst_predict.tsv')
 fwug_tst_predict = 
     str_glue('~/Code/Python/mingen/predict/mingen0_{LANGUAGE}_tst.tsv')
@@ -143,9 +171,9 @@ wug_tst = read_tsv(fwug_tst)
 wug_dev %>%
     mutate(lemma = wordform1) %>%
     mutate(form = wordform2) %>%
-    mutate(tag = 'V.PTCP;PST') %>%
+    mutate(tag = TAG) %>%
     mutate(human_rating = human_rating/7) %>%
-	mutate(model_rating = tidyr::replace_na(model_rating, 0)) %>%
+	mutate(model_rating = tidyr::replace_na(model_rating, replace=0)) %>%
     identity() ->
     wug_dev
 
@@ -162,8 +190,8 @@ print(AIC(fit_model))
 wug_tst %>%
     mutate(lemma = wordform1) %>%
     mutate(form = wordform2) %>%
-    mutate(tag = 'V.PTCP;PST') %>%
-    mutate(model_rating = tidyr::replace_na(model_rating, 0)) %>%
+    mutate(tag = TAG) %>%
+    mutate(model_rating = tidyr::replace_na(model_rating, replace=0)) %>%
     identity() ->
     wug_tst
 
