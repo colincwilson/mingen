@@ -9,15 +9,16 @@ from rules import *
 
 ScoredRule = namedtuple('ScoredRule', ['R', 'score', 'length', 'idx'])
 
-def prune_rules(rules, rule_score='confidence', digits=10):
+
+def prune_rules(rules, score_type='confidence', digits=10):
     print('Prune ...')
-    rules = rules.sort_values(by=rule_score, ascending=False)
+    rules = rules.sort_values(by=score_type, ascending=False)
     R_all = [ScoredRule(FtrRule.from_str(R),
                         np.round(score, digits),
                         len(R),
                         idx) \
         for (R, score, idx) \
-            in zip(rules['rule'], rules[rule_score], rules['rule_idx'])]
+            in zip(rules['rule'], rules[score_type], rules['rule_idx'])]
 
     i = 0
     pruned = []  # Non-maximal rules
@@ -44,7 +45,7 @@ def prune_rules(rules, rule_score='confidence', digits=10):
     # Keep rules that are maximal wrt rule_cmp
     idx_pruned = [R.idx for R in pruned]
     rules_max = rules[~(rules['rule_idx'].isin(idx_pruned))]
-    rules_max = rules_max.sort_values(by=rule_score, ascending=False)
+    rules_max = rules_max.sort_values(by=score_type, ascending=False)
     return rules_max
 
 
@@ -132,6 +133,12 @@ def context_mgt(Z1, Z2, direction='LR->'):
 
 
 def test():
-    rule1 = ScoredRule(FtrRule.from_str("∅ -> d / X [-spread.gl] [-C/V, +syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, -CORONAL, -lateral, +DORSAL, -high, -low, +front, -back, -tense] [+C/V, -syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, +CORONAL, -anterior, +distributed, -strident, -lateral, -DORSAL] __ [-begin/end]"), 0.9978736, -1, 1)
-    rule2 = ScoredRule(FtrRule.from_str("∅ -> d / X [-spread.gl, -lateral] [-C/V, +syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, -CORONAL, -lateral, +DORSAL, -high, -low, +front, -back, -tense] [+C/V, -syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, +CORONAL, -anterior, +distributed, -strident, -lateral, -DORSAL] __ [-begin/end]"), 0.9978424, -1, 2)
+    rule1 = ScoredRule(
+        FtrRule.from_str(
+            "∅ -> d / X [-spread.gl] [-C/V, +syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, -CORONAL, -lateral, +DORSAL, -high, -low, +front, -back, -tense] [+C/V, -syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, +CORONAL, -anterior, +distributed, -strident, -lateral, -DORSAL] __ [-begin/end]"
+        ), 0.9978736, -1, 1)
+    rule2 = ScoredRule(
+        FtrRule.from_str(
+            "∅ -> d / X [-spread.gl, -lateral] [-C/V, +syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, -CORONAL, -lateral, +DORSAL, -high, -low, +front, -back, -tense] [+C/V, -syllabic, -consonantal, +sonorant, +continuant, +approximant, -nasal, +voice, -spread.gl, -LABIAL, -round, -labiodental, +CORONAL, -anterior, +distributed, -strident, -lateral, -DORSAL] __ [-begin/end]"
+        ), 0.9978424, -1, 2)
     print(rule_cmp(rule1, rule2))

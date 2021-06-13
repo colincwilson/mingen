@@ -1,0 +1,132 @@
+stem	output	model_rating	rule_idx	wordform1	wordform2	morphosyn	human_rating
+⋊ b a ɪ z ⋉	⋊ b a ɪ z d ⋉	0.9973102191816628	17205.0	b aɪ z	b aɪ z d	V;PST;1;SG	5.304348
+⋊ b a ɪ z ⋉	⋊ b o z ⋉	0.2011652815704282	30286.0	b aɪ z	b oʊ z	V;PST;1;SG	4.565217
+⋊ b l e f ⋉	⋊ b l e f t ⋉	0.9912008791486236	584.0	b l eɪ f	b l eɪ f t	V;PST;1;SG	6.318182
+⋊ b l e f ⋉	⋊ b l ɛ f t ⋉			b l eɪ f	b l ɛ f t	V;PST;1;SG	4.090909
+⋊ b l ɪ g ⋉	⋊ b l ɪ g d ⋉	0.987178994844546	14956.0	b l ɪ g	b l ɪ g d	V;PST;1;SG	5.666667
+⋊ b l ɪ g ⋉	⋊ b l ʌ g ⋉	0.2473686413648145	30355.0	b l ɪ g	b l ʌ g	V;PST;1;SG	4.166667
+⋊ b ɹ ɛ d ʒ ⋉	⋊ b ɹ ɛ d ʒ d ⋉	0.9960722812678434	20098.0	b ɹ ɛ dʒ	b ɹ ɛ dʒ d	V;PST;1;SG	6.333333
+⋊ b ɹ ɛ d ʒ ⋉	⋊ b ɹ o d ʒ ⋉			b ɹ ɛ dʒ	b ɹ oʊ dʒ	V;PST;1;SG	3.428571
+⋊ t ʃ e k ⋉	⋊ t ʃ e k t ⋉	0.9331266179600765	2801.0	tʃ eɪ k	tʃ eɪ k t	V;PST;1;SG	5.73913
+⋊ t ʃ e k ⋉	⋊ t ʃ ʊ k ⋉	0.7915953685536075	30449.0	tʃ eɪ k	tʃ ʊ k	V;PST;1;SG	5.043478
+⋊ t ʃ u l ⋉	⋊ t ʃ u l d ⋉	0.9858734644939257	12122.0	tʃ u l	tʃ u l d	V;PST;1;SG	6.125
+⋊ t ʃ u l ⋉	⋊ t ʃ o l ⋉			tʃ u l	tʃ oʊ l	V;PST;1;SG	3.708333
+⋊ d e p ⋉	⋊ d e p t ⋉	0.9944927010310411	1140.0	d eɪ p	d eɪ p t	V;PST;1;SG	6.25
+⋊ d e p ⋉	⋊ d ɑ p t ⋉			d eɪ p	d æ p t	V;PST;1;SG	4.0
+⋊ d a ɪ z ⋉	⋊ d a ɪ z d ⋉	0.9973102191816628	17205.0	d aɪ z	d aɪ z d	V;PST;1;SG	5.416667
+⋊ d a ɪ z ⋉	⋊ d o z ⋉	0.2011652815704282	30286.0	d aɪ z	d oʊ z	V;PST;1;SG	5.041667
+⋊ d ɹ a ɪ s ⋉	⋊ d ɹ a ɪ s t ⋉	0.9949729324634736	3390.0	d ɹ aɪ s	d ɹ aɪ s t	V;PST;1;SG	6.26087
+⋊ d ɹ a ɪ s ⋉	⋊ d ɹ o s ⋉	0.443014590250334	30174.0	d ɹ aɪ s	d ɹ oʊ s	V;PST;1;SG	4.478261
+⋊ d ɹ ɪ t ⋉	⋊ d ɹ ɪ t ɪ d ⋉	0.9815521515551252	22585.0	d ɹ ɪ t	d ɹ ɪ t ə d	V;PST;1;SG	4.956522
+⋊ d ɹ ɪ t ⋉	⋊ d ɹ ɪ t ⋉	0.1772689768911593	60.0	d ɹ ɪ t	d ɹ ɪ t	V;PST;1;SG	5.130435
+⋊ d ɹ ɪ t ⋉	⋊ d ɹ ɑ t ⋉			d ɹ ɪ t	d ɹ æ t	V;PST;1;SG	3.65
+⋊ f l i p ⋉	⋊ f l i p t ⋉	0.9691224762972384	2882.0	f l i p	f l i p t	V;PST;1;SG	5.0
+⋊ f l i p ⋉	⋊ f l ɛ p t ⋉	0.731278367963008	30537.0	f l i p	f l ɛ p t	V;PST;1;SG	6.086957
+⋊ f l ɪ d ʒ ⋉	⋊ f l ɪ d ʒ d ⋉	0.9960722812678434	20098.0	f l ɪ dʒ	f l ɪ dʒ d	V;PST;1;SG	6.208333
+⋊ f l ɪ d ʒ ⋉	⋊ f l ʌ d ʒ ⋉	0.0718490093463188	30433.0	f l ɪ dʒ	f l ʌ dʒ	V;PST;1;SG	4.875
+⋊ f ɹ o ⋉	⋊ f ɹ o d ⋉	0.9577286007035796	21572.0	f ɹ oʊ	f ɹ oʊ d	V;PST;1;SG	5.833333
+⋊ f ɹ o ⋉	⋊ f ɹ u ⋉	0.1880623121108921	30617.0	f ɹ oʊ	f ɹ u	V;PST;1;SG	4.333333
+⋊ g ɛ ɹ ⋉	⋊ g ɛ ɹ d ⋉	0.9673186981769776	21762.0	g ɛ ɹ	g ɛ ɹ d	V;PST;1;SG	6.565217
+⋊ g ɛ ɹ ⋉	⋊ g ɔ ɹ ⋉			g ɛ ɹ	g ɔ ɹ	V;PST;1;SG	3.391304
+⋊ g ɛ z ⋉	⋊ g ɛ z d ⋉	0.9898336119025448	17884.0	g ɛ z	g ɛ z d	V;PST;1;SG	6.608696
+⋊ g ɛ z ⋉	⋊ g a z ⋉			g ɛ z	g a z	V;PST;1;SG	2.521739
+⋊ g l i d ⋉	⋊ g l i d ɪ d ⋉	0.9257719907500608	24960.0	g l i d	g l i d ə d	V;PST;1;SG	4.217391
+⋊ g l i d ⋉	⋊ g l ɛ d ⋉	0.8818471272504359	30049.0	g l i d	g l ɛ d	V;PST;1;SG	6.0
+⋊ g l i d ⋉	⋊ g l i d ⋉	0.0580693167832255	96.0	g l i d	g l i d	V;PST;1;SG	4.09
+⋊ g l ɪ p ⋉	⋊ g l ɪ p t ⋉	0.993523548490934	1559.0	g l ɪ p	g l ɪ p t	V;PST;1;SG	5.954545
+⋊ g l ɪ p ⋉	⋊ g l ʌ p ⋉			g l ɪ p	g l ʌ p	V;PST;1;SG	3.454545
+⋊ g l ɪ t ⋉	⋊ g l ɪ t ɪ d ⋉	0.9549508981696708	29526.0	g l ɪ t	g l ɪ t ə d	V;PST;1;SG	5.0
+⋊ g l ɪ t ⋉	⋊ g l ɪ t ⋉	0.3664320682760081	65.0	g l ɪ t	g l ɪ t	V;PST;1;SG	5.208333
+⋊ g l ɪ t ⋉	⋊ g l ɑ t ⋉			g l ɪ t	g l æ t	V;PST;1;SG	3.75
+⋊ g u d ⋉	⋊ g u d ɪ d ⋉	0.9933778813531712	26520.0	g u d	g u d ə d	V;PST;1;SG	4.9
+⋊ g u d ⋉	⋊ g u d ⋉	0.026714142011704	15.0	g u d	g u d	V;PST;1;SG	5.55
+⋊ n e s ⋉	⋊ n e s t ⋉	0.9949729324634736	3390.0	n eɪ s	n eɪ s t	V;PST;1;SG	6.565217
+⋊ n e s ⋉	⋊ n o s ⋉			n eɪ s	n oʊ s	V;PST;1;SG	2.913043
+⋊ n o l d ⋉	⋊ n o l d ɪ d ⋉	0.9257719907500608	24960.0	n oʊ l d	n oʊ l d ə d	V;PST;1;SG	4.636364
+⋊ n o l d ⋉	⋊ n o l d ⋉	0.026714142011704	15.0	n oʊ l d	n oʊ l d	V;PST;1;SG	6.045455
+⋊ n o l d ⋉	⋊ n ɛ l d ⋉			n oʊ l d	n ɛ l d	V;PST;1;SG	5.14
+⋊ n ʌ ŋ ⋉	⋊ n ʌ ŋ d ⋉	0.953912335240325	18322.0	n ʌ ŋ	n ʌ ŋ d	V;PST;1;SG	5.368421
+⋊ n ʌ ŋ ⋉	⋊ n ɑ ŋ ⋉			n ʌ ŋ	n æ ŋ	V;PST;1;SG	4.315789
+⋊ p ɑ ŋ k ⋉	⋊ p ɑ ŋ k t ⋉	0.9789087453215534	218.0	p æ ŋ k	p æ ŋ k t	V;PST;1;SG	6.304348
+⋊ p ɑ ŋ k ⋉	⋊ p ʌ ŋ k ⋉			p æ ŋ k	p ʌ ŋ k	V;PST;1;SG	4.0
+⋊ p l ɪ m ⋉	⋊ p l ɪ m d ⋉	0.974706961343464	12962.0	p l ɪ m	p l ɪ m d	V;PST;1;SG	6.130435
+⋊ p l ɪ m ⋉	⋊ p l ʌ m ⋉			p l ɪ m	p l ʌ m	V;PST;1;SG	4.173913
+⋊ p l ɪ m ⋉	⋊ p l ɑ m ⋉			p l ɪ m	p l æ m	V;PST;1;SG	3.57
+⋊ p ɹ i k ⋉	⋊ p ɹ i k t ⋉	0.9505677122585596	3812.0	p ɹ i k	p ɹ i k t	V;PST;1;SG	5.833333
+⋊ p ɹ i k ⋉	⋊ p ɹ o k ⋉	0.0349390555255629	30496.0	p ɹ i k	p ɹ oʊ k	V;PST;1;SG	3.916667
+⋊ p ɹ i k ⋉	⋊ p ɹ ɛ k ⋉			p ɹ i k	p ɹ ɛ k	V;PST;1;SG	3.54
+⋊ k w i d ⋉	⋊ k w i d ɪ d ⋉	0.9257719907500608	24960.0	k w i d	k w i d ə d	V;PST;1;SG	4.652174
+⋊ k w i d ⋉	⋊ k w ɛ d ⋉			k w i d	k w ɛ d	V;PST;1;SG	5.347826
+⋊ ɹ ɑ s k ⋉	⋊ ɹ ɑ s k t ⋉	0.9671336001971432	626.0	ɹ æ s k	ɹ æ s k t	V;PST;1;SG	6.416667
+⋊ ɹ ɑ s k ⋉	⋊ ɹ ʌ s k ⋉			ɹ æ s k	ɹ ʌ s k	V;PST;1;SG	4.083333
+⋊ ɹ a ɪ f ⋉	⋊ ɹ a ɪ f t ⋉	0.9912008791486236	584.0	ɹ aɪ f	ɹ aɪ f t	V;PST;1;SG	5.952381
+⋊ ɹ a ɪ f ⋉	⋊ ɹ o f ⋉	0.1810841587377534	30198.0	ɹ aɪ f	ɹ oʊ f	V;PST;1;SG	4.142857
+⋊ ɹ a ɪ f ⋉	⋊ ɹ ɪ f ⋉			ɹ aɪ f	ɹ ɪ f	V;PST;1;SG	3.24
+⋊ ʃ ɪ l k ⋉	⋊ ʃ ɪ l k t ⋉	0.9671336001971432	626.0	ʃ ɪ l k	ʃ ɪ l k t	V;PST;1;SG	5.791667
+⋊ ʃ ɪ l k ⋉	⋊ ʃ ɑ l k ⋉			ʃ ɪ l k	ʃ æ l k	V;PST;1;SG	3.666667
+⋊ s k ɹ a ɪ d ⋉	⋊ s k ɹ a ɪ d ɪ d ⋉	0.9257719907500608	24960.0	s k ɹ aɪ d	s k ɹ aɪ d ə d	V;PST;1;SG	4.173913
+⋊ s k ɹ a ɪ d ⋉	⋊ s k ɹ o d ⋉	0.7635729812512861	30289.0	s k ɹ aɪ d	s k ɹ oʊ d	V;PST;1;SG	4.391304
+⋊ s k ɹ a ɪ d ⋉	⋊ s k ɹ ɪ d ⋉	0.1638904323819081	30673.0	s k ɹ aɪ d	s k ɹ ɪ d	V;PST;1;SG	3.57
+⋊ s p ɑ k ⋉	⋊ s p ɑ k t ⋉	0.9941652806521756	649.0	s p æ k	s p æ k t	V;PST;1;SG	6.217391
+⋊ s p ɑ k ⋉	⋊ s p ʌ k ⋉			s p æ k	s p ʌ k	V;PST;1;SG	3.956522
+⋊ s p l ɪ ŋ ⋉	⋊ s p l ɪ ŋ d ⋉	0.953912335240325	18322.0	s p l ɪ ŋ	s p l ɪ ŋ d	V;PST;1;SG	4.363636
+⋊ s p l ɪ ŋ ⋉	⋊ s p l ʌ ŋ ⋉	0.6687014205844588	30354.0	s p l ɪ ŋ	s p l ʌ ŋ	V;PST;1;SG	5.454545
+⋊ s p l ɪ ŋ ⋉	⋊ s p l ɑ ŋ ⋉			s p l ɪ ŋ	s p l æ ŋ	V;PST;1;SG	4.5
+⋊ s t ɪ n ⋉	⋊ s t ɪ n d ⋉	0.9632470811767508	9961.0	s t ɪ n	s t ɪ n d	V;PST;1;SG	5.304348
+⋊ s t ɪ n ⋉	⋊ s t ʌ n ⋉	0.0745973184148459	30434.0	s t ɪ n	s t ʌ n	V;PST;1;SG	4.782609
+⋊ s t ɪ n ⋉	⋊ s t ɑ n ⋉			s t ɪ n	s t æ n	V;PST;1;SG	2.74
+⋊ s t ɪ p ⋉	⋊ s t ɪ p t ⋉	0.993523548490934	1559.0	s t ɪ p	s t ɪ p t	V;PST;1;SG	5.916667
+⋊ s t ɪ p ⋉	⋊ s t ʌ p ⋉			s t ɪ p	s t ʌ p	V;PST;1;SG	4.5
+⋊ s t a ɪ ɹ ⋉	⋊ s t a ɪ ɹ d ⋉	0.9673186981769776	21762.0	s t aɪ ɹ	s t aɪ ɹ d	V;PST;1;SG	6.0
+⋊ s t a ɪ ɹ ⋉	⋊ s t o ɹ ⋉			s t aɪ ɹ	s t oʊ ɹ	V;PST;1;SG	3.217391
+⋊ t a ɹ k ⋉	⋊ t a ɹ k t ⋉	0.9331266179600765	2801.0	t a ɹ k	t a ɹ k t	V;PST;1;SG	6.333333
+⋊ t a ɹ k ⋉	⋊ t ɔ ɹ k ⋉			t a ɹ k	t ɔ ɹ k	V;PST;1;SG	3.708333
+⋊ t i p ⋉	⋊ t i p t ⋉	0.9691224762972384	2882.0	t i p	t i p t	V;PST;1;SG	5.913043
+⋊ t i p ⋉	⋊ t ɛ p t ⋉	0.5496962555457319	30548.0	t i p	t ɛ p t	V;PST;1;SG	4.695652
+⋊ t ɛ ʃ ⋉	⋊ t ɛ ʃ t ⋉	0.9953236820860686	1678.0	t ɛ ʃ	t ɛ ʃ t	V;PST;1;SG	6.217391
+⋊ t ɛ ʃ ⋉	⋊ t a ʃ ⋉			t ɛ ʃ	t a ʃ	V;PST;1;SG	3.130435
+⋊ t ɹ ɪ s k ⋉	⋊ t ɹ ɪ s k t ⋉	0.9671336001971432	626.0	t ɹ ɪ s k	t ɹ ɪ s k t	V;PST;1;SG	6.285714
+⋊ t ɹ ɪ s k ⋉	⋊ t ɹ ɑ s k ⋉			t ɹ ɪ s k	t ɹ æ s k	V;PST;1;SG	3.761905
+⋊ t ɹ ɪ s k ⋉	⋊ t ɹ ʌ s k ⋉			t ɹ ɪ s k	t ɹ ʌ s k	V;PST;1;SG	3.62
+⋊ t ʌ ŋ k ⋉	⋊ t ʌ ŋ k t ⋉	0.9789087453215534	218.0	t ʌ ŋ k	t ʌ ŋ k t	V;PST;1;SG	5.666667
+⋊ t ʌ ŋ k ⋉	⋊ t ɑ ŋ k ⋉			t ʌ ŋ k	t æ ŋ k	V;PST;1;SG	3.916667
+⋊ w ɪ s ⋉	⋊ w ɪ s t ⋉	0.9949729324634736	3390.0	w ɪ s	w ɪ s t	V;PST;1;SG	6.565217
+⋊ w ɪ s ⋉	⋊ w ʌ s ⋉			w ɪ s	w ʌ s	V;PST;1;SG	3.347826
+⋊ g ɹ ɛ l ⋉	⋊ g ɹ ɛ l d ⋉	0.9708373066704508	8355.0	g ɹ ɛ l	g ɹ ɛ l d	V;PST;1;SG	5.86
+⋊ g ɹ ɛ l ⋉	⋊ g ɹ ɛ l t ⋉	0.3331329127081967	3439.0	g ɹ ɛ l	g ɹ ɛ l t	V;PST;1;SG	4.9
+⋊ m ɛ ɹ n ⋉	⋊ m ɛ ɹ n d ⋉	0.9954676551027588	12950.0	m ɚ n	m ɚ n d	V;PST;1;SG	6.57
+⋊ m ɛ ɹ n ⋉	⋊ m ɛ ɹ n t ⋉	0.2567334819542241	1289.0	m ɚ n	m ɚ n t	V;PST;1;SG	4.74
+⋊ s k ɔ ɪ l ⋉	⋊ s k ɔ ɪ l d ⋉	0.9708373066704508	8355.0	s k ɔɪ l	s k ɔɪ l d	V;PST;1;SG	6.45
+⋊ s k ɔ ɪ l ⋉	⋊ s k ɔ ɪ l t ⋉	0.3331329127081967	3439.0	s k ɔɪ l	s k ɔɪ l t	V;PST;1;SG	5.15
+⋊ ʃ ɛ ɹ n ⋉	⋊ ʃ ɛ ɹ n d ⋉	0.9954676551027588	12950.0	ʃ ɚ n	ʃ ɚ n d	V;PST;1;SG	6.57
+⋊ ʃ ɛ ɹ n ⋉	⋊ ʃ ɛ ɹ n t ⋉	0.2567334819542241	1289.0	ʃ ɚ n	ʃ ɚ n t	V;PST;1;SG	4.22
+⋊ s k ɛ l ⋉	⋊ s k ɛ l d ⋉	0.9708373066704508	8355.0	s k ɛ l	s k ɛ l d	V;PST;1;SG	6.05
+⋊ s k ɛ l ⋉	⋊ s k ɛ l t ⋉	0.3331329127081967	3439.0	s k ɛ l	s k ɛ l t	V;PST;1;SG	5.32
+⋊ s n ɛ l ⋉	⋊ s n ɛ l d ⋉	0.9708373066704508	8355.0	s n ɛ l	s n ɛ l d	V;PST;1;SG	6.17
+⋊ s n ɛ l ⋉	⋊ s n ɛ l t ⋉	0.3331329127081967	3439.0	s n ɛ l	s n ɛ l t	V;PST;1;SG	5.3
+⋊ s n ɛ l ⋉	⋊ s n o l d ⋉			s n ɛ l	s n oʊ l d	V;PST;1;SG	2.83
+⋊ s k w ɪ l ⋉	⋊ s k w ɪ l d ⋉	0.9708373066704508	8355.0	s k w ɪ l	s k w ɪ l d	V;PST;1;SG	5.92
+⋊ s k w ɪ l ⋉	⋊ s k w ɪ l t ⋉	0.3331329127081967	3439.0	s k w ɪ l	s k w ɪ l t	V;PST;1;SG	5.21
+⋊ k a ɪ v ⋉	⋊ k a ɪ v d ⋉	0.9573423708051144	15357.0	k aɪ v	k aɪ v d	V;PST;1;SG	6.0
+⋊ k a ɪ v ⋉	⋊ k e v ⋉			k aɪ v	k eɪ v	V;PST;1;SG	4.41
+⋊ l ʌ m ⋉	⋊ l ʌ m d ⋉	0.974706961343464	12962.0	l ʌ m	l ʌ m d	V;PST;1;SG	6.35
+⋊ l ʌ m ⋉	⋊ l e m ⋉			l ʌ m	l eɪ m	V;PST;1;SG	2.87
+⋊ p ʌ m ⋉	⋊ p ʌ m d ⋉	0.974706961343464	12962.0	p ʌ m	p ʌ m d	V;PST;1;SG	6.17
+⋊ p ʌ m ⋉	⋊ p e m ⋉			p ʌ m	p eɪ m	V;PST;1;SG	2.71
+⋊ ʃ i ⋉	⋊ ʃ i d ⋉	0.9673186981769776	21762.0	ʃ i	ʃ i d	V;PST;1;SG	6.17
+⋊ ʃ i ⋉	⋊ ʃ ɔ ⋉			ʃ i	ʃ ɔ	V;PST;1;SG	3.25
+⋊ z e ⋉	⋊ z e d ⋉	0.9789087453215534	19737.0	z eɪ	z eɪ d	V;PST;1;SG	6.39
+⋊ z e ⋉	⋊ z ɛ d ⋉			z eɪ	z ɛ d	V;PST;1;SG	4.39
+⋊ t ʃ a ɪ n d ⋉	⋊ t ʃ a ɪ n d ɪ d ⋉	0.9257719907500608	24960.0	tʃ aɪ n d	tʃ aɪ n d ə d	V;PST;1;SG	3.89
+⋊ t ʃ a ɪ n d ⋉	⋊ t ʃ a ʊ n d ⋉	0.8478608772434439	30337.0	tʃ aɪ n d	tʃ aʊ n d	V;PST;1;SG	4.05
+⋊ f l ɛ t ⋉	⋊ f l ɛ t ɪ d ⋉	0.9738392242062638	24242.0	f l ɛ t	f l ɛ t ə d	V;PST;1;SG	4.5
+⋊ f l ɛ t ⋉	⋊ f l ɛ t ⋉	0.8621476497621283	31.0	f l ɛ t	f l ɛ t	V;PST;1;SG	5.65
+⋊ g ɹ a ɪ n t ⋉	⋊ g ɹ a ɪ n t ɪ d ⋉	0.9941652806521756	26675.0	g ɹ aɪ n t	g ɹ aɪ n t ə d	V;PST;1;SG	5.26
+⋊ g ɹ a ɪ n t ⋉	⋊ g ɹ o n t ⋉			g ɹ aɪ n t	g ɹ oʊ n t	V;PST;1;SG	4.17
+⋊ g ɹ a ɪ n t ⋉	⋊ g ɹ a ʊ n t ⋉			g ɹ aɪ n t	g ɹ aʊ n t	V;PST;1;SG	3.83
+⋊ ɹ a ɪ n t ⋉	⋊ ɹ a ɪ n t ɪ d ⋉	0.9941652806521756	26675.0	ɹ aɪ n t	ɹ aɪ n t ə d	V;PST;1;SG	5.0
+⋊ ɹ a ɪ n t ⋉	⋊ ɹ o n t ⋉			ɹ aɪ n t	ɹ oʊ n t	V;PST;1;SG	4.29
+⋊ ɹ a ɪ n t ⋉	⋊ ɹ a ʊ n t ⋉			ɹ aɪ n t	ɹ aʊ n t	V;PST;1;SG	3.71
+⋊ ʃ a ɪ n t ⋉	⋊ ʃ a ɪ n t ɪ d ⋉	0.9941652806521756	26675.0	ʃ aɪ n t	ʃ aɪ n t ə d	V;PST;1;SG	5.17
+⋊ ʃ a ɪ n t ⋉	⋊ ʃ o n t ⋉			ʃ aɪ n t	ʃ oʊ n t	V;PST;1;SG	3.83
+⋊ ʃ a ɪ n t ⋉	⋊ ʃ a ʊ n t ⋉			ʃ aɪ n t	ʃ aʊ n t	V;PST;1;SG	3.39
