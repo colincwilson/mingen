@@ -1,88 +1,127 @@
 # -*- coding: utf-8 -*-
 
 import re, sys
-import edlib
+import pandas as pd
+#import edlib
 import config
 from rules import *
+import pynini_util
 
 
-def generate(rules):
-    # Rules that make target change
-    #change = 'ɪ -> ɑ'
-    change = 'i -> ɛ'
-    focus, outcome = change.split(' -> ')
-    rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
-    Rs = [FtrRule.from_str(R) for R in rules['rule']]
-    Rs = [R.regexes() for R in Rs]
-    print(f'{len(rules)} rules')
+def generate_wugs(rules):
+    # Symbol environment
+    syms = [x for x in config.seg2ftrs]
+    sigstar, symtable = pynini_util.sigstar(syms)
 
     # Monosyllabic items in training data
     vowels = '[ɑaʌɔoəeɛuʊiɪ]'
-    monosyll_regex = '⋊ ([^ɑaʌɔoəeɛuʊiɪ]+ )([ɑaʌɔoəeɛuʊiɪ] )+([^ɑaʌɔoəeɛuʊiɪ]+ )*⋉'
+    monosyll_regex = \
+        '⋊ ([^ɑaʌɔoəeɛuʊiɪ]+ )([ɑaʌɔoəeɛuʊiɪ] )+([^ɑaʌɔoəeɛuʊiɪ]+ )*⋉'
     lex = config.dat_train
     monosyll = lex[(lex['stem'].str.match(monosyll_regex))]
+    print(f'{len(monosyll)} monosyllables')
 
-    # Attested pre-V and post-V strings in monosyllables
-    prefixes = [re.sub('[ɑaʌɔoəeɛuʊiɪ].*$', '', x) for x in monosyll['stem']]
-    suffixes = [re.sub('^.*[ɑaʌɔoəeɛuʊiɪ]', '', x) for x in monosyll['stem']]
-    prefixes = [p.strip() for p in prefixes]
-    suffixes = [s.strip() for s in suffixes]
-    #print(f'{len(monosyll)} seed lexical items')
-    #print(prefixes)
+    # Attested onsets and rimes of monosyllables
+    onsets = [re.sub('[ɑaʌɔoəeɛuʊiɪ].*', '', x) for x in monosyll['stem']]
+    rimes = [re.sub('.+([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) for x in monosyll['stem']]
+    onsets = set([x.strip() for x in onsets])
+    rimes = set([x.strip() for x in rimes])
+    onset_fst = pynini_util.union( \
+        pynini_util.accep([x for x in onsets], symtable))
+    rime_fst = pynini_util.union( \
+        pynini_util.accep([x for x in rimes], symtable))
+    phonotactics = onset_fst + rime_fst
+    phonotactics = phonotactics.minimize(allow_nondet=True)
+    print(f'{len(onsets)} onsets')
+    print(f'{len(rimes)} rimes')
 
-    # Attested pre-V strings that match at least one left-hand context,
-    # attested post-V strings that match at least one right-hand context
-    prefixes_in = []
-    suffixes_in = []
-    for i in range(len(prefixes)):
-        p = prefixes[i]
-        s = suffixes[i]
-        prefix_in = False
-        suffix_in = False
-        for R in Rs:
+    # Irregular rules
+    #change = 'ɪ -> ɑ'
+    change = 'i -> ɛ'
+    #change = 'i p -> ɛ p t'
+    A, B = change.split(' -> ')  # xxx handle zeros
+    rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
+    rules = rules \
+            .sort_values('confidence', ascending=False) \
+            .reset_index(drop = True)
+    Rs = [FtrRule.from_str(R) for R in rules['rule']]
+    Rs = [R.regexes() for R in Rs]
+    print(f'change: {change}')
+    print(f'{len(rules)} rules')
+
+    # Real stems within scope of rules
+    stems_A = monosyll[(monosyll['stem'].str.contains(A))] \
+            .reset_index(drop=True)
+    stems_apply = []
+    for i, stem in enumerate(stems_A['stem']):
+        outpt = stems_A['output'][i]
+        for j, R in enumerate(Rs):
             A, B, C, D = R
-            #print(C, D)
-            if not prefix_in and re.search(C + '$', p):
-                prefixes_in.append(p)
-                prefix_in = True
-            if not suffix_in and re.search('^' + D, s):
-                suffixes_in.append(s)
-                suffix_in = True
-            if prefix_in and suffix_in:
-                break
-    #print(len(prefixes_in))
-    #print(len(suffixes_in))
+            CAD = [Z for Z in [C, A, D] if Z != '']
+            CAD = ' '.join(CAD)
+            if not re.search(CAD, stem):
+                continue
+            #stems_in_scope.append((stem, rules['confidence'][j]))
+            val = pynini_util.rewrites(R, stem, outpt, sigstar, symtable)
+            val = {
+                'stem': stem,
+                'output': outpt,
+                'model_rating': rules['confidence'][j]
+            } | val
+            stems_apply.append(val)
+            #print(val)
+            break
+    stems_apply = pd.DataFrame(stems_apply)
+    stems_apply = stems_apply[(stems_apply['rewrites'] == 1)] \
+                  .sort_values('model_rating', ascending=False) \
+                  .reset_index(drop=True)
+    print(f'{len(stems_apply)} existing stems:')
+    print(stems_apply)
 
-    # Attested pre-V strings that do not match any left-hand context,
-    # attested post-V strings that do not match any right-hand context
-    prefixes_in = set(prefixes_in)
-    suffixes_in = set(suffixes_in)
-    prefixes_out = set(prefixes) - prefixes_in
-    suffixes_out = set(suffixes) - suffixes_in
-    #print(prefixes_out, len(prefixes_out))
-    #print(suffixes_out, len(suffixes_out))
+    # Wug stems one-edit away from real stems
+    stem_fst = pynini_util.accep([stem for stem in stems_apply['stem']],
+                                 symtable)
+    stem_fst = pynini_util.union(stem_fst)
+    edit1_fst = pynini_util.edit1_fst(sigstar, symtable)
+    wug_fst = stem_fst @ edit1_fst
+    wug_fst = wug_fst @ phonotactics
+    wugs = pynini_util.output_paths(wug_fst, symtable)
+    wugs = set(wugs)
+    #wugs = [wug for wug in wugs if re.match(monosyll_regex, wug)]
 
-    # Potential wug items outside the scope of target rules, created by
-    # recombining attested pre-V + focus + post-V
-    wugs_prefix_out = [' '.join([p, focus, s]) \
-        for p in prefixes_out for s in suffixes_in]
-    wugs_suffix_out = [' '.join([p, focus, s]) \
-        for p in prefixes_in for s in suffixes_out]
-    #print(wugs1)
+    # Wug stems within/outside scope of rules
+    wugs_apply = []
+    wugs_A = [wug for wug in wugs if re.search(A, wug)]
+    for wug in wugs_A:
+        val = None
+        for j, R in enumerate(Rs):
+            A, B, C, D = R
+            CAD = [Z for Z in [C, A, D] if Z != '']
+            CAD = ' '.join(CAD)
+            if not re.search(CAD, wug):
+                continue
+            val = pynini_util.rewrites(R, wug, '', sigstar, symtable)
+            val = {
+                'stem': wug,
+                'output': None,
+                'model_rating': rules['confidence'][j]
+            } | val
+            break
+        if val is None:
+            val = {
+                'stem': wug,
+                'output': None,
+                'model_rating': 0,
+                'applies': 0,
+                'rewrites': 0
+            }
+        wugs_apply.append(val)
 
-    # Potential wug items that are one edit away from example
-    #ex = '⋊ s ɪ ŋ ⋉'
-    #ex = '⋊ ɹ ɪ ŋ ⋉'
-    #ex = '⋊ b ɹ ɪ ŋ ⋉'
-    #ex = '⋊ s p l ɪ ŋ ⋉'
-    #ex = '⋊ s w ɪ ŋ ⋉'
-    ex = '⋊ b l i d ⋉'
-    ex = ex.split(' ')
-    for wugs_out in [wugs_prefix_out, wugs_suffix_out]:
-        for wug in wugs_out:
-            wug = wug.split(' ')
-            d = edlib.align(ex, wug, task='distance')
-            d = d['editDistance']
-            if d < 2:
-                print(' '.join(ex), '\t', ' '.join(wug), '\t', d)
-        print('-----')
+    wugs_apply = pd.DataFrame(wugs_apply)
+    wugs_apply = wugs_apply[~(wugs_apply.stem.isin(lex['stem']))] \
+                 .reset_index(drop = True)
+    print('wug hits:')
+    print(wugs_apply[(wugs_apply['applies'] == 1)] \
+          .sort_values('model_rating', ascending=False))
+    print('wug near-misses:')
+    print(wugs_apply[(wugs_apply['applies'] != 1)])

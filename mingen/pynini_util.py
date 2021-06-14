@@ -4,6 +4,7 @@ import re
 import pynini
 from pynini import Arc, Fst, SymbolTable
 from pynini.lib import pynutil, rewrite
+from str_util import *
 
 # Create acceptors, unions, sigstar from symbol lists (cf. strings),
 # compile rules from mingen format and apply to symbol lists.
@@ -23,7 +24,7 @@ def sigstar(syms, markers=['⟨', '⟩']):
     (optional markers for loci of cdrewrite rule application)
     """
     symtable = SymbolTable()
-    symtable.add_symbol('<eps>')  # Epsilon has id 0
+    symtable.add_symbol(config.epsilon)  # Epsilon has id 0
     for sym in syms:
         symtable.add_symbol(sym)
     for sym in markers:
@@ -111,12 +112,12 @@ def compile_context(C, symtable):
 
 def compile_rule(A, B, C, D, sigstar, symtable):
     """
-    Compile cdrewrite rule from A -> B / C __D where A and B are space-separated strings, C and D are segment regexs in (seg1|seg2|...) format
+    Compile cdrewrite rule from A -> B / C __D where A and B are space-separated strings, C and D are segment regexs (seg1|seg2|...)
     """
     # Use explicit epsilon for deletion rules, instead of pynutil.delete(),
     # and mark rewrite loci (for checking whether rule applies to input)
     if B == '∅':
-        B = '<eps>'
+        B = config.epsilon
     B = ' '.join(['⟨', B, '⟩'])
     # Insertion rule
     if A == "∅":
@@ -136,6 +137,66 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     return fst
 
 
+def rewrites(R, inpt, outpt, sigstar, symtable):
+    """
+    Does applying R to inpt result in outpt
+    """
+    (A, B, C, D) = R
+    R_fst = compile_rule(A, B, C, D, sigstar, symtable)
+    inpt_fst = accep(inpt, symtable)
+    pred_fst = inpt_fst @ R_fst
+
+    strpath_iter = pred_fst.paths(
+        input_token_type=symtable, output_token_type=symtable)
+    pred = [x for x in strpath_iter.ostrings()][0]  # xxx
+
+    if not re.search('⟨', pred):
+        return {'applies': 0, 'rewrites': 0}
+
+    pred = delete_markers(pred)
+    return {'applies': 1, 'rewrites': int(pred == outpt)}
+
+
+def edit1_fst(sigstar, symtable):
+    """ Map inputs to outputs one edit away """
+    M = Fst()
+
+    q0 = M.add_state()
+    q1 = M.add_state()
+    M.set_start(q0)
+    M.set_final(q1)
+    for sym1_id, sym1 in symtable:
+        if sym1 in [config.bos, config.eos] + []:
+            continue
+        for sym2_id, sym2 in symtable:
+            if sym2_id == sym1_id:
+                continue
+            if sym2 in [config.bos, config.eos]:
+                continue
+            M = M.add_arc(q0, Arc(sym1_id, sym2_id, 0, q1))
+    M = accep(config.bos, symtable) \
+        + sigstar + M + sigstar \
+        + accep(config.eos, symtable)
+    M = M.optimize()  #(allow_nondet=True)
+    M.set_input_symbols(symtable)
+    M.set_output_symbols(symtable)
+    return M
+
+
+def input_paths(M, symtable):
+    """ Input strings accepted by M """
+    strpath_iter = M.paths(
+        input_token_type=symtable, output_token_type=symtable)
+    return [x for x in strpath_iter.iostrings()]
+
+
+def output_paths(M, symtable):
+    """ Output strings accepted by M """
+    strpath_iter = M.paths(
+        input_token_type=symtable, output_token_type=symtable)
+    return [x for x in strpath_iter.ostrings()]
+
+
 def test():
     syms = ['aa', 'bb', 'cc', 'dd']
     sigstar_, symtable = sigstar(syms)
@@ -150,16 +211,16 @@ def test():
     input1 = accep('cc aa dd', symtable)
     output1 = (input1 @ rule1)
     print(output1.print(isymbols=symtable, osymbols=symtable))
-    strpath_iter = output1.paths(input_token_type=symtable,
-                                 output_token_type=symtable)
+    strpath_iter = output1.paths(
+        input_token_type=symtable, output_token_type=symtable)
     print([x for x in strpath_iter.ostrings()])
 
     # Rule aa -> ∅ / cc __ dd, apply to input
     rule2 = compile_rule('aa', '∅', 'cc', 'dd', sigstar_, symtable)
     output2 = (input1 @ rule2).project("output").rmepsilon()
     print(output2.print(isymbols=symtable, osymbols=symtable))
-    strpath_iter = output2.paths(input_token_type=symtable,
-                                 output_token_type=symtable)
+    strpath_iter = output2.paths(
+        input_token_type=symtable, output_token_type=symtable)
     print([x for x in strpath_iter.ostrings()])
 
 

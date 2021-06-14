@@ -180,7 +180,7 @@ def main():
         rules = pd.read_csv(
             Path('../data') / f'{LANGUAGE}_rules_pruned_{SCORE_TYPE}.tsv',
             sep='\t')
-        near_miss.generate(rules)
+        near_miss.generate_wugs(rules)
 
 
 if __name__ == "__main__":

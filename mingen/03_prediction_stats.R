@@ -16,7 +16,7 @@ confidence = function(hits, scope, alpha=0.55) {
 
 # # # # # # # # # #
 # English
-LANGUAGE = c('eng', 'eng2', 'eng3')[1]
+LANGUAGE = c('eng', 'eng2', 'eng3')[3]
 SCORE_TYPE = 'confidence'
 
 # Verify learned rules against vault
