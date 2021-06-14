@@ -85,7 +85,7 @@ def generate_wugs(rules):
     edit1_fst = pynini_util.edit1_fst(sigstar, symtable)
     wug_fst = stem_fst @ edit1_fst
     wug_fst = wug_fst @ phonotactics
-    wugs = pynini_util.output_paths(wug_fst, symtable)
+    wugs = pynini_util.ostrings(wug_fst, symtable)
     wugs = set(wugs)
     #wugs = [wug for wug in wugs if re.match(monosyll_regex, wug)]
 

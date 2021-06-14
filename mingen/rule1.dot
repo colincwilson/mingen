@@ -27,9 +27,9 @@ nodesep = "0.25";
 	2 -> 0 [label = "⟨:⟨", fontsize = 14];
 	2 -> 0 [label = "⟩:⟩", fontsize = 14];
 3 [label = "3", shape = circle, style = solid, fontsize = 14]
-	3 -> 4 [label = "<eps>:bb", fontsize = 14];
+	3 -> 4 [label = "ϵ:bb", fontsize = 14];
 4 [label = "4", shape = circle, style = solid, fontsize = 14]
-	4 -> 5 [label = "<eps>:⟩", fontsize = 14];
+	4 -> 5 [label = "ϵ:⟩", fontsize = 14];
 5 [label = "5", shape = circle, style = solid, fontsize = 14]
 	5 -> 0 [label = "dd:dd", fontsize = 14];
 }

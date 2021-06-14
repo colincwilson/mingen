@@ -5,6 +5,7 @@ import pynini
 from pynini import Arc, Fst, SymbolTable
 from pynini.lib import pynutil, rewrite
 from str_util import *
+import config
 
 # Create acceptors, unions, sigstar from symbol lists (cf. strings),
 # compile rules from mingen format and apply to symbol lists.
@@ -67,7 +68,7 @@ def accep_(x, symtable):
     fst.set_final(n)
     for i in range(n):
         iolabel = symtable.find(x[i])
-        fst = fst.add_arc(i, Arc(iolabel, iolabel, 0, i + 1))
+        fst.add_arc(i, Arc(iolabel, iolabel, 0, i + 1))
     return fst
 
 
@@ -159,12 +160,12 @@ def rewrites(R, inpt, outpt, sigstar, symtable):
 
 def edit1_fst(sigstar, symtable):
     """ Map inputs to outputs one edit away """
-    M = Fst()
+    fst = Fst()
 
-    q0 = M.add_state()
-    q1 = M.add_state()
-    M.set_start(q0)
-    M.set_final(q1)
+    q0 = fst.add_state()
+    q1 = fst.add_state()
+    fst.set_start(q0)
+    fst.set_final(q1)
     for sym1_id, sym1 in symtable:
         if sym1 in [config.bos, config.eos] + []:
             continue
@@ -173,31 +174,30 @@ def edit1_fst(sigstar, symtable):
                 continue
             if sym2 in [config.bos, config.eos]:
                 continue
-            M = M.add_arc(q0, Arc(sym1_id, sym2_id, 0, q1))
-    M = accep(config.bos, symtable) \
-        + sigstar + M + sigstar \
-        + accep(config.eos, symtable)
-    M = M.optimize()  #(allow_nondet=True)
-    M.set_input_symbols(symtable)
-    M.set_output_symbols(symtable)
-    return M
+            fst.add_arc(q0, Arc(sym1_id, sym2_id, 0, q1))
+    fst = accep(config.bos, symtable) \
+          + sigstar + fst + sigstar \
+          + accep(config.eos, symtable)
+    fst = fst.optimize()
+    fst.set_input_symbols(symtable)
+    fst.set_output_symbols(symtable)
+    return fst
 
 
-def input_paths(M, symtable):
-    """ Input strings accepted by M """
-    strpath_iter = M.paths(
-        input_token_type=symtable, output_token_type=symtable)
-    return [x for x in strpath_iter.iostrings()]
+def istrings(fst, symtable):
+    """ Input strings of paths through acyclic FST """
+    strpath_iter = fst.paths(input_token_type=symtable)
+    return [x for x in strpath_iter.istrings()]
 
 
-def output_paths(M, symtable):
-    """ Output strings accepted by M """
-    strpath_iter = M.paths(
-        input_token_type=symtable, output_token_type=symtable)
+def ostrings(fst, symtable):
+    """ Output strings of paths through acyclic FST """
+    strpath_iter = fst.paths(output_token_type=symtable)
     return [x for x in strpath_iter.ostrings()]
 
 
 def test():
+    config.epsilon = 'ϵ'
     syms = ['aa', 'bb', 'cc', 'dd']
     sigstar_, symtable = sigstar(syms)
 
@@ -211,17 +211,13 @@ def test():
     input1 = accep('cc aa dd', symtable)
     output1 = (input1 @ rule1)
     print(output1.print(isymbols=symtable, osymbols=symtable))
-    strpath_iter = output1.paths(
-        input_token_type=symtable, output_token_type=symtable)
-    print([x for x in strpath_iter.ostrings()])
+    print(ostrings(output1, symtable))
 
     # Rule aa -> ∅ / cc __ dd, apply to input
     rule2 = compile_rule('aa', '∅', 'cc', 'dd', sigstar_, symtable)
     output2 = (input1 @ rule2).project("output").rmepsilon()
     print(output2.print(isymbols=symtable, osymbols=symtable))
-    strpath_iter = output2.paths(
-        input_token_type=symtable, output_token_type=symtable)
-    print([x for x in strpath_iter.ostrings()])
+    print(ostrings(output2, symtable))
 
 
 if __name__ == "__main__":
