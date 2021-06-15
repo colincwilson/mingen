@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from features import unify_ftrs
+from features import common_ftrs
 from rules import FtrRule
 
 # TODO: phonology, cross-context, impugnment, etc.
@@ -117,7 +117,7 @@ def generalize_context(X1, X2, direction='LR->'):
     seg_ident_flag = True
     for i in range(n_max):
         # X (Sigma*) and terminate if have exceeded shorter context
-        # or have already unified features
+        # or have already gone beyond segment identity
         if (i >= n_min) or (not seg_ident_flag):
             Y.append('X')
             break
@@ -131,9 +131,9 @@ def generalize_context(X1, X2, direction='LR->'):
         if X1[i] == X2[i]:
             Y.append(X1[i])
             continue
-        # Unify features at first segment mismatch
-        ftrs, any_match = unify_ftrs(X1[i], X2[i])
-        if not any_match:
+        # Shared features at first segment mismatch
+        ftrs, any_common = common_ftrs(X1[i], X2[i])
+        if not any_common:
             Y.append('X')
             break
         Y.append(ftrs)

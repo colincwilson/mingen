@@ -34,16 +34,15 @@ def match_ftrs(F, seg):
     return True
 
 
-def unify_ftrs_(F1, F2):
+def shared_ftrs_(F1, F2):
     """
     Shared values of two feature matrices
     [Args: feature dicts]
     """
-    # Unify(Sigma*,F2) = unify(F1,Sigma*) = Sigma*
+    # f(Sigma*,F2) = f(F1,Sigma*) = Sigma*
     if (F1 == 'X') or (F2 == 'X'):
         return 'X'
     # Ordinary unification
-    # todo: built-in dictionary function?
     F = {}
     for (ftr, val) in F1.items():
         if (ftr in F2) and (F2[ftr] == val):
@@ -51,24 +50,26 @@ def unify_ftrs_(F1, F2):
     return F
 
 
-def unify_ftrs(F1, F2):
+def common_ftrs(F1, F2):
     """
-    Shared values of two feature matrices
+    Common values of two feature matrices
     [Args: feature vectors]
     """
+    # f(Sigma*,F2) = f(F1,Sigma*) = Sigma*
     if (F1 == 'X') or (F2 == 'X'):
         return 'X'
+    # Ordinary unification
     n = len(F1)
     F = ['0'] * n
-    any_match = False
+    any_common = False
     for i, F1_i in enumerate(F1):
         F2_i = F2[i]
         if (F1_i == '0') or (F2_i == '0'):
             continue
         if F1_i == F2_i:
             F[i] = F1_i
-            any_match = True
-    return tuple(F), any_match
+            any_common = True
+    return tuple(F), any_common
 
 
 #@lru_cache(maxsize=1024)
@@ -125,7 +126,7 @@ def ftrs2str1(F):
 
 def str2ftrs(x):
     """ String to sequence of feature matrices (inverse of ftrs2str) """
-    y = re.sub('X', '[X', x)  # Pseudo-matrix for Sigma*
+    y = re.sub('X', '[X', x)  # Sigma*
     y = y.split(' [')
     try:
         y = [str2ftrs1(yi) for yi in y]
@@ -139,8 +140,7 @@ def str2ftrs1(x):
     """ String to feature matrix (inverse of ftrs2str1) """
     y = re.sub('\\[', '', x)
     y = re.sub('\\]', '', y)
-    # X (Sigma*)
-    if y == 'X':
+    if y == 'X':  # Sigma*
         return 'X'
     # Ordinary feature matrix, non-zero specs only
     y = y.split(', ')
