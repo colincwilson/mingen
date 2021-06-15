@@ -84,8 +84,8 @@ class FtrRule():
         """
         A = rule.A
         B = rule.B
-        C = [config.seg2ftrs_[seg] for seg in rule.C]
-        D = [config.seg2ftrs_[seg] for seg in rule.D]
+        C = [config.sym2ftr_vec[sym] for sym in rule.C]
+        D = [config.sym2ftr_vec[sym] for sym in rule.D]
         return FtrRule(A, B, tuple(C), tuple(D))
 
     @classmethod

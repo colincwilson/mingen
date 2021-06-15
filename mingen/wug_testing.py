@@ -11,7 +11,7 @@ import pynini_util
 def rate_wugs(wugs, rules, score_type='confidence'):
     print('Wug test ...')
     # Symbol environment
-    syms = [x for x in config.seg2ftrs]
+    syms = [x for x in config.sym2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
 
     stems = [str(x) for x in wugs['stem']]
@@ -46,37 +46,24 @@ def rate_wugs(wugs, rules, score_type='confidence'):
         # Compile rule to FST
         rule_fst = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
 
-        for (wf1, wf2) in subdat:
-            # Apply rule to input
-            input1_fst = pynini_util.accep(wf1, symtable)
-            output1_fst = input1_fst @ rule_fst
-            strpath_iter = output1_fst.paths(
-                input_token_type=symtable, output_token_type=symtable)
-            output1 = [x for x in strpath_iter.ostrings()][0]  # xxx
-
-            # Check whether rule applied
-            if not re.search('⟨.*⟩', output1):
+        for (stem, output) in subdat:
+            rewrite_val = pynini_util.rewrites(rule_fst, stem, output, sigstar,
+                                               symtable)
+            if not rewrite_val['hit']:
                 continue
-
-            # Remove markers around locus of application
-            output1 = str_util.remove(output1, pynini_util.markers)
-
-            # Update only if exact match and better than previous score
-            if output1 != wf2:
-                continue
-            if (wf1, wf2) not in max_rating \
-                or score > max_rating[(wf1, wf2)]:
-                max_rating[(wf1, wf2)] = score
-                max_rule[(wf1, wf2)] = rule_
+            if (stem, output) not in max_rating \
+                or score > max_rating[(stem, output)]:
+                max_rating[(stem, output)] = score
+                max_rule[(stem, output)] = rule_
 
     # Results
     print()
     wug_ratings = []
-    for wf, rating in max_rating.items():
-        wf1, wf2 = wf
-        rule, score, rule_idx = max_rule[(wf1, wf2)]
-        print(wf1, wf2, rating)
+    for forms, rating in max_rating.items():
+        stem, output = forms
+        rule, score, rule_idx = max_rule[(stem, output)]
+        print(stem, output, rating)
         print(rule)
         print()
-        wug_ratings.append((wf1, wf2, rating, rule_idx))
+        wug_ratings.append((stem, output, rating, rule_idx))
     return wug_ratings

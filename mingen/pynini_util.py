@@ -140,24 +140,33 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     return fst
 
 
-def rewrites(rule, inpt, outpt, sigstar, symtable):
+def rewrites(rule, inpt, outpt, sigstar=None, symtable=None):
     """
-    Does applying rule to inpt result in outpt
+    Determines whether inpt is within scope of rule and 
+    if so whether application results in outpt
     """
-    (A, B, C, D) = rule
-    rule_fst = compile_rule(A, B, C, D, sigstar, symtable)
-    inpt_fst = accep(inpt, symtable)
-    pred_fst = inpt_fst @ rule_fst
+    if isinstance(rule, Fst):
+        rule_fst = rule
+    else:
+        (A, B, C, D) = rule
+        rule_fst = compile_rule(A, B, C, D, sigstar, symtable)
 
+    if isinstance(inpt, Fst):
+        inpt_fst = inpt
+    else:
+        inpt_fst = accep(inpt, symtable)
+
+    pred_fst = inpt_fst @ rule_fst
     strpath_iter = pred_fst.paths(
         input_token_type=symtable, output_token_type=symtable)
     pred = [x for x in strpath_iter.ostrings()][0]  # xxx
 
-    if not re.search('⟨', pred):
-        return {'applies': 0, 'rewrites': 0}
-
-    pred = str_util.remove(pred, markers)
-    return {'applies': 1, 'rewrites': int(pred == outpt)}
+    in_scope, hit = 0, 0
+    if re.search('⟨', pred):
+        in_scope = 1
+        pred = str_util.remove(pred, markers)
+        hit = int(pred == outpt)
+    return {'in_scope': in_scope, 'hit': hit}
 
 
 def edit1_fst(sigstar, symtable):

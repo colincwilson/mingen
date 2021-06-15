@@ -10,7 +10,7 @@ import pynini_util
 
 def generate_wugs(rules):
     # Symbol environment
-    syms = [x for x in config.seg2ftrs]
+    syms = [x for x in config.sym2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
 
     # Monosyllabic items in training data
@@ -36,8 +36,8 @@ def generate_wugs(rules):
     print(f'{len(rimes)} rimes')
 
     # Irregular rules
-    #change = 'ɪ -> ɑ'
-    change = 'i -> ɛ'
+    change = 'ɪ -> ɑ'
+    #change = 'i -> ɛ'
     #change = 'i p -> ɛ p t'
     A, B = change.split(' -> ')  # xxx handle zeros
     rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
@@ -71,7 +71,7 @@ def generate_wugs(rules):
             #print(val)
             break
     stems_apply = pd.DataFrame(stems_apply)
-    stems_apply = stems_apply[(stems_apply['rewrites'] == 1)] \
+    stems_apply = stems_apply[(stems_apply['hit'] == 1)] \
                   .sort_values('model_rating', ascending=False) \
                   .reset_index(drop=True)
     print(f'{len(stems_apply)} existing stems:')
@@ -92,35 +92,35 @@ def generate_wugs(rules):
     wugs_apply = []
     wugs_A = [wug for wug in wugs if re.search(A, wug)]
     for wug in wugs_A:
-        val = None
+        rewrite_val = None
         for j, rule in enumerate(R):
             A, B, C, D = rule
             CAD = [Z for Z in [C, A, D] if Z != '']
             CAD = ' '.join(CAD)
             if not re.search(CAD, wug):
                 continue
-            val = pynini_util.rewrites(rule, wug, '', sigstar, symtable)
-            val = {
+            rewrite_val = pynini_util.rewrites(rule, wug, '', sigstar, symtable)
+            rewrite_val = {
                 'stem': wug,
                 'output': None,
                 'model_rating': rules['confidence'][j]
-            } | val
+            } | rewrite_val
             break
-        if val is None:
-            val = {
+        if rewrite_val is None:
+            rewrite_val = {
                 'stem': wug,
                 'output': None,
                 'model_rating': 0,
-                'applies': 0,
-                'rewrites': 0
+                'in_scope': 0,
+                'hit': 0
             }
-        wugs_apply.append(val)
+        wugs_apply.append(rewrite_val)
 
     wugs_apply = pd.DataFrame(wugs_apply)
     wugs_apply = wugs_apply[~(wugs_apply.stem.isin(lex['stem']))] \
                  .reset_index(drop = True)
     print('wug hits:')
-    print(wugs_apply[(wugs_apply['applies'] == 1)] \
+    print(wugs_apply[(wugs_apply['in_scope'] == 1)] \
           .sort_values('model_rating', ascending=False))
     print('wug near-misses:')
-    print(wugs_apply[(wugs_apply['applies'] != 1)])
+    print(wugs_apply[(wugs_apply['in_scope'] == 0)])

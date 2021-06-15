@@ -201,29 +201,24 @@ print()
 #tensormorph.config.fdata = config.save_dir / f'{LANGUAGE}.ftr'
 #fm = tensormorph.phon_features.import_features('hayes_features.csv', segments)
 # Import features from file
-fm = ftr_config.import_features(
+feature_matrix = ftr_config.import_features(
     Path.home() / 'Code/Python/tensormorph_redup/ftrs/hayes_features.csv',
     segments)
 
 # Fix up features for mingen
-ftr_matrix = fm.ftr_matrix
+ftr_matrix = feature_matrix.ftr_matrix
 ftr_matrix = ftr_matrix.drop('sym', 1)  # Redundant with X (Sigma*)
-segs = [seg for seg in ftr_matrix.index]
-ftr_names = [x for x in ftr_matrix.columns.values]
-config.segs = segs
-config.phon_ftrs = phon_ftrs = ftr_matrix
-config.ftr_names = ftr_names = ftr_names
+config.phon_ftrs = ftr_matrix
+config.ftr_names = list(ftr_matrix.columns.values)
+config.syms = list(ftr_matrix.index)
 
-# Map from segments to feature-value dictionaries and feature vectors
-seg2ftrs = {}  # Feature-value dictionaries
-for i, seg in enumerate(segs):
-    ftrs = phon_ftrs.iloc[i, :].to_dict()
-    seg2ftrs[seg] = ftrs
-seg2ftrs_ = {}  # Vectorized feature matrices
-for seg, ftrs in seg2ftrs.items():
-    seg2ftrs_[seg] = tuple([val for key, val in ftrs.items()])
-config.seg2ftrs = seg2ftrs
-config.seg2ftrs_ = seg2ftrs_
+# Map from symbols to feature-value dictionaries and feature vectors
+config.sym2ftrs = {}
+config.sym2ftr_vec = {}
+for i, sym in enumerate(config.syms):
+    ftrs = config.phon_ftrs.iloc[i, :].to_dict()
+    config.sym2ftrs[sym] = ftrs
+    config.sym2ftr_vec[sym] = tuple(ftrs.values())
 
 # # # # # # # # # #
 # Save config

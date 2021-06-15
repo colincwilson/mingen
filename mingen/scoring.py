@@ -15,7 +15,7 @@ def score_rules(R):
     todo: apply simultaneously to all inputs encoded as trie?
     """
     # Symbol environment
-    syms = [x for x in config.seg2ftrs]
+    syms = [x for x in config.sym2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
 
     # Precompile inputs to FSTs
@@ -52,33 +52,15 @@ def score_rules(R):
         rule_fst = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
 
         # Loop over input/output pairs in data subset
-        hits = 0.0
-        scope = 0.0
-        for (wf1, wf2, stem_id) in subdat:
+        hits, scope = 0.0, 0.0
+        for (stem, output, stem_id) in subdat:
             #print(wf1, '->', wf2)
-            # Apply rule to input and yield first (xxx) output
-            input1_fst = stem_fsts[stem_id]
-            output1_fst = input1_fst @ rule_fst
-            strpath_iter = output1_fst.paths(
-                input_token_type=symtable, output_token_type=symtable)
-            output1 = [x for x in strpath_iter.ostrings()][0]  # xxx
-
-            # Check whether rule applied
-            if not re.search('⟨', output1):
-                continue
-
-            scope += 1.0
-
-            # Remove markers around locus of application
-            output1 = str_util.remove(output1, pynini_util.markers)
-
-            # Hit (exact match to output) or miss
-            if output1 == wf2:
+            stem_fst = stem_fsts[stem_id]
+            rewrite_val = pynini_util.rewrites(rule_fst, stem_fst, output)
+            if rewrite_val['in_scope']:
+                scope += 1.0
+            if rewrite_val['hit']:
                 hits += 1.0
-                #print(f'hit: {output1} == {wf2}')
-            else:
-                pass
-                #print(f'miss: {output1} != {wf2}')
 
         hits_all[idx] = hits
         scope_all[idx] = scope

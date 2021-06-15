@@ -7,34 +7,34 @@ import config
 from functools import lru_cache
 
 
-def match_ftrs_(F, seg):
+def match_ftrs_(F, sym):
     """
-    Subsumption relation between feature matrix and segment
-    [Args: feature dicts]
+    Subsumption relation between feature matrix and symbol
+    [feature dicts]
     """
-    seg_ftrs = config.seg2ftrs[seg]
+    ftrs = config.sym2ftrs[sym]
     for (ftr, val) in F.items():
-        if seg_ftrs[ftr] != val:
+        if ftrs[ftr] != val:
             return False
     return True
 
 
-def match_ftrs(F, seg):
+def match_ftrs(F, sym):
     """
-    Subsumption relation between feature matrix and segment
-    [Args: feature vectors]
+    Subsumption relation between feature matrix and symbol
+    [feature vectors]
     """
-    seg_ftrs = config.seg2ftrs_[seg]
-    n = len(seg_ftrs)
-    for i, F_i in enumerate(F):
-        if F_i == '0':
+    ftrs = config.sym2ftr_vec[sym]
+    n = len(ftrs)
+    for i, Fi in enumerate(F):
+        if Fi == '0':
             continue
-        if seg_ftrs[i] != F_i:
+        if ftrs[i] != Fi:
             return False
     return True
 
 
-def shared_ftrs_(F1, F2):
+def common_ftrs_(F1, F2):
     """
     Shared values of two feature matrices
     [Args: feature dicts]
@@ -83,29 +83,29 @@ def subsumes(F1, F2):
     if (F2 == 'X'):
         return False
     n = len(F1)
-    for i, F1_i in enumerate(F1):
-        if F1_i == '0':
+    for i, F1i in enumerate(F1):
+        if F1i == '0':
             continue
-        if F1_i != F2[i]:
+        if F1i != F2[i]:
             return False
     return True
 
 
 def ftrs2regex(F):
     """
-    Segment regex for sequence of feature matrices
+    Symbol regex for sequence of feature matrices
     Note: excludes X (Sigma*), which is assumed to appear only at edges of rule contexts and is always implicit at those positions in cdrewrite compilation
     """
     return ' '.join([ftrs2regex1(Fi) for Fi in F if Fi != 'X'])
 
 
 def ftrs2regex1(F):
-    """ Segment regex for single feature matrix """
+    """ Symbol regex for single feature matrix """
     if F == 'X':
         return 'X'
-    segs = [seg for seg in config.seg2ftrs \
-            if match_ftrs(F, seg)]
-    return '(' + '|'.join(segs) + ')'
+    syms = [sym for sym in config.sym2ftrs \
+            if match_ftrs(F, sym)]
+    return '(' + '|'.join(syms) + ')'
 
 
 def ftrs2str(F):
