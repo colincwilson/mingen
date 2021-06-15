@@ -23,7 +23,9 @@ def generate_wugs(rules):
 
     # Attested onsets and rimes of monosyllables
     onsets = [re.sub('[ɑaʌɔoəeɛuʊiɪ].*', '', x) for x in monosyll['stem']]
-    rimes = [re.sub('.+([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) for x in monosyll['stem']]
+    rimes = [
+        re.sub('.*?([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) for x in monosyll['stem']
+    ]
     onsets = set([x.strip() for x in onsets])
     rimes = set([x.strip() for x in rimes])
     onset_fst = pynini_util.union( \
@@ -36,9 +38,11 @@ def generate_wugs(rules):
     print(f'{len(rimes)} rimes')
 
     # Irregular rules
-    change = 'ɪ -> ɑ'
+    #change = 'ɪ -> ʌ'
+    #change = 'ɪ -> ɑ'
     #change = 'i -> ɛ'
     #change = 'i p -> ɛ p t'
+    change = 'a ɪ -> o'  # xxx error
     A, B = change.split(' -> ')  # xxx handle zeros
     rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
     rules = rules \
@@ -78,7 +82,7 @@ def generate_wugs(rules):
     print(stems_hit)
 
     # Rimes of real stems that undergo rules
-    rimes_hit = [re.sub('.+([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) \
+    rimes_hit = [re.sub('.*?([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) \
         for x in stems_hit['stem']]
     rimes_hit = set([x.strip() for x in rimes_hit])
     rime_hit_fst = pynini_util.union( \
@@ -97,6 +101,7 @@ def generate_wugs(rules):
     wugs = pynini_util.ostrings(wug_fst, symtable)
     sorted(wugs)
     wugs = set(wugs)
+    print(f'{len(wugs)} potential wugs')
 
     # Wug stems within/beyond scope of rules
     wugs_apply = []
@@ -136,3 +141,5 @@ def generate_wugs(rules):
                 .sort_values('stem')
     print(f'wugs in scope ({len(wugs_in)}):\n{wugs_in}')
     print(f'wug near-misses ({len(wugs_out)}):\n{wugs_out}')
+
+    return wugs_in, wugs_out
