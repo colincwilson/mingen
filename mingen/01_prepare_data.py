@@ -4,24 +4,18 @@ import configargparse, pickle, re, sys
 from pathlib import Path
 import pandas as pd
 
-import config
-from str_util import *
+sys.path.append(str(Path('../../phon')))
 
-tensormorph_path = Path.home() / 'Code/Python/tensormorph_redup/tensormorph'
-sys.path.append(str(tensormorph_path))
-import tensormorph
+import config
+from phon import phon_config, ftr_config, str_util
 
 # String environment
+config.epsilon = 'ϵ'
 config.bos = '⋊'
 config.eos = '⋉'
 config.zero = '∅'
-
-tensormorph.config.epsilon = 'ϵ'
-tensormorph.config.bos = config.bos
-tensormorph.config.eos = config.eos
-tensormorph.config.wildcard = '□'
-
 config.save_dir = Path.home() / 'Code/Python/mingen/data'
+phon_config.init(config)
 
 
 def format_strings(dat, extra_seg_fixes=None):
@@ -30,16 +24,17 @@ def format_strings(dat, extra_seg_fixes=None):
         seg_fixes = seg_fixes | extra_seg_fixes
 
     # Fix transcriptions (conform to phonological feature set)
-    dat['stem'] = fix_transcription(dat['wordform1'], seg_fixes)
-    dat['output'] = fix_transcription(dat['wordform2'], seg_fixes)
-    dat['stem'] = [add_delim(x) for x in dat['stem']]
-    dat['output'] = [add_delim(x) for x in dat['output']]
+    dat['stem'] = [str_util.retranscribe(x, seg_fixes) \
+        for x in dat['wordform1']]
+    dat['output'] = [str_util.retranscribe(x, seg_fixes) \
+        for x in dat['wordform2']]
+    dat['stem'] = [str_util.add_delim(x) for x in dat['stem']]
+    dat['output'] = [str_util.add_delim(x) for x in dat['output']]
 
     # Remove prefix from output
     if config.remove_prefix is not None:
-        dat['output'] = [
-            re.sub('⋊ ' + config.remove_prefix, '⋊', x) for x in dat['output']
-        ]
+        dat['output'] = [re.sub('⋊ ' + config.remove_prefix, '⋊', x) \
+            for x in dat['output']]
     return dat
 
 
@@ -70,7 +65,7 @@ if LANGUAGE in ['eng', 'eng2', 'eng3']:
     albrighthayes_seg_fixes = \
         {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
          'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
-    if LANGUAGE in ['eng2', 'eng3']: 
+    if LANGUAGE in ['eng2', 'eng3']:
         config.seg_fixes |= albrighthayes_seg_fixes
     config.remove_prefix = None
 
@@ -99,9 +94,11 @@ if LANGUAGE == 'tiny':
 # Train
 fdat = ddata / f'{LANGUAGE}.train'
 if LANGUAGE == 'eng2':
-    fdat = Path('../albrighthayes2003') / 'AlbrightHayes2003_CELEXFull_unimorph.tsv'
+    fdat = Path(
+        '../albrighthayes2003') / 'AlbrightHayes2003_CELEXFull_unimorph.tsv'
 if LANGUAGE == 'eng3':
-    fdat = Path('../albrighthayes2003') / 'AlbrightHayes2003_CELEXPrefixStrip_unimorph.tsv'
+    fdat = Path('../albrighthayes2003'
+               ) / 'AlbrightHayes2003_CELEXPrefixStrip_unimorph.tsv'
 dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
@@ -168,14 +165,16 @@ print()
 # # # # # # # # # #
 # Albright-Hayes wug
 if LANGUAGE in ['eng', 'eng2', 'eng3']:
-    falbrighthayes = Path('../albrighthayes2003') / 'AlbrightHayes2003_Wug_sigmorphon.tsv'
+    falbrighthayes = Path(
+        '../albrighthayes2003') / 'AlbrightHayes2003_Wug_sigmorphon.tsv'
     wug_albrighthayes = pd.read_csv(
         falbrighthayes,
         sep='\t',
         comment='#',
         names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
 
-    wug_albrighthayes = format_strings(wug_albrighthayes, extra_seg_fixes=albrighthayes_seg_fixes)
+    wug_albrighthayes = format_strings(
+        wug_albrighthayes, extra_seg_fixes=albrighthayes_seg_fixes)
     config.wug_albrighthayes = wug_albrighthayes
     wug_albrighthayes.to_csv(
         config.save_dir / 'albrighthayes2003_wug.tsv', sep='\t', index=False)
@@ -197,22 +196,23 @@ print(f'Segments that appear in training data: '
       f'{segments} (n = {len(segments)})')
 print()
 
-tensormorph.config.feature_dir = Path.home(
-) / 'Code/Python/tensormorph_redup/ftrs'
-tensormorph.config.fdata = config.save_dir / f'{LANGUAGE}.ftr'
-fm = tensormorph.phon_features.import_features('hayes_features.csv', segments)
-# NB. writes feature file before fixes below
+#tensormorph.config.feature_dir = Path.home(
+#) / 'Code/Python/tensormorph_redup/ftrs'
+#tensormorph.config.fdata = config.save_dir / f'{LANGUAGE}.ftr'
+#fm = tensormorph.phon_features.import_features('hayes_features.csv', segments)
+# Import features from file
+fm = ftr_config.import_features(
+    Path.home() / 'Code/Python/tensormorph_redup/ftrs/hayes_features.csv',
+    segments)
 
 # Fix up features for mingen
-phon_ftrs = pd.read_csv(config.save_dir / f'{LANGUAGE}.ftr', sep='\t', header=0)
-phon_ftrs.columns.values[0] = 'seg'
-segs = phon_ftrs['seg']
-phon_ftrs = phon_ftrs.drop('seg', 1)  # Segment column (not a feature)
-phon_ftrs = phon_ftrs.drop('sym', 1)  # Redundant with X = (Sigma*)
-ftr_names = [x for x in phon_ftrs.columns.values]
+ftr_matrix = fm.ftr_matrix
+ftr_matrix = ftr_matrix.drop('sym', 1)  # Redundant with X (Sigma*)
+segs = [seg for seg in ftr_matrix.index]
+ftr_names = [x for x in ftr_matrix.columns.values]
 config.segs = segs
-config.phon_ftrs = phon_ftrs
-config.ftr_names = ftr_names
+config.phon_ftrs = phon_ftrs = ftr_matrix
+config.ftr_names = ftr_names = ftr_names
 
 # Map from segments to feature-value dictionaries and feature vectors
 seg2ftrs = {}  # Feature-value dictionaries
