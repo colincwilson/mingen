@@ -5,6 +5,8 @@ import configargparse, pickle, sys
 from pathlib import Path
 import pandas as pd
 
+sys.path.append(str(Path('../../phon')))
+
 import config
 from rules import *
 import mingen
@@ -12,6 +14,7 @@ import scoring
 import pruning
 import wug_testing
 import near_miss
+from phon import phon_config
 
 
 def main():
@@ -70,6 +73,7 @@ def main():
         open(Path('../data') / f'{LANGUAGE}_config.pkl', 'rb'))
     for key, val in config_save.items():
         setattr(config, key, val)
+    phon_config.init(config_save)
 
     #pruning.test()
     #sys.exit(0)
@@ -81,7 +85,7 @@ def main():
         R_base = [base_rule(w1, w2) for (w1, w2) \
             in zip(dat_train['stem'], dat_train['output'])]
 
-        base_rules = pd.DataFrame({'rule': [str(R) for R in R_base]})
+        base_rules = pd.DataFrame({'rule': [str(rule) for rule in R_base]})
         base_rules.to_csv(
             Path('../data') / f'{LANGUAGE}_rules_base.tsv',
             index=False,
@@ -93,9 +97,9 @@ def main():
 
         rules = pd.DataFrame({
             'rule_idx': [idx for idx in range(len(R_all))],
-            'rule': [str(R) for R in R_all]
+            'rule': [str(rule) for rule in R_all]
         })
-        rules['rule_regex'] = [repr(R) for R in R_all]
+        rules['rule_regex'] = [repr(rule) for rule in R_all]
         #rules['rule_len'] = [len(x) for x in rules['rule']]
         rules.to_csv(
             Path('../data') / f'{LANGUAGE}_rules_out.tsv',
@@ -108,7 +112,7 @@ def main():
             Path('../data') / f'{LANGUAGE}_rules_out.tsv', sep='\t')
 
         # Hit and scope on train data
-        R_all = [FtrRule.from_str(R) for R in rules['rule']]
+        R_all = [FtrRule.from_str(rule) for rule in rules['rule']]
         hits_all, scope_all = scoring.score_rules(R_all)
         rules['hits'] = hits_all
         rules['scope'] = scope_all
@@ -175,7 +179,7 @@ def main():
                 sep='\t',
                 index=False)
 
-    # Generate wug items just outside the scope of irregular rules
+    # Generate wug items just beyond the scope of irregular rules
     if args.near_miss:
         rules = pd.read_csv(
             Path('../data') / f'{LANGUAGE}_rules_pruned_{SCORE_TYPE}.tsv',

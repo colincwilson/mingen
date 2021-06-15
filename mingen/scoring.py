@@ -5,11 +5,11 @@ import numpy as np
 from scipy.stats import t as student_t
 
 from rules import *
-from str_util import *
+from phon import str_util
 import pynini_util
 
 
-def score_rules(R_all):
+def score_rules(R):
     """
     Hits and scope for FtrRules on training data
     todo: apply simultaneously to all inputs encoded as trie?
@@ -28,11 +28,11 @@ def score_rules(R_all):
 
     # Hits and scope for each rule
     print("Hits and scope ...")
-    hits_all = [0.0] * len(R_all)
-    scope_all = [0.0] * len(R_all)
-    for idx, R in enumerate(R_all):
+    hits_all = [0.0] * len(R)
+    scope_all = [0.0] * len(R)
+    for idx, rule in enumerate(R):
         # Convert rule to regexes
-        (A, B, C, D) = R.regexes()
+        (A, B, C, D) = rule.regexes()
 
         # Subset of data s.t. CAD occurs in input
         CAD = [X for X in [C, A, D] if X != '∅']
@@ -49,7 +49,7 @@ def score_rules(R_all):
             continue
 
         # Compile rule to FST
-        R_fst = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
+        rule_fst = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
 
         # Loop over input/output pairs in data subset
         hits = 0.0
@@ -57,9 +57,9 @@ def score_rules(R_all):
         for (wf1, wf2, stem_id) in subdat:
             #print(wf1, '->', wf2)
             # Apply rule to input and yield first (xxx) output
-            input1 = stem_fsts[stem_id]
-            output1 = input1 @ R_fst
-            strpath_iter = output1.paths(
+            input1_fst = stem_fsts[stem_id]
+            output1_fst = input1_fst @ rule_fst
+            strpath_iter = output1_fst.paths(
                 input_token_type=symtable, output_token_type=symtable)
             output1 = [x for x in strpath_iter.ostrings()][0]  # xxx
 
@@ -70,7 +70,7 @@ def score_rules(R_all):
             scope += 1.0
 
             # Remove markers around locus of application
-            output1 = delete_markers(output1)
+            output1 = str_util.remove(output1, pynini_util.markers)
 
             # Hit (exact match to output) or miss
             if output1 == wf2:
@@ -84,13 +84,13 @@ def score_rules(R_all):
         scope_all[idx] = scope
         if hits == 0.0:
             print('(warning) rule has zero hits')
-            print(R_all[idx])
-            print(repr(R_all[idx]))
+            print(R[idx])
+            print(repr(R[idx]))
         if scope == 0.0:
             print('(error) rule has zero scope')
             print(f'size of data subset_ {len(subdat_)}')
-            print(R_all[idx])
-            print(repr(R_all[idx]))
+            print(R[idx])
+            print(repr(R[idx]))
             sys.exit(0)
         print(f'rule {idx}, hits = {hits}, scope = {scope}, '
               f'raw accuracy = {hits/scope}')

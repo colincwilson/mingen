@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import re, sys
-import pandas as pd
-
-import config
-from str_util import *
-from features import *
-from rules import *
+from features import unify_ftrs
+from rules import FtrRule
 
 # TODO: phonology, cross-context, impugnment, etc.
 
 
-def generalize_rules_rec(Rs):
+def generalize_rules_rec(R):
     """
     Recursively apply minimal generalization to set of FtrRules
     todo: generalize each context pair at most once
@@ -20,33 +15,33 @@ def generalize_rules_rec(Rs):
     # Word-specific rules
     # Rules grouped by common change [invariant]
     R_base = {}
-    for R in Rs:
-        change = ' '.join(R.A) + ' -> ' + ' '.join(R.B)
+    for rule in R:
+        change = ' '.join(rule.A) + ' -> ' + ' '.join(rule.B)
         if change in R_base:
-            R_base[change].append(R)
+            R_base[change].append(rule)
         else:
-            R_base[change] = [R]
+            R_base[change] = [rule]
     R_base = {change: set(rules) \
                 for change, rules in R_base.items()}
     R_all = {change: rules.copy() \
                 for change, rules in R_base.items()}
 
-    # First-step minimal generalization (exploit commutativity)
+    # First-step minimal generalization
     print('Iteration 0 (base rules only) ...')
     R_new = {}
     for change, rules_base in R_base.items():
-        print(f'\t{change} [{len(rules_base)}]')
-        rules_base = [R for R in rules_base]
+        print(f'\t{change} [{len(rules_base)}^2]')
+        rules_base = list(rules_base)
         n = len(rules_base)
         rules_new = set()
         for i in range(n - 1):
-            R1 = rules_base[i]
+            rule1 = rules_base[i]
             for j in range(i + 1, n):
-                R2 = rules_base[j]
-                R = generalize_rules(R1, R2)
-                if R is None:
+                rule2 = rules_base[j]
+                rule = generalize_rules(rule1, rule2)
+                if rule is None:
                     continue
-                rules_new.add(R)
+                rules_new.add(rule)
         R_new[change] = rules_new
     for change in R_all:
         R_all[change] |= R_new[change]
@@ -63,12 +58,12 @@ def generalize_rules_rec(Rs):
             rules_old = R_old[change]
             print(f'\t{change} [{len(rules_base)} x {len(rules_old)}]')
             rules_new = set()
-            for R1 in rules_base:
-                for R2 in rules_old:
-                    R = generalize_rules(R1, R2)
-                    if R is None:
+            for rule1 in rules_base:
+                for rule2 in rules_old:
+                    rule = generalize_rules(rule1, rule2)
+                    if rule is None:
                         continue
-                    rules_new.add(R)
+                    rules_new.add(rule)
             R_new[change] = (rules_new - R_all[change])
 
         # Update rule sets
@@ -84,23 +79,23 @@ def generalize_rules_rec(Rs):
         if not new_rule_flag:
             break
 
-    R_all = [R for change, rules in R_all.items() for R in rules]
+    R_all = [rule for change, rules in R_all.items() for rule in rules]
     return R_all
 
 
-def generalize_rules(R1, R2):
+def generalize_rules(rule1, rule2):
     """
     Apply minimal generalization to pair of FtrRules
     """
     # Check for matching change A -> B
-    if (R1.A != R2.A) or (R1.B != R2.B):
+    if (rule1.A != rule2.A) or (rule1.B != rule2.B):
         return None
 
     # Generalize left and right contexts
-    C = generalize_context(R1.C, R2.C, '<-RL')
-    D = generalize_context(R1.D, R2.D, 'LR->')
+    C = generalize_context(rule1.C, rule2.C, '<-RL')
+    D = generalize_context(rule1.D, rule2.D, 'LR->')
 
-    R = FtrRule(R1.A, R1.B, C, D)
+    R = FtrRule(rule1.A, rule1.B, C, D)
     return R
 
 

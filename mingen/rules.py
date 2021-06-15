@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import config
-from str_util import *
+from phon import str_util
 from features import *
 
 
@@ -70,7 +70,7 @@ class FtrRule():
         return f'{A_} -> {B_} / {C_} __ {D_}'
 
     def regexes(self):
-        """ Separate regular expressions for change and context """
+        """ Regular expressions for focus, change, contexts """
         R_regex = repr(self)
         AB, CD = R_regex.split(' / ')
         A, B = AB.split(' -> ')
@@ -78,14 +78,14 @@ class FtrRule():
         return (A, B, C, D)
 
     @classmethod
-    def from_segrule(cls, R: SegRule):
+    def from_segrule(cls, rule: SegRule):
         """
         Convert SegRule to FtrRule by replacing segments in context with feature matrices
         """
-        A = R.A
-        B = R.B
-        C = [config.seg2ftrs_[seg] for seg in R.C]
-        D = [config.seg2ftrs_[seg] for seg in R.D]
+        A = rule.A
+        B = rule.B
+        C = [config.seg2ftrs_[seg] for seg in rule.C]
+        D = [config.seg2ftrs_[seg] for seg in rule.D]
         return FtrRule(A, B, tuple(C), tuple(D))
 
     @classmethod
@@ -107,16 +107,16 @@ class FtrRule():
 
 def base_rule(inpt: str, outpt: str) -> SegRule:
     """
-    Learn word-specific rule A -> B / C __D by aligning input and output
+    Learn word-specific rule A -> B / C __D by aligning input and output strings
     """
     inpt = inpt.split(' ')
     outpt = outpt.split(' ')
     # Left-hand context
-    C = lcp(inpt, outpt, prefix=True)
+    C = str_util.lcp(inpt, outpt, prefix=True)
     # Right-hand context
     inpt = inpt[len(C):]
     outpt = outpt[len(C):]
-    D = lcp(inpt, outpt, prefix=False)
+    D = str_util.lcp(inpt, outpt, prefix=False)
     # Change
     A = inpt[:-len(D)]
     B = outpt[:-len(D)]

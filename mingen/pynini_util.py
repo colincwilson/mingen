@@ -4,7 +4,7 @@ import re
 import pynini
 from pynini import Arc, Fst, SymbolTable
 from pynini.lib import pynutil, rewrite
-from str_util import *
+from phon import str_util
 import config
 
 # Create acceptors, unions, sigstar from symbol lists (cf. strings),
@@ -18,11 +18,13 @@ import config
 # see also (on how operations affect SymbolTables):
 # https://github.com/kylebgorman/pynini/issues/22
 
+# Mark locus of cdrewrite rule application
+markers = ['⟨', '⟩']
 
-def sigstar(syms, markers=['⟨', '⟩']):
+
+def sigstar(syms):
     """
     Symbol table and Sigma* acceptor fom list of symbols
-    (optional markers for loci of cdrewrite rule application)
     """
     symtable = SymbolTable()
     symtable.add_symbol(config.epsilon)  # Epsilon has id 0
@@ -121,7 +123,7 @@ def compile_rule(A, B, C, D, sigstar, symtable):
         B = config.epsilon
     B = ' '.join(['⟨', B, '⟩'])
     # Insertion rule
-    if A == "∅":
+    if A == '∅':
         change = pynutil.insert(accep(B, symtable))
     # Change or deletion rule
     else:
@@ -138,14 +140,14 @@ def compile_rule(A, B, C, D, sigstar, symtable):
     return fst
 
 
-def rewrites(R, inpt, outpt, sigstar, symtable):
+def rewrites(rule, inpt, outpt, sigstar, symtable):
     """
-    Does applying R to inpt result in outpt
+    Does applying rule to inpt result in outpt
     """
-    (A, B, C, D) = R
-    R_fst = compile_rule(A, B, C, D, sigstar, symtable)
+    (A, B, C, D) = rule
+    rule_fst = compile_rule(A, B, C, D, sigstar, symtable)
     inpt_fst = accep(inpt, symtable)
-    pred_fst = inpt_fst @ R_fst
+    pred_fst = inpt_fst @ rule_fst
 
     strpath_iter = pred_fst.paths(
         input_token_type=symtable, output_token_type=symtable)
@@ -154,12 +156,12 @@ def rewrites(R, inpt, outpt, sigstar, symtable):
     if not re.search('⟨', pred):
         return {'applies': 0, 'rewrites': 0}
 
-    pred = delete_markers(pred)
+    pred = str_util.remove(pred, markers)
     return {'applies': 1, 'rewrites': int(pred == outpt)}
 
 
 def edit1_fst(sigstar, symtable):
-    """ Map inputs to outputs one edit away """
+    """ Map inputs to outputs one edit away (e.g., for word neighborhoods) """
     fst = Fst()
 
     q0 = fst.add_state()

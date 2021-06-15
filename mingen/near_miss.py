@@ -44,8 +44,8 @@ def generate_wugs(rules):
     rules = rules \
             .sort_values('confidence', ascending=False) \
             .reset_index(drop = True)
-    Rs = [FtrRule.from_str(R) for R in rules['rule']]
-    Rs = [R.regexes() for R in Rs]
+    R = [FtrRule.from_str(rule) for rule in rules['rule']]
+    R = [rule.regexes() for rule in R]
     print(f'change: {change}')
     print(f'{len(rules)} rules')
 
@@ -55,14 +55,13 @@ def generate_wugs(rules):
     stems_apply = []
     for i, stem in enumerate(stems_A['stem']):
         outpt = stems_A['output'][i]
-        for j, R in enumerate(Rs):
-            A, B, C, D = R
+        for j, rule in enumerate(R):
+            A, B, C, D = rule
             CAD = [Z for Z in [C, A, D] if Z != '']
             CAD = ' '.join(CAD)
             if not re.search(CAD, stem):
                 continue
-            #stems_in_scope.append((stem, rules['confidence'][j]))
-            val = pynini_util.rewrites(R, stem, outpt, sigstar, symtable)
+            val = pynini_util.rewrites(rule, stem, outpt, sigstar, symtable)
             val = {
                 'stem': stem,
                 'output': outpt,
@@ -94,13 +93,13 @@ def generate_wugs(rules):
     wugs_A = [wug for wug in wugs if re.search(A, wug)]
     for wug in wugs_A:
         val = None
-        for j, R in enumerate(Rs):
-            A, B, C, D = R
+        for j, rule in enumerate(R):
+            A, B, C, D = rule
             CAD = [Z for Z in [C, A, D] if Z != '']
             CAD = ' '.join(CAD)
             if not re.search(CAD, wug):
                 continue
-            val = pynini_util.rewrites(R, wug, '', sigstar, symtable)
+            val = pynini_util.rewrites(rule, wug, '', sigstar, symtable)
             val = {
                 'stem': wug,
                 'output': None,
