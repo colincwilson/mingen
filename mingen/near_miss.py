@@ -31,7 +31,7 @@ def generate_wugs(rules):
     rime_fst = pynini_util.union( \
         pynini_util.accep([x for x in rimes], symtable))
     phonotactics = onset_fst + rime_fst
-    phonotactics = phonotactics.minimize(allow_nondet=True)
+    phonotactics = phonotactics.optimize()
     print(f'{len(onsets)} onsets')
     print(f'{len(rimes)} rimes')
 
@@ -49,7 +49,7 @@ def generate_wugs(rules):
     print(f'change: {change}')
     print(f'{len(rules)} rules')
 
-    # Real stems within scope of rules
+    # Real stems that undergo rules
     stems_A = monosyll[(monosyll['stem'].str.contains(A))] \
             .reset_index(drop=True)
     stems_apply = []
@@ -71,11 +71,20 @@ def generate_wugs(rules):
             #print(val)
             break
     stems_apply = pd.DataFrame(stems_apply)
-    stems_apply = stems_apply[(stems_apply['hit'] == 1)] \
+    stems_hit = stems_apply[(stems_apply['hit'] == 1)] \
                   .sort_values('model_rating', ascending=False) \
                   .reset_index(drop=True)
-    print(f'{len(stems_apply)} existing stems:')
-    print(stems_apply)
+    print(f'{len(stems_hit)} existing stems:')
+    print(stems_hit)
+
+    # Rimes of real stems that undergo rules
+    rimes_hit = [re.sub('.+([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) \
+        for x in stems_hit['stem']]
+    rimes_hit = set([x.strip() for x in rimes_hit])
+    rime_hit_fst = pynini_util.union( \
+        pynini_util.accep([x for x in rimes_hit], symtable))
+    phonotactics_hit = onset_fst + rime_hit_fst
+    phonotactics_hit = phonotactics_hit.optimize()
 
     # Wug stems one-edit away from real stems
     stem_fst = pynini_util.accep([stem for stem in stems_apply['stem']],
@@ -83,12 +92,13 @@ def generate_wugs(rules):
     stem_fst = pynini_util.union(stem_fst)
     edit1_fst = pynini_util.edit1_fst(sigstar, symtable)
     wug_fst = stem_fst @ edit1_fst
-    wug_fst = wug_fst @ phonotactics
+    #wug_fst @= phonotactics  # Filter by general phonotactics
+    wug_fst @= phonotactics_hit  # Filter by rimes of real hit stems
     wugs = pynini_util.ostrings(wug_fst, symtable)
+    sorted(wugs)
     wugs = set(wugs)
-    #wugs = [wug for wug in wugs if re.match(monosyll_regex, wug)]
 
-    # Wug stems within/outside scope of rules
+    # Wug stems within/beyond scope of rules
     wugs_apply = []
     wugs_A = [wug for wug in wugs if re.search(A, wug)]
     for wug in wugs_A:
@@ -116,11 +126,13 @@ def generate_wugs(rules):
             }
         wugs_apply.append(rewrite_val)
 
+    # Report wugs
     wugs_apply = pd.DataFrame(wugs_apply)
     wugs_apply = wugs_apply[~(wugs_apply.stem.isin(lex['stem']))] \
                  .reset_index(drop = True)
-    print('wug hits:')
-    print(wugs_apply[(wugs_apply['in_scope'] == 1)] \
-          .sort_values('model_rating', ascending=False))
-    print('wug near-misses:')
-    print(wugs_apply[(wugs_apply['in_scope'] == 0)])
+    wugs_in = wugs_apply[(wugs_apply['in_scope'] == 1)] \
+                .sort_values('model_rating', ascending=False)
+    wugs_out = wugs_apply[(wugs_apply['in_scope'] == 0)] \
+                .sort_values('stem')
+    print(f'wugs in scope ({len(wugs_in)}):\n{wugs_in}')
+    print(f'wug near-misses ({len(wugs_out)}):\n{wugs_out}')
