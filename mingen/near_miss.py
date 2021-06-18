@@ -39,10 +39,12 @@ def generate_wugs(rules):
 
     # Irregular rules
     #change = 'ɪ -> ʌ'
-    #change = 'ɪ -> ɑ'
+    #change = 'a ɪ -> o'
     #change = 'i -> ɛ'
-    #change = 'i p -> ɛ p t'
-    change = 'a ɪ -> o'  # xxx error
+    #change = 'ɪ -> ɑ'
+    #change = 'e -> o'
+    #change = 'e -> ʊ'
+    change = 'i p -> ɛ p t'
     A, B = change.split(' -> ')  # xxx handle zeros
     rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
     rules = rules \
