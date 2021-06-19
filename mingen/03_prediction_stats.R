@@ -77,10 +77,10 @@ rules %>%
 
 # Albright-Hayes lexical data and wugs
 #lex_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_CELEXFull.tsv')
-lex_ah03 = read_tsv('~/Code/Python/mingen/albrighthayes2003/AlbrightHayes2003_CELEXFull.tsv', comment='#')
+lex_ah03 = read_tsv('~/Code/Python/mingen/albrighthayes2003/CELEXFull_ipa.tsv', comment='#')
 
 #dat_ah03 = read_tsv('~/Researchers/HayesBruce/AlbrightHayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
-dat_ah03 = read_tsv('~/Code/Python/mingen/albrighthayes2003/AlbrightHayes2003_Wug.tsv', comment='#')
+dat_ah03 = read_tsv('~/Code/Python/mingen/albrighthayes2003/Wug_ipa.tsv', comment='#')
 
 wug_ah03 = read_tsv(str_glue('~/Code/Python/mingen/data/{LANGUAGE}_wug_albrighthayes_predict_{SCORE_TYPE}.tsv'))
 

@@ -5,7 +5,7 @@ require(glmmTMB)
 
 source('~/Code/Python/mingen/mingen/confidence.R')
 
-TRAIN = c('CELEXFull', 'CELEXPrefixStrip')[2]
+TRAIN = c('CELEXFull', 'CELEXPrefixStrip')[1]
 mydir = '~/Library/Java/MinimalGeneralization/English2_unicode/sigmorphon2021/'
 
 # # # # # # # # # #
@@ -26,7 +26,7 @@ nrow(wug_dat)
 read_tsv(
     str_glue(mydir, '{TRAIN}_unicode.sum')) %>%
     select(lemma=form1, past=form2, scope, hits, reliability, confidence) %>%
-    mutate(past = sub('əd$', 'Id', past)) %>% # xxx
+    mutate(past = sub('əd$', 'ɪd', past)) %>% # Retranscribe third allomorph
     identity() ->
     wug_pred
 nrow(wug_pred)
@@ -39,8 +39,16 @@ with(wug_pred, plot(myconfidence, confidence))
 # Errant confidence values (all related to impugnment?)
 subset(wug_pred, abs(myconfidence - confidence) > 0.5)
 
+# Lexicon
+read_tsv(
+    str_glue(mydir, 'CELEXFull_unicode.in'),
+    col_names = c('lemma', 'past', 'celex_freq', 'lemma_orth', 'past_ort', 'past_type', 'notes'),
+    skip=9) ->
+    lex_ah03
+
+
 # # # # # # # # # #
-# Merge data and predictions on unicode keys, retaining only highest-confidence prediction for each <lemma, past> combo
+# Merge data and predictions on unicode keys, retaining only highest-confidence prediction for each <lemma, past> pair
 left_join(wug_dat, wug_pred) %>%
     mutate(human_rating = human_rating / 7) %>%
     mutate(model_rating = confidence) %>%
@@ -51,14 +59,17 @@ left_join(wug_dat, wug_pred) %>%
     wug_dat_pred
 nrow(wug_dat_pred)
 
+# Which <lemma, past> pairs are missing from merge?
+
+
 wug_dat_pred %>%
     filter(split == 'dev') -> wug_dev_pred
 
 ggplot(wug_dev_pred, aes(x=model_rating, y=human_rating)) + geom_point()
 with(wug_dev_pred, cor.test(model_rating, human_rating))
-# CELEXFull 0.4645719, CELEXPrefixStrip: 0.4603526
+# CELEXFull 0.4863085, CELEXPrefixStrip: 0.4769243
 
 fit_model = glmmTMB(human_rating ~ model_rating + (1 | lemma), data = wug_dev_pred, family = beta_family())
 summary(fit_model)
 AIC(fit_model)
-# CELEXFull -96.4707, CELEXPrefixStrip: -95.83543
+# CELEXFull -100.817, CELEXPrefixStrip: -99.02455
