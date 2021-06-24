@@ -39,13 +39,32 @@ with(wug_pred, plot(myconfidence, confidence))
 # Errant confidence values (all related to impugnment?)
 subset(wug_pred, abs(myconfidence - confidence) > 0.5)
 
-# Lexicon
+# Compare Albright-Hayes and Sigmorphon lexicons
 read_tsv(
     str_glue(mydir, 'CELEXFull_unicode.in'),
-    col_names = c('lemma', 'past', 'celex_freq', 'lemma_orth', 'past_ort', 'past_type', 'notes'),
+    col_names = c('lemma', 'past', 'celex_freq', 'lemma_orth', 'past_orth', 'past_type', 'notes'),
     skip=9) ->
     lex_ah03
 
+read_tsv(
+    str_glue('~/Languages/UniMorph/sigmorphon2021/2021Task0/part2/eng.train'),
+    col_names = c('lemma', 'past', 'morphosyn', 'lemma_orth', 'past_orth')) %>%
+    filter(grepl('V;PST;', morphosyn)) ->
+    lex_sig
+
+full_join(lex_ah03, lex_sig,
+    by=c('lemma_orth'='lemma_orth')) ->
+    lex
+
+lex %>%
+    filter(is.na(lemma.x)) -> lex_ah03_out # Mising from lex_ah03
+lex %>%
+    filter(is.na(lemma.y)) -> lex_sig_out # Missing from lex_sig
+
+lex_sig_out %>%
+    filter(past_type=='irreg') # Irregulars missing from lex_sig
+# sit ~ sat, eat ~ ate, cling ~ clung, forcast ~ forcast, 
+# bid ~ bid, stink ~ stunk, stink ~ stank, outrun ~ outran
 
 # # # # # # # # # #
 # Merge data and predictions on unicode keys, retaining only highest-confidence prediction for each <lemma, past> pair
