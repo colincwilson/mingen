@@ -3,10 +3,10 @@
 # example: xxx
 
 LANG='eng' # $1
-DATADIR=. # save data
-STEPS=1000 # training steps
-WORDVEC=50 # embedding size
-RNN=100 # hidden size
+DATADIR=. # Save data
+STEPS=1000 # Training steps
+WORDVEC=50 # Embedding size
+RNN=100 # Hidden size
 
 # Preprocess
 if true; then
