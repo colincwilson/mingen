@@ -3,8 +3,6 @@
 from features import common_ftrs
 from rules import FtrRule
 
-# TODO: phonology, cross-context, impugnment, etc.
-
 
 def generalize_rules_rec(R):
     """
@@ -16,7 +14,7 @@ def generalize_rules_rec(R):
     # Rules grouped by common change [invariant]
     R_base = {}
     for rule in R:
-        change = ' '.join(rule.A) + ' -> ' + ' '.join(rule.B)
+        change = f"{' '.join(rule.A)} -> {' '.join(rule.B)}"
         if change in R_base:
             R_base[change].append(rule)
         else:
@@ -99,48 +97,48 @@ def generalize_rules(rule1, rule2):
     return R
 
 
-def generalize_context(X1, X2, direction='LR->'):
+def generalize_context(C1, C2, direction='LR->'):
     """
     Apply minimal generalization to pair of feature contexts, working inward (<-RL) or outward (LR->) from change location
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
     if direction == '<-RL':
-        X1 = X1[::-1]
-        X2 = X2[::-1]
+        C1 = C1[::-1]
+        C2 = C2[::-1]
 
-    n1 = len(X1)
-    n2 = len(X2)
+    n1 = len(C1)
+    n2 = len(C2)
     n_min = min(n1, n2)
     n_max = max(n1, n2)
 
-    Y = []
+    C = []
     seg_ident_flag = True
     for i in range(n_max):
         # X (Sigma*) and terminate if have exceeded shorter context
         # or have already gone beyond segment identity
         if (i >= n_min) or (not seg_ident_flag):
-            Y.append('X')
+            C.append('X')
             break
         # X (Sigma*) and terminate if either is X
-        if (X1[i] == 'X') or (X2[i] == 'X'):
-            Y.append('X')
+        if (C1[i] == 'X') or (C2[i] == 'X'):
+            C.append('X')
             break
         # Perfect match of feature matrices
         # (NB. Conforms to A&H spec only if at least one
         # of the rules has contexts that are segment-specific)
-        if X1[i] == X2[i]:
-            Y.append(X1[i])
+        if C1[i] == C2[i]:
+            C.append(C1[i])
             continue
         # Shared features at first segment mismatch
-        ftrs, any_common = common_ftrs(X1[i], X2[i])
+        ftrs, any_common = common_ftrs(C1[i], C2[i])
         if not any_common:
-            Y.append('X')
+            C.append('X')
             break
-        Y.append(ftrs)
+        C.append(ftrs)
         seg_ident_flag = False
 
     if direction == '<-RL':
-        Y = Y[::-1]
+        C = C[::-1]
 
-    Y = tuple(Y)
-    return Y
+    C = tuple(C)
+    return C

@@ -50,6 +50,7 @@ def common_ftrs_(F1, F2):
     return F
 
 
+@lru_cache(maxsize=10000)
 def common_ftrs(F1, F2):
     """
     Common values of two feature matrices
@@ -72,7 +73,7 @@ def common_ftrs(F1, F2):
     return tuple(F), any_common
 
 
-#@lru_cache(maxsize=1024)
+@lru_cache(maxsize=10000)
 def subsumes(F1, F2):
     """
     Subsumption relation between feature matrices F1 and F2

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Ex. python 02_run_model.py --language eng --learn_rules --score_rules --prune_rules --rate_wugs
 
+# todo: scalar features, phonology, impugnment, ...
+
 import configargparse, pickle, sys
 from pathlib import Path
 import pandas as pd
@@ -30,6 +32,11 @@ def main():
         action='store_true', \
         default=False, \
         help='recursive minimal generalization')
+    parser.add( \
+        '--cross_contexts', \
+        action='store_true', \
+        default=False, \
+        help='make cross-context base rules (aka dopplegangers)')
     parser.add( \
         '--score_rules', \
         action='store_true', \
@@ -84,6 +91,9 @@ def main():
         print('Base rules ...')
         R_base = [base_rule(w1, w2) for (w1, w2) \
             in zip(dat_train['stem'], dat_train['output'])]
+
+        if args.cross_contexts:
+            R_base = cross_contexts(R_base)
 
         base_rules = pd.DataFrame({'rule': [str(rule) for rule in R_base]})
         base_rules.to_csv(

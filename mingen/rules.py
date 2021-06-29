@@ -15,6 +15,16 @@ class SegRule():
         self.C = C
         self.D = D
 
+    def __eq__(self, other):
+        if not isinstance(other, SegRule):
+            return False
+        return (self.A == other.A) and (self.B == other.B) \
+                and (self.C == other.C) and (self.D == other.D)
+
+    def __hash__(self):
+        _hash = hash((self.A, self.B, self.C, self.D))
+        return _hash
+
     def __str__(self):
         if self.A == '' or self.B == '' or self.C == '' or self.D == '':
             print(f'Empty rule part: {A}, {B}, {C}, {D}')
@@ -46,8 +56,7 @@ class FtrRule():
     def __hash__(self):
         if hasattr(self, '_hash'):
             return self._hash
-        _hash = 7 * hash(self.A) + 13 * hash(self.B) + 17 * hash(
-            self.C) + 19 * hash(self.D)
+        _hash = hash((self.A, self.B, self.C, self.D))
         return _hash
 
     def __str__(self):
@@ -132,3 +141,37 @@ def base_rule(inpt: str, outpt: str) -> SegRule:
 
     rule = SegRule(tuple(A), tuple(B), tuple(C), tuple(D))
     return rule
+
+
+def cross_contexts(R_base):
+    """
+    Given base rules  A -> B / C __ D  and A -> B' / C' __ D', B' =/= B,
+    create base rules A -> B' / C __ D and A -> B / C' __ D'
+    """
+    print('Cross-context base rules ...')
+    # Group rules by A
+    Arules = {}
+    for rule in R_base:
+        if rule.A in Arules:
+            Arules[rule.A].append(rule)
+        else:
+            Arules[rule.A] = [rule]
+    # Create cross-context rules within groups
+    R_base_ = set(R_base)
+    for A, rules in Arules.items():
+        n = len(rules)
+        for i in range(n - 1):
+            rulei = rules[i]
+            for j in range(i + 1, n):
+                rulej = rules[j]
+                if rulej.B == rulei.B:
+                    continue
+                ruleij = SegRule(rulei.A, rulej.B, rulei.C, rulei.D)
+                ruleji = SegRule(rulej.A, rulei.B, rulej.C, rulej.D)
+                if ruleij not in R_base_:
+                    R_base.append(ruleij)
+                    R_base_.add(ruleij)
+                if ruleji not in R_base_:
+                    R_base.append(ruleji)
+                    R_base_.add(ruleji)
+    return R_base

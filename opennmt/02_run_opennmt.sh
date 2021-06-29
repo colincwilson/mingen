@@ -1,3 +1,4 @@
+#! /usr/local/bin/bash
 # Train generic encoder-decoder neural network with Open-NMT
 # install: pip install OpenNMT-py
 # example: xxx
@@ -7,6 +8,8 @@ DATADIR=. # Save data
 STEPS=1000 # Training steps
 WORDVEC=50 # Embedding size
 RNN=100 # Hidden size
+
+conda activate opennmt
 
 # Preprocess
 if true; then
