@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import config
+import sys
 import numpy as np
 from scipy.stats import t as student_t
 
+import config
 from rules import *
 from phon import str_util
 import pynini_util
+
+verbosity = 0
 
 
 def score_rules(R):
@@ -54,9 +57,11 @@ def score_rules(R):
         # Loop over input/output pairs in data subset
         hits, scope = 0.0, 0.0
         for (stem, output, stem_id) in subdat:
-            #print(wf1, '->', wf2)
             stem_fst = stem_fsts[stem_id]
-            rewrite_val = pynini_util.rewrites(rule_fst, stem_fst, output)
+            rewrite_val = pynini_util.rewrites(rule_fst, stem_fst, output,
+                                               sigstar, symtable)
+            #print(rule.regexes())
+            #print(stem, '->', output, rewrite_val)
             if rewrite_val['in_scope']:
                 scope += 1.0
             if rewrite_val['hit']:
@@ -64,15 +69,15 @@ def score_rules(R):
 
         hits_all[idx] = hits
         scope_all[idx] = scope
-        if hits == 0.0:
+        if hits == 0.0 and verbosity > 0:
             print('(warning) rule has zero hits')
             print(R[idx])
             print(repr(R[idx]))
         if scope == 0.0:
-            print('(error) rule has zero scope')
-            print(f'size of data subset_ {len(subdat_)}')
+            print('(warning) rule has zero scope')
             print(R[idx])
             print(repr(R[idx]))
+            print(len(subdat))
             sys.exit(0)
         print(f'rule {idx}, hits = {hits}, scope = {scope}, '
               f'raw accuracy = {hits/scope}')

@@ -39,12 +39,12 @@ def generate_wugs(rules):
 
     # Irregular rules
     #change = 'ɪ -> ʌ'
-    #change = 'a ɪ -> o'
+    change = 'a ɪ -> o'
     #change = 'i -> ɛ'
     #change = 'ɪ -> ɑ'
     #change = 'e -> o'
     #change = 'e -> ʊ'
-    change = 'i p -> ɛ p t'
+    #change = 'i p -> ɛ p t'
     A, B = change.split(' -> ')  # xxx handle zeros
     rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
     rules = rules \
@@ -141,7 +141,9 @@ def generate_wugs(rules):
                 .sort_values('model_rating', ascending=False)
     wugs_out = wugs_apply[(wugs_apply['in_scope'] == 0)] \
                 .sort_values('stem')
-    print(f'wugs in scope ({len(wugs_in)}):\n{wugs_in}')
+    print(f'wugs in scope ({len(wugs_in)}):\n{wugs_in.head(40)}')
+    print([wug for wug in wugs_in['stem']])
     print(f'wug near-misses ({len(wugs_out)}):\n{wugs_out}')
+    print([wug for wug in wugs_out['stem']])
 
     return wugs_in, wugs_out

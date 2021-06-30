@@ -86,7 +86,7 @@ def main():
     #sys.exit(0)
 
     # Make word-specific (base) rules, apply recursive minimal generalization
-    if args.learn_rules:
+    if 0 and args.learn_rules:
         dat_train = config.dat_train
         print('Base rules ...')
         R_base = [base_rule(w1, w2) for (w1, w2) \
@@ -154,7 +154,7 @@ def main():
             sep='\t',
             index=False)
 
-    # Prune rules that are bounded by less minimal generalizations
+    # Prune rules that are bounded by more general rules or have scores <= 0
     if args.prune_rules:
         rules = pd.read_csv(
             Path('../data') / f'{LANGUAGE}_rules_scored.tsv', sep='\t')

@@ -11,6 +11,9 @@ ScoredRule = namedtuple('ScoredRule', ['R', 'score', 'length', 'idx'])
 
 
 def prune_rules(rules, score_type='confidence', digits=10):
+    """
+    Prune rules that are bounded by more general rules or have scores <= 0
+    """
     print('Prune ...')
     rules = rules.sort_values(by=score_type, ascending=False)
     R = [ScoredRule(FtrRule.from_str(rule),
@@ -18,10 +21,12 @@ def prune_rules(rules, score_type='confidence', digits=10):
                         len(rule),
                         idx) \
         for (rule, score, idx) \
-            in zip(rules['rule'], rules[score_type], rules['rule_idx'])]
+            in zip(rules['rule'], rules[score_type], rules['rule_idx']) \
+        if score > 0.0]
 
     i = 0
     pruned = []  # Non-maximal rules
+    print(f'rules {len(R)}')
     print('iter pruned')
     while len(R) > 0:
         if i > 0 and i % 100 == 0:
@@ -42,9 +47,10 @@ def prune_rules(rules, score_type='confidence', digits=10):
 
     print(f'{len(pruned)} pruned rules')  # 30261 pruned rules
 
-    # Keep rules that are maximal wrt rule_cmp
+    # Keep rules that are maximal wrt rule_cmp and have scores >= 0
     idx_pruned = [rule_.idx for rule_ in pruned]
     rules_max = rules[~(rules['rule_idx'].isin(idx_pruned))]
+    rules_max = rules_max[(rules_max[score_type] > 0.0)]
     rules_max = rules_max.sort_values(by=score_type, ascending=False)
     return rules_max
 
@@ -99,16 +105,16 @@ def rule_mgt(rule1: FtrRule, rule2: FtrRule):
 
 
 #@lru_cache(maxsize=1024)
-def context_mgt(Z1, Z2, direction='LR->'):
+def context_mgt(C1, C2, direction='LR->'):
     """
     More-general-than-or-equal relation ⊒ on rule contexts (sequences of feature matrices), inward (<-RL) or outward (LR->) from change location
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
     if direction == '<-RL':
-        Z1 = Z1[::-1]
-        Z2 = Z2[::-1]
-    n1 = len(Z1)
-    n2 = len(Z2)
+        C1 = C1[::-1]
+        C2 = C2[::-1]
+    n1 = len(C1)
+    n2 = len(C2)
 
     # Empty context is always more general
     if n1 == 0:
@@ -120,13 +126,13 @@ def context_mgt(Z1, Z2, direction='LR->'):
         return False
 
     for i in range(n1):
-        # Special case: context Z1 has one more matrix than Z2,
+        # Special case: context C1 has one more matrix than C2,
         # test whether it is identical to X (Sigma*)
         if i == n2:
-            return (Z1[i] == 'X')
+            return (C1[i] == 'X')
 
-        # Matrix Z1[i] is not more general than Z2[i]
-        if not subsumes(Z1[i], Z2[i]):
+        # Matrix C1[i] is not more general than C2[i]
+        if not subsumes(C1[i], C2[i]):
             return False
 
     return True
