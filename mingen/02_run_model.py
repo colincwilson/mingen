@@ -10,6 +10,7 @@ import pandas as pd
 sys.path.append(str(Path('../../phon')))
 
 import config
+from features import *
 from rules import *
 import mingen
 import scoring
@@ -85,8 +86,18 @@ def main():
     #pruning.test()
     #sys.exit(0)
 
+    # Quick examples xxx move to utils file
+    if 1:
+        t_ftrs = config.sym2ftr_vec['t']
+        print(ftrs2str1(t_ftrs))
+        l_ftrs = config.sym2ftr_vec['l']
+        tl_ftrs, _ = common_ftrs(t_ftrs, l_ftrs)
+        print(tl_ftrs)
+        print(ftrs2str1(tl_ftrs))
+        sys.exit(0)
+
     # Make word-specific (base) rules, apply recursive minimal generalization
-    if 0 and args.learn_rules:
+    if args.learn_rules:
         dat_train = config.dat_train
         print('Base rules ...')
         R_base = [base_rule(w1, w2) for (w1, w2) \

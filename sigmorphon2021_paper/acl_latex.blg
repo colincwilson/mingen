@@ -7,46 +7,52 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: anthology.bib
-Database file #2: custom.bib
+Database file #2: sigmorphon2021.bib
+Database file #3: sigmorphon2021extra.bib
+Warning--I didn't find a database entry for "Gusfield:97"
+Warning--I didn't find a database entry for "Ando2005"
+Warning--I didn't find a database entry for "andrew2007scalable"
+Warning--I didn't find a database entry for "rasooli-tetrault-2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 7 entries,
+You've used 19 entries,
             3571 wiz_defined-function locations,
-            749 strings with 7229 characters,
-and the built_in function-call counts, 4818 in all, are:
-= -- 449
-> -- 150
-< -- 10
-+ -- 50
-- -- 39
-* -- 277
-:= -- 717
-add.period$ -- 31
-call.type$ -- 7
-change.case$ -- 56
-chr.to.int$ -- 7
-cite$ -- 7
-duplicate$ -- 331
-empty$ -- 394
-format.name$ -- 64
-if$ -- 1098
+            843 strings with 10296 characters,
+and the built_in function-call counts, 13866 in all, are:
+= -- 1291
+> -- 482
+< -- 23
++ -- 154
+- -- 129
+* -- 874
+:= -- 2028
+add.period$ -- 84
+call.type$ -- 19
+change.case$ -- 153
+chr.to.int$ -- 19
+cite$ -- 19
+duplicate$ -- 946
+empty$ -- 1103
+format.name$ -- 190
+if$ -- 3121
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 65
-newline$ -- 40
-num.names$ -- 28
-pop$ -- 139
+missing$ -- 182
+newline$ -- 99
+num.names$ -- 80
+pop$ -- 367
 preamble$ -- 1
-purify$ -- 41
+purify$ -- 117
 quote$ -- 0
-skip$ -- 269
+skip$ -- 722
 stack$ -- 0
-substring$ -- 183
-swap$ -- 166
-text.length$ -- 4
+substring$ -- 600
+swap$ -- 516
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 171
 warning$ -- 0
-while$ -- 33
+while$ -- 98
 width$ -- 0
-write$ -- 100
+write$ -- 266
+(There were 4 warnings)

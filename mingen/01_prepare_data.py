@@ -7,7 +7,7 @@ import pandas as pd
 sys.path.append(str(Path('../../phon')))
 
 import config
-from phon import phon_config, ftr_config, str_util
+from phon import phon_config, features, str_util
 
 # String environment
 config.epsilon = 'ϵ'
@@ -166,7 +166,7 @@ print()
 # Albright-Hayes wug
 if LANGUAGE in ['eng', 'eng2', 'eng3']:
     falbrighthayes = Path(
-        '../albrighthayes2003') / 'AlbrightHayes2003_Wug_sigmorphon.tsv'
+        '../albrighthayes2003') / 'Wug_unimorph.tsv'
     wug_albrighthayes = pd.read_csv(
         falbrighthayes,
         sep='\t',
@@ -201,7 +201,7 @@ print()
 #tensormorph.config.fdata = config.save_dir / f'{LANGUAGE}.ftr'
 #fm = tensormorph.phon_features.import_features('hayes_features.csv', segments)
 # Import features from file
-feature_matrix = ftr_config.import_features(
+feature_matrix = features.import_features(
     Path.home() / 'Code/Python/tensormorph_redup/ftrs/hayes_features.csv',
     segments)
 
