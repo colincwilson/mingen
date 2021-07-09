@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ahyad(2019)}]{ahyad2019}
@@ -112,6 +112,11 @@ Kim Plunkett and Patrick Juola. 1999.
 \newblock \href {https://doi.org/10.1207/s15516709cog2304_4} {A {{Connectionist
   Model}} of {{English Past Tense}} and {{Plural Morphology}}}.
 \newblock \emph{Cognitive Science}, 23(4):463--490.
+
+\bibitem[{Prasada and Pinker(1993)}]{prasada1993}
+S.~Prasada and Steven Pinker. 1993.
+\newblock Generalisation of regular and irregular morphological patterns.
+\newblock \emph{Language and cognitive processes}, 8(1):1--56.
 
 \bibitem[{R{\'a}cz et~al.(2020)R{\'a}cz, Beckner, Hay, and
   Pierrehumbert}]{racz2020a}

@@ -87,7 +87,7 @@ def main():
     #sys.exit(0)
 
     # Quick examples xxx move to utils file
-    if 1:
+    if 0:
         t_ftrs = config.sym2ftr_vec['t']
         print(ftrs2str1(t_ftrs))
         l_ftrs = config.sym2ftr_vec['l']
@@ -107,10 +107,10 @@ def main():
             R_base = cross_contexts(R_base)
 
         base_rules = pd.DataFrame({'rule': [str(rule) for rule in R_base]})
-        base_rules.to_csv(
-            Path('../data') / f'{LANGUAGE}_rules_base.tsv',
-            index=False,
-            sep='\t')
+        #base_rules.to_csv(
+        #    Path('../data') / f'{LANGUAGE}_rules_base.tsv',
+        #    index=False,
+        #    sep='\t')
 
         R_ftr = [FtrRule.from_segrule(R) for R in R_base]
         R_all = mingen.generalize_rules_rec(R_ftr)
@@ -122,10 +122,10 @@ def main():
         })
         rules['rule_regex'] = [repr(rule) for rule in R_all]
         #rules['rule_len'] = [len(x) for x in rules['rule']]
-        rules.to_csv(
-            Path('../data') / f'{LANGUAGE}_rules_out.tsv',
-            index=False,
-            sep='\t')
+        #rules.to_csv(
+        #    Path('../data') / f'{LANGUAGE}_rules_out.tsv',
+        #    index=False,
+        #    sep='\t')
 
     # Compute hits and scope and for each learned rule
     if args.learn_rules:
