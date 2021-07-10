@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex acl_latex"] 1625864152 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1625864470
+["bibtex acl_latex"] 1625870252 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1625921431
   "./acl_natbib.bst" 1625764349 47709 d9d0ab22329e3318a3d1b2ae6abaab62 ""
-  "acl_latex.aux" 1625864470 3708 651fb2560b33834eb2e924f83d8bff56 "pdflatex"
+  "acl_latex.aux" 1625921431 3708 3bb1bf51c8159d5d633ced48a8c8e028 "pdflatex"
   "anthology.bib" 1625764349 35309919 21f8e8d5ff8c5da3e0689053d5621845 ""
   "sigmorphon2021.bib" 1625855385 21772 8ce51c66014c9f1d2c253ee80db18571 ""
   "sigmorphon2021extra.bib" 1625782558 350 7889e42e5a01f69d36de3a1cb2f7b47f ""
   (generated)
   "acl_latex.blg"
   "acl_latex.bbl"
-["pdflatex"] 1625864469 "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf" "acl_latex" 1625864470
-  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.aux" 1625864470 3708 651fb2560b33834eb2e924f83d8bff56 ""
-  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" 1625864469 22398 c1d296c3a5230451b6f5d21c05e6079f ""
+["pdflatex"] 1625921431 "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf" "acl_latex" 1625921431
+  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.aux" 1625921431 3708 3bb1bf51c8159d5d633ced48a8c8e028 ""
+  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" 1625921430 26223 5270597a4643293ad0bd8a4bdf48f8d1 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -146,10 +146,10 @@
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1580838821 8254053 723ef77d54821140a3fe135bd3b21997 ""
   "/usr/local/texlive/2019/texmf.cnf" 1564069179 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "acl.sty" 1625764349 11158 b6ad1bbc953e18f357974bb34039deb0 ""
-  "acl_latex.aux" 1625864470 3708 651fb2560b33834eb2e924f83d8bff56 "pdflatex"
-  "acl_latex.bbl" 1625864153 7200 ecebc0a108783b59b65ddedfbbe86416 "bibtex acl_latex"
-  "acl_latex.out" 1625864470 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "acl_latex.tex" 1625864469 22398 c1d296c3a5230451b6f5d21c05e6079f ""
+  "acl_latex.aux" 1625921431 3708 3bb1bf51c8159d5d633ced48a8c8e028 "pdflatex"
+  "acl_latex.bbl" 1625870253 7200 ecebc0a108783b59b65ddedfbbe86416 "bibtex acl_latex"
+  "acl_latex.out" 1625921431 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "acl_latex.tex" 1625921430 26223 5270597a4643293ad0bd8a4bdf48f8d1 ""
   (generated)
   "acl_latex.aux"
   "acl_latex.out"
