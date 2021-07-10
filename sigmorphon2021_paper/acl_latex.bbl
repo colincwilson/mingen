@@ -1,11 +1,10 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{27}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ahyad(2019)}]{ahyad2019}
 Honaida~Yousuf Ahyad. 2019.
 \newblock \emph{Vowel {{Distribution}} in the {{Hijazi Arabic Root}}}.
-\newblock Ph.{{D}}., State University of New York at Stony Brook, {United
-  States -- New York}.
+\newblock Ph.{{D}}., State University of New York at Stony Brook.
 
 \bibitem[{Albright(2002)}]{albright2002b}
 Adam Albright. 2002.
@@ -50,6 +49,12 @@ Benjamin B{\"o}rschinger and Mark Johnson. 2011.
 \newblock In \emph{Proceedings of the Australasian Language Technology
   Association Workshop 2011}, pages 10--18, Canberra, Australia.
 
+\bibitem[{Bybee and Moder(1983)}]{bybee1983}
+Joan~L. Bybee and Carol~Lynn Moder. 1983.
+\newblock \href {https://doi.org/10.2307/413574} {Morphological classes as
+  natural categories}.
+\newblock \emph{Language}, 59(2):251--270.
+
 \bibitem[{Corkery et~al.(2019)Corkery, Matusevych, and
   Goldwater}]{corkery-etal-2019-yet}
 Maria Corkery, Yevgen Matusevych, and Sharon Goldwater. 2019.
@@ -70,6 +75,21 @@ James Goodman, Andreas Vlachos, and Jason Naradowsky. 2016.
   for Computational Linguistics (Volume 1: Long Papers)}, pages 1--11, Berlin,
   Germany. Association for Computational Linguistics.
 
+\bibitem[{Gorman(2016)}]{gorman-2016-pynini}
+Kyle Gorman. 2016.
+\newblock \href {https://doi.org/10.18653/v1/W16-2409} {{P}ynini: A python
+  library for weighted finite-state grammar compilation}.
+\newblock In \emph{Proceedings of the {SIGFSM} Workshop on Statistical {NLP}
+  and Weighted Automata}, pages 75--80, Berlin, Germany. Association for
+  Computational Linguistics.
+
+\bibitem[{Gorman and Sproat(2021)}]{gorman2021}
+Kyle Gorman and Richard Sproat. 2021.
+\newblock \href {https://doi.org/10.2200/S01086ED1V01Y202104HLT050}
+  {Finite-{{State Text Processing}}}.
+\newblock \emph{Synthesis Lectures on Human Language Technologies},
+  14(2):1--158.
+
 \bibitem[{Harper(2014)}]{harper-2014-learning}
 Mary Harper. 2014.
 \newblock \href {https://aclanthology.org/C14-1001} {Learning from 26
@@ -78,6 +98,12 @@ Mary Harper. 2014.
   Conference on Computational Linguistics: Technical Papers}, page~1, Dublin,
   Ireland. Dublin City University and Association for Computational
   Linguistics.
+
+\bibitem[{Hayes and Wilson(2008)}]{hayes2008a}
+Bruce Hayes and Colin Wilson. 2008.
+\newblock \href {https://doi.org/10.1162/ling.2008.39.3.379} {A {{Maximum
+  Entropy Model}} of {{Phonotactics}} and {{Phonotactic Learning}}}.
+\newblock \emph{Linguistic Inquiry}, 39(3):379--440.
 
 \bibitem[{Kapatsinski(2010)}]{kapatsinski2010a}
 Vsevolod Kapatsinski. 2010.
@@ -89,13 +115,23 @@ Vsevolod Kapatsinski. 2010.
 \bibitem[{Kuo(2020)}]{kuo2020}
 Jennifer Kuo. 2020.
 \newblock \emph{Evidence for Base-Driven Alternation in {{Tgdaya Seediq}}}.
-\newblock Ph.D. thesis, UCLA.
+\newblock Master's {{Thesis}}, UCLA.
+
+\bibitem[{Mortensen et~al.(2016)Mortensen, Littell, Bharadwaj, Goyal, Dyer, and
+  Levin}]{mortensen-etal-2016-panphon}
+David~R. Mortensen, Patrick Littell, Akash Bharadwaj, Kartik Goyal, Chris Dyer,
+  and Lori Levin. 2016.
+\newblock \href {https://aclanthology.org/C16-1328} {{P}an{P}hon: A resource
+  for mapping {IPA} segments to articulatory feature vectors}.
+\newblock In \emph{Proceedings of {COLING} 2016, the 26th International
+  Conference on Computational Linguistics: Technical Papers}, pages 3475--3484,
+  Osaka, Japan. The COLING 2016 Organizing Committee.
 
 \bibitem[{Nakisa et~al.(2001)Nakisa, Plunkett, and Hahn}]{nakisa2001}
-R.~C. Nakisa, Kim Plunkett, and U~Hahn. 2001.
+Ramin~Charles Nakisa, Kim Plunkett, and Ulrika Hahn. 2001.
 \newblock A cross-linguistic comparison of single and dual-route models of
   inflectional morphology.
-\newblock In P~Broder and J~Murre, editors, \emph{Models of Language
+\newblock In P~Broeder and J~Murre, editors, \emph{Models of Language
   Acquisition: Inductive and Deductive Approaches}. {MIT Pres}, {Cambride, MA}.
 
 \bibitem[{Oseki et~al.(2019)Oseki, Sudo, Sakai, and
@@ -107,6 +143,12 @@ Yohei Oseki, Yasutada Sudo, Hiromu Sakai, and Alec Marantz. 2019.
   in Phonetics, Phonology, and Morphology}, pages 170--177, Florence, Italy.
   Association for Computational Linguistics.
 
+\bibitem[{Plotkin(1970)}]{plotkin1970}
+Gordon~D. Plotkin. 1970.
+\newblock A {{Note}} on {{Inductive Generalization}}.
+\newblock In \emph{Machine {{Intelligence}}}, volume~5, pages 153--163.
+  {Edinburgh University Press}.
+
 \bibitem[{Plunkett and Juola(1999)}]{plunkett1999}
 Kim Plunkett and Patrick Juola. 1999.
 \newblock \href {https://doi.org/10.1207/s15516709cog2304_4} {A {{Connectionist
@@ -114,7 +156,7 @@ Kim Plunkett and Patrick Juola. 1999.
 \newblock \emph{Cognitive Science}, 23(4):463--490.
 
 \bibitem[{Prasada and Pinker(1993)}]{prasada1993}
-S.~Prasada and Steven Pinker. 1993.
+Sandeep Prasada and Steven Pinker. 1993.
 \newblock Generalisation of regular and irregular morphological patterns.
 \newblock \emph{Language and cognitive processes}, 8(1):1--56.
 
@@ -142,6 +184,12 @@ Oscar Strik. 2014.
   marking changes in {{Swedish}} verbs: {{An}} application of two analogical
   computer models}.
 \newblock \emph{Journal of Historical Linguistics}, 4(2):192--231.
+
+\bibitem[{Tenenbaum(1999)}]{tenenbaum1999}
+Joshua~B Tenenbaum. 1999.
+\newblock Bayesian modeling of human concept learning.
+\newblock \emph{Advances in neural information processing systems}, pages
+  59--68.
 
 \bibitem[{Ver{\'i}ssimo and Clahsen(2014)}]{verissimo2014}
 Jo{\~a}o Ver{\'i}ssimo and Harald Clahsen. 2014.

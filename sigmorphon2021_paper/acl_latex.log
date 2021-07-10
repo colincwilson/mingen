@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.4)  10 JUL 2021 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.4)  10 JUL 2021 11:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -453,39 +453,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
 
 ]
+
+Package natbib Warning: Citation `moran2014' on page 2 undefined on input line 90.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 90--90
 \T1/pcr/m/n/9 edu / people / hayes / 120a / Index . htm # features$[][]\T1/ptm/m/n/9 (+20) .
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 153--153
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
 [][][][][]$\T1/pcr/m/n/9 http : / / acl-[]org . github . io / ACLPUB /
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 [][][]\T1/pcr/m/n/10.95 \pdfendlink []ended up in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 \T1/pcr/m/n/10.95 different nesting level
  []
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 265.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 266.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 267.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 268.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 280.
 
 
 Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 281.
@@ -494,51 +483,68 @@ Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line
 Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 282.
 
 
-Package natbib Warning: Citation `Ando2005' undefined on input line 286.
+Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 283.
 
 
-Package natbib Warning: Citation `andrew2007scalable' undefined on input line 286.
+Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 284.
 
 
-Package natbib Warning: Citation `rasooli-tetrault-2015' undefined on input line 286.
+Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 296.
 
 
-Overfull \hbox (3.19867pt too wide) in paragraph at lines 303--303
+Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 297.
+
+
+Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input line 298.
+
+
+Package natbib Warning: Citation `Ando2005' undefined on input line 302.
+
+
+Package natbib Warning: Citation `andrew2007scalable' undefined on input line 302.
+
+
+Package natbib Warning: Citation `rasooli-tetrault-2015' undefined on input line 302.
+
+
+Overfull \hbox (3.19867pt too wide) in paragraph at lines 319--319
  []\T1/pcr/m/n/10.95 \bibliography{anthology,custom}[] 
  []
 
 (/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.bbl
-Underfull \hbox (badness 2027) in paragraph at lines 25--29
+Underfull \hbox (badness 2027) in paragraph at lines 24--28
 []\T1/ptm/m/n/10 Adam Al-bright and Bruce Hayes. 2003.  [][]Rules
  []
 
-[5])
+[5] [6])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 354.
+[7
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 354.
  (/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 354.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 354.
 Package rerunfilecheck Info: File `acl_latex.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 354.
  ) 
 Here is how much of TeX's memory you used:
- 11461 strings out of 481248
- 174385 string characters out of 5918184
- 468420 words of memory out of 5000000
- 26275 multiletter control sequences out of 15000+600000
- 587031 words of font info for 207 fonts, out of 8000000 for 9000
+ 11494 strings out of 481248
+ 175033 string characters out of 5918184
+ 467699 words of memory out of 5000000
+ 26298 multiletter control sequences out of 15000+600000
+ 589834 words of font info for 209 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,10n,46p,1470b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/tipa/xipa10.pfb>
-Output written on /home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf (6 pages, 205503 bytes).
+ 49i,10n,46p,1470b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/tipa/xipa10.pfb>
+Output written on /home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf (7 pages, 218547 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 25089 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 326 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 25601 words of extra memory for PDF output out of 29859 (max. 10000000)
 
