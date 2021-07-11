@@ -9,51 +9,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: anthology.bib
 Database file #2: sigmorphon2021.bib
 Database file #3: sigmorphon2021extra.bib
-Warning--I didn't find a database entry for "moran2014"
 Warning--I didn't find a database entry for "Gusfield:97"
 Warning--I didn't find a database entry for "Ando2005"
 Warning--I didn't find a database entry for "andrew2007scalable"
 Warning--I didn't find a database entry for "rasooli-tetrault-2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 27 entries,
+You've used 29 entries,
             3571 wiz_defined-function locations,
-            904 strings with 11890 characters,
-and the built_in function-call counts, 19786 in all, are:
-= -- 1851
-> -- 674
-< -- 35
-+ -- 217
-- -- 180
-* -- 1236
-:= -- 2865
-add.period$ -- 119
-call.type$ -- 27
-change.case$ -- 217
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 1351
-empty$ -- 1574
-format.name$ -- 267
-if$ -- 4461
+            919 strings with 12400 characters,
+and the built_in function-call counts, 20940 in all, are:
+= -- 1948
+> -- 719
+< -- 36
++ -- 231
+- -- 192
+* -- 1311
+:= -- 3048
+add.period$ -- 128
+call.type$ -- 29
+change.case$ -- 233
+chr.to.int$ -- 29
+cite$ -- 29
+duplicate$ -- 1431
+empty$ -- 1670
+format.name$ -- 283
+if$ -- 4713
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 260
-newline$ -- 139
-num.names$ -- 112
-pop$ -- 519
+missing$ -- 279
+newline$ -- 149
+num.names$ -- 120
+pop$ -- 558
 preamble$ -- 1
-purify$ -- 166
+purify$ -- 178
 quote$ -- 0
-skip$ -- 1042
+skip$ -- 1097
 stack$ -- 0
-substring$ -- 897
-swap$ -- 745
+substring$ -- 920
+swap$ -- 782
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 243
+type$ -- 261
 warning$ -- 0
-while$ -- 142
+while$ -- 147
 width$ -- 0
-write$ -- 375
-(There were 5 warnings)
+write$ -- 401
+(There were 4 warnings)

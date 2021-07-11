@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex acl_latex"] 1625929198 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1625929283
+["bibtex acl_latex"] 1626012818 "acl_latex.aux" "acl_latex.bbl" "acl_latex" 1626013877
   "./acl_natbib.bst" 1625764349 47709 d9d0ab22329e3318a3d1b2ae6abaab62 ""
-  "acl_latex.aux" 1625929283 4354 e086282553673f7402fe40ba1c7c1783 "pdflatex"
+  "acl_latex.aux" 1626012804 4533 4ff027ebc4bad0adcebefc44e0f60d74 "pdflatex"
   "anthology.bib" 1625764349 35309919 21f8e8d5ff8c5da3e0689053d5621845 ""
-  "sigmorphon2021.bib" 1625928893 25589 3aad8ceda77900789ef560ffb28b046a ""
-  "sigmorphon2021extra.bib" 1625924925 614 f8b764c4d024c27d777ce9194b35d1fc ""
+  "sigmorphon2021.bib" 1626013876 34229 c1435e7f5d4bbddedc49f788a4da4ccb ""
+  "sigmorphon2021extra.bib" 1626006343 822 ae69a899e0bbaa986496473407fce5d2 ""
   (generated)
   "acl_latex.blg"
   "acl_latex.bbl"
-["pdflatex"] 1625929283 "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf" "acl_latex" 1625929283
-  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.aux" 1625929283 4354 e086282553673f7402fe40ba1c7c1783 ""
-  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" 1625929282 27781 041c945ae718c0f11e93ad189ba0f8eb ""
+["pdflatex"] 1626012804 "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf" "acl_latex" 1626013877
+  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.aux" 1626012804 4533 4ff027ebc4bad0adcebefc44e0f60d74 ""
+  "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.tex" 1626013864 28946 0a9cba7c5570582cb446ad58807472e2 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -147,13 +147,13 @@
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1580838821 8254053 723ef77d54821140a3fe135bd3b21997 ""
   "/usr/local/texlive/2019/texmf.cnf" 1564069179 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "acl.sty" 1625764349 11158 b6ad1bbc953e18f357974bb34039deb0 ""
-  "acl_latex.aux" 1625929283 4354 e086282553673f7402fe40ba1c7c1783 "pdflatex"
-  "acl_latex.bbl" 1625929199 9360 2835a364e98b2d982e947a1ff0a3828d "bibtex acl_latex"
-  "acl_latex.out" 1625929283 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "acl_latex.tex" 1625929282 27781 041c945ae718c0f11e93ad189ba0f8eb ""
+  "acl_latex.aux" 1626012804 4533 4ff027ebc4bad0adcebefc44e0f60d74 "pdflatex"
+  "acl_latex.bbl" 1626012819 10009 cf312ca4698f475c577bd134aaa13fd1 "bibtex acl_latex"
+  "acl_latex.out" 1626012804 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "acl_latex.tex" 1626013864 28946 0a9cba7c5570582cb446ad58807472e2 ""
   (generated)
-  "acl_latex.aux"
   "acl_latex.out"
+  "acl_latex.aux"
   "acl_latex.log"
   "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf"
   "/home/cwilso23/Code/Python/mingen/sigmorphon2021_paper/acl_latex.log"

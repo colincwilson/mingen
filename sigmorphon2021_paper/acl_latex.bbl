@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{29}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ahyad(2019)}]{ahyad2019}
@@ -54,6 +54,12 @@ Joan~L. Bybee and Carol~Lynn Moder. 1983.
 \newblock \href {https://doi.org/10.2307/413574} {Morphological classes as
   natural categories}.
 \newblock \emph{Language}, 59(2):251--270.
+
+\bibitem[{Chandlee(2017)}]{chandlee2017a}
+Jane Chandlee. 2017.
+\newblock \href {https://doi.org/10.1007/s11525-017-9316-9} {Computational
+  locality in morphological maps}.
+\newblock \emph{Morphology}, 27(4):599--641.
 
 \bibitem[{Corkery et~al.(2019)Corkery, Matusevych, and
   Goldwater}]{corkery-etal-2019-yet}
@@ -116,6 +122,13 @@ Vsevolod Kapatsinski. 2010.
 Jennifer Kuo. 2020.
 \newblock \emph{Evidence for Base-Driven Alternation in {{Tgdaya Seediq}}}.
 \newblock Master's {{Thesis}}, UCLA.
+
+\bibitem[{Moran et~al.(2014)Moran, McCloy, and Wright}]{moran2014}
+Steven Moran, Daniel McCloy, and Richard Wright. 2014.
+\newblock {{PHOIBLE Online}}.
+\newblock \emph{PHOIBLE Online. Edited by: Moran, Steven; McCloy, Daniel;
+  Wright, Richard (2014). Leipzig: Max Planck Institute for Evolutionary
+  Anthropology.}
 
 \bibitem[{Mortensen et~al.(2016)Mortensen, Littell, Bharadwaj, Goyal, Dyer, and
   Levin}]{mortensen-etal-2016-panphon}
@@ -186,10 +199,12 @@ Oscar Strik. 2014.
 \newblock \emph{Journal of Historical Linguistics}, 4(2):192--231.
 
 \bibitem[{Tenenbaum(1999)}]{tenenbaum1999}
-Joshua~B Tenenbaum. 1999.
-\newblock Bayesian modeling of human concept learning.
-\newblock \emph{Advances in neural information processing systems}, pages
-  59--68.
+Joshua Tenenbaum. 1999.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/1998/file/d010396ca8abf6ead8cacc2c2f2f26c7-Paper.pdf}
+  {Bayesian modeling of human concept learning}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~11. MIT Press.
 
 \bibitem[{Ver{\'i}ssimo and Clahsen(2014)}]{verissimo2014}
 Jo{\~a}o Ver{\'i}ssimo and Harald Clahsen. 2014.
