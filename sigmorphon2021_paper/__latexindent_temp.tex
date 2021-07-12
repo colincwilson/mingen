@@ -133,9 +133,19 @@ If all of the remainders are empty, then $D = E = \sigma$. If all but one of the
 These results validate the rule learning algorithm proposed by \citet{albright-hayes-2002-modeling} and used in our implementation. Any minimal generalization of two arbitrary rules $R_1$ and $R_2$ (as allowed by the model) can also be derived from $R_1$ (or $R_2$) by recursive application of minimal generalization with one or more base rules.
 
 
+\subsection{Relative generality}
+\label{subsec:generality}
+
+While not required for the minimal generalization operation itself, we define here a (partial) generality relation on rules. The definition uses the same notation as above and is employed in pruning rules after recursive minimal generalization has been applied (see \S\ref{subsec:pruning} below). 
+
+Relative generality is defined only for rules $R_1$ and $R_2$ that make the same change. It is sufficient to consider the right-hand contexts $D_1$ and $D_2$ and then apply the same definition to the reversed left-hand contexts. Conceptually, context $D_2$ is at least as general as context $D_1$, $D_1 \sqsubseteq D_2$, iff the set of strings represented by $D_1$ is a subset of that represented by $D_2$ when both contexts are considered as regular expressions over $\Sigma_{\#}^*$. The formal definition is complicated somewhat by $X$, which can appear at the end of either context.
+
+Replace each symbol $x \in \Sigma_{\#}$ in $D_1$ or $D_2$ with its feature set $\phi(x)$, treat $X$ as equivalent to $\emptyset$, and let $|D|$ be the length of context $D$.Then $D_1 \sqsubseteq D_2$ iff (i) $|D_1| \geq |D_2|$ and $D_1[k] \subseteq D_2[k]$ for all $1 \leq k \leq |D_1|$, except when $|D_1| = |D_2| + 1$ and the last element of $D_1$ but not $D_2$ is $X$, or (ii) $|D_1| = |D_2| - 1$, $D_1[k] \subseteq D_2[k]$ for all $1 \leq k \leq |D_1|$, and the last element of $D_2$ is $X$. Context $D_2$ is strictly more general than $D_1$, $D_1 \sqsubset D_2$, iff $D_1 \sqsubseteq D_2$ and $D_2 \not\sqsubseteq D_1$. Rule $R_2$ is at least as general as $R_1$, $R_1 \sqsubseteq R_2$, iff $C_1 \sqsubseteq C_2$ and $D_1 \sqsubseteq D_2$; it is a strictly more general rule iff either of the context relations is strict.
+
+
 \section{System Description}
 
-Our system for the shared task preprocesed the input wordforms, learned rules recursively as in \S\ref{sec:mingen}, scored the rules in two ways, pruned out rule that have no effect on the model's predictions, and  applied the remaining rules to wug forms in order to generated predicted ratings.
+Our system for the shared task preprocesed the input wordforms, learned rules with recursive minimal generalization, scored the rules in two ways, pruned rule that have no effect on the model's predictions, and  applied the remaining rules to wug forms in order to generated predicted ratings.
 
 \subsection{Preprocessing}
 
@@ -145,27 +155,36 @@ For German, we split the diphthongs \textipa{/a\textsubarch{i} a\textsubarch{u} 
 
 Checking that all wordform symbols appear in a phonological feature chart is also useful for data cleaning. It helped us to identify a few thousand  Dutch wordforms containing `+' (indicating a Verb - Preposition combination), which we removed. And it caught an encoding error in which two distinct but perceptually similar Unicode symbols were used for /g/.
 
-Two acknowledged limitations of the original version of the minimal generalization model, and our version, are relevant here. First, the model learns rules for individual morphological relations (\emph{e.g.}, mapping a bare stem to a past tense form), not for entire morphological systems jointly. Therefore, we retained from the preprocessed input data only the wordform pairs that instantiate the relations targeted by the wug tests: formation of past participles in German and past tenses  in English and Dutch.
+Two acknowledged limitations of the original version of the minimal generalization model, and our version, are relevant here. First, the model learns rules for individual morphological relations (\emph{e.g.}, mapping a bare stem to a past tense form), not for entire morphological systems jointly. Therefore, we retained from the preprocessed input data only the wordform pairs that instantiate the relations targeted by the wug tests: formation of past participles in German \citep{clahsen1999} and past tenses in English and Dutch \citep{booij2019}.
 
-Second, the model cannot learn sensible rules for circumfixes (xxx). This could be remedied by allowing the model to form rules that simultaneously make changes at both edges of inputs, or by allowing it to apply multiple single-edge rules when mapping inputs to outputs. As a provisional solution, we removed the invariant prefix \textipa{/g@-/} whenever it occured at the beginning of a German past participle (training or wug wordform).
+Second, the model cannot learn sensible rules for circumfixes (xxx). This could be remedied by allowing the model to form rules that simultaneously make changes at both edges of inputs, or by allowing it to apply multiple single-edge rules when mapping inputs to outputs. As a provisional solution, we removed the invariant prefix \textipa{/g@-/} whenever it occured at the beginning of a German past participle (training or wug wordform).\footnote{xxx prefix constant in wug outputs, occurred both initially and finally in training outputs; removed only if absolutely initial}
+
+\subsection{Rules}
+
+Given the preprocessed and filter input data, a base rule was learned for each lexeme and then minimal generalization was applied recursively as in \S\ref{sec:mingen}. This results in tens of thousands of morphological rules for each of the three languages (xxx table reference).
+
+A major goal of Albright \& Hayes was to learn rules that can construct outputs from inputs (as opposed to merely rating or selecting outputs that are generated by some other source). Their model achieved this goal, and a substantial portion of its original implementation was dedicated to rule application. We instead delegated the application of rules to a general purpose finite-state library (Pynini; \citealp{gorman-2016-pynini, gorman2021}).
+
+Each component of a rule $A \to B / C \underline{\ \ \ } D$ was first converted to a regular expression over symbols in $\Sigma_{\#}$ by mapping any feature set $\phi \in \Phi$ to the $|$-disjunction of symbols that bear all of the specified features and deleting instances of $X$. Segments were then encoded as integers using a symbol table. Pynini provides a function \texttt{cdrewrite} that compiles rules in this format to finite-state transducers, a function \texttt{accep} for converting input strings to linear finite-state acceptors encoded with the same symbol table, a composition function \texttt{@} that applies rules to inputs yielding output acceptors, and the means to decode the result back to string form.\footnote{The technique of mapping feature matrices to disjunctions (\emph{i.e.}, natural classes) of segments and beginning/end symbols, and ultimately to disjunctions of integer ids, was also used in the finite-state implementation of \citet{hayes2008}. $X$ was deleted because it occurs only at the beginning of left-hand contexts and at the end of right-hand contexts, both positions where Pynini's rule compiler implicitly adds $\Sigma_{\#}^*$.}
 
 \subsection{Scoring}
 
-xxx
+The \emph{score} of a rule is a function of its accuracy on the training data. The simplest notion of score would be accuracy: the number of training outputs that are correctly predicted by the rule (\emph{hits}), divided by the number of training inputs that meet the structural description of the rule (\emph{scope}). Albright \& Hayes propose instead to discount the scores of rules with smaller scopes, using a formula previously applied to linguistic rules by \citet{mikheev-1997-automatic} (see xxx; one free parameter $\alpha$ set to $0.55$ as in A\&H 2003, p.127). Our implementation includes this way of scoring rules, which Albright \& Hayes call \textit{confidence}.
+
+Because confidence imposes only a modest penalty on rules with small scopes, we also considered a score function of the form $score_{\beta} = hits / (scope + \beta)$, where $\beta$ is a non-negative discount factor (here, $\beta = 10$). A rules that is perfectly accurate and applies to just $5$ cases has high confidence $= .90$ but much lower score$_{10}$ $= .33$; one that applies perfectly to $1000$ cases has a near-maximal score ($> .99$) regardless of which function is used. Clearly, these are only two of a wide range of score functions that could be explored.
 
 \subsection{Pruning}
+\label{subsec:pruning}
 
-When applied to a data set containing thousands of lexemes, recursive minimal generalization can produce 
+When applied to training data consisting of thousands of lexemes, recursive minimal generalization can produce tens of thousands of distinct rules. Albright \& Hayes mention but do not implement the possibility of pruning the rules on the basis of their generality and scores. We pursued this suggestion by first partitioning the set of all learned rules according to their change and imposing a partial order on each of the resulting subsets.
 
-\subsection{Application}
-
-\citep{gorman-2016-pynini, gorman2021}
-xxx
-
-\citep{hayes2008}
+We ordered rules by generality (\S\ref{subsec:generality}), score, and length when expressed with features \citep{chomsky1968a}. Rule $R_2$ dominated rule $R_1$ in the order, $R_1 \prec R_2$ iff $R_2$ was at least as general as $R_1$ ($R_1 \sqsubseteq R_2$) and (i) $R_2$ had a higher score or (ii) the rules tied on score and $R_2$ was either strictly more general ($R_1 \sqsubset R_2$) or shorter. Dominated rules were pruned without affecting the predictions of the model, as we discuss next.
 
 \subsection{Prediction}
 
+Once rules have been learned by minimal generalization and scored, they can be used for multiple purposes: to generate potential outputs for input wordforms (by finite-state composition), to determine possible inputs for a given output wordform (by composition with the inverted transducer), and to assign scores to input/output mappings. Following Albright \& Hayes, we assume that the score of a mapping is inherited from the highest-scoring rule(s) that could produce it. That is, rules neither `gang up' --- multiple rules cannot contribute to the score of a mapping --- nor do they compete --- rules that prefer different outputs for the same input do not detract from the score.
+
+As for the scoring function itself, there is a range of other possibilities to consider. For example, rule scores could be normalized within or across changes, a type of competition that is inherent to probabilistic models. See \citet{albright2006} for a different kind of competition model in which rules learned by minimal generalization are weighted like conflicting constraints.
 
 
 \section{Results}
@@ -173,7 +192,7 @@ xxx
 % German (deu): verb stem tp past % 3417 train examples; 150 wug dev; 266 wug tst
 % mingen0 learned 31,562 rules; 3630 rules after pruning
 % dev eval (AIC): -127.5508, tst eval (AIC): -135.0 *lower is better*
-\citet{clahsen1999} % Appendix A
+% Clahsen 1999 Appendix A
 
 
 % English (eng): verb stem to past-tense form
@@ -185,7 +204,8 @@ xxx
 % 7823 train examples; 122 wug dev; 166 wug tst
 % mingen0 learned 55,114 rules; 1,862 rules after pruning
 % dev eval (AIC): -58.50812, tst eval (AIC): -76.5 *lower is better*
-\citet{booij2019}
+% Booij 2019
+
 
 \section{Conclusions and Future Directions}
 

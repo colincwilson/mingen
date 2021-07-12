@@ -15,45 +15,45 @@ Warning--I didn't find a database entry for "Ando2005"
 Warning--I didn't find a database entry for "andrew2007scalable"
 Warning--I didn't find a database entry for "rasooli-tetrault-2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 30 entries,
+You've used 32 entries,
             3571 wiz_defined-function locations,
-            926 strings with 12558 characters,
-and the built_in function-call counts, 21410 in all, are:
-= -- 1990
-> -- 731
-< -- 36
-+ -- 237
-- -- 195
-* -- 1332
-:= -- 3125
-add.period$ -- 132
-call.type$ -- 30
-change.case$ -- 239
-chr.to.int$ -- 30
-cite$ -- 30
-duplicate$ -- 1461
-empty$ -- 1717
-format.name$ -- 287
-if$ -- 4822
+            939 strings with 12814 characters,
+and the built_in function-call counts, 22584 in all, are:
+= -- 2094
+> -- 767
+< -- 38
++ -- 250
+- -- 204
+* -- 1401
+:= -- 3302
+add.period$ -- 140
+call.type$ -- 32
+change.case$ -- 251
+chr.to.int$ -- 32
+cite$ -- 32
+duplicate$ -- 1538
+empty$ -- 1821
+format.name$ -- 302
+if$ -- 5087
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 285
-newline$ -- 154
-num.names$ -- 124
-pop$ -- 570
+missing$ -- 301
+newline$ -- 164
+num.names$ -- 132
+pop$ -- 600
 preamble$ -- 1
-purify$ -- 183
+purify$ -- 194
 quote$ -- 0
-skip$ -- 1126
+skip$ -- 1193
 stack$ -- 0
-substring$ -- 936
-swap$ -- 791
+substring$ -- 985
+swap$ -- 829
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 267
+type$ -- 282
 warning$ -- 0
-while$ -- 150
+while$ -- 158
 width$ -- 0
-write$ -- 413
+write$ -- 438
 (There were 5 warnings)
