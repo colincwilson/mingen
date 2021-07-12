@@ -82,12 +82,13 @@ In this paper, we apply a partial reimplementation of the Albright \& Hayes mode
 xxx
 
 \section{Minimal Generalization}
+\label{sec:mingen}
 
 \subsection{Inputs}
 
 The model takes as input a set of wordform pairs, one per lexeme, that instantiate the same morphological relationship. In simulations of English past tense formation, these are pairs of bare verb stems and past tense forms such as $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{tOk}$\ltimes$, $\rtimes$\textipa{tOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{stIN}$\ltimes$, $\rtimes$\textipa{st2N}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{flIN}$\ltimes$, $\rtimes$\textipa{fl2N}$\ltimes$$\rangle$, and $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$. Wordforms consist of phonological segments (here, in broad transcription) delimited by special beginning and end of string symbols. The set $\Sigma$ of phonological segments, and the set $\Sigma_{\#} = \Sigma \ \cup \ \{ \rtimes, \ltimes \}$, are assumed to be given to the model.
 
-The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature set, augmenting it with orthogonal feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature specifications are available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all possible (partial) feature specifications over the chosen set and $\phi(x)$ gives the features of $x \in \Sigma_{\#}$.
+The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature chart, augmenting it with orthogonal feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature chart is available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all possible (partial) feature specifications over the chosen set and $\phi(x)$ gives the features of $x \in \Sigma_{\#}$.
 
 \subsection{Base rules}
 
@@ -129,25 +130,43 @@ If all of the remainders are empty, then $D = E = \sigma$. If all but one of the
 
 \textbf{Complete}. \qquad We now prove by induction that, for any $R \in \mathcal{R}_k$ and $R_1, R_2 \in \mathcal{R}_{k-1}$ ($k > 1$) such that $R = R_1 \sqcap R_2$, rule $R$ can also be derived by applying minimal generalization to $R_1$ and one or more base rules (\emph{i.e.}, the rules in the history of $R_2$).\footnote{We ignore rules that are carried over from $\mathcal{R}_{k-1}$ to $\mathcal{R}_{k}$.} For $R \in \mathcal{R}_2$ this is true by definition. For $R \in \mathcal{R}_3$, we have $R = R_1 \sqcap R_2 = R_1 \sqcap (R_{21} \sqcap R_{22}) = (R_1 \sqcap R_{21}) \sqcap R_{22}$, where $R_{21}$ and $R_{22}$ are base rules whose minimal generalization results is $R_2$. In general, suppose that the statement is true for $k-1 > 0$. Then it is also true for $k$ because $R \in \mathcal{R}_k$ can be derived by $R_1 \sqcap R_2 = R_1 \sqcap (\sqcap_{i=1}^{n} R_{2i}) = (((R_{1} \sqcap R_{21}) \sqcap R_{22}) \cdots \sqcap R_{2n})$ where $R_1, R_2 \in \mathcal{R}_{k-1}$ and each $R_{2i}$ is a base rule in the history of $R_2$.
 
-This result validates the rule learning algorithm proposed by \citet{albright-hayes-2002-modeling} and used in our reimplementation. Any minimal generalization of two arbitrary rules $R_1$ and $R_2$ (as allowed by the model) can also be derived from $R_1$ (or $R_2$) by recursive application of minimal generalization with one or more base rules.
-
-\subsection{Pruning}
-
-When applied to an
+These results validate the rule learning algorithm proposed by \citet{albright-hayes-2002-modeling} and used in our implementation. Any minimal generalization of two arbitrary rules $R_1$ and $R_2$ (as allowed by the model) can also be derived from $R_1$ (or $R_2$) by recursive application of minimal generalization with one or more base rules.
 
 
 \section{System Description}
+
+Our system for the shared task preprocesed the input wordforms, learned rules recursively as in \S\ref{sec:mingen}, scored the rules in two ways, pruned out rule that have no effect on the model's predictions, and  applied the remaining rules to wug forms in order to generated predicted ratings.
+
+\subsection{Preprocessing}
+
+The shared task provided space-separated broad IPA transcriptions of the training and wug wordforms (\emph{e.g.}, \textipa{s t I N}, \textipa{s t 2 N}, \textipa{w O k}, \textipa{w O k t}). As already mentioned, we added explicit beginning and end of string symbols. Because minimal generalization requires each wordform symbol to have a phonological feature specificiation, but some segments in the data lack entries in our feature chart, we further simplified or split the symbols as follows.
+
+For German, we split the diphthongs \textipa{/a\textsubarch{i} a\textsubarch{u} o\textsubarch{i} i:@ e:@ E:@/} into their component vowels and additionally regularized \textipa{/\textsubarch{i} \textsubarch{u}/} to \textipa{/i u/}. For English, we split the diphthongs \textipa{/aI aU OI u:I/} into their components and \textipa{/3\textrhoticity/} into \textipa{/E \*r/}, simplified \textipa{/eI @U/} to \textipa{/e o/}, and regularized \textipa{/\s{m} \s{n} r \s{l} \~{O}/} to \textipa{/m n \*r l O/}. We also deleted all length marks \textipa{/:/} and instances of \textipa{/\super G/}. For Dutch, we split \textipa{/EI AU UI/} into their components.
+
+Checking that all wordform symbols appear in a phonological feature chart is also useful for data cleaning. It helped us to identify a few thousand  Dutch wordforms containing `+' (indicating a Verb - Preposition combination), which we removed. And it caught an encoding error in which two distinct but perceptually similar Unicode symbols were used for /g/.
+
+Two acknowledged limitations of the original version of the minimal generalization model, and our version, are relevant here. First, the model learns rules for individual morphological relations (\emph{e.g.}, mapping a bare stem to a past tense form), not for entire morphological systems jointly. Therefore, we retained from the preprocessed input data only the wordform pairs that instantiate the relations targeted by the wug tests: formation of past participles in German and past tenses  in English and Dutch.
+
+Second, the model cannot learn sensible rules for circumfixes (xxx). This could be remedied by allowing the model to form rules that simultaneously make changes at both edges of inputs, or by allowing it to apply multiple single-edge rules when mapping inputs to outputs. As a provisional solution, we removed the invariant prefix \textipa{/g@-/} whenever it occured at the beginning of a German past participle (training or wug wordform).
 
 \subsection{Scoring}
 
 xxx
 
-\subsection{Rule application}
+\subsection{Pruning}
+
+When applied to a data set containing thousands of lexemes, recursive minimal generalization can produce 
+
+\subsection{Application}
 
 \citep{gorman-2016-pynini, gorman2021}
 xxx
 
 \citep{hayes2008}
+
+\subsection{Prediction}
+
+
 
 \section{Results}
 
@@ -297,12 +316,12 @@ This happens when pdf\LaTeX{} is used and a citation splits across a page bounda
 \begin{tabular}{lll}
 \hline
 \textbf{Output} & \textbf{natbib command} & \textbf{Old ACL-style command}\\
-\hline
-\citep{Gusfield:97} & \verb|\citep| & \verb|\cite| \\
-\citealp{Gusfield:97} & \verb|\citealp| & no equivalent \\
-\citet{Gusfield:97} & \verb|\citet| & \verb|\newcite| \\
-\citeyearpar{Gusfield:97} & \verb|\citeyearpar| & \verb|\shortcite| \\
-\hline
+% \hline
+% \citep{Gusfield:97} & \verb|\citep| & \verb|\cite| \\
+% \citealp{Gusfield:97} & \verb|\citealp| & no equivalent \\
+% \citet{Gusfield:97} & \verb|\citet| & \verb|\newcite| \\
+% \citeyearpar{Gusfield:97} & \verb|\citeyearpar| & \verb|\shortcite| \\
+% \hline
 \end{tabular}
 \caption{\label{citation-guide}
 Citation commands supported by the style file.

@@ -17,7 +17,7 @@ Warning--I didn't find a database entry for "rasooli-tetrault-2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 30 entries,
             3571 wiz_defined-function locations,
-            925 strings with 12551 characters,
+            926 strings with 12558 characters,
 and the built_in function-call counts, 21410 in all, are:
 = -- 1990
 > -- 731
