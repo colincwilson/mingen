@@ -1,58 +1,59 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: acl_latex.aux
 The style file: acl_natbib.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: anthology.bib
 Database file #2: sigmorphon2021.bib
 Database file #3: sigmorphon2021extra.bib
+Warning--I didn't find a database entry for "chandlee2017a"
 Warning--I didn't find a database entry for "Gusfield:97"
 Warning--I didn't find a database entry for "Ando2005"
 Warning--I didn't find a database entry for "andrew2007scalable"
 Warning--I didn't find a database entry for "rasooli-tetrault-2015"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 29 entries,
+You've used 30 entries,
             3571 wiz_defined-function locations,
-            919 strings with 12400 characters,
-and the built_in function-call counts, 20940 in all, are:
-= -- 1948
-> -- 719
+            925 strings with 12551 characters,
+and the built_in function-call counts, 21410 in all, are:
+= -- 1990
+> -- 731
 < -- 36
-+ -- 231
-- -- 192
-* -- 1311
-:= -- 3048
-add.period$ -- 128
-call.type$ -- 29
-change.case$ -- 233
-chr.to.int$ -- 29
-cite$ -- 29
-duplicate$ -- 1431
-empty$ -- 1670
-format.name$ -- 283
-if$ -- 4713
++ -- 237
+- -- 195
+* -- 1332
+:= -- 3125
+add.period$ -- 132
+call.type$ -- 30
+change.case$ -- 239
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 1461
+empty$ -- 1717
+format.name$ -- 287
+if$ -- 4822
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 279
-newline$ -- 149
-num.names$ -- 120
-pop$ -- 558
+missing$ -- 285
+newline$ -- 154
+num.names$ -- 124
+pop$ -- 570
 preamble$ -- 1
-purify$ -- 178
+purify$ -- 183
 quote$ -- 0
-skip$ -- 1097
+skip$ -- 1126
 stack$ -- 0
-substring$ -- 920
-swap$ -- 782
-text.length$ -- 15
+substring$ -- 936
+swap$ -- 791
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 261
+type$ -- 267
 warning$ -- 0
-while$ -- 147
+while$ -- 150
 width$ -- 0
-write$ -- 401
-(There were 4 warnings)
+write$ -- 413
+(There were 5 warnings)

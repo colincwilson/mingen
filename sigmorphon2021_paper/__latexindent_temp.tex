@@ -70,12 +70,12 @@ xxx
 
 \section{Introduction}
 
-In a landmark paper, \citet{albright2003} proposed a model that learns morphological rules by recursive \textbf{minimal generalization} from lexeme-specific examples (\emph{e.g.}, \textipa{I} $\to$ \textipa{2} / \textipa{st} \underline{\ \ \ } \textipa{N} for \emph{sting $\sim$ stung} and \textipa{I} $\to$ \textipa{2} / \textipa{fl} \underline{\ \ \ } \textipa{N} for \emph{fling $\sim$ flung} generalized to  \textipa{I} $\to$ \textipa{2} / X [$-$syllabic, $+$coronal, $+$anterior, \ldots] \underline{\ \ \ } \textipa{N}).\footnote{The square brackets contain the shared phonological feature specifications of /t/ and /l/, which in the feature system used here are xxx.} The model was presented more formally in \citet{albright2002a}, along with evidence that the rules it learns for the English past tense give a good account of native speakers' productions and ratings in wug-test experiments (\emph{e.g.} judgments that \textit{splung} is quite acceptable as the past tense of the novel verb \textit{spling}). In addition to providing further analysis of the experimental data, \citet{albright2003} compared their proposal with early connectionist models of morphology \citep[\emph{e.g.,}][]{plunkett1999} and an analogical or `family resemblance' model inspired by research on psychological categories \citep{nakisa2001}.
+In a landmark paper, \citet{albright2003} proposed a model that learns morphological rules by recursive \textbf{minimal generalization} from lexeme-specific examples (\emph{e.g.}, \textipa{I} $\to$ \textipa{2} / \textipa{st} \underline{\ \ \ } \textipa{N} for \emph{sting $\sim$ stung} and \textipa{I} $\to$ \textipa{2} / \textipa{fl} \underline{\ \ \ } \textipa{N} for \emph{fling $\sim$ flung} generalized to  \textipa{I} $\to$ \textipa{2} / X [$-$syllabic, $+$coronal, $+$anterior, \ldots] \underline{\ \ \ } \textipa{N}).\footnote{The square brackets contain the shared phonological feature specifications of /t/ and /l/, which in the feature system used here are xxx.} The model was presented more formally in \citet{albright-hayes-2002-modeling}, along with evidence that the rules it learns for the English past tense give a good account of native speakers' productions and ratings in wug-test experiments (\emph{e.g.} judgments that \textit{splung} is quite acceptable as the past tense of the novel verb \textit{spling}). In addition to providing further analysis of the experimental data, \citet{albright2003} compared their proposal with early connectionist models of morphology \citep[\emph{e.g.,}][]{plunkett1999} and an analogical or `family resemblance' model inspired by research on psychological categories \citep{nakisa2001}.
 
-Along with \citet{albright2002b}, which presents a parallel treatment of Italian inflection, Albright \& Hayes's study of the English past tense is a paradigm example of theory-driven, multiple-methodology, open and reproducible research in cognitive science.\footnote{Albright \& Hayes released both the results of their wug-test experiments and an implementation of their model (visit \url{http://www.mit.edu/~albright/mgl/} and \url{https://linguistics.ucla.edu/people/hayes/RulesVsAnalogy/index.html}). An impediment to large-scale simulation with the model is that it runs from a GUI interface only. As part of the present project, we have added a command line interface to the original source code (available on request).} Their model has enduring significance for the study of morphological learning and productivity in English \citep[\emph{e.g.,}][]{racz-etal-2014-rules, racz2020a, corkery-etal-2019-yet} and many other languages (\emph{e.g.,} Hijazi Arabic: \citealt{ahyad2019}; Japanese: \citealt{oseki-etal-2019-inverting}; Korean: \citealt{albright2009}; Navajo: \citealt{albright2006}; Portuguese: \citealt{verissimo2014}; Russian: \citealt{kapatsinski2010a}; Tgdaya Seediq: \citealt{kuo2020}; Spanish: \citealt{albright2003}; Swedish: \citealt{strik2014}).
+Along with \citet{albright2002}, which presents a parallel treatment of Italian inflection, Albright \& Hayes's study of the English past tense is a paradigm example of theory-driven, multiple-methodology, open and reproducible research in cognitive science.\footnote{Albright \& Hayes released both the results of their wug-test experiments and an implementation of their model (visit \url{http://www.mit.edu/~albright/mgl/} and \url{https://linguistics.ucla.edu/people/hayes/RulesVsAnalogy/index.html}). An impediment to large-scale simulation with the model is that it runs from a GUI interface only. As part of the present project, we have added a command line interface to the original source code (available on request).} Their model has enduring significance for the study of morphological learning and productivity in English \citep[\emph{e.g.,}][]{racz-etal-2014-rules, racz2020, corkery-etal-2019-yet} and many other languages (\emph{e.g.,} Hijazi Arabic: \citealt{ahyad2019}; Japanese: \citealt{oseki-etal-2019-inverting}; Korean: \citealt{albright2009}; Navajo: \citealt{albright2006}; Portuguese: \citealt{verissimo2014}; Russian: \citealt{kapatsinski2010}; Tgdaya Seediq: \citealt{kuo2020}; Spanish: \citealt{albright2003}; Swedish: \citealt{strik2014}).
 
 
-In this paper, we apply a partial reimplementation of the Albright \& Hayes model to wug-test rating data from three languages (Dutch, English, and German) collected for the SIGMORPHON-UniMorph 2021 Shared Task. Our version of the model is based purely on minimal generalization of morphological rules, as described in \S3.1 of \citet{albright2002a} and reviewed below. It does not include additional mechanisms for learning phonological rules, and expanding or reigning in morphological rules, that were part of the original model \citep[see][\S3.3 - \S3.7]{albright2002a}. We think there is much to be gained from considering minimal generalization on its own, with the other mechanisms ablated away, as borne out by competitive results on the shared task. For convenience, we refer to the original model as \textbf{mingen} and our bare-bones version as \textbf{mingen0}.
+In this paper, we apply a partial reimplementation of the Albright \& Hayes model to wug-test rating data from three languages (German, English, and Dutch) collected for the SIGMORPHON-UniMorph 2021 Shared Task. Our version of the model is based purely on minimal generalization of morphological rules, as described in \S3.1 of \citet{albright-hayes-2002-modeling} and reviewed below. It does not include additional mechanisms for learning phonological rules, and expanding or reigning in morphological rules, that were part of the original model \citep[see][\S3.3 - \S3.7]{albright-hayes-2002-modeling}. We think there is much to be gained from considering minimal generalization on its own, with the other mechanisms ablated away, as borne out by competitive results on the shared task. For convenience, we refer to the original model as \textbf{mingen} and our bare-bones version as \textbf{mingen0}.
 
 \subsection{Outline}
 
@@ -101,7 +101,7 @@ The minimal generalization $D = D_1 \sqcap D_2$ is defined precedurally by first
 
 If there are no common features, $\phi_{1\cap2} = \emptyset$, then as before $D = \sigma_{1\land2}X$. Otherwise, the set of common features $\phi_{1\cap2} \neq \emptyset$ is appended to $\sigma_{1\land2}$, the first symbol is removed from $D_1'$ and $D_2'$, and the operation applies to the remainders. If both remainders are empty then $D = \sigma_{1\land2} \phi_{1\cap2}$, otherwise $D = \sigma_{1\land2}\phi_{1\cap2}X$.
 
-In summary, the generalized right-hand context $D$ consists of the longest common prefix shared by $D_1$ and $D_2$, followed by a single set of shared features (if any), followed by $X$ in case there are no shared features or one context is longer than the other. With the change and generalized left-hand context $C$ determined as already described, the result of applying minimal generalization to the two base rules is $R = A \to B / C \ \underline{\ \ \ } \ D$.\footnote{There could be a slight difference between our definition of context generalization and that in \citet{albright2002a}, hinging on whether the empty feature set is allowed in rules. In our definition, $\phi_{1\cap2} = \emptyset$ is replaced by the variable $X$. It is possible that the original proposal intended for empty and non-empty feature sets to be treated alike. The definitions can diverge when applied to contexts that are of identical length and share all but the last (resp. first) segments, in which case our version would result in a broader rule.}
+In summary, the generalized right-hand context $D$ consists of the longest common prefix shared by $D_1$ and $D_2$, followed by a single set of shared features (if any), followed by $X$ in case there are no shared features or one context is longer than the other. With the change and generalized left-hand context $C$ determined as already described, the result of applying minimal generalization to the two base rules is $R = A \to B / C \ \underline{\ \ \ } \ D$.\footnote{There could be a slight difference between our definition of context generalization and that in \citet{albright-hayes-2002-modeling}, hinging on whether the empty feature set is allowed in rules. In our definition, $\phi_{1\cap2} = \emptyset$ is replaced by the variable $X$. It is possible that the original proposal intended for empty and non-empty feature sets to be treated alike. The definitions can diverge when applied to contexts that are of identical length and share all but the last (resp. first) segments, in which case our version would result in a broader rule.}
 
 \subsection{Recursive Minimal Generalization}
 
@@ -117,7 +117,9 @@ By construction, the contexts that result from this operation are also in $\Sigm
 
 Having defined minimal generalization for arbitrary contexts (as allowed by the model), we can revisit the conjecture that nothing is lost by restricting the operation to pairs at least one of which is a base rule. This is a practical concern, as the number of base rules is a constant determined by the input data while the number of generalized rules can increase exponentially.
 
-Each rule learned by unrestricted minimal generalization has a (possibly non-unique) `history' of base rules from which it originated: each base rule in $\mathcal{R}_1$ is its own history; each rule in $\mathcal{R}_2$ has two base rules in its history; each rule in $\mathcal{R}_3$ combines the histories of the two rules from which it was derived; and so on. Because all rules are learned `bottom-up' in this sense, the conjecture can be proved by showing that the minimal generalization operation is associative; we also show that it is commutative --- both properties inherited from equality, lcp, set intersection, and other primitive ingredients of the operation. It follows that any rule $R$ can be replaced, for the purpose of minimal generalization, by the generalization of the base rules in its history (in any order). As always, we consider right-hand contexts, from which parallel results for left-hand contexts and entire rules follow immediately.
+Conceptually, each rule learned by unrestricted minimal generalization has a (possibly non-unique) `history' of base rules from which it originated. A base rule $R \in \mathcal{R}_1$ has the history $\{ R \}$. A rule in $R \in \mathcal{R}_2$ has the history $\{ R_1, R_2 \}$ containing the two base rules from which it derived. In general, the history of each rule in $\mathcal{R}_k$ is the union of the histories of two rules in $\mathcal{R}_{k-1}$ ($k > 1$).
+
+Because all rules are learned `bottom-up' in this sense, the conjecture can be proved by showing that the minimal generalization operation is associative; we also show that it is commutative --- both properties inherited from equality, lcp, set intersection, and other more primitive ingredients. As before, we explicitly consider right-hand contexts, from which parallel results for left-hand contexts and entire rules follow immediately. It follows that any rule $R$ can be replaced, for the purposes of minimal generalization, with the base rules in its history (in any order). 
 
 \textbf{Commutative}. Let $D = D_1 \sqcap D_2$ for any $D_1, D_2 \in \Sigma_{\#}^*(\Phi)(X)$. We prove by construction that $D$ is also equal to $D_2 \sqcap D_1$. The lcp of elements from $\Sigma_{\#}$ is the same regardless of the order of the contexts ($\sigma_{1\land 2} = \sigma_{2\land 1}$) as are the remainders ($D_1'$ and $D_2'$). If both remainders are empty, then the result of minimal generalization is $\sigma_{1\land 2} = \sigma_{2\land 1}$. If one but not both of them are empty then the result is $\sigma_{1\land 2}X = \sigma_{2\land 1}X$; note that $X$ appears regardless of which context is longer. If both are non-empty then we ensure that their initial elements are (possibly empty) feature sets and take their intersection, which is order independent: $\phi_{1\cap 2} = \phi_{2\cap 1}$. If $\phi_{1\cap 2} = \emptyset$ then the result is $\sigma_{1\land 2}X = \sigma_{2\land 1}X$. Otherwise, the initial elements are removed and the operation continues to the remainders. If both remainders are empty the result is $\sigma_{1\land 2}\phi_{1\cap 2} = \sigma_{2\land 1}\phi_{2\cap 1}$, otherwise it is the same expressions terminated by $X$.
 
@@ -127,7 +129,11 @@ If all of the remainders are empty, then $D = E = \sigma$. If all but one of the
 
 \textbf{Complete}. \qquad We now prove by induction that, for any $R \in \mathcal{R}_k$ and $R_1, R_2 \in \mathcal{R}_{k-1}$ ($k > 1$) such that $R = R_1 \sqcap R_2$, rule $R$ can also be derived by applying minimal generalization to $R_1$ and one or more base rules (\emph{i.e.}, the rules in the history of $R_2$).\footnote{We ignore rules that are carried over from $\mathcal{R}_{k-1}$ to $\mathcal{R}_{k}$.} For $R \in \mathcal{R}_2$ this is true by definition. For $R \in \mathcal{R}_3$, we have $R = R_1 \sqcap R_2 = R_1 \sqcap (R_{21} \sqcap R_{22}) = (R_1 \sqcap R_{21}) \sqcap R_{22}$, where $R_{21}$ and $R_{22}$ are base rules whose minimal generalization results is $R_2$. In general, suppose that the statement is true for $k-1 > 0$. Then it is also true for $k$ because $R \in \mathcal{R}_k$ can be derived by $R_1 \sqcap R_2 = R_1 \sqcap (\sqcap_{i=1}^{n} R_{2i}) = (((R_{1} \sqcap R_{21}) \sqcap R_{22}) \cdots \sqcap R_{2n})$ where $R_1, R_2 \in \mathcal{R}_{k-1}$ and each $R_{2i}$ is a base rule in the history of $R_2$.
 
-This result validates the rule learning algorithm proposed by \citet{albright2002a} and used in our reimplementation. Any minimal generalization of two arbitrary rules $R_1$ and $R_2$ (as allowed by the model) can also be derived from $R_1$ (or $R_2$) by recursive application of minimal generalization with one or more base rules.
+This result validates the rule learning algorithm proposed by \citet{albright-hayes-2002-modeling} and used in our reimplementation. Any minimal generalization of two arbitrary rules $R_1$ and $R_2$ (as allowed by the model) can also be derived from $R_1$ (or $R_2$) by recursive application of minimal generalization with one or more base rules.
+
+\subsection{Pruning}
+
+When applied to an
 
 
 \section{System Description}
@@ -136,34 +142,31 @@ This result validates the rule learning algorithm proposed by \citet{albright200
 
 xxx
 
-\subsection{Pruning}
-
-xxx
-
 \subsection{Rule application}
 
 \citep{gorman-2016-pynini, gorman2021}
 xxx
 
-\citep{hayes2008a}
+\citep{hayes2008}
 
 \section{Results}
 
-% German (deu): verb stem tp past participle \citet{clahsen1999}, Appendix A
-% 3417 train examples; 150 wug dev; 266 wug tst
+% German (deu): verb stem tp past % 3417 train examples; 150 wug dev; 266 wug tst
 % mingen0 learned 31,562 rules; 3630 rules after pruning
 % dev eval (AIC): -127.5508, tst eval (AIC): -135.0 *lower is better*
+\citet{clahsen1999} % Appendix A
+
 
 % English (eng): verb stem to past-tense form
 % 5803 train examples; 158 wug dev; 139 wug tst
 % mingen0 learned 30,728 rules; 263 rules after pruning
 % dev eval (AIC): -112.0, tst eval (AIC): -62.2 *lower is better*
 
-% Dutch (nld): verb stem to past-tense form \citet{booij2019}
+% Dutch (nld): verb stem to past-tense form
 % 7823 train examples; 122 wug dev; 166 wug tst
 % mingen0 learned 55,114 rules; 1,862 rules after pruning
 % dev eval (AIC): -58.50812, tst eval (AIC): -76.5 *lower is better*
-
+\citet{booij2019}
 
 \section{Conclusions and Future Directions}
 

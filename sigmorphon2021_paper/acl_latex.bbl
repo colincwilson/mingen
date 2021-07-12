@@ -1,29 +1,29 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{30}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ahyad(2019)}]{ahyad2019}
 Honaida~Yousuf Ahyad. 2019.
-\newblock \emph{Vowel {{Distribution}} in the {{Hijazi Arabic Root}}}.
-\newblock Ph.{{D}}., State University of New York at Stony Brook.
+\newblock \emph{Vowel Distribution in the {{Hijazi Arabic}} Root}.
+\newblock Ph.{{D}}. dissertation, State University of New York at Stony Brook.
 
-\bibitem[{Albright(2002)}]{albright2002b}
+\bibitem[{Albright(2002)}]{albright2002}
 Adam Albright. 2002.
-\newblock Islands of {{Reliability}} for {{Regular Morphology}}: {{Evidence}}
-  from {{Italian}}.
+\newblock Islands of reliability for regular morphology: {{Evidence}} from
+  {{Italian}}.
 \newblock \emph{Language}, 78(4):684--709.
 
-\bibitem[{Albright and Hayes(2002)}]{albright2002a}
+\bibitem[{Albright and Hayes(2002)}]{albright-hayes-2002-modeling}
 Adam Albright and Bruce Hayes. 2002.
-\newblock \href {https://doi.org/10.3115/1118647.1118654} {Modeling english
+\newblock \href {https://doi.org/10.3115/1118647.1118654} {Modeling {E}nglish
   past tense intuitions with minimal generalization}.
-\newblock In \emph{Proceedings of the {{ACL}}-02 Workshop on {{Morphological}}
-  and Phonological Learning -}, volume~6, pages 58--69, {Not Known}.
-  {Association for Computational Linguistics}.
+\newblock In \emph{Proceedings of the {ACL}-02 Workshop on Morphological and
+  Phonological Learning}, pages 58--69. Association for Computational
+  Linguistics.
 
 \bibitem[{Albright and Hayes(2003)}]{albright2003}
 Adam Albright and Bruce Hayes. 2003.
 \newblock \href {https://doi.org/10.1016/S0010-0277(03)00146-X} {Rules vs.
-  analogy in {{English}} past tenses: A computational/experimental study}.
+  analogy in {{English}} past tenses: {{A}} computational/experimental study}.
 \newblock \emph{Cognition}, 90(2):119--161.
 
 \bibitem[{Albright and Hayes(2006)}]{albright2006}
@@ -41,6 +41,11 @@ Adam Albright and Yoonjung Kang. 2009.
   of the papers selected from the {CIL} 18, held at {K}orea {U}niversity in
   {S}eoul}, pages 1--20.
 
+\bibitem[{Booij(2019)}]{booij2019}
+Geert Booij. 2019.
+\newblock \emph{The Morphology of {{Dutch}}}, second edition.
+\newblock {Oxford University Press}, {New York}.
+
 \bibitem[{B{\"o}rschinger and
   Johnson(2011)}]{borschinger-johnson-2011-particle}
 Benjamin B{\"o}rschinger and Mark Johnson. 2011.
@@ -55,11 +60,12 @@ Joan~L. Bybee and Carol~Lynn Moder. 1983.
   natural categories}.
 \newblock \emph{Language}, 59(2):251--270.
 
-\bibitem[{Chandlee(2017)}]{chandlee2017a}
-Jane Chandlee. 2017.
-\newblock \href {https://doi.org/10.1007/s11525-017-9316-9} {Computational
-  locality in morphological maps}.
-\newblock \emph{Morphology}, 27(4):599--641.
+\bibitem[{Clahsen(1999)}]{clahsen1999}
+Harald Clahsen. 1999.
+\newblock \href {https://doi.org/10.1017/S0140525X99002228} {Lexical entries
+  and rules of language: {{A}} multidisciplinary study of {{German}}
+  inflection}.
+\newblock \emph{Behavioral and Brain Sciences}, 22(6):991--1013.
 
 \bibitem[{Corkery et~al.(2019)Corkery, Matusevych, and
   Goldwater}]{corkery-etal-2019-yet}
@@ -83,7 +89,7 @@ James Goodman, Andreas Vlachos, and Jason Naradowsky. 2016.
 
 \bibitem[{Gorman(2016)}]{gorman-2016-pynini}
 Kyle Gorman. 2016.
-\newblock \href {https://doi.org/10.18653/v1/W16-2409} {{P}ynini: A python
+\newblock \href {https://doi.org/10.18653/v1/W16-2409} {{P}ynini: A {P}ython
   library for weighted finite-state grammar compilation}.
 \newblock In \emph{Proceedings of the {SIGFSM} Workshop on Statistical {NLP}
   and Weighted Automata}, pages 75--80, Berlin, Germany. Association for
@@ -105,13 +111,13 @@ Mary Harper. 2014.
   Ireland. Dublin City University and Association for Computational
   Linguistics.
 
-\bibitem[{Hayes and Wilson(2008)}]{hayes2008a}
+\bibitem[{Hayes and Wilson(2008)}]{hayes2008}
 Bruce Hayes and Colin Wilson. 2008.
-\newblock \href {https://doi.org/10.1162/ling.2008.39.3.379} {A {{Maximum
-  Entropy Model}} of {{Phonotactics}} and {{Phonotactic Learning}}}.
+\newblock \href {https://doi.org/10.1162/ling.2008.39.3.379} {A maximum entropy
+  model of phonotactics and phonotactic learning}.
 \newblock \emph{Linguistic Inquiry}, 39(3):379--440.
 
-\bibitem[{Kapatsinski(2010)}]{kapatsinski2010a}
+\bibitem[{Kapatsinski(2010)}]{kapatsinski2010}
 Vsevolod Kapatsinski. 2010.
 \newblock \href {https://doi.org/10.1515/labphon.2010.019} {Velar
   palatalization in {{Russian}} and artificial grammar: {{Constraints}} on
@@ -144,7 +150,7 @@ David~R. Mortensen, Patrick Littell, Akash Bharadwaj, Kartik Goyal, Chris Dyer,
 Ramin~Charles Nakisa, Kim Plunkett, and Ulrika Hahn. 2001.
 \newblock A cross-linguistic comparison of single and dual-route models of
   inflectional morphology.
-\newblock In P~Broeder and J~Murre, editors, \emph{Models of Language
+\newblock In Peter Broeder and Jaap Murre, editors, \emph{Models of Language
   Acquisition: Inductive and Deductive Approaches}. {MIT Pres}, {Cambride, MA}.
 
 \bibitem[{Oseki et~al.(2019)Oseki, Sudo, Sakai, and
@@ -158,23 +164,23 @@ Yohei Oseki, Yasutada Sudo, Hiromu Sakai, and Alec Marantz. 2019.
 
 \bibitem[{Plotkin(1970)}]{plotkin1970}
 Gordon~D. Plotkin. 1970.
-\newblock A {{Note}} on {{Inductive Generalization}}.
+\newblock A note on inductive generalization.
 \newblock In \emph{Machine {{Intelligence}}}, volume~5, pages 153--163.
   {Edinburgh University Press}.
 
 \bibitem[{Plunkett and Juola(1999)}]{plunkett1999}
 Kim Plunkett and Patrick Juola. 1999.
-\newblock \href {https://doi.org/10.1207/s15516709cog2304_4} {A {{Connectionist
-  Model}} of {{English Past Tense}} and {{Plural Morphology}}}.
+\newblock \href {https://doi.org/10.1207/s15516709cog2304_4} {A connectionist
+  model of {{English}} past tense and plural morphology}.
 \newblock \emph{Cognitive Science}, 23(4):463--490.
 
 \bibitem[{Prasada and Pinker(1993)}]{prasada1993}
 Sandeep Prasada and Steven Pinker. 1993.
 \newblock Generalisation of regular and irregular morphological patterns.
-\newblock \emph{Language and cognitive processes}, 8(1):1--56.
+\newblock \emph{Language and Cognitive Processes}, 8(1):1--56.
 
 \bibitem[{R{\'a}cz et~al.(2020)R{\'a}cz, Beckner, Hay, and
-  Pierrehumbert}]{racz2020a}
+  Pierrehumbert}]{racz2020}
 P{\'e}ter R{\'a}cz, Clay Beckner, Jennifer~B. Hay, and Janet~B. Pierrehumbert.
   2020.
 \newblock \href {https://doi.org/10.1353/lan.2020.0061} {Morphological
@@ -204,7 +210,7 @@ Joshua Tenenbaum. 1999.
   {https://proceedings.neurips.cc/paper/1998/file/d010396ca8abf6ead8cacc2c2f2f26c7-Paper.pdf}
   {Bayesian modeling of human concept learning}.
 \newblock In \emph{Advances in Neural Information Processing Systems},
-  volume~11. MIT Press.
+  volume~11, Cambridge, MA. MIT Press.
 
 \bibitem[{Ver{\'i}ssimo and Clahsen(2014)}]{verissimo2014}
 Jo{\~a}o Ver{\'i}ssimo and Harald Clahsen. 2014.
