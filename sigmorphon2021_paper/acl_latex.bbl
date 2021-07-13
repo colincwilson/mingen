@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{31}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ahyad(2019)}]{ahyad2019}
@@ -46,14 +46,6 @@ Geert Booij. 2019.
 \newblock \emph{The Morphology of {{Dutch}}}, second edition.
 \newblock {Oxford University Press}, {New York}.
 
-\bibitem[{B{\"o}rschinger and
-  Johnson(2011)}]{borschinger-johnson-2011-particle}
-Benjamin B{\"o}rschinger and Mark Johnson. 2011.
-\newblock \href {https://aclanthology.org/U11-1004} {A particle filter
-  algorithm for {B}ayesian wordsegmentation}.
-\newblock In \emph{Proceedings of the Australasian Language Technology
-  Association Workshop 2011}, pages 10--18, Canberra, Australia.
-
 \bibitem[{Bybee and Moder(1983)}]{bybee1983}
 Joan~L. Bybee and Carol~Lynn Moder. 1983.
 \newblock \href {https://doi.org/10.2307/413574} {Morphological classes as
@@ -82,16 +74,6 @@ Maria Corkery, Yevgen Matusevych, and Sharon Goldwater. 2019.
   for Computational Linguistics}, pages 3868--3877, Florence, Italy.
   Association for Computational Linguistics.
 
-\bibitem[{Goodman et~al.(2016)Goodman, Vlachos, and
-  Naradowsky}]{goodman-etal-2016-noise}
-James Goodman, Andreas Vlachos, and Jason Naradowsky. 2016.
-\newblock \href {https://doi.org/10.18653/v1/P16-1001} {Noise reduction and
-  targeted exploration in imitation learning for {A}bstract {M}eaning
-  {R}epresentation parsing}.
-\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
-  for Computational Linguistics (Volume 1: Long Papers)}, pages 1--11, Berlin,
-  Germany. Association for Computational Linguistics.
-
 \bibitem[{Gorman(2016)}]{gorman-2016-pynini}
 Kyle Gorman. 2016.
 \newblock \href {https://doi.org/10.18653/v1/W16-2409} {{P}ynini: A {P}ython
@@ -106,15 +88,6 @@ Kyle Gorman and Richard Sproat. 2021.
   {Finite-{{State Text Processing}}}.
 \newblock \emph{Synthesis Lectures on Human Language Technologies},
   14(2):1--158.
-
-\bibitem[{Harper(2014)}]{harper-2014-learning}
-Mary Harper. 2014.
-\newblock \href {https://aclanthology.org/C14-1001} {Learning from 26
-  languages: Program management and science in the babel program}.
-\newblock In \emph{Proceedings of {COLING} 2014, the 25th International
-  Conference on Computational Linguistics: Technical Papers}, page~1, Dublin,
-  Ireland. Dublin City University and Association for Computational
-  Linguistics.
 
 \bibitem[{Hayes and Wilson(2008)}]{hayes2008}
 Bruce Hayes and Colin Wilson. 2008.
@@ -140,6 +113,14 @@ Andrei Mikheev. 1997.
   for unknown-word guessing}.
 \newblock \emph{Computational Linguistics}, 23(3):405--423.
 
+\bibitem[{Mohri and Sproat(1996)}]{mohri-sproat-1996-efficient}
+Mehryar Mohri and Richard Sproat. 1996.
+\newblock \href {https://doi.org/10.3115/981863.981894} {An efficient compiler
+  for weighted rewrite rules}.
+\newblock In \emph{34th Annual Meeting of the Association for Computational
+  Linguistics}, pages 231--238, Santa Cruz, California, USA. Association for
+  Computational Linguistics.
+
 \bibitem[{Moran et~al.(2014)Moran, McCloy, and Wright}]{moran2014}
 Steven Moran, Daniel McCloy, and Richard Wright. 2014.
 \newblock {{PHOIBLE Online}}.
@@ -162,7 +143,8 @@ Ramin~Charles Nakisa, Kim Plunkett, and Ulrika Hahn. 2001.
 \newblock A cross-linguistic comparison of single and dual-route models of
   inflectional morphology.
 \newblock In Peter Broeder and Jaap Murre, editors, \emph{Models of Language
-  Acquisition: Inductive and Deductive Approaches}. {MIT Pres}, {Cambride, MA}.
+  Acquisition: Inductive and Deductive Approaches}, pages 201--222. {MIT Pres},
+  {Cambride, MA}.
 
 \bibitem[{Oseki et~al.(2019)Oseki, Sudo, Sakai, and
   Marantz}]{oseki-etal-2019-inverting}
@@ -207,6 +189,17 @@ P{\'e}ter R{\'a}cz, Clayton Beckner, Jennifer~B. Hay, and Janet~B.
 \newblock In \emph{Proceedings of the 2014 Joint Meeting of {SIGMORPHON} and
   {SIGFSM}}, pages 55--63, Baltimore, Maryland. Association for Computational
   Linguistics.
+
+\bibitem[{Riley et~al.(2009)Riley, Allauzen, and
+  Jansche}]{riley-etal-2009-openfst}
+Michael Riley, Cyril Allauzen, and Martin Jansche. 2009.
+\newblock \href {https://aclanthology.org/N09-4005} {{O}pen{F}st: An
+  open-source, weighted finite-state transducer library and its applications to
+  speech and language}.
+\newblock In \emph{Proceedings of Human Language Technologies: The 2009 Annual
+  Conference of the North {A}merican Chapter of the Association for
+  Computational Linguistics, Companion Volume: Tutorial Abstracts}, pages
+  9--10, Boulder, Colorado. Association for Computational Linguistics.
 
 \bibitem[{Strik(2014)}]{strik2014}
 Oscar Strik. 2014.

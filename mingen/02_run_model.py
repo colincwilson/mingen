@@ -77,7 +77,9 @@ def main():
         SCORE_TYPE = f'accuracy{s0}'
 
     # Import config (as created by 01_prepare_data)
-    config_save = pickle.load(
+    #config_save = pickle.load( # bug in reading older pkl files
+    #    open(Path('../data') / f'{LANGUAGE}_config.pkl', 'rb'))
+    config_save = pd.read_pickle(
         open(Path('../data') / f'{LANGUAGE}_config.pkl', 'rb'))
     for key, val in config_save.items():
         setattr(config, key, val)

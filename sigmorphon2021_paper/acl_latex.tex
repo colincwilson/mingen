@@ -56,11 +56,10 @@
 \author{Colin Wilson\\
   Johns Hopkins University \\
   \texttt{colin.wilson@jhu.edu} \\\And
-  Second Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  \texttt{email@domain} \\}
+  Jane S.Y. Li \\
+  Simon Fraser University \\
+  Johns Hopkins University \\
+  \texttt{sli213@jhu.edu} \\}
 
 \begin{document}
 \maketitle
@@ -88,7 +87,7 @@ xxx
 
 The model takes as input a set of wordform pairs, one per lexeme, that instantiate the same morphological relationship. In simulations of English past tense formation, these are pairs of bare verb stems and past tense forms such as $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{tOk}$\ltimes$, $\rtimes$\textipa{tOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{stIN}$\ltimes$, $\rtimes$\textipa{st2N}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{flIN}$\ltimes$, $\rtimes$\textipa{fl2N}$\ltimes$$\rangle$, and $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$. Wordforms consist of phonological segments (here, in broad transcription) delimited by special beginning and end of string symbols. The set $\Sigma$ of phonological segments, and the set $\Sigma_{\#} = \Sigma \ \cup \ \{ \rtimes, \ltimes \}$, are assumed to be given to the model.
 
-The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature chart, augmenting it with orthogonal feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature chart is available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all possible (partial) feature specifications over the chosen set and $\phi(x)$ gives the features of $x \in \Sigma_{\#}$.
+The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature chart, augmenting it with distinct and orthogonal feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature chart is available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all possible (partial) feature specifications over the chosen set and $\phi(x)$ gives the features of $x \in \Sigma_{\#}$.
 
 \subsection{Base rules}
 
@@ -149,7 +148,7 @@ Our system for the shared task preprocesed the input wordforms, learned rules wi
 
 \subsection{Preprocessing}
 
-The shared task provided space-separated broad IPA transcriptions of the training and wug wordforms (\emph{e.g.}, \textipa{s t I N}, \textipa{s t 2 N}, \textipa{w O k}, \textipa{w O k t}). As already mentioned, we added explicit beginning and end of string symbols. Because minimal generalization requires each wordform symbol to have a phonological feature specificiation, but some segments in the data lack entries in our feature chart, we further simplified or split the symbols as follows.
+The shared task provided space-separated broad IPA transcriptions of the training and wug wordforms (\emph{e.g.}, \textipa{s t I N}, \textipa{s t 2 N}, \textipa{w O k}, \textipa{w O k t}). As already mentioned, we added explicit beginning and end of string symbols. Because minimal generalization requires each wordform symbol to have a phonological feature specificiation, but some segments in the data lack entries in our feature system, we further simplified or split the symbols as follows.
 
 For German, we split the diphthongs \textipa{/a\textsubarch{i} a\textsubarch{u} o\textsubarch{i} i:@ e:@ E:@/} into their component vowels and additionally regularized \textipa{/\textsubarch{i} \textsubarch{u}/} to \textipa{/i u/}. For English, we split the diphthongs \textipa{/aI aU OI u:I/} into their components and \textipa{/3\textrhoticity/} into \textipa{/E \*r/}, simplified \textipa{/eI @U/} to \textipa{/e o/}, and regularized \textipa{/\s{m} \s{n} r \s{l} \~{O}/} to \textipa{/m n \*r l O/}. We also deleted all length marks \textipa{/:/} and instances of \textipa{/\super G/}. For Dutch, we split \textipa{/EI AU UI/} into their components.
 
@@ -182,9 +181,9 @@ We ordered rules by generality (\S\ref{subsec:generality}), score, and length wh
 
 \subsection{Prediction}
 
-Once rules have been learned by minimal generalization and scored, they can be used for multiple purposes: to generate potential outputs for input wordforms (by finite-state composition), to determine possible inputs for a given output wordform (by composition with the inverted transducer), and to assign scores to input/output mappings. Following Albright \& Hayes, we assume that the score of a mapping is inherited from the highest-scoring rule(s) that could produce it. That is, rules neither `gang up' --- multiple rules cannot contribute to the score of a mapping --- nor do they compete --- rules that prefer different outputs for the same input do not detract from the score.
+Once rules have been learned by minimal generalization and scored, they can be used for multiple purposes: to generate potential outputs for input wordforms (by finite-state composition), to determine possible inputs for a given output wordform (by composition with the inverted transducer), and to assign scores to input/output mappings. Following Albright \& Hayes, we assume that the score of a mapping is taken from the highest-scoring rule(s) that could produce it. Rules neither `gang up' --- multiple rules cannot contribute to the score of a mapping --- nor do they compete --- rules that prefer different outputs for the same input do not detract from the score. In the event that no rule produced a mapping, we assigned the minimal score of zero.
 
-As for the scoring function itself, there is a range of other possibilities to consider. For example, rule scores could be normalized within or across changes, a type of competition that is inherent to probabilistic models. See \citet{albright2006} for a different kind of competition model in which rules learned by minimal generalization are weighted like conflicting constraints.
+As for the scoring function itself, many other possibilities could be considered. For example, rule scores could be normalized within or across changes, a type of competition that is inherent to probabilistic models. See \citet{albright2006} for a different kind of competition model in which rules learned by minimal generalization are weighted like conflicting constraints.
 
 
 \section{Results}
@@ -209,7 +208,14 @@ As for the scoring function itself, there is a range of other possibilities to c
 
 \section{Conclusions and Future Directions}
 
-\citep{bybee1983}
+
+\subsection{Near misses}
+
+As the organizers of this shared task have emphasized, implemented models can be used not only to predict the results of experiments but also to generate stimuli. Ideally, stimulus items would be designed to test the core tenets of a single model or to probe systematic differences in prediction among models. As part of our implementation, we have developed a method for generating wug items that can get at a central concern about Albright \& Hayes's model: namely, that by learning rules in a purely bottom-up way it undergeneralizes, predicting sharp contrasts in inflectional behavior on the basis of minor deviations in form.
+
+We illustrate our method with the English irregular pattern \textipa{I} $\to$ \textipa{2}, which has attracted new members in the history of English and elicited relatively high production rates and acceptability ratings in previous wug tests \citep[\emph{e.g.},][]{bybee1983}.
+
+
 % "attributes of the prototype of this [irregular] class of verbs are:
 % a final velar nasal (/N/ better than /Nk/)
 % an initial consonant cluster that begins with /s/
@@ -221,9 +227,29 @@ As for the scoring function itself, there is a range of other possibilities to c
 \citep{plotkin1970} % least general generalization
 % least general generalization; it's legacy in inductive logic programming (ILP), a connection also noted by Albright \& Hayes
 
+\citep{mohri-sproat-1996-efficient}
 
-\vfill
-\pagebreak
+\citep{riley-etal-2009-openfst}
+
+
+\section*{Acknowledgements}
+
+We would like to thank the organizers xxx We would like to thank Adam Albright and Bruce Hayes for inspiring this study and for stimulating conversations over many years. The research presented here was partially supported by NSF grant BCS-1844780 to CW.
+
+
+
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{anthology, sigmorphon2021, sigmorphon2021extra}
+\bibliographystyle{acl_natbib}
+
+\appendix
+
+\section{Example Appendix}
+\label{sec:appendix}
+
+This is an appendix.
+
+\end{document}
 
 These instructions are for authors submitting papers to *ACL conferences using \LaTeX. They are not self-contained. All authors must follow the general instructions for *ACL proceedings,\footnote{\url{http://acl-org.github.io/ACLPUB/formatting.html}} and this document contains additional instructions for the \LaTeX{} style files.
 

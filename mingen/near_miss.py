@@ -38,8 +38,8 @@ def generate_wugs(rules):
     print(f'{len(rimes)} rimes')
 
     # Irregular rules
-    #change = 'ɪ -> ʌ'
-    change = 'a ɪ -> o'
+    change = 'ɪ -> ʌ'
+    #change = 'a ɪ -> o'
     #change = 'i -> ɛ'
     #change = 'ɪ -> ɑ'
     #change = 'e -> o'
@@ -68,11 +68,14 @@ def generate_wugs(rules):
             if not re.search(CAD, stem):
                 continue
             val = pynini_util.rewrites(rule, stem, outpt, sigstar, symtable)
-            val = {
-                'stem': stem,
-                'output': outpt,
-                'model_rating': rules['confidence'][j]
-            } | val
+            val['stem'] = stem
+            val['output'] = outpt
+            val['model_rating'] = rules['confidence'][j]
+            #val = {
+            #    'stem': stem,
+            #    'output': outpt,
+            #    'model_rating':
+            #} | val
             stems_apply.append(val)
             #print(val)
             break
@@ -117,11 +120,14 @@ def generate_wugs(rules):
             if not re.search(CAD, wug):
                 continue
             rewrite_val = pynini_util.rewrites(rule, wug, '', sigstar, symtable)
-            rewrite_val = {
-                'stem': wug,
-                'output': None,
-                'model_rating': rules['confidence'][j]
-            } | rewrite_val
+            rewrite_val['stem'] = wug
+            rewrite_val['output'] = None
+            rewrite_val['model_rating'] = rules['confidence'][j]
+            #rewrite_val = {
+            #    'stem': wug,
+            #    'output': None,
+            #    'model_rating': rules['confidence'][j]
+            #} | rewrite_val
             break
         if rewrite_val is None:
             rewrite_val = {
