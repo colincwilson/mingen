@@ -13,7 +13,7 @@ Warning--I didn't find a database entry for "chandlee2017a"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 31 entries,
             3571 wiz_defined-function locations,
-            928 strings with 12477 characters,
+            926 strings with 12460 characters,
 and the built_in function-call counts, 22222 in all, are:
 = -- 2071
 > -- 755

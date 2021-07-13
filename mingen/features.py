@@ -50,7 +50,7 @@ def common_ftrs_(F1, F2):
     return F
 
 
-@lru_cache(maxsize=10000)
+@lru_cache(maxsize=1000)
 def common_ftrs(F1, F2):
     """
     Common values of two feature matrices

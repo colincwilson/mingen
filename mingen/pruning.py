@@ -104,7 +104,7 @@ def rule_mgt(rule1: FtrRule, rule2: FtrRule):
     return True
 
 
-#@lru_cache(maxsize=1024)
+@lru_cache(maxsize=1000)
 def context_mgt(C1, C2, direction='LR->'):
     """
     More-general-than-or-equal relation ⊒ on rule contexts (sequences of feature matrices), inward (<-RL) or outward (LR->) from change location

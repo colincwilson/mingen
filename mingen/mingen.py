@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from functools import lru_cache
+
 from features import common_ftrs
 from rules import FtrRule
 
@@ -97,6 +99,7 @@ def generalize_rules(rule1, rule2):
     return R
 
 
+@lru_cache(maxsize=1000)
 def generalize_context(C1, C2, direction='LR->'):
     """
     Apply minimal generalization to pair of feature contexts, working inward (<-RL) or outward (LR->) from change location
