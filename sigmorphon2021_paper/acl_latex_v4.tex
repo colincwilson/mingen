@@ -1,0 +1,456 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage[]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+\usepackage{tipa}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Were We Already There? Applying Minimal Generalization to the SIGMORPHON-UniMorph Shared Task on Cognitively Plausible Morphological Inflection}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a seperate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\author{
+  Colin Wilson$^1$ \qquad\qquad\qquad Jane S.Y. Li$^{1,2}$ \\
+  $^1$Johns Hopkins University \qquad $^2$Simon Fraser University \\
+  \texttt{colin.wilson@jhu.edu} \quad \texttt{sli213@jhu.edu}}
+
+%\author{Colin Wilson$^1$ \\
+%  $^1$Johns Hopkins University \\
+%  \texttt{colin.wilson@jhu.edu} \\
+%  \And
+%  Jane S.Y. Li$^{1,2}$ \\
+%  $^2$Simon Fraser University \\
+%  \texttt{sli213@jhu.edu}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+xxx
+\end{abstract}
+
+\section{Introduction}
+
+In a landmark paper, \citet{albright2003} proposed a model that learns morphological rules by recursive \textbf{minimal generalization} from lexeme-specific examples (\emph{e.g.}, \textipa{I} $\to$ \textipa{2} / \textipa{st} \underline{\ \ \ } \textipa{N} for \emph{sting $\sim$ stung} and \textipa{I} $\to$ \textipa{2} / \textipa{fl} \underline{\ \ \ } \textipa{N} for \emph{fling $\sim$ flung} generalized to  \textipa{I} $\to$ \textipa{2} / X [$-$syllabic, $+$coronal, $+$anterior, \ldots] \underline{\ \ \ } \textipa{N}).\footnote{The square brackets contain the shared phonological feature specifications of /t/ and /l/, which in the feature system used here are xxx.} The model was presented more formally in \citet{albright-hayes-2002-modeling}, along with evidence that the rules it learns for the English past tense give a good account of native speakers' productions and ratings in wug-test experiments (\emph{e.g.} judgments that \textit{splung} is quite acceptable as the past tense of the novel verb \textit{spling}). In addition to providing further analysis of the experimental data, \citet{albright2003} compared their proposal with early connectionist models of morphology \citep[\emph{e.g.,}][]{plunkett1999} and an analogical or `family resemblance' model inspired by research on psychological categories \citep{nakisa2001}.
+
+Along with \citet{albright2002}, which presents a parallel treatment of Italian inflection, Albright \& Hayes's study of the English past tense is a paradigm example of theory-driven, multiple-methodology, open and reproducible research in cognitive science.\footnote{Albright \& Hayes released both the results of their wug-test experiments and an implementation of their model (visit \url{http://www.mit.edu/~albright/mgl/} and \url{https://linguistics.ucla.edu/people/hayes/RulesVsAnalogy/index.html}). An impediment to large-scale simulation with the model is that it runs from a GUI interface only. As part of the present project, we have added a command line interface to the original source code (available on request).} Their model has enduring significance for the study of morphological learning and productivity in English \citep[\emph{e.g.,}][]{racz-etal-2014-rules, racz2020, corkery-etal-2019-yet} and many other languages (\emph{e.g.,} Hijazi Arabic: \citealt{ahyad2019}; Japanese: \citealt{oseki-etal-2019-inverting}; Korean: \citealt{albright2009}; Navajo: \citealt{albright2006}; Portuguese: \citealt{verissimo2014}; Russian: \citealt{kapatsinski2010}; Tgdaya Seediq: \citealt{kuo2020}; Spanish: \citealt{albright2003}; Swedish: \citealt{strik2014}).
+
+
+In this study, we applied a partial reimplementation of the \citet{albright-hayes-2002-modeling, albright2003} model to wug-test rating data from three languages (German, English, and Dutch) collected for the SIGMORPHON-UniMorph 2021 Shared Task. Our version of the model is based purely on minimal generalization of morphological rules, as described in \S3.1 of \citet{albright-hayes-2002-modeling} and reviewed below. It does not include additional mechanisms for learning phonological rules, and expanding or reigning in morphological rules, that were part of the original model \citep[see][\S3.3 - \S3.7]{albright-hayes-2002-modeling}. We think it is worthwhile to consider minimal generalization on its own, with the other mechanisms ablated, as borne out by our competitive results on the shared task.
+
+\subsection{Outline}
+
+xxx
+
+\section{Minimal Generalization}
+\label{sec:mingen}
+
+\subsection{Inputs}
+
+The model takes as input a set of wordform pairs, one per lexeme, that instantiate the same morphological relationship. In simulations of English past tense formation, these are pairs of bare verb stems and past tense forms such as $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{tOk}$\ltimes$, $\rtimes$\textipa{tOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{stIN}$\ltimes$, $\rtimes$\textipa{st2N}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{flIN}$\ltimes$, $\rtimes$\textipa{fl2N}$\ltimes$$\rangle$, and $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$. Wordforms consist of phonological segments (here, in broad transcription) delimited by special beginning and end of string symbols. The set $\Sigma$ of phonological segments, and the set $\Sigma_{\#} = \Sigma \ \cup \ \{ \rtimes, \ltimes \}$, are assumed to be given to the model.
+
+The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature chart, augmenting it with distinct and orthogonal feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature chart is available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all possible (partial) feature specifications over the chosen set and $\phi(x)$ gives the features of $x \in \Sigma_{\#}$.
+
+\subsection{Base rules}
+
+For each wordform pair, the model constructs a lexeme-specific morphological rule by first identifying the longest common prefix (lcp) of the wordforms excluding $\ltimes$ (C), then the longest common suffix from the remainder (D), and finally identifying the remaining symbols in the first (A) and second (B) members of the pair. The symbol $\varnothing \notin \Sigma_{\#}$ denotes the empty string.\footnote{In other common notations, the empty string is denoted by $\lambda$. xxx notation for phonological segment strings generally follows \citep{chandlee2017a} and works cited there.} The rule formed from $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$ has the components C = $\rtimes$\textipa{wOk}, D = $\ltimes$, A = $\varnothing$ and B = \textipa{t} (\emph{i.e.}, $\varnothing$ $\to$ \textipa{t} / $\rtimes$\textipa{wOk} \underline{\ \ \ } $\ltimes$). The rule for $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$ is $\varnothing$ $\to$ $\varnothing$ $\rtimes$\textipa{k2t} \underline{\ \ \ } $\ltimes$.
+
+\subsection{Minimal Generalization}
+\label{sec:mingenop}
+Given any two base rules $R_1$ and $R_2$ that make the same change (A $\to$ B), the model forms a possibly more general rule by aligning and comparing their contexts. The minimal generalization operation, $R = R_1 \sqcap R_2$, carries over the common change of the two base rules and applies independently to their left-hand ($C_1$, $C_2$) and right-hand ($D_1$, $D_2$) contexts. For convenience, we define minimal generalization of the right-hand contexts. Minimal generalization of the left-hand contexts can be performed by reversing $C_1$ and $C_2$, applying the definition for right-hand contexts, and reversing the result.
+
+The minimal generalization $D = D_1 \sqcap D_2$ is defined precedurally by first extracting the lcp $\sigma_{1\land2}$ of the two contexts and then operating on the remainders ($D_1'$, $D_2'$). If both $D_1'$ and $D_2'$ are empty then $D = \sigma_{1\land2}$. If one but not both of them are empty then $D = \sigma_{1\land2}X$, where $X \notin \Sigma_{\#}$ is a variable over symbol sequences (\emph{i.e.}, $X$ stands for $\Sigma_{\#}^*$). If neither is empty, then the operation determines whether their initial symbols have any shared features; for this purpose it is useful to consider $\phi(x)$ as a function from symbols to sets of feature-value pairs, in which case the common features are found by set intersection.
+
+If there are no common features, $\phi_{1\cap2} = \emptyset$, then as before $D = \sigma_{1\land2}X$. Otherwise, the set of common features $\phi_{1\cap2} \neq \emptyset$ is appended to $\sigma_{1\land2}$, the first symbol is removed from $D_1'$ and $D_2'$, and the operation applies to the remainders. If both remainders are empty then $D = \sigma_{1\land2} \phi_{1\cap2}$, otherwise $D = \sigma_{1\land2}\phi_{1\cap2}X$.
+
+In summary, the generalized right-hand context $D$ consists of the longest common prefix shared by $D_1$ and $D_2$, followed by a single set of shared features (if any), followed by $X$ in case there are no shared features or one context is longer than the other. With the change and generalized left-hand context $C$ determined as already described, the result of applying minimal generalization to the two base rules is $R = A \to B / C \ \underline{\ \ \ } \ D$.\footnote{There could be a slight difference between our definition of context generalization and that in \citet{albright-hayes-2002-modeling}, hinging on whether the empty feature set is allowed in rules. In our definition, $\phi_{1\cap2} = \emptyset$ is replaced by the variable $X$. It is possible that the original proposal intended for empty and non-empty feature sets to be treated alike. The definitions can diverge when applied to contexts that are of identical length and share all but the last (resp. first) segments, in which case our version would result in a broader rule.}
+
+\subsection{Recursive Minimal Generalization}
+
+Let $\mathcal{R}_1$ be the set of base rules (one per wordform pair in the input data) and $\mathcal{R}_2$ be the set containing all of the base rules and the result of applying minimal generalization to each eligible pair of base rules. While the rules of $\mathcal{R}_2$ have greater collective scope, they are nevertheless unlikely to account for the level of morphological productivity shown by native speakers. For example, English speakers can systematically rate and produce past tense forms of novel verbs that contain unusual segment sequences, such as \emph{ploamf} \textipa{/ploUmf/} \citep[\emph{e.g.},][]{prasada1993}. Albright \& Hayes propose to apply minimal generalization recursively and demonstrate that this can yield rules of great generality (\emph{e.g.}, in our notation, $\varnothing$ $\to$ \textipa{t} / X [-voice] \underline{\ \ \ } $\ltimes$).
+
+In the original proposal, recursive minimal generalization was defined only for pairs that include one base rule; it was conjectured that no additional generalizations could result from dropping this restriction. Here we define the operation for any two right-hand contexts $D_1, D_2 \in \Sigma_{\#}^*(\Phi)(X)$. As before, only rules that make the same change are eligible for generalization and the operation applies to left-hand contexts under reversal.
+
+The revised definition of $D = D_1 \sqcap D_2$ is identical to that given above except that we must consider input contexts that contain feature sets and $X$ (which previously could occur only in outputs). As before, we first identify the lcp of symbols from $\Sigma_{\#}$ in the two contexts, $\sigma_{1\land 2}$, and then operate on the remainders ($D_1', D_2'$). If both $D_1'$ and $D_2'$ are empty then $D = \sigma_{1\land2}$. If one but not both of them are empty then $D = \sigma_{1\land2}X$. If both are non-empty then their initial elements are either symbols in $\Sigma_{\#}$, feature sets in $\Phi$, or $X$. Replace any initial symbol $x \in \Sigma_{\#}$ with its feature set $\phi(x)$, extend the function $\phi$ so that $\phi(X) = \emptyset$, and compute the unification $\phi_{1\cap2}$ of the initial elements. The rest of the definition is unchanged (see the end of \S\ref{sec:mingenop}). 
+
+By construction, the contexts that result from this operation are also in $\Sigma_{\#}^*(\Phi)(X)$ (\emph{i.e.}, no ordinary symbol can occur after a feature set, there is at most one feature set, $X$ can occur only at the end of the context, etc.). Therefore, the revised definition supports the application of minimal generalization to its own products. Let $\mathcal{R}_{k}$ be the set of rules containing every member of $\mathcal{R}_{k-1}$ and the result of applying minimal generalization to each eligible pair of rules in $\mathcal{R}_{k-1}$ (for $k > 1$). In principle, there is an infinite sequence of rules set related by inclusion $\mathcal{R}_1 \subseteq \mathcal{R}_2 \subseteq \mathcal{R}_3 \cdots$. In practice, the equality becomes strict after a small number of iterations of minimal generalization (typically 6-7), at which point there are no more rules to be found.
+
+\subsection{Completeness}
+
+Having defined minimal generalization for arbitrary contexts (as allowed by the model), we can revisit the conjecture that nothing is lost by restricting the operation to pairs at least one of which is a base rule. This is a practical concern, as the number of base rules is a constant determined by the input data while the number of generalized rules can increase exponentially.
+
+Conceptually, each rule learned by unrestricted minimal generalization has a (possibly non-unique) `history' of base rules from which it originated. A base rule $R \in \mathcal{R}_1$ has the history $\{ R \}$. A rule in $R \in \mathcal{R}_2$ has the history $\{ R_1, R_2 \}$ containing the two base rules from which it derived. In general, the history of each rule in $\mathcal{R}_k$ is the union of the histories of two rules in $\mathcal{R}_{k-1}$ ($k > 1$).
+
+Because all rules are learned `bottom-up' in this sense, the conjecture can be proved by showing that the minimal generalization operation is associative; we also show that it is commutative --- both properties inherited from equality, lcp, set intersection, and other more primitive ingredients. As before, we explicitly consider right-hand contexts, from which parallel results for left-hand contexts and entire rules follow immediately. It follows that any rule $R$ can be replaced, for the purposes of minimal generalization, with the base rules in its history (in any order). 
+
+\textbf{Commutative}. Let $D = D_1 \sqcap D_2$ for any $D_1, D_2 \in \Sigma_{\#}^*(\Phi)(X)$. We prove by construction that $D$ is also equal to $D_2 \sqcap D_1$. The lcp of elements from $\Sigma_{\#}$ is the same regardless of the order of the contexts ($\sigma_{1\land 2} = \sigma_{2\land 1}$) as are the remainders ($D_1'$ and $D_2'$). If both remainders are empty, then the result of minimal generalization is $\sigma_{1\land 2} = \sigma_{2\land 1}$. If one but not both of them are empty then the result is $\sigma_{1\land 2}X = \sigma_{2\land 1}X$; note that $X$ appears regardless of which context is longer. If both are non-empty then we ensure that their initial elements are (possibly empty) feature sets and take their intersection, which is order independent: $\phi_{1\cap 2} = \phi_{2\cap 1}$. If $\phi_{1\cap 2} = \emptyset$ then the result is $\sigma_{1\land 2}X = \sigma_{2\land 1}X$. Otherwise, the initial elements are removed and the operation continues to the remainders. If both remainders are empty the result is $\sigma_{1\land 2}\phi_{1\cap 2} = \sigma_{2\land 1}\phi_{2\cap 1}$, otherwise it is the same expressions terminated by $X$.
+
+\textbf{Associative}. Let $D = (D_1 \sqcap D_2) \sqcap D_3$ for any $D_1, D_2, D_3 \in \Sigma_{\#}^*(\Phi)(X)$. We prove by construction that $D$ is equal to $E = D_1 \sqcap (D_2 \sqcap D_3)$. Let $\sigma$ be the longest prefix of symbols from $\Sigma_{\#}$ in $D$. Because $\sigma$ occurs in $D$ iff it is the lcp of this type in $(D_1 \sqcap D_2)$ and $D_3$, it must be a prefix of each of $D_1, D_2, D_3$ and the longest such prefix in at least one of them. It follows that $\sigma$ is also the lcp of symbols from $\Sigma_{\#}$ in $D_1$ and $(D_2 \sqcap D_3)$. Therefore, $D$ and $E$ both begin with $\sigma$. We now remove the prefix $\sigma$ from all of the input contexts and consider the remainders $D'_1, D'_2, D'_3$.
+
+If all of the remainders are empty, then $D = E = \sigma$. If all but one of them are empty, then $D = E = \sigma X$.\footnote{If $D'_1$ or $D'_2$ is the longest context, assume by commutativity that it is $D'_1$. The minimal generalizations are $(D'_1 \sqcap D'_2) = X$ and $X \sqcap D'_3$ = $X$, which gives the same result as $(D'_2 \sqcap D'_3) = \lambda$ and $D'_1 \sqcap \lambda = X$. Similar reasoning applies if $D'_3$ is the longest context.} If none of the remainder is empty, let $\phi_1, \phi_2, \phi_3$ be their (featurized) initial elements. The intersection of those elements is independent of grouping, $\phi = (\phi_1 \cap \phi_2) \cap \phi_3 = \phi_1 \cap (\phi_2 \cap \phi_3)$. If the intersection is empty then again $D = E = \sigma X$. If the intersection is non-empty then $D$ and $E$ both begin $\sigma\phi$. Finally, remove the initial elements of each of $D'_1, D'_2, D'_3$ and compare the lengths of the remainders to determine whether $X$ appears at the end of $D$ and $E$; this is independent of grouping along the same lines shown previously.
+
+\textbf{Complete}. \qquad We now prove by induction that, for any $R \in \mathcal{R}_k$ and $R_1, R_2 \in \mathcal{R}_{k-1}$ ($k > 1$) such that $R = R_1 \sqcap R_2$, rule $R$ can also be derived by applying minimal generalization to $R_1$ and one or more base rules (\emph{i.e.}, the rules in the history of $R_2$).\footnote{We ignore rules that are carried over from $\mathcal{R}_{k-1}$ to $\mathcal{R}_{k}$.} For $R \in \mathcal{R}_2$ this is true by definition. For $R \in \mathcal{R}_3$, we have $R = R_1 \sqcap R_2 = R_1 \sqcap (R_{21} \sqcap R_{22}) = (R_1 \sqcap R_{21}) \sqcap R_{22}$, where $R_{21}$ and $R_{22}$ are base rules whose minimal generalization results is $R_2$. In general, suppose that the statement is true for $k-1 > 0$. Then it is also true for $k$ because $R \in \mathcal{R}_k$ can be derived by $R_1 \sqcap R_2 = R_1 \sqcap (\sqcap_{i=1}^{n} R_{2i}) = (((R_{1} \sqcap R_{21}) \sqcap R_{22}) \cdots \sqcap R_{2n})$ where $R_1, R_2 \in \mathcal{R}_{k-1}$ and each $R_{2i}$ is a base rule in the history of $R_2$.
+
+These results validate the rule learning algorithm proposed by \citet{albright-hayes-2002-modeling} and used in our implementation. Any minimal generalization of two arbitrary rules $R_1$ and $R_2$ (as allowed by the model) can also be derived from $R_1$ (or $R_2$) by recursive application of minimal generalization with one or more base rules.
+
+
+\subsection{Relative generality}
+\label{subsec:generality}
+
+While not required for the minimal generalization operation itself, we define here a (partial) generality relation on rules. The definition uses the same notation as above and is employed in pruning rules after recursive minimal generalization has been applied (see \S\ref{subsec:pruning} below). 
+
+Relative generality is defined only for rules $R_1$ and $R_2$ that make the same change. It is sufficient to consider the right-hand contexts $D_1$ and $D_2$ and then apply the same definition to the reversed left-hand contexts. Conceptually, context $D_2$ is at least as general as context $D_1$, $D_1 \sqsubseteq D_2$, iff the set of strings represented by $D_1$ is a subset of that represented by $D_2$ when both contexts are considered as regular expressions over $\Sigma_{\#}^*$. The formal definition is complicated somewhat by $X$, which can appear at the end of either context.
+
+Replace each symbol $x \in \Sigma_{\#}$ in $D_1$ or $D_2$ with its feature set $\phi(x)$, treat $X$ as equivalent to $\emptyset$, and let $|D|$ be the length of context $D$.Then $D_1 \sqsubseteq D_2$ iff (i) $|D_1| \geq |D_2|$ and $D_1[k] \subseteq D_2[k]$ for all $1 \leq k \leq |D_1|$, except when $|D_1| = |D_2| + 1$ and the last element of $D_1$ but not $D_2$ is $X$, or (ii) $|D_1| = |D_2| - 1$, $D_1[k] \subseteq D_2[k]$ for all $1 \leq k \leq |D_1|$, and the last element of $D_2$ is $X$. Context $D_2$ is strictly more general than $D_1$, $D_1 \sqsubset D_2$, iff $D_1 \sqsubseteq D_2$ and $D_2 \not\sqsubseteq D_1$. Rule $R_2$ is at least as general as $R_1$, $R_1 \sqsubseteq R_2$, iff $C_1 \sqsubseteq C_2$ and $D_1 \sqsubseteq D_2$; it is a strictly more general rule iff either of the context relations is strict.
+
+
+\section{System Description}
+
+Our system for the shared task preprocesed the input wordforms, learned rules with recursive minimal generalization, scored the rules in two ways, pruned rule that have no effect on the model's predictions, and  applied the remaining rules to wug forms in order to generated predicted ratings.
+
+\subsection{Preprocessing}
+
+The shared task provided space-separated broad IPA transcriptions of the training and wug wordforms (\emph{e.g.}, \textipa{s t I N}, \textipa{s t 2 N}, \textipa{w O k}, \textipa{w O k t}). As already mentioned, we added explicit beginning and end of string symbols. Because minimal generalization requires each wordform symbol to have a phonological feature specificiation, but some segments in the data lack entries in our feature system, we further simplified or split the symbols as follows.
+
+For German, we split the diphthongs \textipa{/a\textsubarch{i} a\textsubarch{u} o\textsubarch{i} i:@ e:@ E:@/} into their component vowels and additionally regularized \textipa{/\textsubarch{i} \textsubarch{u}/} to \textipa{/i u/}. For English, we split the diphthongs \textipa{/aI aU OI u:I/} into their components and \textipa{/3\textrhoticity/} into \textipa{/E \*r/}, simplified \textipa{/eI @U/} to \textipa{/e o/}, and regularized \textipa{/\s{m} \s{n} r \s{l} \~{O}/} to \textipa{/m n \*r l O/}. We also deleted all length marks \textipa{/:/} and instances of \textipa{/\super G/}. For Dutch, we split \textipa{/EI AU UI/} into their components.
+
+Checking that all wordform symbols appear in a phonological feature chart is also useful for data cleaning. It helped us to identify a few thousand  Dutch wordforms containing `+' (indicating a Verb - Preposition combination), which we removed. And it caught an encoding error in which two distinct but perceptually similar Unicode symbols were used for /g/.
+
+Two acknowledged limitations of the original version of the minimal generalization model, and our version, are relevant here. First, the model learns rules for individual morphological relations (\emph{e.g.}, mapping a bare stem to a past tense form), not for entire morphological systems jointly. Therefore, we retained from the preprocessed input data only the wordform pairs that instantiate the relations targeted by the wug tests: formation of past participles in German \citep{clahsen1999} and past tenses in English and Dutch \citep{booij2019}.
+
+Second, the model cannot learn sensible rules for circumfixes (xxx). This could be remedied by allowing the model to form rules that simultaneously make changes at both edges of inputs, or by allowing it to apply multiple single-edge rules when mapping inputs to outputs. As a provisional solution, we removed the invariant prefix \textipa{/g@-/} whenever it occured at the beginning of a German past participle (training or wug wordform).\footnote{xxx prefix constant in wug outputs, occurred both initially and finally in training outputs; removed only if absolutely initial}
+
+\subsection{Rules}
+
+Given the preprocessed and filter input data, a base rule was learned for each lexeme and then minimal generalization was applied recursively as in \S\ref{sec:mingen}. This results in tens of thousands of morphological rules for each of the three languages (xxx table reference).
+
+A major goal of Albright \& Hayes was to learn rules that can construct outputs from inputs (as opposed to merely rating or selecting outputs that are generated by some other source). Their model achieved this goal, and a substantial portion of its original implementation was dedicated to rule application. We instead delegated the application of rules to a general purpose finite-state library (Pynini; \citealp{gorman-2016-pynini, gorman2021}).
+
+Each component of a rule $A \to B / C \underline{\ \ \ } D$ was first converted to a regular expression over symbols in $\Sigma_{\#}$ by mapping any feature set $\phi \in \Phi$ to the $|$-disjunction of symbols that bear all of the specified features and deleting instances of $X$. Segments were then encoded as integers using a symbol table. Pynini provides a function \texttt{cdrewrite} that compiles rules in this format to finite-state transducers, a function \texttt{accep} for converting input strings to linear finite-state acceptors encoded with the same symbol table, a composition function \texttt{@} that applies rules to inputs yielding output acceptors, and the means to decode the result back to string form.\footnote{xxx \citep{mohri-sproat-1996-efficient} xxx \citep{riley-etal-2009-openfst} The technique of mapping feature matrices to disjunctions (\emph{i.e.}, natural classes) of segments and beginning/end symbols, and ultimately to disjunctions of integer ids, was also used in the finite-state implementation of \citet{hayes2008}. $X$ was deleted because it occurs only at the beginning of left-hand contexts and at the end of right-hand contexts, both positions where Pynini's rule compiler implicitly adds $\Sigma_{\#}^*$.}
+
+\subsection{Scoring}
+
+The \emph{score} of a rule is a function of its accuracy on the training data. The simplest notion of score would be accuracy: the number of training outputs that are correctly predicted by the rule (\emph{hits}), divided by the number of training inputs that meet the structural description of the rule (\emph{scope}). Albright \& Hayes propose instead to discount the scores of rules with smaller scopes, using a formula previously applied to linguistic rules by \citet{mikheev-1997-automatic} (see xxx; one free parameter $\alpha$ set to $0.55$ as in A\&H 2003, p.127). Our implementation includes this way of scoring rules, which Albright \& Hayes call \textit{confidence}.
+
+Because confidence imposes only a modest penalty on rules with small scopes, we also considered a score function of the form $score_{\beta} = hits / (scope + \beta)$, where $\beta$ is a non-negative discount factor (here, $\beta = 10$). A rules that is perfectly accurate and applies to just $5$ cases has high confidence $= .90$ but much lower score$_{10}$ $= .33$; one that applies perfectly to $1000$ cases has a near-maximal score ($> .99$) regardless of which function is used. Clearly, these are only two of a wide range of score functions that could be explored.
+
+\subsection{Pruning}
+\label{subsec:pruning}
+
+When applied to training data consisting of thousands of lexemes, recursive minimal generalization can produce tens of thousands of distinct rules. Albright \& Hayes mention but do not implement the possibility of pruning the rules on the basis of their generality and scores. We pursued this suggestion by first partitioning the set of all learned rules according to their change and imposing a partial order on each of the resulting subsets.
+
+We ordered rules by generality (\S\ref{subsec:generality}), score, and length when expressed with features \citep{chomsky1968a}. Rule $R_2$ dominated rule $R_1$ in the order, $R_1 \prec R_2$ iff $R_2$ was at least as general as $R_1$ ($R_1 \sqsubseteq R_2$) and (i) $R_2$ had a higher score or (ii) the rules tied on score and $R_2$ was either strictly more general ($R_1 \sqsubset R_2$) or shorter. Dominated rules were pruned without affecting the predictions of the model, as we discuss next.
+
+\subsection{Prediction}
+
+Once rules have been learned by minimal generalization and scored, they can be used for multiple purposes: to generate potential outputs for input wordforms (by finite-state composition), to determine possible inputs for a given output wordform (by composition with the inverted transducer), and to assign scores to input/output mappings. Following Albright \& Hayes, we assume that the score of a mapping is taken from the highest-scoring rule(s) that could produce it. Rules neither `gang up' --- multiple rules cannot contribute to the score of a mapping --- nor do they compete --- rules that prefer different outputs for the same input do not detract from the score. In the event that no rule produced a mapping, we assigned the minimal score of zero.
+
+As for the scoring function itself, many other possibilities could be considered. For example, rule scores could be normalized within or across changes, a type of competition that is inherent to probabilistic models. See \citet{albright2006} for a different kind of competition model in which rules learned by minimal generalization are weighted like conflicting constraints.
+
+
+\section{Results}
+
+\begin{table*}
+  \centering
+  \begin{tabular}{l c c c c c}
+    \hline
+    Language & Lexemes & Rules (all) & Rules (pruned) & 
+    AIC (dev wugs) & AIC (test wugs) \\
+    \hline
+    German  & 3,417 & 31,562 & 3,629 & -127.6 & -135.0\\
+    English & 5,803 & 30,728 & 263 & -112.0 & -62.2\\
+    Dutch & 7,823 & 55,114 & 1,862 & -58.5 & -76.5\\
+    \hline
+  \end{tabular}
+\caption{\label{results}xxx}
+\end{table*}
+
+% German (deu): verb stem tp past % 3417 train examples; 150 wug dev; 266 wug tst
+% mingen0 learned 31,562 rules; 3630 rules after pruning
+% dev eval (AIC): -127.5508, tst eval (AIC): -135.0 *lower is better*
+% Clahsen 1999 Appendix A
+
+
+% English (eng): verb stem to past-tense form
+% 5803 train examples; 158 wug dev; 139 wug tst
+% mingen0 learned 30,728 rules; 263 rules after pruning
+% dev eval (AIC): -112.0, tst eval (AIC): -62.2 *lower is better*
+
+% Dutch (nld): verb stem to past-tense form
+% 7823 train examples; 122 wug dev; 166 wug tst
+% mingen0 learned 55,114 rules; 1,862 rules after pruning
+% dev eval (AIC): -58.50812, tst eval (AIC): -76.5 *lower is better*
+% Booij 2019
+
+
+\section{Conclusions and Future Directions}
+
+
+\subsection{Near misses}
+
+As the organizers of this shared task have emphasized, implemented models can be used not only to predict the results of experiments but also to generate stimuli. Ideally, stimulus items would be designed to test the core tenets of a single model or to probe systematic differences in prediction among models. As part of our implementation, we have developed a method for generating wug items that can get at a central concern about Albright \& Hayes's model: namely, that by learning rules in a purely bottom-up way it undergeneralizes, predicting sharp contrasts in inflectional behavior on the basis of minor deviations in form.
+
+We illustrate our method with the English irregular pattern \textipa{I} $\to$ \textipa{2}, which has attracted new members in the history of English and elicited relatively high production rates and acceptability ratings in previous wug tests \citep[\emph{e.g.},][]{bybee1983}.
+
+
+% "attributes of the prototype of this [irregular] class of verbs are:
+% a final velar nasal (/N/ better than /Nk/)
+% an initial consonant cluster that begins with /s/
+% vowel /I/ (only in conjunction with the other two)
+
+% minimal generalization related to: size principle (Tenenbaum & Griffiths, 2001); least-general generalization; Anti-unification
+\citep{tenenbaum1999} % size principle
+
+\citep{plotkin1970} % least general generalization
+% least general generalization; it's legacy in inductive logic programming (ILP), a connection also noted by Albright \& Hayes
+
+
+
+\section*{Acknowledgements}
+
+We would like to thank the organizers xxx We would like to thank Adam Albright and Bruce Hayes for inspiring this study and for stimulating conversations over many years. The research presented here was partially supported by NSF grant BCS-1844780 to CW.
+
+
+
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{anthology, sigmorphon2021, sigmorphon2021extra}
+\bibliographystyle{acl_natbib}
+
+\appendix
+
+\section{Example Appendix}
+\label{sec:appendix}
+
+This is an appendix.
+
+\end{document}
+
+These instructions are for authors submitting papers to *ACL conferences using \LaTeX. They are not self-contained. All authors must follow the general instructions for *ACL proceedings,\footnote{\url{http://acl-org.github.io/ACLPUB/formatting.html}} and this document contains additional instructions for the \LaTeX{} style files.
+
+The templates include the \LaTeX{} source of this document (\texttt{acl.tex}),
+the \LaTeX{} style file used to format it (\texttt{acl.sty}),
+an ACL bibliography style (\texttt{acl\_natbib.bst}),
+an example bibliography (\texttt{custom.bib}),
+and the bibliography for the ACL Anthology (\texttt{anthology.bib}).
+
+\section{Engines}
+
+To produce a PDF file, pdf\LaTeX{} is strongly recommended (over original \LaTeX{} plus dvips+ps2pdf or dvipdf). Xe\LaTeX{} also produces PDF files, and is especially suitable for text in non-Latin scripts.
+
+\section{Preamble}
+
+The first line of the file must be
+\begin{quote}
+\begin{verbatim}
+\documentclass[11pt]{article}
+\end{verbatim}
+\end{quote}
+
+To load the style file in the review version:
+\begin{quote}
+\begin{verbatim}
+\usepackage[review]{acl}
+\end{verbatim}
+\end{quote}
+For the final version, omit the \verb|review| option:
+\begin{quote}
+\begin{verbatim}
+\usepackage{acl}
+\end{verbatim}
+\end{quote}
+
+To use Times Roman, put the following in the preamble:
+\begin{quote}
+\begin{verbatim}
+\usepackage{times}
+\end{verbatim}
+\end{quote}
+(Alternatives like txfonts or newtx are also acceptable.)
+
+Please see the \LaTeX{} source of this document for comments on other packages that may be useful.
+
+Set the title and author using \verb|\title| and \verb|\author|. Within the author list, format multiple authors using \verb|\and| and \verb|\And| and \verb|\AND|; please see the \LaTeX{} source for examples.
+
+By default, the box containing the title and author names is set to the minimum of 5 cm. If you need more space, include the following in the preamble:
+\begin{quote}
+\begin{verbatim}
+\setlength\titlebox{<dim>}
+\end{verbatim}
+\end{quote}
+where \verb|<dim>| is replaced with a length. Do not set this length smaller than 5 cm.
+
+\section{Document Body}
+
+\subsection{Footnotes}
+
+Footnotes are inserted with the \verb|\footnote| command.\footnote{This is a footnote.}
+
+\subsection{Tables and figures}
+
+See Table~\ref{tab:accents} for an example of a table and its caption.
+\textbf{Do not override the default caption sizes.}
+
+\begin{table}
+\centering
+\begin{tabular}{lc}
+\hline
+\textbf{Command} & \textbf{Output}\\
+\hline
+\verb|{\"a}| & {\"a} \\
+\verb|{\^e}| & {\^e} \\
+\verb|{\`i}| & {\`i} \\ 
+\verb|{\.I}| & {\.I} \\ 
+\verb|{\o}| & {\o} \\
+\verb|{\'u}| & {\'u}  \\ 
+\verb|{\aa}| & {\aa}  \\\hline
+\end{tabular}
+\begin{tabular}{lc}
+\hline
+\textbf{Command} & \textbf{Output}\\
+\hline
+\verb|{\c c}| & {\c c} \\ 
+\verb|{\u g}| & {\u g} \\ 
+\verb|{\l}| & {\l} \\ 
+\verb|{\~n}| & {\~n} \\ 
+\verb|{\H o}| & {\H o} \\ 
+\verb|{\v r}| & {\v r} \\ 
+\verb|{\ss}| & {\ss} \\
+\hline
+\end{tabular}
+\caption{Example commands for accented characters, to be used in, \emph{e.g.}, Bib\TeX{} entries.}
+\label{tab:accents}
+\end{table}
+
+\subsection{Hyperlinks}
+
+Users of older versions of \LaTeX{} may encounter the following error during compilation: 
+\begin{quote}
+\tt\verb|\pdfendlink| ended up in different nesting level than \verb|\pdfstartlink|.
+\end{quote}
+This happens when pdf\LaTeX{} is used and a citation splits across a page boundary. The best way to fix this is to upgrade \LaTeX{} to 2018-12-01 or later.
+
+\subsection{Citations}
+
+\begin{table*}
+\centering
+\begin{tabular}{lll}
+\hline
+\textbf{Output} & \textbf{natbib command} & \textbf{Old ACL-style command}\\
+% \hline
+% \citep{Gusfield:97} & \verb|\citep| & \verb|\cite| \\
+% \citealp{Gusfield:97} & \verb|\citealp| & no equivalent \\
+% \citet{Gusfield:97} & \verb|\citet| & \verb|\newcite| \\
+% \citeyearpar{Gusfield:97} & \verb|\citeyearpar| & \verb|\shortcite| \\
+% \hline
+\end{tabular}
+\caption{\label{citation-guide}
+Citation commands supported by the style file.
+The style is based on the natbib package and supports all natbib citation commands.
+It also supports commands defined in previous ACL style files for compatibility.
+}
+\end{table*}
+
+Table~\ref{citation-guide} shows the syntax supported by the style files.
+We encourage you to use the natbib styles.
+You can use the command \verb|\citet| (cite in text) to get ``author (year)'' citations, like this citation to a paper by \citet{Gusfield:97}.
+You can use the command \verb|\citep| (cite in parentheses) to get ``(author, year)'' citations \citep{Gusfield:97}.
+You can use the command \verb|\citealp| (alternative cite without parentheses) to get ``author, year'' citations, which is useful for using citations within parentheses (e.g. \citealp{Gusfield:97}).
+
+\subsection{References}
+
+\nocite{Ando2005,borschinger-johnson-2011-particle,andrew2007scalable,rasooli-tetrault-2015,goodman-etal-2016-noise,harper-2014-learning}
+
+The \LaTeX{} and Bib\TeX{} style files provided roughly follow the American Psychological Association format.
+If your own bib file is named \texttt{custom.bib}, then placing the following before any appendices in your \LaTeX{} file will generate the references section for you:
+\begin{quote}
+\begin{verbatim}
+\bibliographystyle{acl_natbib}
+\bibliography{custom}
+\end{verbatim}
+\end{quote}
+
+You can obtain the complete ACL Anthology as a Bib\TeX{} file from \url{https://aclweb.org/anthology/anthology.bib.gz}.
+To include both the Anthology and your own .bib file, use the following instead of the above.
+\begin{quote}
+\begin{verbatim}
+\bibliographystyle{acl_natbib}
+\bibliography{anthology,custom}
+\end{verbatim}
+\end{quote}
+
+Please see Section~\ref{sec:bibtex} for information on preparing Bib\TeX{} files.
+
+\subsection{Appendices}
+
+Use \verb|\appendix| before any appendix section to switch the section numbering over to letters. See Appendix~\ref{sec:appendix} for an example.
+
+\section{Bib\TeX{} Files}
+\label{sec:bibtex}
+
+Unicode cannot be used in Bib\TeX{} entries, and some ways of typing special characters can disrupt Bib\TeX's alphabetization. The recommended way of typing special characters is shown in Table~\ref{tab:accents}.
+
+Please ensure that Bib\TeX{} records contain DOIs or URLs when possible, and for all the ACL materials that you reference.
+Use the \verb|doi| field for DOIs and the \verb|url| field for URLs.
+If a Bib\TeX{} entry has a URL or DOI field, the paper title in the references section will appear as a hyperlink to the paper, using the hyperref \LaTeX{} package.
+
+\section*{Acknowledgements}
+
+This research was partially supported by NSF grant BCS-1844780.
+
+
+
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{anthology, sigmorphon2021, sigmorphon2021extra}
+\bibliographystyle{acl_natbib}
+
+\appendix
+
+\section{Example Appendix}
+\label{sec:appendix}
+
+This is an appendix.
+
+\end{document}

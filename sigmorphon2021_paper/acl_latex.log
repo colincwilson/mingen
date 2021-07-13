@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 JUL 2021 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 JUL 2021 08:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -454,45 +454,38 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 
 Package natbib Warning: Citation `chandlee2017a' on page 2 undefined on input line 99.
 
-[2] [3] [4] [5] (/Users/colin/Code/Python/mingen/sigmorphon2021_paper/acl_latex.bbl
+[2] [3] [4] [5] [6] (/Users/colin/Code/Python/mingen/sigmorphon2021_paper/acl_latex.bbl
 Underfull \hbox (badness 2027) in paragraph at lines 24--28
 []\T1/ptm/m/n/10 Adam Al-bright and Bruce Hayes. 2003.  [][]Rules
- []
-
-[6]
-Underfull \hbox (badness 1635) in paragraph at lines 125--130
-\T1/ptm/m/n/10 2014.  PHOIBLE On-line.  \T1/ptm/m/it/10 PHOIBLE On-line.
  []
 
 [7])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
-[8
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
  (/Users/colin/Code/Python/mingen/sigmorphon2021_paper/acl_latex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 274.
 Package rerunfilecheck Info: File `acl_latex.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
  ) 
 Here is how much of TeX's memory you used:
- 11068 strings out of 492616
- 166284 string characters out of 6129482
- 292826 words of memory out of 5000000
- 14564 multiletter control sequences out of 15000+600000
- 67256 words of font info for 221 fonts, out of 8000000 for 9000
+ 11091 strings out of 492616
+ 166577 string characters out of 6129482
+ 292851 words of memory out of 5000000
+ 14569 multiletter control sequences out of 15000+600000
+ 68460 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,12n,40p,1483b,507s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,40p,1483b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/tipa/xipa10.pfb>
-Output written on /Users/colin/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf (8 pages, 240278 bytes).
+Output written on /Users/colin/Code/Python/mingen/sigmorphon2021_paper/acl_latex.pdf (8 pages, 245209 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 318 compressed objects within 4 object streams
- 71 named destinations out of 1000 (max. 500000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 334 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
  29697 words of extra memory for PDF output out of 29859 (max. 10000000)
 

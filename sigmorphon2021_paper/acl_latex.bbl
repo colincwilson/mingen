@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ahyad(2019)}]{ahyad2019}
@@ -74,6 +74,12 @@ Maria Corkery, Yevgen Matusevych, and Sharon Goldwater. 2019.
   for Computational Linguistics}, pages 3868--3877, Florence, Italy.
   Association for Computational Linguistics.
 
+\bibitem[{Davis(1989)}]{davis-1989-cross}
+Stuart Davis. 1989.
+\newblock \href {https://aclanthology.org/J89-2003} {Cross-vowel phonotactic
+  constraints}.
+\newblock \emph{Computational Linguistics}, 15(2):109--110.
+
 \bibitem[{Gorman(2016)}]{gorman-2016-pynini}
 Kyle Gorman. 2016.
 \newblock \href {https://doi.org/10.18653/v1/W16-2409} {{P}ynini: A {P}ython
@@ -122,11 +128,9 @@ Mehryar Mohri and Richard Sproat. 1996.
   Computational Linguistics.
 
 \bibitem[{Moran et~al.(2014)Moran, McCloy, and Wright}]{moran2014}
-Steven Moran, Daniel McCloy, and Richard Wright. 2014.
-\newblock {{PHOIBLE Online}}.
-\newblock \emph{PHOIBLE Online. Edited by: Moran, Steven; McCloy, Daniel;
-  Wright, Richard (2014). Leipzig: Max Planck Institute for Evolutionary
-  Anthropology.}
+Steven Moran, Daniel McCloy, and Richard Wright, editors. 2014.
+\newblock \emph{{{PHOIBLE Online}}}.
+\newblock {Max Planck Institute for Evolutionary Anthropology}, {Leipzig}.
 
 \bibitem[{Mortensen et~al.(2016)Mortensen, Littell, Bharadwaj, Goyal, Dyer, and
   Levin}]{mortensen-etal-2016-panphon}

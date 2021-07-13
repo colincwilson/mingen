@@ -11,45 +11,45 @@ Database file #2: sigmorphon2021.bib
 Database file #3: sigmorphon2021extra.bib
 Warning--I didn't find a database entry for "chandlee2017a"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 31 entries,
+You've used 32 entries,
             3571 wiz_defined-function locations,
-            926 strings with 12460 characters,
-and the built_in function-call counts, 22222 in all, are:
-= -- 2071
-> -- 755
-< -- 37
-+ -- 246
-- -- 201
-* -- 1387
-:= -- 3233
-add.period$ -- 136
-call.type$ -- 31
-change.case$ -- 243
-chr.to.int$ -- 31
-cite$ -- 31
-duplicate$ -- 1506
-empty$ -- 1783
-format.name$ -- 298
-if$ -- 5006
+            932 strings with 12429 characters,
+and the built_in function-call counts, 22860 in all, are:
+= -- 2126
+> -- 768
+< -- 38
++ -- 250
+- -- 204
+* -- 1427
+:= -- 3325
+add.period$ -- 140
+call.type$ -- 32
+change.case$ -- 248
+chr.to.int$ -- 32
+cite$ -- 32
+duplicate$ -- 1548
+empty$ -- 1853
+format.name$ -- 302
+if$ -- 5156
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 293
-newline$ -- 159
-num.names$ -- 128
-pop$ -- 580
+missing$ -- 301
+newline$ -- 164
+num.names$ -- 133
+pop$ -- 592
 preamble$ -- 1
-purify$ -- 189
+purify$ -- 194
 quote$ -- 0
-skip$ -- 1173
+skip$ -- 1207
 stack$ -- 0
-substring$ -- 1012
-swap$ -- 821
+substring$ -- 1048
+swap$ -- 844
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 273
+type$ -- 279
 warning$ -- 0
-while$ -- 157
+while$ -- 162
 width$ -- 0
-write$ -- 425
+write$ -- 438
 (There was 1 warning)

@@ -69,7 +69,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-xxx
+xxx TBA
 \end{abstract}
 
 \section{Introduction}
@@ -79,24 +79,24 @@ In a landmark paper, \citet{albright2003} proposed a model that learns morpholog
 Along with \citet{albright2002}, which presents a parallel treatment of Italian inflection, Albright \& Hayes's study of the English past tense is a paradigm example of theory-driven, multiple-methodology, open and reproducible research in cognitive science.\footnote{Albright \& Hayes released both the results of their wug-test experiments and an implementation of their model (visit \url{http://www.mit.edu/~albright/mgl/} and \url{https://linguistics.ucla.edu/people/hayes/RulesVsAnalogy/index.html}). An impediment to large-scale simulation with the model is that it runs from a GUI interface only. As part of the present project, we have added a command line interface to the original source code (available on request).} Their model has enduring significance for the study of morphological learning and productivity in English \citep[\emph{e.g.,}][]{racz-etal-2014-rules, racz2020, corkery-etal-2019-yet} and many other languages (\emph{e.g.,} Hijazi Arabic: \citealt{ahyad2019}; Japanese: \citealt{oseki-etal-2019-inverting}; Korean: \citealt{albright2009}; Navajo: \citealt{albright2006}; Portuguese: \citealt{verissimo2014}; Russian: \citealt{kapatsinski2010}; Tgdaya Seediq: \citealt{kuo2020}; Spanish: \citealt{albright2003}; Swedish: \citealt{strik2014}).
 
 
-In this study, we applied a partial reimplementation of the \citet{albright-hayes-2002-modeling, albright2003} model to wug-test rating data from three languages (German, English, and Dutch) collected for the SIGMORPHON-UniMorph 2021 Shared Task. Our version of the model is based purely on minimal generalization of morphological rules, as described in \S3.1 of \citet{albright-hayes-2002-modeling} and reviewed below. It does not include additional mechanisms for learning phonological rules, and expanding or reigning in morphological rules, that were part of the original model \citep[see][\S3.3 - \S3.7]{albright-hayes-2002-modeling}. We think it is worthwhile to consider minimal generalization on its own, with the other mechanisms ablated, as borne out by our competitive results on the shared task.
+In this study, we apply a partial reimplementation of the \citet{albright-hayes-2002-modeling, albright2003} model to wug-test rating data from three languages (German, English, and Dutch) collected for the SIGMORPHON-UniMorph 2021 Shared Task. Our version of the model is based purely on minimal generalization of morphological rules, as described in \S3.1 of \citet{albright-hayes-2002-modeling} and reviewed below. It does not include additional mechanisms for learning phonological rules, and expanding or reigning in morphological rules, that were part of the original model \citep[see][\S3.3 - \S3.7]{albright-hayes-2002-modeling}. We think it is worthwhile to consider minimal generalization on its own, with the other mechanisms ablated, as borne out by our competitive results on the shared task.
 
 \subsection{Outline}
 
-xxx
+xxx TBA
 
 \section{Minimal Generalization}
 \label{sec:mingen}
 
 \subsection{Inputs}
 
-The model takes as input a set of wordform pairs, one per lexeme, that instantiate the same morphological relationship. In simulations of English past tense formation, these are pairs of bare verb stems and past tense forms such as $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{tOk}$\ltimes$, $\rtimes$\textipa{tOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{stIN}$\ltimes$, $\rtimes$\textipa{st2N}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{flIN}$\ltimes$, $\rtimes$\textipa{fl2N}$\ltimes$$\rangle$, and $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$. Wordforms consist of phonological segments (here, in broad transcription) delimited by special beginning and end of string symbols. The set $\Sigma$ of phonological segments, and the set $\Sigma_{\#} = \Sigma \ \cup \ \{ \rtimes, \ltimes \}$, are assumed to be given to the model.
+The model takes as input a set of wordform pairs, one per lexeme, that instantiate the same morphological relationship in a language. In simulations of English past tense formation, these are pairs of bare verb stems and past tense forms such as $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{tOk}$\ltimes$, $\rtimes$\textipa{tOkt}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{stIN}$\ltimes$, $\rtimes$\textipa{st2N}$\ltimes$$\rangle$, $\langle$$\rtimes$\textipa{flIN}$\ltimes$, $\rtimes$\textipa{fl2N}$\ltimes$$\rangle$, and $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$. Wordforms consist of phonological segments (here, in broad IPA transcription) delimited by special beginning and end of string symbols. The set $\Sigma$ of phonological segments for the language, and the set $\Sigma_{\#} = \Sigma \ \cup \ \{ \rtimes, \ltimes \}$, are provided to the model.
 
-The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature chart, augmenting it with distinct and orthogonal feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature chart is available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all possible (partial) feature specifications over the chosen set and $\phi(x)$ gives the features of $x \in \Sigma_{\#}$.
+The model also requires a phonological feature specification for each of the symbols that appears in wordforms. We used a well-known feature chart, augmenting it with orthogonal and distinct feature specifications for the delimiters $\rtimes$ and $\ltimes$.\footnote{The phonological feature chart is available from Bruce Hayes's website, \url{https://linguistics.ucla.edu/people/hayes/120a/Index.htm\#features}. xxx binary with 0s xxx original features distribued with the model included scalar features xxx for example. Alternative binary (with underspecification) feature sets are xxx phoible \citep{moran2014} xxx panphon \citep{mortensen-etal-2016-panphon}.} $\Phi$ is the set of all (partial) specifications of the features and $\phi(x)$ gives the specifications of $x \in \Sigma_{\#}$.
 
 \subsection{Base rules}
 
-For each wordform pair, the model constructs a lexeme-specific morphological rule by first identifying the longest common prefix (lcp) of the wordforms excluding $\ltimes$ (C), then the longest common suffix from the remainder (D), and finally identifying the remaining symbols in the first (A) and second (B) members of the pair. The symbol $\varnothing \notin \Sigma_{\#}$ denotes the empty string.\footnote{In other common notations, the empty string is denoted by $\lambda$. xxx notation for phonological segment strings generally follows \citep{chandlee2017a} and works cited there.} The rule formed from $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$ has the components C = $\rtimes$\textipa{wOk}, D = $\ltimes$, A = $\varnothing$ and B = \textipa{t} (\emph{i.e.}, $\varnothing$ $\to$ \textipa{t} / $\rtimes$\textipa{wOk} \underline{\ \ \ } $\ltimes$). The rule for $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$ is $\varnothing$ $\to$ $\varnothing$ $\rtimes$\textipa{k2t} \underline{\ \ \ } $\ltimes$.
+For each wordform pair, the model constructs a lexeme-specific morphological rule by first identifying the longest common prefix (lcp) of the wordforms excluding $\ltimes$ (\emph{i.e.}, the left-hand context $C$), then the longest common suffix from the remainder (the right-hand context $D$), and finally identifying the remaining symbols in the first ($A$) and second ($B$) wordform. The resulting rule is $A \to B / C \underline{\ \ \ } D$. The symbol $\varnothing \notin \Sigma_{\#}$ denotes the empty string in $A$ or $B$.\footnote{In other common notations, the empty string is denoted by $\lambda$. xxx notation for phonological segment strings generally follows \citep{chandlee2017a} and works cited there.} To illustrate, the rule formed from $\langle$$\rtimes$\textipa{wOk}$\ltimes$, $\rtimes$\textipa{wOkt}$\ltimes$$\rangle$ has the components C = $\rtimes$\textipa{wOk}, D = $\ltimes$, A = $\varnothing$ and B = \textipa{t} (\emph{i.e.}, $\varnothing$ $\to$ \textipa{t} / $\rtimes$\textipa{wOk} \underline{\ \ \ } $\ltimes$). The rule for $\langle$$\rtimes$\textipa{k2t}$\ltimes$, $\rtimes$\textipa{k2t}$\ltimes$$\rangle$ is $\varnothing$ $\to$ $\varnothing$ $\rtimes$\textipa{k2t} \underline{\ \ \ } $\ltimes$.
 
 \subsection{Minimal Generalization}
 \label{sec:mingenop}
@@ -147,7 +147,7 @@ Relative generality is defined only for rules $R_1$ and $R_2$ that make the same
 Replace each symbol $x \in \Sigma_{\#}$ in $D_1$ or $D_2$ with its feature set $\phi(x)$, treat $X$ as equivalent to $\emptyset$, and let $|D|$ be the length of context $D$.Then $D_1 \sqsubseteq D_2$ iff (i) $|D_1| \geq |D_2|$ and $D_1[k] \subseteq D_2[k]$ for all $1 \leq k \leq |D_1|$, except when $|D_1| = |D_2| + 1$ and the last element of $D_1$ but not $D_2$ is $X$, or (ii) $|D_1| = |D_2| - 1$, $D_1[k] \subseteq D_2[k]$ for all $1 \leq k \leq |D_1|$, and the last element of $D_2$ is $X$. Context $D_2$ is strictly more general than $D_1$, $D_1 \sqsubset D_2$, iff $D_1 \sqsubseteq D_2$ and $D_2 \not\sqsubseteq D_1$. Rule $R_2$ is at least as general as $R_1$, $R_1 \sqsubseteq R_2$, iff $C_1 \sqsubseteq C_2$ and $D_1 \sqsubseteq D_2$; it is a strictly more general rule iff either of the context relations is strict.
 
 
-\section{System Description}
+\section{System Description and Results}
 
 Our system for the shared task preprocesed the input wordforms, learned rules with recursive minimal generalization, scored the rules in two ways, pruned rule that have no effect on the model's predictions, and  applied the remaining rules to wug forms in order to generated predicted ratings.
 
@@ -186,12 +186,13 @@ We ordered rules by generality (\S\ref{subsec:generality}), score, and length wh
 
 \subsection{Prediction}
 
-Once rules have been learned by minimal generalization and scored, they can be used for multiple purposes: to generate potential outputs for input wordforms (by finite-state composition), to determine possible inputs for a given output wordform (by composition with the inverted transducer), and to assign scores to input/output mappings. Following Albright \& Hayes, we assume that the score of a mapping is taken from the highest-scoring rule(s) that could produce it. Rules neither `gang up' --- multiple rules cannot contribute to the score of a mapping --- nor do they compete --- rules that prefer different outputs for the same input do not detract from the score. In the event that no rule produced a mapping, we assigned the minimal score of zero.
+Once rules have been learned by minimal generalization and scored, they can be used for multiple purposes: to generate potential outputs for input wordforms (by finite-state composition), to determine possible inputs for a given output wordform (by composition with the inverted transducer), and to assign scores to input/output mappings. Following Albright \& Hayes, we assume that the score of a mapping is taken from the highest-scoring rule(s) that could produce it. Rules neither `gang up' --- multiple rules cannot contribute to the score of a mapping --- nor do they compete --- rules that prefer different outputs for the same input do not detract from the score. When no rule produces a mapping, we assign it the minimal score of zero.
 
 As for the scoring function itself, many other possibilities could be considered. For example, rule scores could be normalized within or across changes, a type of competition that is inherent to probabilistic models. See \citet{albright2006} for a different kind of competition model in which rules learned by minimal generalization are weighted like conflicting constraints.
 
+\subsection{Results}
 
-\section{Results}
+xxx TBA
 
 \begin{table*}
   \centering
@@ -228,18 +229,7 @@ As for the scoring function itself, many other possibilities could be considered
 
 \section{Conclusions and Future Directions}
 
-
-\subsection{Near misses}
-
-As the organizers of this shared task have emphasized, implemented models can be used not only to predict the results of experiments but also to generate stimuli. Ideally, stimulus items would be designed to test the core tenets of a single model or to probe systematic differences in prediction among models. As part of our implementation, we have developed a method for generating wug items that can get at a central concern about Albright \& Hayes's model: namely, that by learning rules in a purely bottom-up way it undergeneralizes, predicting sharp contrasts in inflectional behavior on the basis of minor deviations in form.
-
-We illustrate our method with the English irregular pattern \textipa{I} $\to$ \textipa{2}, which has attracted new members in the history of English and elicited relatively high production rates and acceptability ratings in previous wug tests \citep[\emph{e.g.},][]{bybee1983}.
-
-
-% "attributes of the prototype of this [irregular] class of verbs are:
-% a final velar nasal (/N/ better than /Nk/)
-% an initial consonant cluster that begins with /s/
-% vowel /I/ (only in conjunction with the other two)
+xxx TBA
 
 % minimal generalization related to: size principle (Tenenbaum & Griffiths, 2001); least-general generalization; Anti-unification
 \citep{tenenbaum1999} % size principle
@@ -247,11 +237,26 @@ We illustrate our method with the English irregular pattern \textipa{I} $\to$ \t
 \citep{plotkin1970} % least general generalization
 % least general generalization; it's legacy in inductive logic programming (ILP), a connection also noted by Albright \& Hayes
 
+\subsection{Near misses}
 
+As the organizers of this shared task have emphasized, implemented models can be used not only to predict the results of experiments but also to generate stimuli. Ideally, stimulus items would be designed to test the core tenets of a single model or to probe systematic differences in prediction among models. As part of our implementation, we have developed a method for generating wug items that targets what is likely to be the principal failing of minimal generalization: namely, that by learning rules in a purely bottom-up way it undergeneralizes, predicting sharp contrasts in inflectional behavior on the basis of minor differences in wordforms.
+
+We illustrate our method with the English irregular pattern \textipa{I} $\to$ \textipa{2}, which has attracted new members in the history of English and elicited relatively high production rates and acceptability ratings in previous wug tests \citep[\emph{e.g.},][]{bybee1983, albright2003}. We first extracted all of the onsets and rimes that appear in the bare forms of monosyllabic English verbs, and freely combined these to create a large pool of possible stimulus items. We eliminated items that are real verbs, then shrunk the pool to those items that are one (segmental) edit away from some existing irregular verb that undergoes the change \textipa{I} $\to$ \textipa{2}. We also required the remaining items in the pool to have the same rime as at least one such irregular verb.\footnote{Studies of English irregular verbs have focused primarily on vowels and codas of monosyllables, though see \citet{bybee1983} on the potential role of onsets.}  All of the nonce items in the pool are highly similar, in this sense, to existing irregulars.
+
+We then divided the pool into two sets: items that are within the scope of at least one \textipa{I} $\to$ \textipa{2} rule learned by minimal generalization (\emph{close neighbors}), and items that are beyond the scope of all such rules (\emph{near misses}). For the former, we recorded the highest-scoring applicable rule. We wanted to provide the model the opportunity to form rules that were as broad as possible --- making it more difficult for us to find near misses --- and therefore implemented cross-context base rules as described earlier.\footnote{With this change in implementation, which we did not apply elsewhere in the paper, the total number of rules for the English past tense ballooned to 191,874. Even after pruning there were tens of thousands of rules (69,747) and 128 for just \textipa{I} $\to$ \textipa{2}. The majority of the rules have very low scores.}
+
+Some of the close neighbors and near misses are minimal pairs. For example, \textipa{/lIN/} ($.67$) and \textipa{/SIN/} ($.61$) could potentially undergo \textipa{I} $\to$ \textipa{2} rules with the indicated confidence values. But \textipa{/fIN/} and \textipa{/vIN/} are ineligible for the change, according to the model, because no existing irregular verb of this type has a labial fricative immediately before the vowel. Other differences in onsets can also dramatically affect the model's predictions: \textipa{/T\*rINk/} ($.88$) and \textipa{/glIN/} ($.67$) are close neighbors but \textipa{/smINk/} and \textipa{/smIN/} are near misses. The latter are phonotactically challenged \citep{davis-1989-cross}, but is \textipa{/T\*r2Nk/} a far superior past tense forms than \textipa{/sm2Nk/}?
+
+Our method can be applied to any irregular (or indeed regular) change. For \textipa{i} $\to$ \textipa{Ept} (as in \emph{sleep} $\sim$ \emph{slept}), the close neighbors include \textipa{/gip/} ($.85$) and \textipa{/flip/} ($.73$, one of Albright \& Hayes's wug stems) while among the near misses are \textipa{/fip/}, \textipa{/vip/}, \textipa{/nip/}, and \textipa{/snip/}. Would the nonce past tense \textipa{/gEpt/} be far more acceptible than \textipa{/fEpt/}? We look forward to further empirical tests of the minimal generalization model, with these items and others, as we continue to xxx
+
+% "attributes of the prototype of this [irregular] class of verbs are:
+% a final velar nasal (/N/ better than /Nk/)
+% an initial consonant cluster that begins with /s/
+% vowel /I/ (only in conjunction with the other two)
 
 \section*{Acknowledgements}
 
-We would like to thank the organizers xxx We would like to thank Adam Albright and Bruce Hayes for inspiring this study and for stimulating conversations over many years. The research presented here was partially supported by NSF grant BCS-1844780 to CW.
+xxx We would like to thank the organizers xxx We would like to thank Adam Albright and Bruce Hayes for inspiring this study and for stimulating conversations over many years. The research presented here was partially supported by NSF grant BCS-1844780 to CW.
 
 
 
