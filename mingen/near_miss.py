@@ -38,13 +38,13 @@ def generate_wugs(rules):
     print(f'{len(rimes)} rimes')
 
     # Irregular rules
-    change = 'ɪ -> ʌ'
+    #change = 'ɪ -> ʌ'
     #change = 'a ɪ -> o'
     #change = 'i -> ɛ'
     #change = 'ɪ -> ɑ'
     #change = 'e -> o'
     #change = 'e -> ʊ'
-    #change = 'i p -> ɛ p t'
+    change = 'i p -> ɛ p t'
     A, B = change.split(' -> ')  # xxx handle zeros
     rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
     rules = rules \
