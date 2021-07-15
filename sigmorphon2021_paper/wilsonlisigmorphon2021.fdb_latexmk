@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex wilsonlisigmorphon2021"] 1626315911 "wilsonlisigmorphon2021.aux" "wilsonlisigmorphon2021.bbl" "wilsonlisigmorphon2021" 1626316653
+["bibtex wilsonlisigmorphon2021"] 1626315911 "wilsonlisigmorphon2021.aux" "wilsonlisigmorphon2021.bbl" "wilsonlisigmorphon2021" 1626375863
   "./acl_natbib.bst" 1625764624 47709 d9d0ab22329e3318a3d1b2ae6abaab62 ""
   "anthology.bib" 1626102047 35309921 8480dcb46e31d5b50f6b1c43f1c763ff ""
-  "wilsonlisigmorphon2021.aux" 1626316653 5017 4a3b9d42d24af469bbcd791737a2cc5b "pdflatex"
+  "wilsonlisigmorphon2021.aux" 1626375863 5017 4a3b9d42d24af469bbcd791737a2cc5b "pdflatex"
   "wilsonlisigmorphon2021.bib" 1626187925 33311 491ac25d71642dc47d3868c1e4c81e75 ""
   "wilsonlisigmorphon2021extra.bib" 1626191846 845 05024d5221c114497bb19c7eb1aa5b8d ""
   (generated)
-  "wilsonlisigmorphon2021.blg"
   "wilsonlisigmorphon2021.bbl"
-["pdflatex"] 1626316652 "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.tex" "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.pdf" "wilsonlisigmorphon2021" 1626316653
-  "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.aux" 1626316653 5017 4a3b9d42d24af469bbcd791737a2cc5b ""
-  "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.tex" 1626316652 50841 425f36453a1b1fc12fda2bad575c30c3 ""
+  "wilsonlisigmorphon2021.blg"
+["pdflatex"] 1626375862 "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.tex" "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.pdf" "wilsonlisigmorphon2021" 1626375863
+  "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.aux" 1626375863 5017 4a3b9d42d24af469bbcd791737a2cc5b ""
+  "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.tex" 1626375861 51119 f3ad74dbb332b2f663837216dc59aeee ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -137,14 +137,14 @@
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
   "acl.sty" 1625764624 11158 b6ad1bbc953e18f357974bb34039deb0 ""
-  "wilsonlisigmorphon2021.aux" 1626316653 5017 4a3b9d42d24af469bbcd791737a2cc5b "pdflatex"
+  "wilsonlisigmorphon2021.aux" 1626375863 5017 4a3b9d42d24af469bbcd791737a2cc5b "pdflatex"
   "wilsonlisigmorphon2021.bbl" 1626315918 10114 1da617a785c3f9e971b63abd0d9ab79f "bibtex wilsonlisigmorphon2021"
-  "wilsonlisigmorphon2021.out" 1626316653 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "wilsonlisigmorphon2021.tex" 1626316652 50841 425f36453a1b1fc12fda2bad575c30c3 ""
+  "wilsonlisigmorphon2021.out" 1626375862 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "wilsonlisigmorphon2021.tex" 1626375861 51119 f3ad74dbb332b2f663837216dc59aeee ""
   (generated)
-  "wilsonlisigmorphon2021.aux"
   "wilsonlisigmorphon2021.out"
+  "wilsonlisigmorphon2021.aux"
+  "wilsonlisigmorphon2021.log"
   "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.pdf"
   "/Users/colin/Code/Python/mingen/sigmorphon2021_paper/wilsonlisigmorphon2021.log"
   "wilsonlisigmorphon2021.pdf"
-  "wilsonlisigmorphon2021.log"
