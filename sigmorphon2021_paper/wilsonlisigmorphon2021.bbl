@@ -1,0 +1,222 @@
+\begin{thebibliography}{31}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Ahyad(2019)}]{ahyad2019}
+Honaida~Yousuf Ahyad. 2019.
+\newblock \emph{Vowel Distribution in the {{Hijazi Arabic}} Root}.
+\newblock Ph.{{D}}. dissertation, State University of New York at Stony Brook.
+
+\bibitem[{Albright(2002)}]{albright2002}
+Adam Albright. 2002.
+\newblock Islands of reliability for regular morphology: {{Evidence}} from
+  {{Italian}}.
+\newblock \emph{Language}, 78(4):684--709.
+
+\bibitem[{Albright and Hayes(2002)}]{albright-hayes-2002-modeling}
+Adam Albright and Bruce Hayes. 2002.
+\newblock \href {https://doi.org/10.3115/1118647.1118654} {Modeling {E}nglish
+  past tense intuitions with minimal generalization}.
+\newblock In \emph{Proceedings of the {ACL}-02 Workshop on Morphological and
+  Phonological Learning}, pages 58--69. Association for Computational
+  Linguistics.
+
+\bibitem[{Albright and Hayes(2003)}]{albright2003}
+Adam Albright and Bruce Hayes. 2003.
+\newblock \href {https://doi.org/10.1016/S0010-0277(03)00146-X} {Rules vs.
+  analogy in {{English}} past tenses: {{A}} computational/experimental study}.
+\newblock \emph{Cognition}, 90(2):119--161.
+
+\bibitem[{Albright and Hayes(2006)}]{albright2006}
+Adam Albright and Bruce Hayes. 2006.
+\newblock Modeling productivity with the {{Gradual Learning Algorithm}}:
+  {{The}} problem of accidentally exceptionless generalizations.
+\newblock In Gisbert Fanselow, Caroline Fery, Matthias Schlesewsky, and Ralf
+  Vogel, editors, \emph{Gradience in {{Grammar}}: {{Generative}} Perspectives},
+  pages 185--204. {Oxford University Press}, {Oxford}.
+
+\bibitem[{Albright and Kang(2009)}]{albright2009}
+Adam Albright and Yoonjung Kang. 2009.
+\newblock Predicting innovative alternations in {K}orean verb paradigms.
+\newblock \emph{Current issues in unity and diversity of languages: Collection
+  of the papers selected from the 18th International Conference of
+  Linguistics}, pages 1--20.
+
+\bibitem[{Booij(2019)}]{booij2019}
+Geert Booij. 2019.
+\newblock \emph{The Morphology of {{Dutch}}}, second edition.
+\newblock {Oxford University Press}, {New York}.
+
+\bibitem[{Bybee and Moder(1983)}]{bybee1983}
+Joan~L. Bybee and Carol~Lynn Moder. 1983.
+\newblock \href {https://doi.org/10.2307/413574} {Morphological classes as
+  natural categories}.
+\newblock \emph{Language}, 59(2):251--270.
+
+\bibitem[{Chandlee(2017)}]{chandlee2017}
+Jane Chandlee. 2017.
+\newblock \href {https://doi.org/10.1007/s11525-017-9316-9} {Computational
+  locality in morphological maps}.
+\newblock \emph{Morphology}, 27(4):599--641.
+
+\bibitem[{Chomsky and Halle(1968)}]{chomsky1968a}
+Noam Chomsky and Morris Halle. 1968.
+\newblock \emph{The Sound Pattern of {{English}}}.
+\newblock {MIT Press}, {Cambridge, MA}.
+
+\bibitem[{Clahsen(1999)}]{clahsen1999}
+Harald Clahsen. 1999.
+\newblock \href {https://doi.org/10.1017/S0140525X99002228} {Lexical entries
+  and rules of language: {{A}} multidisciplinary study of {{German}}
+  inflection}.
+\newblock \emph{Behavioral and Brain Sciences}, 22(6):991--1013.
+
+\bibitem[{Corkery et~al.(2019)Corkery, Matusevych, and
+  Goldwater}]{corkery-etal-2019-yet}
+Maria Corkery, Yevgen Matusevych, and Sharon Goldwater. 2019.
+\newblock \href {https://doi.org/10.18653/v1/P19-1376} {Are we there yet?
+  encoder-decoder neural networks as cognitive models of {E}nglish past tense
+  inflection}.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association
+  for Computational Linguistics}, pages 3868--3877, Florence, Italy.
+  Association for Computational Linguistics.
+
+\bibitem[{Davis(1989)}]{davis-1989-cross}
+Stuart Davis. 1989.
+\newblock \href {https://aclanthology.org/J89-2003} {Cross-vowel phonotactic
+  constraints}.
+\newblock \emph{Computational Linguistics}, 15(2):109--110.
+
+\bibitem[{Gorman(2016)}]{gorman-2016-pynini}
+Kyle Gorman. 2016.
+\newblock \href {https://doi.org/10.18653/v1/W16-2409} {{P}ynini: A {P}ython
+  library for weighted finite-state grammar compilation}.
+\newblock In \emph{Proceedings of the {SIGFSM} Workshop on Statistical {NLP}
+  and Weighted Automata}, pages 75--80, Berlin, Germany. Association for
+  Computational Linguistics.
+
+\bibitem[{Gorman and Sproat(2021)}]{gorman2021}
+Kyle Gorman and Richard Sproat. 2021.
+\newblock \href {https://doi.org/10.2200/S01086ED1V01Y202104HLT050}
+  {Finite-{{State Text Processing}}}.
+\newblock \emph{Synthesis Lectures on Human Language Technologies},
+  14(2):1--158.
+
+\bibitem[{Hayes and Wilson(2008)}]{hayes2008}
+Bruce Hayes and Colin Wilson. 2008.
+\newblock \href {https://doi.org/10.1162/ling.2008.39.3.379} {A maximum entropy
+  model of phonotactics and phonotactic learning}.
+\newblock \emph{Linguistic Inquiry}, 39(3):379--440.
+
+\bibitem[{Kapatsinski(2010)}]{kapatsinski2010}
+Vsevolod Kapatsinski. 2010.
+\newblock \href {https://doi.org/10.1515/labphon.2010.019} {Velar
+  palatalization in {{Russian}} and artificial grammar: {{Constraints}} on
+  models of morphophonology}.
+\newblock \emph{Laboratory Phonology}, 1(2):361--393.
+
+\bibitem[{Kuo(2020)}]{kuo2020}
+Jennifer Kuo. 2020.
+\newblock \emph{Evidence for Base-Driven Alternation in {{Tgdaya Seediq}}}.
+\newblock Master's {{Thesis}}, UCLA.
+
+\bibitem[{Mikheev(1997)}]{mikheev-1997-automatic}
+Andrei Mikheev. 1997.
+\newblock \href {https://aclanthology.org/J97-3003} {Automatic rule induction
+  for unknown-word guessing}.
+\newblock \emph{Computational Linguistics}, 23(3):405--423.
+
+\bibitem[{Mohri and Sproat(1996)}]{mohri-sproat-1996-efficient}
+Mehryar Mohri and Richard Sproat. 1996.
+\newblock \href {https://doi.org/10.3115/981863.981894} {An efficient compiler
+  for weighted rewrite rules}.
+\newblock In \emph{34th Annual Meeting of the Association for Computational
+  Linguistics}, pages 231--238, Santa Cruz, California, USA. Association for
+  Computational Linguistics.
+
+\bibitem[{Moran et~al.(2014)Moran, McCloy, and Wright}]{moran2014}
+Steven Moran, Daniel McCloy, and Richard Wright, editors. 2014.
+\newblock \emph{{{PHOIBLE Online}}}.
+\newblock {Max Planck Institute for Evolutionary Anthropology}, {Leipzig}.
+
+\bibitem[{Mortensen et~al.(2016)Mortensen, Littell, Bharadwaj, Goyal, Dyer, and
+  Levin}]{mortensen-etal-2016-panphon}
+David~R. Mortensen, Patrick Littell, Akash Bharadwaj, Kartik Goyal, Chris Dyer,
+  and Lori Levin. 2016.
+\newblock \href {https://aclanthology.org/C16-1328} {{P}an{P}hon: A resource
+  for mapping {IPA} segments to articulatory feature vectors}.
+\newblock In \emph{Proceedings of {COLING} 2016, the 26th International
+  Conference on Computational Linguistics: Technical Papers}, pages 3475--3484,
+  Osaka, Japan. The COLING 2016 Organizing Committee.
+
+\bibitem[{Nakisa et~al.(2001)Nakisa, Plunkett, and Hahn}]{nakisa2001}
+Ramin~Charles Nakisa, Kim Plunkett, and Ulrika Hahn. 2001.
+\newblock A cross-linguistic comparison of single and dual-route models of
+  inflectional morphology.
+\newblock In Peter Broeder and Jaap Murre, editors, \emph{Models of Language
+  Acquisition: Inductive and Deductive Approaches}, pages 201--222. {MIT
+  Press}, {Cambridge, MA}.
+
+\bibitem[{Oseki et~al.(2019)Oseki, Sudo, Sakai, and
+  Marantz}]{oseki-etal-2019-inverting}
+Yohei Oseki, Yasutada Sudo, Hiromu Sakai, and Alec Marantz. 2019.
+\newblock \href {https://doi.org/10.18653/v1/W19-4220} {Inverting and modeling
+  morphological inflection}.
+\newblock In \emph{Proceedings of the 16th Workshop on Computational Research
+  in Phonetics, Phonology, and Morphology}, pages 170--177, Florence, Italy.
+  Association for Computational Linguistics.
+
+\bibitem[{Plunkett and Juola(1999)}]{plunkett1999}
+Kim Plunkett and Patrick Juola. 1999.
+\newblock \href {https://doi.org/10.1207/s15516709cog2304_4} {A connectionist
+  model of {{English}} past tense and plural morphology}.
+\newblock \emph{Cognitive Science}, 23(4):463--490.
+
+\bibitem[{Prasada and Pinker(1993)}]{prasada1993}
+Sandeep Prasada and Steven Pinker. 1993.
+\newblock Generalisation of regular and irregular morphological patterns.
+\newblock \emph{Language and Cognitive Processes}, 8(1):1--56.
+
+\bibitem[{R{\'a}cz et~al.(2020)R{\'a}cz, Beckner, Hay, and
+  Pierrehumbert}]{racz2020}
+P{\'e}ter R{\'a}cz, Clay Beckner, Jennifer~B. Hay, and Janet~B. Pierrehumbert.
+  2020.
+\newblock \href {https://doi.org/10.1353/lan.2020.0061} {Morphological
+  convergence as on-line lexical analogy}.
+\newblock \emph{Language}, 96(4):735--770.
+
+\bibitem[{R{\'a}cz et~al.(2014)R{\'a}cz, Beckner, Hay, and
+  Pierrehumbert}]{racz-etal-2014-rules}
+P{\'e}ter R{\'a}cz, Clayton Beckner, Jennifer~B. Hay, and Janet~B.
+  Pierrehumbert. 2014.
+\newblock \href {https://doi.org/10.3115/v1/W14-2807} {Rules, analogy, and
+  social factors codetermine past-tense formation patterns in {E}nglish}.
+\newblock In \emph{Proceedings of the 2014 Joint Meeting of {SIGMORPHON} and
+  {SIGFSM}}, pages 55--63, Baltimore, Maryland. Association for Computational
+  Linguistics.
+
+\bibitem[{Riley et~al.(2009)Riley, Allauzen, and
+  Jansche}]{riley-etal-2009-openfst}
+Michael Riley, Cyril Allauzen, and Martin Jansche. 2009.
+\newblock \href {https://aclanthology.org/N09-4005} {{O}pen{F}st: An
+  open-source, weighted finite-state transducer library and its applications to
+  speech and language}.
+\newblock In \emph{Proceedings of Human Language Technologies: The 2009 Annual
+  Conference of the North {A}merican Chapter of the Association for
+  Computational Linguistics, Companion Volume: Tutorial Abstracts}, pages
+  9--10, Boulder, Colorado. Association for Computational Linguistics.
+
+\bibitem[{Strik(2014)}]{strik2014}
+Oscar Strik. 2014.
+\newblock \href {https://doi.org/10.1075/jhl.4.2.02str} {Explaining tense
+  marking changes in {{Swedish}} verbs: {{An}} application of two analogical
+  computer models}.
+\newblock \emph{Journal of Historical Linguistics}, 4(2):192--231.
+
+\bibitem[{Ver{\'i}ssimo and Clahsen(2014)}]{verissimo2014}
+Jo{\~a}o Ver{\'i}ssimo and Harald Clahsen. 2014.
+\newblock \href {https://doi.org/10.1016/j.jml.2014.06.001} {Variables and
+  similarity in linguistic generalization: {{Evidence}} from inflectional
+  classes in {{Portuguese}}}.
+\newblock \emph{Journal of Memory and Language}, 76:61--79.
+
+\end{thebibliography}
