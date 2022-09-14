@@ -4,10 +4,10 @@ import configargparse, pickle, re, sys
 from pathlib import Path
 import pandas as pd
 
-sys.path.append(str(Path('../../phon')))
+sys.path.append(str(Path('../../phonfeats')))
 
 import config
-from phon import phon_config, features, str_util
+from phonfeats import phon_config, features, str_util
 
 # String environment
 config.epsilon = 'ϵ'
@@ -165,8 +165,7 @@ print()
 # # # # # # # # # #
 # Albright-Hayes wug
 if LANGUAGE in ['eng', 'eng2', 'eng3']:
-    falbrighthayes = Path(
-        '../albrighthayes2003') / 'Wug_unimorph.tsv'
+    falbrighthayes = Path('../albrighthayes2003') / 'Wug_unimorph.tsv'
     wug_albrighthayes = pd.read_csv(
         falbrighthayes,
         sep='\t',

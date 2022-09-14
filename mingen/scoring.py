@@ -6,7 +6,7 @@ from scipy.stats import t as student_t
 
 import config
 from rules import *
-from phon import str_util
+from phonfeats import str_util
 import pynini_util
 
 verbosity = 0
