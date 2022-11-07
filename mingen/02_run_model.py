@@ -7,7 +7,7 @@ import configargparse, pickle, sys
 from pathlib import Path
 import pandas as pd
 
-sys.path.append(str(Path.cwd() / '../../phonfeats'))
+sys.path.append(str(Path.cwd() / '../../phtrs'))
 
 import config
 from features import *
@@ -17,7 +17,7 @@ import scoring
 import pruning
 import wug_testing
 import near_miss
-from phonfeats import config as phon_config
+from phtrs import config as phon_config
 
 
 def main():

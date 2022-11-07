@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import config
-from phonfeats import str_util
+from phtrs import str_util
 from features import *
 
 

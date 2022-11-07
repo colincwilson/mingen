@@ -4,7 +4,7 @@ import numpy as np
 
 import config
 from rules import *
-from phonfeats import str_util
+from phtrs import str_util
 import pynini_util
 
 

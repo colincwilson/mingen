@@ -4,10 +4,10 @@ import configargparse, pickle, re, sys
 from pathlib import Path
 import pandas as pd
 
-sys.path.append(str(Path('../../phonfeats')))
+sys.path.append(str(Path('../../phtrs')))
 
 import config
-from phonfeats import phon_config, features, str_util
+from phtrs import phon_config, features, str_util
 
 # String environment
 config.epsilon = 'ϵ'

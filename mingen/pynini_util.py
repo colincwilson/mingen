@@ -4,7 +4,7 @@ import re
 import pynini
 from pynini import Arc, Fst, SymbolTable
 from pynini.lib import pynutil, rewrite
-from phonfeats import str_util
+from phtrs import str_util
 import config
 
 # Create acceptors, unions, sigstar from symbol lists (cf. strings),
