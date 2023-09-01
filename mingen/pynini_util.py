@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 import pynini
 from pynini import Arc, Fst, SymbolTable

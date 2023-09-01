@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import configargparse, pickle, re, sys
 from pathlib import Path
 import pandas as pd

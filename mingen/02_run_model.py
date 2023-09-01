@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Ex. python 02_run_model.py --language eng --learn_rules --score_rules --prune_rules --rate_wugs
 
 # todo: scalar features, phonology, impugnment, ...

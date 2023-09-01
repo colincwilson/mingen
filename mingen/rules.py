@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import config
 from phtrs import str_util
 from features import *
