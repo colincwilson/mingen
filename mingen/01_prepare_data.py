@@ -5,7 +5,9 @@ import pandas as pd
 sys.path.append(str(Path('../../phtrs')))
 
 import config
-from phtrs import phon_config, features, str_util
+#from phtrs import phon_config, features, str_util
+from phtrs import config as phon_config
+from phtrs import features, str_util
 
 # String environment
 config.epsilon = 'ϵ'
@@ -39,15 +41,15 @@ def format_strings(dat, extra_seg_fixes=None):
 # Select language and transcription conventions
 parser = configargparse.ArgParser(
     config_file_parser_class=configargparse.YAMLConfigFileParser)
-parser.add(
-    '--language',
-    type=str,
-    choices=['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'],
-    default='tiny')
+parser.add('--language',
+           type=str,
+           choices=['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'],
+           default='tiny')
 args = parser.parse_args()
 LANGUAGE = args.language
 
-ddata = Path.home() / 'Languages/UniMorph/sigmorphon2021/2021Task0/part2'
+ddata = Path.home(
+) / 'Languages/00Dictionaries/UniMorph/sigmorphon2021/2021Task0/part2'
 if LANGUAGE == 'tiny':
     ddata = Path.home() / 'Code/Python/mingen/data'
 
@@ -92,11 +94,9 @@ if LANGUAGE == 'tiny':
 # Train
 fdat = ddata / f'{LANGUAGE}.train'
 if LANGUAGE == 'eng2':
-    fdat = Path(
-        '../albrighthayes2003') / 'AlbrightHayes2003_CELEXFull_unimorph.tsv'
+    fdat = Path('../albrighthayes2003') / 'CELEXFull_unimorph.tsv'
 if LANGUAGE == 'eng3':
-    fdat = Path('../albrighthayes2003'
-               ) / 'AlbrightHayes2003_CELEXPrefixStrip_unimorph.tsv'
+    fdat = Path('../albrighthayes2003') / 'CELEXPrefixStrip_unimorph.tsv'
 dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
@@ -110,12 +110,14 @@ print(dat)
 
 # Keep rows with wug-tested morphosyn xxx could be list
 dat = dat[(dat.morphosyn.str.contains(wug_morphosyn))]
-dat = dat.drop('morphosyn', 1)
+dat = dat.drop('morphosyn', axis=1)
 dat = dat.drop_duplicates().reset_index()
 
 # Format strings and save
 dat = format_strings(dat)
-dat.to_csv(config.save_dir / f'{LANGUAGE}_dat_train.tsv', sep='\t', index=False)
+dat.to_csv(config.save_dir / f'{LANGUAGE}_dat_train.tsv',
+           sep='\t',
+           index=False)
 config.dat_train = dat
 print('Training data')
 print(dat)
@@ -131,12 +133,13 @@ wug_dev = pd.read_csv(
     fwug_dev,
     sep='\t',
     names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
-wug_dev = wug_dev.drop('morphosyn', 1)
+wug_dev = wug_dev.drop('morphosyn', axis=1)
 
 wug_dev = format_strings(wug_dev)
 config.wug_dev = wug_dev
-wug_dev.to_csv(
-    config.save_dir / f'{LANGUAGE}_wug_dev.tsv', sep='\t', index=False)
+wug_dev.to_csv(config.save_dir / f'{LANGUAGE}_wug_dev.tsv',
+               sep='\t',
+               index=False)
 print('Wug dev data')
 print(wug_dev)
 print()
@@ -148,14 +151,16 @@ if LANGUAGE in ['eng2', 'eng3']:
     WUG_TST = 'eng'
 fwug_tst = ddata / f'{WUG_TST}.judgements.tst'
 
-wug_tst = pd.read_csv(
-    fwug_tst, sep='\t', names=['wordform1', 'wordform2', 'morphosyn'])
-wug_tst = wug_tst.drop('morphosyn', 1)
+wug_tst = pd.read_csv(fwug_tst,
+                      sep='\t',
+                      names=['wordform1', 'wordform2', 'morphosyn'])
+wug_tst = wug_tst.drop('morphosyn', axis=1)
 
 wug_tst = format_strings(wug_tst)
 config.wug_tst = wug_tst
-wug_tst.to_csv(
-    config.save_dir / f'{LANGUAGE}_wug_tst.tsv', sep='\t', index=False)
+wug_tst.to_csv(config.save_dir / f'{LANGUAGE}_wug_tst.tsv',
+               sep='\t',
+               index=False)
 print('Wug test data')
 print(wug_tst)
 print()
@@ -170,11 +175,12 @@ if LANGUAGE in ['eng', 'eng2', 'eng3']:
         comment='#',
         names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
 
-    wug_albrighthayes = format_strings(
-        wug_albrighthayes, extra_seg_fixes=albrighthayes_seg_fixes)
+    wug_albrighthayes = format_strings(wug_albrighthayes,
+                                       extra_seg_fixes=albrighthayes_seg_fixes)
     config.wug_albrighthayes = wug_albrighthayes
-    wug_albrighthayes.to_csv(
-        config.save_dir / 'albrighthayes2003_wug.tsv', sep='\t', index=False)
+    wug_albrighthayes.to_csv(config.save_dir / 'albrighthayes2003_wug.tsv',
+                             sep='\t',
+                             index=False)
     print('Albright-Hayes wug data')
     print(wug_albrighthayes)
     print()
@@ -199,12 +205,12 @@ print()
 #fm = tensormorph.phon_features.import_features('hayes_features.csv', segments)
 # Import features from file
 feature_matrix = features.import_features(
-    Path.home() / 'Code/Python/tensormorph_redup/ftrs/hayes_features.csv',
+    Path.home() / 'Code/Python/transmorph/features/hayes_features.csv',
     segments)
 
 # Fix up features for mingen
 ftr_matrix = feature_matrix.ftr_matrix
-ftr_matrix = ftr_matrix.drop('sym', 1)  # Redundant with X (Sigma*)
+ftr_matrix = ftr_matrix.drop('sym', axis=1)  # sym redundant with X (Sigma*)
 config.phon_ftrs = ftr_matrix
 config.ftr_names = list(ftr_matrix.columns.values)
 config.syms = list(ftr_matrix.index)
