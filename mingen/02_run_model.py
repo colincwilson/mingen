@@ -1,5 +1,5 @@
 # Ex. python 02_run_model.py --language eng3 --learn_rules --score_rules --prune_rules --rate_wugs
-# Ex. python 02_run_mode.py --language eng3 --inflect_wugs <wugs.csv>
+# Ex. python 02_run_mode.py --language eng3 --wug_test <wugs.csv>
 
 # todo: scalar features, phonology, impugnment, ...
 
@@ -48,10 +48,10 @@ def main():
         default=False,
         help='maximal rules by generality, score, and length')
     parser.add( \
-        '--inflect_wugs',
+        '--wug_test',
         type=str,
         default=None,
-        help='inflect wugs with pruned rules')
+        help='predict wug outputs with pruned rules')
     parser.add( \
         '--rate_wugs',
         action='store_true',
@@ -181,16 +181,17 @@ def main():
                          sep='\t',
                          index=False)
 
-    # Inflect wugs with pruned rules.
-    if args.inflect_wugs:
-        rules = pd.read_csv(Path('../data') /
-                            f'{LANGUAGE}_rules_pruned_{SCORE_TYPE}.tsv',
-                            sep='\t')
-        print(rules)
+    # Predict wug outputs with pruned rules.
+    if args.wug_test:
+        rules = pd.read_csv( \
+            Path('../data') /
+            f'{LANGUAGE}_rules_pruned_{SCORE_TYPE}.tsv',
+            sep='\t')
+        print('Rules:\n', rules)
 
-        wug_file = args.inflect_wugs
+        wug_file = args.wug_test
         wugs = pd.read_csv(wug_file, sep='\t')
-        print(wugs)
+        print('Wug-test input:\n', wugs)
 
         wug_results = wug_testing.wug_test(wugs,
                                            rules,
@@ -202,15 +203,15 @@ def main():
         wug_results = wug_results.sort_values( \
             by=['stem', 'model_rating'],
             ascending=[True, False])
-        print(wug_results)
+        print('Wug-test output:\n', wug_results)
 
         wug_results.to_csv(
             Path.home() /
-            f'Downloads/{Path(wug_file).stem}_inflected_{LANGUAGE}_{SCORE_TYPE}.tsv',
+            f'Downloads/{Path(wug_file).stem}_{LANGUAGE}_{SCORE_TYPE}.tsv',
             sep='\t',
             index=False)
 
-    # Predict wug-test ratings with pruned rules.
+    # Assign wug-test ratings with pruned rules.
     if args.rate_wugs:
         rules = pd.read_csv(Path('../data') /
                             f'{LANGUAGE}_rules_pruned_{SCORE_TYPE}.tsv',

@@ -9,7 +9,7 @@ import config
 from phtrs import config as phon_config
 from phtrs import features, str_util
 
-# String environment
+# String environment.
 config.epsilon = 'ϵ'
 config.bos = '⋊'
 config.eos = '⋉'
@@ -23,7 +23,7 @@ def format_strings(dat, extra_seg_fixes=None):
     if extra_seg_fixes is not None:
         seg_fixes = seg_fixes | extra_seg_fixes
 
-    # Fix transcriptions (conform to phonological feature set)
+    # Fix transcriptions (conform to phonological feature set).
     dat['stem'] = [str_util.retranscribe(x, seg_fixes) \
         for x in dat['wordform1']]
     dat['output'] = [str_util.retranscribe(x, seg_fixes) \
@@ -31,14 +31,14 @@ def format_strings(dat, extra_seg_fixes=None):
     dat['stem'] = [str_util.add_delim(x) for x in dat['stem']]
     dat['output'] = [str_util.add_delim(x) for x in dat['output']]
 
-    # Remove prefix from output
+    # Remove prefix from output.
     if config.remove_prefix is not None:
         dat['output'] = [re.sub('⋊ ' + config.remove_prefix, '⋊', x) \
             for x in dat['output']]
     return dat
 
 
-# Select language and transcription conventions
+# Select language and transcription conventions.
 parser = configargparse.ArgParser(
     config_file_parser_class=configargparse.YAMLConfigFileParser)
 parser.add('--language',
@@ -56,12 +56,13 @@ if LANGUAGE == 'tiny':
 if LANGUAGE in ['eng', 'eng2', 'eng3']:
     wordform_omit = None
     wug_morphosyn = 'V;PST;'
-    # Simplify or split diphthongs, zap diacritics, fix unicode
+    # Simplify or split diphthongs, zap diacritics, fix unicode.
     config.seg_fixes = {
       'eɪ': 'e', 'oʊ': 'o', 'əʊ': 'o', 'aɪ': 'a ɪ', 'aʊ': 'a ʊ', \
       'ɔɪ': 'ɔ ɪ', 'ɝ': 'ɛ ɹ', 'ˠ': '', 'm̩': 'm', 'n̩': 'n', 'l̩': 'l', \
       'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g'}
-    # Albright & Hayes 2003 training data: split diphthongs and rhoticized vowels, ~Britishize æ -> ɑ, fix regular past
+    # Albright & Hayes 2003 training data: split diphthongs and
+    # rhoticized vowels, ~Britishize æ -> ɑ, fix regular past.
     albrighthayes_seg_fixes = \
         {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
          'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
@@ -91,7 +92,7 @@ if LANGUAGE == 'tiny':
     config.remove_prefix = None
 
 # # # # # # # # # #
-# Train
+# Training data.
 fdat = ddata / f'{LANGUAGE}.train'
 if LANGUAGE == 'eng2':
     fdat = Path('../albrighthayes2003') / 'CELEXFull_unimorph.tsv'
@@ -101,19 +102,19 @@ dat = pd.read_csv(fdat, sep='\t', \
     names=['wordform1', 'wordform2', 'morphosyn',
            'wordform1_orth', 'wordform2_orth'])
 
-# Filter rows by characters in wordforms
+# Filter rows by characters in wordforms.
 if wordform_omit is not None:
     dat = dat[~(dat.wordform1.str.contains(wordform_omit))]
     dat = dat[~(dat.wordform2.str.contains(wordform_omit))]
     dat = dat.reset_index()
 print(dat)
 
-# Keep rows with wug-tested morphosyn xxx could be list
+# Keep rows with wug-tested morphosyn (todo: could be list).
 dat = dat[(dat.morphosyn.str.contains(wug_morphosyn))]
 dat = dat.drop('morphosyn', axis=1)
 dat = dat.drop_duplicates().reset_index()
 
-# Format strings and save
+# Format strings and save.
 dat = format_strings(dat)
 dat.to_csv(config.save_dir / f'{LANGUAGE}_dat_train.tsv',
            sep='\t',
@@ -124,7 +125,7 @@ print(dat)
 print()
 
 # # # # # # # # # #
-# Wug dev
+# Wug dev set.
 WUG_DEV = LANGUAGE
 if LANGUAGE in ['eng2', 'eng3']:
     WUG_DEV = 'eng'
@@ -145,7 +146,7 @@ print(wug_dev)
 print()
 
 # # # # # # # # # #
-# Wug tst
+# Wug test set.
 WUG_TST = LANGUAGE
 if LANGUAGE in ['eng2', 'eng3']:
     WUG_TST = 'eng'
@@ -166,7 +167,7 @@ print(wug_tst)
 print()
 
 # # # # # # # # # #
-# Albright-Hayes wug
+# Albright-Hayes wugs.
 if LANGUAGE in ['eng', 'eng2', 'eng3']:
     falbrighthayes = Path('../albrighthayes2003') / 'Wug_unimorph.tsv'
     wug_albrighthayes = pd.read_csv(
@@ -175,12 +176,14 @@ if LANGUAGE in ['eng', 'eng2', 'eng3']:
         comment='#',
         names=['wordform1', 'wordform2', 'morphosyn', 'human_rating'])
 
-    wug_albrighthayes = format_strings(wug_albrighthayes,
-                                       extra_seg_fixes=albrighthayes_seg_fixes)
+    wug_albrighthayes = format_strings( \
+        wug_albrighthayes,
+        extra_seg_fixes=albrighthayes_seg_fixes)
     config.wug_albrighthayes = wug_albrighthayes
-    wug_albrighthayes.to_csv(config.save_dir / 'albrighthayes2003_wug.tsv',
-                             sep='\t',
-                             index=False)
+    wug_albrighthayes.to_csv( \
+        config.save_dir / 'albrighthayes2003_wug.tsv',
+        sep='\t',
+        index=False)
     print('Albright-Hayes wug data')
     print(wug_albrighthayes)
     print()
@@ -208,14 +211,14 @@ feature_matrix = features.import_features(
     Path.home() / 'Code/Python/transmorph/features/hayes_features.csv',
     segments)
 
-# Fix up features for mingen
+# Fix up features for mingen.
 ftr_matrix = feature_matrix.ftr_matrix
 ftr_matrix = ftr_matrix.drop('sym', axis=1)  # sym redundant with X (Sigma*)
 config.phon_ftrs = ftr_matrix
 config.ftr_names = list(ftr_matrix.columns.values)
 config.syms = list(ftr_matrix.index)
 
-# Map from symbols to feature-value dictionaries and feature vectors
+# Map from symbols to feature-value dictionaries and feature vectors.
 config.sym2ftrs = {}
 config.sym2ftr_vec = {}
 for i, sym in enumerate(config.syms):
@@ -224,7 +227,7 @@ for i, sym in enumerate(config.syms):
     config.sym2ftr_vec[sym] = tuple(ftrs.values())
 
 # # # # # # # # # #
-# Save config
+# Save config.
 config_save = {}
 for key in dir(config):
     if re.search('__', key):
