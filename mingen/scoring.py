@@ -12,14 +12,14 @@ verbosity = 0
 
 def score_rules(R):
     """
-    Hits and scope for FtrRules on training data
+    Hits and scope for FtrRules on training data.
     todo: apply simultaneously to all inputs encoded as trie?
     """
-    # Symbol environment
+    # Symbol environment.
     syms = [x for x in config.sym2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
 
-    # Precompile inputs to FSTs
+    # Precompile inputs to FSTs.
     dat = config.dat_train
     stems = [str(x) for x in dat['stem']]
     outputs = [str(x) for x in dat['output']]
@@ -27,15 +27,15 @@ def score_rules(R):
     wordforms = list(zip(stems, outputs, stem_ids))
     stem_fsts = pynini_util.accep(stems, symtable)
 
-    # Hits and scope for each rule
+    # Hits and scope for each rule.
     print("Hits and scope ...")
     hits_all = [0.0] * len(R)
     scope_all = [0.0] * len(R)
     for idx, rule in enumerate(R):
-        # Convert rule to regexes
+        # Convert rule to regexes.
         (A, B, C, D) = rule.regexes()
 
-        # Subset of data s.t. CAD occurs in input
+        # Subset of data s.t. CAD occurs in input.
         CAD = [X for X in [C, A, D] if X != '∅']
         CAD = ' '.join(CAD)
         if CAD != '':
@@ -43,16 +43,16 @@ def score_rules(R):
         else:
             subdat = wordforms
 
-        # Skip rules with zero scope
+        # Skip rules with zero scope.
         if len(subdat) == 0:
             hits_all[idx] = 0
             scope_all[idx] = 0
             continue
 
-        # Compile rule to FST
+        # Compile rule to FST.
         rule_fst = pynini_util.compile_rule(A, B, C, D, sigstar, symtable)
 
-        # Loop over input/output pairs in data subset
+        # Loop over input/output pairs in data subset.
         hits, scope = 0.0, 0.0
         for (stem, output, stem_id) in subdat:
             stem_fst = stem_fsts[stem_id]
@@ -68,16 +68,16 @@ def score_rules(R):
         hits_all[idx] = hits
         scope_all[idx] = scope
         if hits == 0.0 and verbosity > 0:
-            print('(warning) rule has zero hits')
+            print('(warning) Rule has zero hits.')
             print(R[idx])
             print(repr(R[idx]))
         if scope == 0.0:
-            print('(warning) rule has zero scope')
+            print('(warning) Rule has zero scope.')
             print(R[idx])
             print(repr(R[idx]))
             print(len(subdat))
             sys.exit(0)
-        print(f'rule {idx}, hits = {hits}, scope = {scope}, '
+        print(f'Rule {idx}, hits = {hits}, scope = {scope}, '
               f'raw accuracy = {hits/scope}')
 
     return hits_all, scope_all
@@ -86,23 +86,23 @@ def score_rules(R):
 def confidence(hits, scope, alpha=0.55):
     """
     Adjust reliability by scope
-    (default alpha from A&H 2003:127)
+    (default alpha from A&H 2003:127).
     """
-    # Adjusted reliability
+    # Adjusted reliability.
     p_star = (hits + 0.5) / (scope + 1.0)
-    # Estimated variance
+    # Estimated variance.
     var_est = (p_star * (1 - p_star)) / scope
     var_est = var_est**0.5
-    # Confidence
+    # Confidence.
     z = student_t.ppf(alpha, scope - 1.0)
     c = p_star - z * var_est
-    if np.isnan(c):  # xxx document
+    if np.isnan(c):  # todo: document
         c = 0.0
     return c
 
 
 def test():
-    # Exampes from A&H 2003:127
+    # Exampes from A&H 2003:127.
     hits, scope = 5.0, 5.0
     print(confidence(hits, scope, alpha=0.75))
     hits, scope = 1000, 1000.0

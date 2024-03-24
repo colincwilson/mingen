@@ -10,7 +10,8 @@ ScoredRule = namedtuple('ScoredRule', ['R', 'score', 'length', 'idx'])
 
 def prune_rules(rules, score_type='confidence', digits=10):
     """
-    Prune rules that are bounded by more general rules or have scores <= 0
+    Prune rules that are bounded by more general rules 
+    or have scores <= 0.
     """
     print('Prune ...')
     rules = rules.sort_values(by=score_type, ascending=False)
@@ -23,7 +24,7 @@ def prune_rules(rules, score_type='confidence', digits=10):
         if score > 0.0]
 
     i = 0
-    pruned = []  # Non-maximal rules
+    pruned = []  # Non-maximal rules.
     print(f'rules {len(R)}')
     print('iter pruned')
     while len(R) > 0:
@@ -45,7 +46,8 @@ def prune_rules(rules, score_type='confidence', digits=10):
 
     print(f'{len(pruned)} pruned rules')  # 30261 pruned rules
 
-    # Keep rules that are maximal wrt rule_cmp and have scores >= 0
+    # Keep rules that are maximal wrt rule_cmp
+    # and have scores >= 0.
     idx_pruned = [rule_.idx for rule_ in pruned]
     rules_max = rules[~(rules['rule_idx'].isin(idx_pruned))]
     rules_max = rules_max[(rules_max[score_type] > 0.0)]
@@ -54,27 +56,28 @@ def prune_rules(rules, score_type='confidence', digits=10):
 
 
 def rule_cmp(rule1_: ScoredRule, rule2_: ScoredRule):
-    """ Compare rules by score and generality, breaking ties with length
+    """
+    Compare rules by score and generality, breaking ties with length
         -1 if score1 > score2 and rule1 ⊒ rule2   -or-
-              score1 == score2 and rule1 ⊐ rule2  -or-
-              score1 == score2 and rule1 = rule2 and length1 < length2
+                score1 == score2 and rule1 ⊐ rule2  -or-
+                score1 == score2 and rule1 = rule2 and length1 < length2
         +1 if score2 > score1 and rule2 ⊒ rule1   -or-
-              score2 == score1 and rule2 ⊐ rule1  -or-
-              score2 == score1 and rule2 = rule1 and length2 < length1
+                score2 == score1 and rule2 ⊐ rule1  -or-
+                score2 == score1 and rule2 = rule1 and length2 < length1
         0 otherwise
     """
     rule1, score1, length1, idx1 = rule1_
     rule2, score2, length2, idx2 = rule2_
 
-    # R1 has higher score
+    # R1 has higher score.
     if score1 > score2:
         if rule_mgt(rule1, rule2):
             return -1
-    # R2 has higher score
+    # R2 has higher score.
     elif score2 > score1:
         if rule_mgt(rule2, rule1):
             return +1
-    # Tied on score
+    # Tied on score.
     else:
         mgt12 = rule_mgt(rule1, rule2)
         mgt21 = rule_mgt(rule2, rule1)
@@ -88,8 +91,10 @@ def rule_cmp(rule1_: ScoredRule, rule2_: ScoredRule):
 
 
 def rule_mgt(rule1: FtrRule, rule2: FtrRule):
-    """ More-general-than-or-equal relation ⊒ on rules """
-    # Apply only to rules with same focus and change xxx fixme
+    """
+    More-general-than-or-equal relation ⊒ on rules.
+    """
+    # Apply only to rules with same focus and change. todo: fixme
     if (rule1.A != rule2.A) or (rule1.B != rule2.B):
         return False
 
@@ -105,7 +110,9 @@ def rule_mgt(rule1: FtrRule, rule2: FtrRule):
 @lru_cache(maxsize=1000)
 def context_mgt(C1, C2, direction='LR->'):
     """
-    More-general-than-or-equal relation ⊒ on rule contexts (sequences of feature matrices), inward (<-RL) or outward (LR->) from change location
+    More-general-than-or-equal relation ⊒ on rule contexts 
+    (sequences of feature matrices), inward (<-RL) or 
+    outward (LR->) from change location.
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
     if direction == '<-RL':
@@ -114,22 +121,22 @@ def context_mgt(C1, C2, direction='LR->'):
     n1 = len(C1)
     n2 = len(C2)
 
-    # Empty context is always more general
+    # Empty context is always more general.
     if n1 == 0:
         return True
 
     # Longer context cannot be more general
-    # (except for special case below)
+    # (except for special case below).
     if (n1 - n2) > 1:
         return False
 
     for i in range(n1):
         # Special case: context C1 has one more matrix than C2,
-        # test whether it is identical to X (Sigma*)
+        # test whether it is identical to X (Sigma*).
         if i == n2:
             return (C1[i] == 'X')
 
-        # Matrix C1[i] is not more general than C2[i]
+        # Matrix C1[i] is not more general than C2[i].
         if not subsumes(C1[i], C2[i]):
             return False
 

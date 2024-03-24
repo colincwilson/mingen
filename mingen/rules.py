@@ -4,10 +4,12 @@ from features import *
 
 
 class SegRule():
-    """ Rule stated over segments """
+    """ Rule stated over segments. """
 
     def __init__(self, A, B, C, D):
-        """ Construct from segment tuples (see base_rule()) """
+        """
+        Construct from segment tuples (see base_rule()).
+        """
         self.A = A
         self.B = B
         self.C = C
@@ -34,11 +36,14 @@ class SegRule():
 
 class FtrRule():
     """
-    Rule with contexts defined by features and X (Sigma*)
+    Rule with contexts defined by features and X (Sigma*).
     """
 
     def __init__(self, A, B, C, D):
-        """ Construct from change stated over segments and context stated over features (see from_segrule())"""
+        """
+        Construct from change stated over segments and 
+        context stated over features (see from_segrule()).
+        """
         self.A = A
         self.B = B
         self.C = C
@@ -58,11 +63,13 @@ class FtrRule():
         return _hash
 
     def __str__(self):
-        """ String with feature matrices and X (for the humans) """
+        """
+        String with feature matrices and X (for the humans).
+        """
         A_, B_ = map(lambda Z: ' '.join(Z), [self.A, self.B])
         C_, D_ = map(lambda Z: ftrs2str(Z), [self.C, self.D])
         if C_ == '' or D_ == '':
-            print('Empty string (expected feature matrix)')
+            print('Empty string (expected feature matrix).')
             print('C:', self.C)
             print('C_:', C_)
             print('D:', self.D)
@@ -71,13 +78,17 @@ class FtrRule():
         return f'{A_} -> {B_} / {C_} __ {D_}'
 
     def __repr__(self):
-        """ String with segment regexs (for compilation to FST) """
+        """
+        String with segment regexs (for compilation to FST).
+        """
         A_, B_ = map(lambda Z: ' '.join(Z), [self.A, self.B])
         C_, D_ = map(lambda Z: ftrs2regex(Z), [self.C, self.D])
         return f'{A_} -> {B_} / {C_} __ {D_}'
 
     def regexes(self):
-        """ Regular expressions for focus, change, contexts """
+        """
+        Regular expressions for focus, change, contexts.
+        """
         R_regex = repr(self)
         AB, CD = R_regex.split(' / ')
         A, B = AB.split(' -> ')
@@ -87,7 +98,8 @@ class FtrRule():
     @classmethod
     def from_segrule(cls, rule: SegRule):
         """
-        Convert SegRule to FtrRule by replacing segments in context with feature matrices
+        Convert SegRule to FtrRule by replacing segments 
+        in context with their feature matrices.
         """
         A = rule.A
         B = rule.B
@@ -100,7 +112,7 @@ class FtrRule():
         """
         FtrRule from string A -> B / C __ D 
         with contexts defined by feature matrices
-        (inverse of FtrRule.__str__)
+        (inverse of FtrRule.__str__).
         """
         AB, CD = x.split(' / ')
         A, B = AB.split(' -> ')
@@ -114,7 +126,8 @@ class FtrRule():
 
 def base_rule(inpt: str, outpt: str) -> SegRule:
     """
-    Learn word-specific rule A -> B / C __D by aligning input and output strings
+    Learn word-specific rule A -> B / C __D by 
+    aligning input and output strings.
     """
     inpt = inpt.split(' ')
     outpt = outpt.split(' ')
@@ -143,18 +156,20 @@ def base_rule(inpt: str, outpt: str) -> SegRule:
 
 def cross_contexts(R_base):
     """
-    Given base rules  A -> B / C __ D  and A -> B' / C' __ D', B' =/= B,
-    create base rules A -> B' / C __ D and A -> B / C' __ D'
+    Given base rules  A -> B / C __ D 
+                 and  A -> B' / C' __ D', B' =/= B,
+    create base rules A -> B' / C __ D
+                  and A -> B / C' __ D'
     """
     print('Cross-context base rules ...')
-    # Group rules by A
+    # Group rules by A.
     Arules = {}
     for rule in R_base:
         if rule.A in Arules:
             Arules[rule.A].append(rule)
         else:
             Arules[rule.A] = [rule]
-    # Create cross-context rules within groups
+    # Create cross-context rules within groups.
     R_base_ = set(R_base)
     for A, rules in Arules.items():
         n = len(rules)

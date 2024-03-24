@@ -6,12 +6,12 @@ from rules import FtrRule
 
 def generalize_rules_rec(R):
     """
-    Recursively apply minimal generalization to set of FtrRules
+    Recursively apply minimal generalization to set of FtrRules.
     todo: generalize each context pair at most once
     """
     print('Minimal generalization ...')
-    # Word-specific rules
-    # Rules grouped by common change [invariant]
+    # Word-specific rules.
+    # Rules grouped by common change [invariant].
     R_base = {}
     for rule in R:
         change = f"{' '.join(rule.A)} -> {' '.join(rule.B)}"
@@ -24,7 +24,7 @@ def generalize_rules_rec(R):
     R_all = {change: rules.copy()  \
                 for change, rules in R_base.items()}
 
-    # First-step minimal generalization
+    # First-step minimal generalization.
     print('Iteration 0 (base rules only) ...')
     R_new = {}
     for change, rules_base in R_base.items():
@@ -44,12 +44,12 @@ def generalize_rules_rec(R):
     for change in R_all:
         R_all[change] |= R_new[change]
 
-    # Recursive minimal generalization
-    for i in range(10):  # xxx loop forever
-        # Report number of rules by change
+    # Recursive minimal generalization.
+    for i in range(10):  # todo: loop forever
+        # Report number of rules by change.
         print(f'Recursion {i+1} ...')
 
-        # One-step minimal generalization
+        # One-step minimal generalization.
         R_old = R_new
         R_new = {}
         for change, rules_base in R_base.items():
@@ -64,7 +64,7 @@ def generalize_rules_rec(R):
                     rules_new.add(rule)
             R_new[change] = (rules_new - R_all[change])
 
-        # Update rule sets
+        # Update rule sets.
         new_rule_flag = False
         for change in R_all:
             size_old = len(R_all[change])
@@ -73,7 +73,7 @@ def generalize_rules_rec(R):
             if size_new > size_old:
                 new_rule_flag = True
 
-        # Stop if no new rules added for any context
+        # Stop if no new rules added for any context.
         if not new_rule_flag:
             break
 
@@ -83,13 +83,13 @@ def generalize_rules_rec(R):
 
 def generalize_rules(rule1, rule2):
     """
-    Apply minimal generalization to pair of FtrRules
+    Apply minimal generalization to pair of FtrRules.
     """
-    # Check for matching change A -> B
+    # Check for matching change A -> B.
     if (rule1.A != rule2.A) or (rule1.B != rule2.B):
         return None
 
-    # Generalize left and right contexts
+    # Generalize left and right contexts.
     C = generalize_context(rule1.C, rule2.C, '<-RL')
     D = generalize_context(rule1.D, rule2.D, 'LR->')
 
@@ -100,7 +100,8 @@ def generalize_rules(rule1, rule2):
 @lru_cache(maxsize=1000)
 def generalize_context(C1, C2, direction='LR->'):
     """
-    Apply minimal generalization to pair of feature contexts, working inward (<-RL) or outward (LR->) from change location
+    Apply minimal generalization to pair of feature contexts,
+    working inward (<-RL) or outward (LR->) from change location.
     """
     assert ((direction == 'LR->') or (direction == '<-RL'))
     if direction == '<-RL':
@@ -115,22 +116,22 @@ def generalize_context(C1, C2, direction='LR->'):
     C = []
     seg_ident_flag = True
     for i in range(n_max):
-        # X (Sigma*) and terminate if have exceeded shorter context
-        # or have already gone beyond segment identity
+        # X (Sigma*) and terminate if have exceeded shorter
+        # context or have already gone beyond segment identity.
         if (i >= n_min) or (not seg_ident_flag):
             C.append('X')
             break
-        # X (Sigma*) and terminate if either is X
+        # X (Sigma*) and terminate if either is X.
         if (C1[i] == 'X') or (C2[i] == 'X'):
             C.append('X')
             break
         # Perfect match of feature matrices
         # (NB. Conforms to A&H spec only if at least one
-        # of the rules has contexts that are segment-specific)
+        # of the rules has contexts that are segment-specific).
         if C1[i] == C2[i]:
             C.append(C1[i])
             continue
-        # Shared features at first segment mismatch
+        # Shared features at first segment mismatch.
         ftrs, any_common = common_ftrs(C1[i], C2[i])
         if not any_common:
             C.append('X')

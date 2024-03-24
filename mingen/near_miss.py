@@ -7,11 +7,11 @@ import pynini_util
 
 
 def generate_wugs(rules):
-    # Symbol environment
+    # Symbol environment.
     syms = [x for x in config.sym2ftrs]
     sigstar, symtable = pynini_util.sigstar(syms)
 
-    # Monosyllabic items in training data
+    # Monosyllabic items in training data.
     vowels = '[ɑaʌɔoəeɛuʊiɪ]'
     monosyll_regex = \
         '⋊ ([^ɑaʌɔoəeɛuʊiɪ]+ )([ɑaʌɔoəeɛuʊiɪ] )+([^ɑaʌɔoəeɛuʊiɪ]+ )*⋉'
@@ -19,7 +19,7 @@ def generate_wugs(rules):
     monosyll = lex[(lex['stem'].str.match(monosyll_regex))]
     print(f'{len(monosyll)} monosyllables')
 
-    # Attested onsets and rimes of monosyllables
+    # Attested onsets and rimes of monosyllables.
     onsets = [re.sub('[ɑaʌɔoəeɛuʊiɪ].*', '', x) for x in monosyll['stem']]
     rimes = [
         re.sub('.*?([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) for x in monosyll['stem']
@@ -35,7 +35,7 @@ def generate_wugs(rules):
     print(f'{len(onsets)} onsets')
     print(f'{len(rimes)} rimes')
 
-    # Irregular rules
+    # Irregular rules.
     #change = 'ɪ -> ʌ'
     #change = 'a ɪ -> o'
     #change = 'i -> ɛ'
@@ -43,7 +43,7 @@ def generate_wugs(rules):
     #change = 'e -> o'
     #change = 'e -> ʊ'
     change = 'i p -> ɛ p t'
-    A, B = change.split(' -> ')  # xxx handle zeros
+    A, B = change.split(' -> ')  # todo: handle zeros
     rules = rules[(rules['rule'].str.contains(f'^{change} /'))]
     rules = rules \
             .sort_values('confidence', ascending=False) \
@@ -53,7 +53,7 @@ def generate_wugs(rules):
     print(f'change: {change}')
     print(f'{len(rules)} rules')
 
-    # Real stems that undergo rules
+    # Real stems that undergo rules.
     stems_A = monosyll[(monosyll['stem'].str.contains(A))] \
             .reset_index(drop=True)
     stems_apply = []
@@ -85,7 +85,7 @@ def generate_wugs(rules):
     print(stems_hit)
     print(print([stem for stem in stems_hit['stem']]))
 
-    # Rimes of real stems that undergo rules
+    # Rimes of real stems that undergo rules.
     rimes_hit = [re.sub('.*?([ɑaʌɔoəeɛuʊiɪ].*)', '\\1', x) \
         for x in stems_hit['stem']]
     rimes_hit = set([x.strip() for x in rimes_hit])
@@ -94,7 +94,7 @@ def generate_wugs(rules):
     phonotactics_hit = onset_fst + rime_hit_fst
     phonotactics_hit = phonotactics_hit.optimize()
 
-    # Wug stems one-edit away from real stems
+    # Wug stems one-edit away from real stems.
     stem_fst = pynini_util.accep([stem for stem in stems_apply['stem']],
                                  symtable)
     stem_fst = pynini_util.union(stem_fst)
@@ -107,7 +107,7 @@ def generate_wugs(rules):
     wugs = set(wugs)
     print(f'{len(wugs)} potential wugs')
 
-    # Wug stems within/beyond scope of rules
+    # Wug stems within/beyond scope of rules.
     wugs_apply = []
     wugs_A = [wug for wug in wugs if re.search(A, wug)]
     for wug in wugs_A:
@@ -118,7 +118,8 @@ def generate_wugs(rules):
             CAD = ' '.join(CAD)
             if not re.search(CAD, wug):
                 continue
-            rewrite_val = pynini_util.rewrites(rule, wug, '', sigstar, symtable)
+            rewrite_val = pynini_util.rewrites(rule, wug, '', sigstar,
+                                               symtable)
             rewrite_val['stem'] = wug
             rewrite_val['output'] = None
             rewrite_val['model_rating'] = rules['confidence'][j]
@@ -138,7 +139,7 @@ def generate_wugs(rules):
             }
         wugs_apply.append(rewrite_val)
 
-    # Report wugs
+    # Report wugs.
     wugs_apply = pd.DataFrame(wugs_apply)
     wugs_apply = wugs_apply[~(wugs_apply.stem.isin(lex['stem']))] \
                  .reset_index(drop = True)

@@ -16,7 +16,7 @@ from features import *
 def main():
     LANGUAGE = 'eng2'
 
-    # Import config (as created by 01_prepare_data)
+    # Import config (as created by 01_prepare_data).
     config_save = pickle.load(
         open(Path('../data') / f'{LANGUAGE}_config.pkl', 'rb'))
     for key, val in config_save.items():

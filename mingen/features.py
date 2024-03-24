@@ -8,7 +8,7 @@ from functools import lru_cache
 def match_ftrs_(F, sym):
     """
     Subsumption relation between feature matrix and symbol
-    [feature dicts]
+    (applies to feature dicts).
     """
     ftrs = config.sym2ftrs[sym]
     for (ftr, val) in F.items():
@@ -20,7 +20,7 @@ def match_ftrs_(F, sym):
 def match_ftrs(F, sym):
     """
     Subsumption relation between feature matrix and symbol
-    [feature vectors]
+    (applies to feature vectors).
     """
     ftrs = config.sym2ftr_vec[sym]
     n = len(ftrs)
@@ -35,7 +35,7 @@ def match_ftrs(F, sym):
 def common_ftrs_(F1, F2):
     """
     Shared values of two feature matrices
-    [Args: feature dicts]
+    (applies to feature dicts).
     """
     # f(Sigma*,F2) = f(F1,Sigma*) = Sigma*
     if (F1 == 'X') or (F2 == 'X'):
@@ -51,8 +51,8 @@ def common_ftrs_(F1, F2):
 @lru_cache(maxsize=1000)
 def common_ftrs(F1, F2):
     """
-    Common values of two feature matrices
-    [Args: feature vectors]
+    Shared values of two feature matrices
+    (applies to feature vectors).
     """
     # f(Sigma*,F2) = f(F1,Sigma*) = Sigma*
     if (F1 == 'X') or (F2 == 'X'):
@@ -74,8 +74,8 @@ def common_ftrs(F1, F2):
 @lru_cache(maxsize=10000)
 def subsumes(F1, F2):
     """
-    Subsumption relation between feature matrices F1 and F2
-    [Args: feature vectors]
+    Subsumption relation between feature matrices 
+    F1 and F2 (applies to feature vectors).
     """
     if (F1 == 'X'):
         return True
@@ -92,14 +92,18 @@ def subsumes(F1, F2):
 
 def ftrs2regex(F):
     """
-    Symbol regex for sequence of feature matrices
-    Note: excludes X (Sigma*), which is assumed to appear only at edges of rule contexts and is always implicit at those positions in cdrewrite compilation
+    Symbol regex for sequence of feature matrices.
+    Note: excludes X (Sigma*), which is assumed to 
+    appear only at edges of rule contexts and is always
+    implicit at those positions in cdrewrite compilation.
     """
     return ' '.join([ftrs2regex1(Fi) for Fi in F if Fi != 'X'])
 
 
 def ftrs2regex1(F):
-    """ Symbol regex for single feature matrix """
+    """
+    Symbol regex for one feature matrix.
+    """
     if F == 'X':
         return 'X'
     syms = [sym for sym in config.sym2ftrs \
@@ -108,12 +112,17 @@ def ftrs2regex1(F):
 
 
 def ftrs2str(F):
-    """ String corresponding to sequence of feature matrices """
+    """
+    String corresponding to sequence of feature matrices.
+    """
     return ' '.join([ftrs2str1(Fi) for Fi in F])
 
 
 def ftrs2str1(F):
-    """ String corresponding to feature matrix, with non-zero values only """
+    """
+    String corresponding to feature matrix,
+    showing non-zero values only.
+    """
     if F == 'X':
         return 'X'
     ftr_names = config.ftr_names
@@ -124,7 +133,10 @@ def ftrs2str1(F):
 
 
 def str2ftrs(x):
-    """ String to sequence of feature matrices (inverse of ftrs2str) """
+    """
+    String to sequence of feature matrices
+    (inverse of ftrs2str).
+    """
     y = re.sub('X', '[X', x)  # Sigma*
     y = y.split(' [')
     try:
@@ -136,17 +148,20 @@ def str2ftrs(x):
 
 
 def str2ftrs1(x):
-    """ String to feature matrix (inverse of ftrs2str1) """
+    """
+    String to feature matrix
+    (inverse of ftrs2str1).
+    """
     y = re.sub('\\[', '', x)
     y = re.sub('\\]', '', y)
     if y == 'X':  # Sigma*
         return 'X'
-    # Ordinary feature matrix, non-zero specs only
+    # Ordinary feature matrix, non-zero specs only.
     y = y.split(', ')
     ftrs = ['0'] * len(config.ftr_names)
     ftr_names = config.ftr_names
     for spec in y:
-        if spec == '':  # xxx document
+        if spec == '':  # todo: document
             continue
         val = spec[0]
         ftr = spec[1:]
