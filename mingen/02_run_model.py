@@ -1,5 +1,5 @@
 # Ex. python 02_run_model.py --language eng3 --learn_rules --score_rules --prune_rules --rate_wugs # learn/score/prune/rate
-# Ex. python 02_run_mode.py --language eng3 --wug_test <wugs.csv> # generate wug-test predictions with ratings
+# Ex. python 02_run_model.py --language eng3 --wug_test <wugs.csv> # generate wug-test predictions with ratings
 
 # todo: scalar features, phonology, impugnment, ...
 

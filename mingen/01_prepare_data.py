@@ -17,6 +17,29 @@ config.zero = '∅'
 config.save_dir = Path.home() / 'Code/Python/mingen/data'
 phon_config.init(config)
 
+# Language-specific configs.
+# Eng.
+# Simplify or split diphthongs, zap diacritics, fix unicode.
+ENG_SEG_FIXES = {
+        'eɪ': 'e', 'oʊ': 'o', 'əʊ': 'o', 'aɪ': 'a ɪ', 'aʊ': 'a ʊ', \
+        'ɔɪ': 'ɔ ɪ', 'ɝ': 'ɛ ɹ', 'ˠ': '', 'm̩': 'm', 'n̩': 'n', 'l̩': 'l', \
+        'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g', \
+        'ʧ': 'tʃ', 'ʤ': 'dʒ'}
+# Albright & Hayes 2003 training data: split diphthongs and
+# rhoticized vowels, ~Britishize æ -> ɑ, fix regular past.
+ALBRIGHTHAYES_SEG_FIXES = \
+    {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
+    'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ'} | {'([td]) ə d$': '\\1 ɨ d'} # {'([td]) ə d$': '\\1 ɪ d'}
+
+# Deu.
+# Split diphthongs, fix unicode
+DEU_SEG_FIXES = {
+    'ai̯': 'a i', 'au̯': 'a u', 'oi̯': 'o i', 'iːə': \
+    'iː ə', 'eːə': 'eː ə', 'ɛːə': 'ɛː ə', 'ɡ': 'g'}
+
+# Nld.
+NLD_SEG_FIXES = {'ɑʊ': 'ɑ ʊ', 'ɛɪ': 'ɛ ɪ', 'ʊɪ': 'ʊ ɪ', '[+]': ''}
+
 
 def format_strings(dat, extra_seg_fixes=None):
     seg_fixes = config.seg_fixes
@@ -46,6 +69,7 @@ def main():
                type=str,
                choices=['eng', 'eng2', 'eng3', 'deu', 'nld', 'tiny'],
                default='tiny')
+    parser.add('--wugs', action='store_true', default=False)
     args = parser.parse_args()
     LANGUAGE = args.language
 
@@ -57,33 +81,22 @@ def main():
     if LANGUAGE in ['eng', 'eng2', 'eng3']:
         wordform_omit = None
         wug_morphosyn = 'V;PST;'
-        # Simplify or split diphthongs, zap diacritics, fix unicode.
-        config.seg_fixes = {
-        'eɪ': 'e', 'oʊ': 'o', 'əʊ': 'o', 'aɪ': 'a ɪ', 'aʊ': 'a ʊ', \
-        'ɔɪ': 'ɔ ɪ', 'ɝ': 'ɛ ɹ', 'ˠ': '', 'm̩': 'm', 'n̩': 'n', 'l̩': 'l', \
-        'ɜ': 'ə', 'uːɪ': 'uː ɪ', 'ɔ̃': 'ɔ', 'ː': '', 'r': 'ɹ', 'ɡ': 'g'}
-        # Albright & Hayes 2003 training data: split diphthongs and
-        # rhoticized vowels, ~Britishize æ -> ɑ, fix regular past.
-        albrighthayes_seg_fixes = \
-            {'tʃ': 't ʃ', 'dʒ': 'd ʒ', 'æ': 'ɑ', 'ɜ˞': 'ɛ ɹ', \
-            'ə˞': 'ɛ ɹ', 'ɚ': 'ɛ ɹ', '([td]) ə d$': '\\1 ɪ d'}
+        config.seg_fixes = ENG_SEG_FIXES
         if LANGUAGE in ['eng2', 'eng3']:
-            config.seg_fixes |= albrighthayes_seg_fixes
+            config.seg_fixes |= ALBRIGHTHAYES_SEG_FIXES
         config.remove_prefix = None
 
     if LANGUAGE == 'deu':
         wordform_omit = '[+]'
         wug_morphosyn = '^V.PTCP;PST$'
-        # Split diphthongs, fix unicode
-        config.seg_fixes = {'ai̯': 'a i', 'au̯': 'a u', 'oi̯': 'o i', \
-        'iːə': 'iː ə', 'eːə': 'eː ə', 'ɛːə': 'ɛː ə', 'ɡ': 'g'}
+        config.seg_fixes = DEU_SEG_FIXES
         config.remove_prefix = 'g ə'
 
     if LANGUAGE == 'nld':
         wordform_omit = '[+]'
         wug_morphosyn = 'V;PST;PL'
         # Split diphthongs
-        config.seg_fixes = {'ɑʊ': 'ɑ ʊ', 'ɛɪ': 'ɛ ɪ', 'ʊɪ': 'ʊ ɪ', '[+]': ''}
+        config.seg_fixes = NLD_SEG_FIXES
         config.remove_prefix = None
 
     if LANGUAGE == 'tiny':
@@ -117,9 +130,10 @@ def main():
 
     # Format strings and save.
     dat = format_strings(dat)
-    dat.to_csv(config.save_dir / f'{LANGUAGE}_dat_train.tsv',
-               sep='\t',
-               index=False)
+    dat.to_csv( \
+        config.save_dir / f'{LANGUAGE}_dat_train.tsv',
+        sep='\t',
+        index=False)
     config.dat_train = dat
     print('Training data')
     print(dat)
@@ -139,9 +153,10 @@ def main():
 
     wug_dev = format_strings(wug_dev)
     config.wug_dev = wug_dev
-    wug_dev.to_csv(config.save_dir / f'{LANGUAGE}_wug_dev.tsv',
-                   sep='\t',
-                   index=False)
+    wug_dev.to_csv( \
+        config.save_dir / f'{LANGUAGE}_wug_dev.tsv',
+        sep='\t',
+        index=False)
     print('Wug dev data')
     print(wug_dev)
     print()
@@ -153,16 +168,18 @@ def main():
         WUG_TST = 'eng'
     fwug_tst = ddata / f'{WUG_TST}.judgements.tst'
 
-    wug_tst = pd.read_csv(fwug_tst,
-                          sep='\t',
-                          names=['wordform1', 'wordform2', 'morphosyn'])
+    wug_tst = pd.read_csv( \
+        fwug_tst,
+        sep='\t',
+        names=['wordform1', 'wordform2', 'morphosyn'])
     wug_tst = wug_tst.drop('morphosyn', axis=1)
 
     wug_tst = format_strings(wug_tst)
     config.wug_tst = wug_tst
-    wug_tst.to_csv(config.save_dir / f'{LANGUAGE}_wug_tst.tsv',
-                   sep='\t',
-                   index=False)
+    wug_tst.to_csv( \
+        config.save_dir / f'{LANGUAGE}_wug_tst.tsv',
+        sep='\t',
+        index=False)
     print('Wug test data')
     print(wug_tst)
     print()
@@ -171,7 +188,7 @@ def main():
     # Albright-Hayes wugs.
     if LANGUAGE in ['eng', 'eng2', 'eng3']:
         falbrighthayes = Path('../albrighthayes2003') / 'Wug_unimorph.tsv'
-        wug_albrighthayes = pd.read_csv(
+        wug_albrighthayes = pd.read_csv( \
             falbrighthayes,
             sep='\t',
             comment='#',
@@ -179,7 +196,7 @@ def main():
 
         wug_albrighthayes = format_strings( \
             wug_albrighthayes,
-            extra_seg_fixes=albrighthayes_seg_fixes)
+            extra_seg_fixes=ALBRIGHTHAYES_SEG_FIXES)
         config.wug_albrighthayes = wug_albrighthayes
         wug_albrighthayes.to_csv( \
             config.save_dir / 'albrighthayes2003_wug.tsv',
@@ -187,6 +204,34 @@ def main():
             index=False)
         print('Albright-Hayes wug data')
         print(wug_albrighthayes)
+        print()
+
+    # # # # # # # # # #
+    # Monosyllabic wug pool.
+    if LANGUAGE in ['eng2', 'eng3'] and args.wugs:
+        fwugpool = Path.home(
+        ) / 'Projects/allomorphz/exp4/stim/wug_pool/wug_pool1.csv'
+        wug_pool = pd.read_csv(fwugpool)
+        wug_pool = wug_pool[['phon2']]
+        wug_pool.columns = ['wordform1']
+
+        # todo: diphthong-aware string splitting
+        wug_pool['wordform1'] = \
+            [' '.join(x) for x in wug_pool['wordform1']]
+
+        wug_pool['wordform2'] = wug_pool['wordform1']
+        wug_pool['morphosyn'] = 'V;PST;'
+        wug_pool['human_rating'] = 0.0
+
+        wug_pool = format_strings( \
+            wug_pool,
+            extra_seg_fixes=ALBRIGHTHAYES_SEG_FIXES)
+        wug_pool.to_csv( \
+            Path.home() / 'Downloads/wug_pool.tsv',
+            sep='\t',
+            index=False)
+        print('Monosyllabic wug pool')
+        print(wug_pool)
         print()
 
     # # # # # # # # # #
@@ -214,13 +259,14 @@ def main():
 
     # Fix up features for mingen.
     ftr_matrix = feature_matrix.ftr_matrix
-    ftr_matrix = ftr_matrix.drop('sym',
-                                 axis=1)  # sym redundant with X (Sigma*)
+    # Drop sym feature, redundant with X (Sigma*).
+    ftr_matrix = ftr_matrix.drop('sym', axis=1)
     config.phon_ftrs = ftr_matrix
     config.ftr_names = list(ftr_matrix.columns.values)
     config.syms = list(ftr_matrix.index)
 
-    # Map from symbols to feature-value dictionaries and feature vectors.
+    # Map from symbols to feature-value dictionaries
+    # and feature vectors.
     config.sym2ftrs = {}
     config.sym2ftr_vec = {}
     for i, sym in enumerate(config.syms):
