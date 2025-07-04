@@ -2,12 +2,12 @@ import configargparse, pickle, re, sys
 from pathlib import Path
 import pandas as pd
 
-sys.path.append(str(Path('../../phtrs')))
+sys.path.append(str(Path('../../phonopy')))  # fixme
 
 import config
 #from phtrs import phon_config, features, str_util
-from phtrs import config as phon_config
-from phtrs import features, str_util
+from phonopy import config as phon_config
+from phonopy import features, str_util
 
 # String environment.
 config.epsilon = 'ϵ'

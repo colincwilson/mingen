@@ -182,7 +182,7 @@ def rewrites(rule, inpt, outpt, sigstar=None, symtable=None):
     if so whether application results in outpt.
     """
     pred = rewrite(rule, inpt, sigstar, symtable)
-    ret = {'in_scope': 0, 'hit': hit}
+    ret = {'in_scope': 0, 'hit': 0}
     if pred is None:
         return ret
     ret['in_scope'] = 1
