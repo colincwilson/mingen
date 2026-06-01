@@ -5,24 +5,24 @@ import config
 from functools import lru_cache
 
 
-def match_ftrs_(F, sym):
+def match_ftrs_(F, seg):
     """
-    Subsumption relation between feature matrix and symbol
+    Subsumption relation between feature matrix and segment
     (applies to feature dicts).
     """
-    ftrs = config.sym2ftrs[sym]
+    ftrs = config.seg2ftrs[seg]
     for (ftr, val) in F.items():
         if ftrs[ftr] != val:
             return False
     return True
 
 
-def match_ftrs(F, sym):
+def match_ftrs(F, seg):
     """
-    Subsumption relation between feature matrix and symbol
+    Subsumption relation between feature matrix and segment
     (applies to feature vectors).
     """
-    ftrs = config.sym2ftr_vec[sym]
+    ftrs = config.seg2ftr_vec[seg]
     n = len(ftrs)
     for i, Fi in enumerate(F):
         if Fi == '0':
@@ -106,9 +106,9 @@ def ftrs2regex1(F):
     """
     if F == 'X':
         return 'X'
-    syms = [sym for sym in config.sym2ftrs \
-            if match_ftrs(F, sym)]
-    return '(' + '|'.join(syms) + ')'
+    segs = [seg for seg in config.seg2ftrs \
+            if match_ftrs(F, seg)]
+    return '(' + '|'.join(segs) + ')'
 
 
 def ftrs2str(F):

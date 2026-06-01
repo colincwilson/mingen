@@ -263,13 +263,13 @@ def main():
     ftr_matrix = ftr_matrix.drop('sym', axis=1)
     config.phon_ftrs = ftr_matrix
     config.ftr_names = list(ftr_matrix.columns.values)
-    config.syms = list(ftr_matrix.index)
+    config.segments = list(ftr_matrix.index)
 
     # Map from symbols to feature-value dictionaries
     # and feature vectors.
-    config.sym2ftrs = {}
-    config.sym2ftr_vec = {}
-    for i, sym in enumerate(config.syms):
+    config.seg2ftrs = {}
+    config.seg2ftr_vec = {}
+    for i, seg in enumerate(config.segments):
         ftrs = config.phon_ftrs.iloc[i, :].to_dict()
         config.sym2ftrs[sym] = ftrs
         config.sym2ftr_vec[sym] = tuple(ftrs.values())

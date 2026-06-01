@@ -15,8 +15,8 @@ def wug_test(wugs, rules, score_type='confidence', mode='rate'):
     """
     print('Wug testing ...')
     # Symbol environment.
-    syms = [x for x in config.sym2ftrs]
-    sigstar, symtable = pynini_util.sigstar(syms)
+    segments = [x for x in config.seg2ftrs]
+    sigstar, symtable = pynini_util.sigstar(segments)
 
     stems = [str(x) for x in wugs['stem']]
     if mode == 'rating':

@@ -8,8 +8,8 @@ import pynini_util
 
 def generate_wugs(rules):
     # Symbol environment.
-    syms = [x for x in config.sym2ftrs]
-    sigstar, symtable = pynini_util.sigstar(syms)
+    segments = [x for x in config.seg2ftrs]
+    sigstar, symtable = pynini_util.sigstar(segments)
 
     # Monosyllabic items in training data.
     vowels = '[ɑaʌɔoəeɛuʊiɪ]'

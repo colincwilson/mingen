@@ -16,8 +16,8 @@ def score_rules(R):
     todo: apply simultaneously to all inputs encoded as trie?
     """
     # Symbol environment.
-    syms = [x for x in config.sym2ftrs]
-    sigstar, symtable = pynini_util.sigstar(syms)
+    segments = [x for x in config.seg2ftrs]
+    sigstar, symtable = pynini_util.sigstar(segments)
 
     # Precompile inputs to FSTs.
     dat = config.dat_train
